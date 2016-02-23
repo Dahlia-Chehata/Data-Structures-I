@@ -32,12 +32,12 @@ public class Mycalculator implements ICalculator {
 		else if (x < 0 && y < 0) {
 			x = -x;
 			y = -y;
-			return x / y;
+			return (float)x / y;
 		} 
 		else if (x == 0)
 			return 0;
 		else
-			return x / y;
+			return (float)x / y;
 	}
 
 }
