@@ -26,9 +26,10 @@ public class Hangman_game implements IHangman {
 		
 		 Random rand = new Random();
 			int num = rand.nextInt(temp.length);
+			if(num>=0 && num<temp.length){
 			str = temp[num];
 			show=new char[str.length()] ;
-		 if (str.length()!=0){
+		 
 			for(int i=0;i<str.length();i++)
 				show[i]='-';
 		 }
