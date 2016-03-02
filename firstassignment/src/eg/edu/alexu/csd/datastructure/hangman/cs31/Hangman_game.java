@@ -7,7 +7,7 @@ import java.util.Random;
 public class Hangman_game implements IHangman {
 	static String[] temp;
 	 static String str ;
-	static  int counter=0, maximum;
+	static  int counter;
 	 static String out = new String();
 	 static char[] show ;
 
@@ -68,8 +68,8 @@ public class Hangman_game implements IHangman {
 	public void setMaxWrongGuesses(Integer max) {
 		// TODO Auto-generated method stub
 		counter= max;
-		/*if (max == null)
-			maximum = 0;*/
+		if (max == null)
+			counter = 0;
 
 	}
 
