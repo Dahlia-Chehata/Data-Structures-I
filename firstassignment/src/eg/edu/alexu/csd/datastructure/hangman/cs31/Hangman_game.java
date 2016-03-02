@@ -28,9 +28,12 @@ public class Hangman_game implements IHangman {
 	@Override
 	public String selectRandomSecretWord() {
 		str=null;
-		Random rand = new Random();
+		 Random rand = new Random();
 			int num = rand.nextInt(temp.length);
+			if (!str.isEmpty())
 			str = temp[num];
+			else
+				str=null;
 			
 		return str;
 	}
