@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Hangman_game implements IHangman {
 	static String[] temp;
-	static String str = new String();
+	static String str ;
 	static int counter=0, maximum;
 	static String out = new String();
 	 static char[] show ;
@@ -26,14 +26,11 @@ public class Hangman_game implements IHangman {
 		
 		 Random rand = new Random();
 			int num = rand.nextInt(temp.length);
-			if(num>=0 && num<temp.length){
 			str = temp[num];
 			show=new char[str.length()] ;
 		 
 			for(int i=0;i<str.length();i++)
 				show[i]='-';
-		 }
-		 else return null;
 		
 		return str;
 	}
