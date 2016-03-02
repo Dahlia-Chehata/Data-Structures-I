@@ -8,7 +8,7 @@ public class Hangman_game implements IHangman {
 	static String[] temp;
 	static String str = new String();
 	static Character guess;
-	static int counter, maximum;
+	static int counter=0, maximum;
 	static String out = null;
 	static boolean[] global=new boolean [20];
 	 static Character[] show =new Character[20];
@@ -30,11 +30,9 @@ public class Hangman_game implements IHangman {
 		str=null;
 		 Random rand = new Random();
 			int num = rand.nextInt(temp.length);
-			if (!str.isEmpty())
 			str = temp[num];
-			else
-				str=null;
-			
+			for(int i=0;i<str.length();i++)
+				show[i]='-';
 		return str;
 	}
 
@@ -43,13 +41,13 @@ public class Hangman_game implements IHangman {
 		int flag = 0;
       // global=new boolean[str.length()];  
        //show= new Character [str.length()];
-		for (int i=0;i<str.length();i++) 
+		/*for (int i=0;i<str.length();i++) 
 			show[i]='-';
 		char[] a1 = new char[str.length()];
 		for (int i = 0; i < str.length(); i++) {
 			a1[i] = show[i].charValue();
 		}
-		out = String.valueOf(a1);
+		out = String.valueOf(a1);*/
 		
 		if (c != null) {
 			for (int i = 0; i < str.length(); i++) {
@@ -68,10 +66,10 @@ public class Hangman_game implements IHangman {
 				}*/
 
 				//out = null;
-				//char[] a1 = new char[str.length()];
-				for (int i = 0; i < str.length(); i++) {
+				char[] a1 = new char[str.length()];
+				for (int i = 0; i < str.length(); i++) 
 					a1[i] = show[i].charValue();
-				}
+				
 				out = String.valueOf(a1);
 			}
 
