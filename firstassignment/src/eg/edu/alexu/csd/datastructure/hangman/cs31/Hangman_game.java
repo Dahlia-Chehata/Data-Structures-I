@@ -47,9 +47,9 @@ public class Hangman_game implements IHangman {
 
 			if (flag == 0) {
 
-				counter++;
+				counter--;
 				
-				if (counter == maximum)
+				if (counter == 0)
 					return null;
 
 			}
@@ -62,7 +62,7 @@ public class Hangman_game implements IHangman {
 	@Override
 	public void setMaxWrongGuesses(Integer max) {
 		// TODO Auto-generated method stub
-		maximum = max;
+		counter= max;
 		if (max == null)
 			maximum = 0;
 
