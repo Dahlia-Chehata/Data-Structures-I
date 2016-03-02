@@ -17,7 +17,8 @@ public class Hangman_game implements IHangman {
 	
 	static Character guess;
 	static int counter, maximum;
-	static String out = new String();
+	static String out = null;
+
 	static boolean[] global = new boolean[20];
 	 static Character[] show = new Character[20];
 
@@ -91,7 +92,7 @@ public class Hangman_game implements IHangman {
 						show[i] = '-';
 				}
 
-				out = " ";
+				out = null;
 				char[] a1 = new char[str.length()];
 				for (int i = 0; i < str.length(); i++) {
 					a1[i] = show[i].charValue();
@@ -102,6 +103,21 @@ public class Hangman_game implements IHangman {
 			if (flag == 0) {
 
 				counter++;
+				
+					if(counter <maximum && out == null){
+						for (int i=0;i<str.length();i++){
+							show[i]='-';
+						}
+						char[] a1 = new char[str.length()];
+						for (int i = 0; i < str.length(); i++) {
+							a1[i] = show[i].charValue();
+						}
+						out = String.valueOf(a1);
+						
+					}
+				
+				
+				
 				if (counter >= maximum)
 					out = null;
 
@@ -130,9 +146,11 @@ public class Hangman_game implements IHangman {
 		hangman.setDictionary(temp);
 		hangman.setMaxWrongGuesses(5);
 		String secret = hangman.selectRandomSecretWord();
+		while (secret==null)
+			secret = hangman.selectRandomSecretWord();
 		Scanner input = new Scanner(System.in); // Get user input
-    
-    guess =null; //input.next().charAt(0);
+        System.out.println("enter"); 
+       guess =input.next().charAt(0);
 		do {
 			String result = hangman.guess(guess);
 			if (result == null) {
