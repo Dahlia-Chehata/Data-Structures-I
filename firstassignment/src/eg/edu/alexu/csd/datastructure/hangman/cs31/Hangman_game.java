@@ -6,9 +6,9 @@ import java.util.Random;
 
 public class Hangman_game implements IHangman {
 	static String[] temp;
-	static String str ;
-	static int counter=0, maximum;
-	static String out = new String();
+	 String str ;
+	 int counter=0, maximum;
+	 String out = new String();
 	 static char[] show ;
 
 
@@ -37,6 +37,14 @@ public class Hangman_game implements IHangman {
 
 	@Override
 	public String guess(Character c) {
+		
+		out = String.valueOf(show);
+		if (c==null)
+			return out;
+		if(temp==null)
+			return out;
+		if (temp.length==0)
+		   return out;
 		int flag = 0;
      
 			for (int i = 0; i < str.length(); i++) {
@@ -54,7 +62,7 @@ public class Hangman_game implements IHangman {
 					return null;
 
 			}
-			out = String.valueOf(show);
+			
 		 return out;
 	
 		
@@ -64,7 +72,8 @@ public class Hangman_game implements IHangman {
 	public void setMaxWrongGuesses(Integer max) {
 		// TODO Auto-generated method stub
 		counter= max;
-		
+		if (max == null)
+			maximum = 0;
 
 	}
 
