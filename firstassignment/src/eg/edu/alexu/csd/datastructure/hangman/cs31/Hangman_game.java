@@ -7,9 +7,9 @@ import java.util.Random;
 public class Hangman_game implements IHangman {
 	static  String[] temp;
 	 static String str ;
-	  int counter=0;
+	  static int counter=0;
 	 
-	  char[] show ;
+	  static char[] show ;
 
 
 	@Override
