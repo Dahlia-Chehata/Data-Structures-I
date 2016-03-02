@@ -42,9 +42,9 @@ public class Hangman_game implements IHangman {
 		if (c==null)
 			return out;
 		if(temp==null)
-			return out;
+			return null;
 		if (temp.length==0)
-		   return out;
+		   return null;
 		int flag = 0;
      
 			for (int i = 0; i < str.length(); i++) {
