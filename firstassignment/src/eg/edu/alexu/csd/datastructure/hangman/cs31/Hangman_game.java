@@ -5,11 +5,11 @@ import java.util.Random;
 
 
 public class Hangman_game implements IHangman {
-	static String[] temp;
-	 static String str ;
-	static  int counter;
-	 static String out = new String();
-	 static char[] show ;
+	 String[] temp;
+	  String str ;
+	  int counter;
+	 
+	  char[] show ;
 
 
 	@Override
@@ -58,9 +58,8 @@ public class Hangman_game implements IHangman {
 					return null;
 
 			}
-		out = String.valueOf(show);
-		 return out;
-	
+		 return String.valueOf(show);
+		 
 		
 	}
 
