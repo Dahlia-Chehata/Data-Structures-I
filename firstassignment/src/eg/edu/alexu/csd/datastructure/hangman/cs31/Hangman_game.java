@@ -8,8 +8,8 @@ public class Hangman_game implements IHangman {
 	static String[] temp;
 	static String str = new String();
 	static int counter=0, maximum;
-	static String out = null;
-	 static Character[] show =new Character[20];
+	static String out = new String();
+	 static char[] show ;
 
 
 	@Override
@@ -27,6 +27,7 @@ public class Hangman_game implements IHangman {
 		 Random rand = new Random();
 			int num = rand.nextInt(temp.length);
 			str = temp[num];
+			show=new char[str.length()] ;
 		for(int i=0;i<str.length();i++)
 				show[i]='-';
 		
@@ -48,7 +49,7 @@ public class Hangman_game implements IHangman {
 
 				counter++;
 				
-				if (counter >= maximum)
+				if (counter == maximum)
 					return null;
 
 			}
