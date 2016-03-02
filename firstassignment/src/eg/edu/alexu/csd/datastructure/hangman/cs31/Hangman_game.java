@@ -2,7 +2,7 @@ package eg.edu.alexu.csd.datastructure.hangman.cs31;
 
 import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 import java.util.Random;
-//import java.util.Scanner;
+
 
 public class Hangman_game implements IHangman {
 	static String[] temp;
@@ -16,9 +16,7 @@ public class Hangman_game implements IHangman {
 
 	@Override
 	public void setDictionary(String[] words) {
-     /*   words= new String[]{ "BELGIUM", "BURUNDI", "COLOMBIA", "EGYPT"
-        		, "KAZAKHSTAN", "MAURITANIA", "SINGAPORE", "UZBEKISTAN","SensitiveLower" };
-        */
+     
 		temp=new String[words.length];
 		
 		for (int j = 0; j < words.length; j++)
@@ -31,7 +29,7 @@ public class Hangman_game implements IHangman {
 		 Random rand = new Random();
 			int num = rand.nextInt(temp.length);
 			str = temp[num];
-			for(int i=0;i<str.length();i++)
+		for(int i=0;i<str.length();i++)
 				show[i]='-';
 		return str;
 	}
@@ -39,19 +37,9 @@ public class Hangman_game implements IHangman {
 	@Override
 	public String guess(Character c) {
 		int flag = 0;
-      // global=new boolean[str.length()];  
-       //show= new Character [str.length()];
-		/*for (int i=0;i<str.length();i++) 
-			show[i]='-';
-		char[] a1 = new char[str.length()];
-		for (int i = 0; i < str.length(); i++) {
-			a1[i] = show[i].charValue();
-		}
-		out = String.valueOf(a1);*/
-		
-		if (c != null) {
+     
 			for (int i = 0; i < str.length(); i++) {
-				if (str.charAt(i) == c && global[i] == false) {
+				if (str.toLowerCase().charAt(i) == Character.toLowerCase(c)&& global[i] == false) {
 					show[i] = c;
 
 					global[i] = true;
@@ -60,44 +48,23 @@ public class Hangman_game implements IHangman {
 				}
 			}
 			if (flag == 1) {
-				/*for (int i = 0; i < str.length(); i++) {
-					if (global[i] == false)
-						show[i] = '-';
-				}*/
-
-				//out = null;
-				char[] a1 = new char[str.length()];
-				for (int i = 0; i < str.length(); i++) 
-					a1[i] = show[i].charValue();
 				
-				out = String.valueOf(a1);
+				for (int i=0;i<str.length();i++)
+					show[i]=c;
 			}
 
 			if (flag == 0) {
 
 				counter++;
 				
-					/*if(counter <maximum && out == null){
-						for (int i=0;i<str.length();i++){
-							show[i]='-';
-						}
-						char[] a1 = new char[str.length()];
-						for (int i = 0; i < str.length(); i++) {
-							a1[i] = show[i].charValue();
-						}
-						out = String.valueOf(a1);
-						
-					}*/
-				
 				if (counter >= maximum)
 					out = null;
 
 			}
-		return out;
-	}
-		else 
-
-		return out;
+			out = String.valueOf(show);
+		 return out;
+	
+		
 	}
 
 	@Override
