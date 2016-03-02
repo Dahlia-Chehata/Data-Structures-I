@@ -7,11 +7,9 @@ import java.util.Random;
 public class Hangman_game implements IHangman {
 	static String[] temp;
 	static String str = new String();
-	
 	static Character guess;
 	static int counter, maximum;
 	static String out = null;
-
 	static boolean[] global;
 	 static Character[] show ;
 
@@ -26,8 +24,9 @@ public class Hangman_game implements IHangman {
 
 	@Override
 	public String selectRandomSecretWord() {
+		str=null;
 		Random rand = new Random();
-		int num = rand.nextInt(temp.length);
+		int num = rand.nextInt(temp.length-1);
 		str = temp[num];
 		return str;
 	}
@@ -37,7 +36,6 @@ public class Hangman_game implements IHangman {
 		int flag = 0;
        global=new boolean[str.length()];  
        show= new Character [str.length()];
-	
 		 
 		if (c != null) {
 			for (int i = 0; i < str.length(); i++) {
