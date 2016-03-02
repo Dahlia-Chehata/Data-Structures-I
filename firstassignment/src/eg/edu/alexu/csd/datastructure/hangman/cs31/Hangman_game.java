@@ -23,7 +23,10 @@ public class Hangman_game implements IHangman {
 
 	@Override
 	public String selectRandomSecretWord() {
-		
+		if(temp==null)
+			return null;
+		if (temp.length==0)
+		   return null;
 		 Random rand = new Random();
 			int num = rand.nextInt(temp.length);
 			str = temp[num];
@@ -38,13 +41,11 @@ public class Hangman_game implements IHangman {
 	@Override
 	public String guess(Character c) {
 		
+		
 		out = String.valueOf(show);
 		if (c==null)
 			return out;
-		if(temp==null)
-			return null;
-		if (temp.length==0)
-		   return null;
+		
 		int flag = 0;
      
 			for (int i = 0; i < str.length(); i++) {
