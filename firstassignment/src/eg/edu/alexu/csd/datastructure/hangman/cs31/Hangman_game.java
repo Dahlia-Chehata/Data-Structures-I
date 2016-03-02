@@ -7,7 +7,7 @@ import java.util.Random;
 public class Hangman_game implements IHangman {
 	static String[] temp;
 	 String str ;
-	 int counter, maximum;
+	static  int counter=0, maximum;
 	 static String out = new String();
 	 static char[] show ;
 
