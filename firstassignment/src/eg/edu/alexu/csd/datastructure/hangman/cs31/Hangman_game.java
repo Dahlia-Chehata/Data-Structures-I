@@ -40,7 +40,9 @@ public class Hangman_game implements IHangman {
 
 	@Override
 	public String guess(Character c) {
-
+     
+		if (c==null)
+			return String.valueOf(show);
 		int flag=0;
      
 			for (int i = 0; i < str.length(); i++) {
