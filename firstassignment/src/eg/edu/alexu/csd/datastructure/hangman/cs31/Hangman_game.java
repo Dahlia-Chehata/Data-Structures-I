@@ -28,8 +28,11 @@ public class Hangman_game implements IHangman {
 			int num = rand.nextInt(temp.length);
 			str = temp[num];
 			show=new char[str.length()] ;
-		for(int i=0;i<str.length();i++)
+		 if (str.length()!=0){
+			for(int i=0;i<str.length();i++)
 				show[i]='-';
+		 }
+		 else return null;
 		
 		return str;
 	}
