@@ -2,7 +2,7 @@ package eg.edu.alexu.csd.datastructure.hangman.cs31;
 
 import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 import java.util.Random;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Hangman_game implements IHangman {
 	static String[] temp;
@@ -16,9 +16,9 @@ public class Hangman_game implements IHangman {
 
 	@Override
 	public void setDictionary(String[] words) {
-        words= new String[]{ "BELGIUM", "BURUNDI", "COLOMBIA", "EGYPT"
+     /*   words= new String[]{ "BELGIUM", "BURUNDI", "COLOMBIA", "EGYPT"
         		, "KAZAKHSTAN", "MAURITANIA", "SINGAPORE", "UZBEKISTAN","SensitiveLower" };
-        ;
+        */
 		temp=new String[words.length];
 		
 		for (int j = 0; j < words.length; j++)
@@ -107,7 +107,7 @@ public class Hangman_game implements IHangman {
 
 	}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		
 		IHangman hangman = new Hangman_game(); // Here you will create an object
 												// of your class
@@ -132,6 +132,6 @@ public class Hangman_game implements IHangman {
 			}
 			guess = input.next().toUpperCase().charAt(0);// scanning a character
 		} while (true);
-	}
+	}*/
 
 }
