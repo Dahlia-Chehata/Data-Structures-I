@@ -2,7 +2,7 @@ package eg.edu.alexu.csd.datastructure.hangman.cs31;
 
 import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 import java.util.Random;
-
+import java.util.Scanner;
 
 public class Hangman_game implements IHangman {
 	static String[] temp;
@@ -10,13 +10,16 @@ public class Hangman_game implements IHangman {
 	static Character guess;
 	static int counter, maximum;
 	static String out = null;
-	static boolean[] global;
-	 static Character[] show ;
+	static boolean[] global=new boolean [20];
+	 static Character[] show =new Character[20];
 
 
 	@Override
 	public void setDictionary(String[] words) {
-        temp=new String[words.length];
+        words= new String[]{ "BELGIUM", "BURUNDI", "COLOMBIA", "EGYPT"
+        		, "KAZAKHSTAN", "MAURITANIA", "SINGAPORE", "UZBEKISTAN" };
+        ;
+		temp=new String[words.length];
 		
 		for (int j = 0; j < words.length; j++)
 			temp[j] = words[j];
@@ -24,9 +27,9 @@ public class Hangman_game implements IHangman {
 
 	@Override
 	public String selectRandomSecretWord() {
-		str=null;
+		
 		Random rand = new Random();
-		int num = rand.nextInt(temp.length-1);
+		int num = rand.nextInt(temp.length);
 		str = temp[num];
 		return str;
 	}
@@ -34,8 +37,8 @@ public class Hangman_game implements IHangman {
 	@Override
 	public String guess(Character c) {
 		int flag = 0;
-       global=new boolean[str.length()];  
-       show= new Character [str.length()];
+      // global=new boolean[str.length()];  
+       //show= new Character [str.length()];
 		 
 		if (c != null) {
 			for (int i = 0; i < str.length(); i++) {
@@ -101,7 +104,8 @@ public class Hangman_game implements IHangman {
 
 	}
 
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
+		
 		IHangman hangman = new Hangman_game(); // Here you will create an object
 												// of your class
 		hangman.setDictionary(temp);
@@ -111,7 +115,7 @@ public class Hangman_game implements IHangman {
 			secret = hangman.selectRandomSecretWord();
 		Scanner input = new Scanner(System.in); // Get user input
         //System.out.println("enter"); 
-       guess =null;
+       guess =input.next().toUpperCase().charAt(0);
 		do {
 			String result = hangman.guess(guess);
 			if (result == null) {
@@ -123,8 +127,8 @@ public class Hangman_game implements IHangman {
 				System.out.println("Well Done!"); // win
 				return;
 			}
-			guess = input.next().charAt(0);// scanning a character
+			guess = input.next().toUpperCase().charAt(0);// scanning a character
 		} while (true);
 	}
-*/
+
 }
