@@ -27,8 +27,8 @@ public class Hangman_game implements IHangman {
 		 Random rand = new Random();
 			int num = rand.nextInt(temp.length);
 			str = temp[num];
+			
 			show=new char[str.length()] ;
-		 
 			for(int i=0;i<str.length();i++)
 				show[i]='-';
 		
@@ -64,8 +64,7 @@ public class Hangman_game implements IHangman {
 	public void setMaxWrongGuesses(Integer max) {
 		// TODO Auto-generated method stub
 		counter= max;
-		if (max == null)
-			maximum = 0;
+		
 
 	}
 
