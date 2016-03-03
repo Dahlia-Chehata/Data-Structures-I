@@ -9,7 +9,7 @@ public class Hangman_game implements IHangman {
 	 static String str ;
 	 static int counter;
 	  static char[] show ;
-	  static boolean [] check;
+	  boolean [] check;
 	  
 
 
