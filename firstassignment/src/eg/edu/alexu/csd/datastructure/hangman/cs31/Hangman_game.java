@@ -47,7 +47,7 @@ public class Hangman_game implements IHangman {
 			return new String(show);
 		
 		int flag=0;
-		int found=1;
+		int found=0;
      
 			for (int i = 0; i < str.length(); i++) {
 				
@@ -58,8 +58,8 @@ public class Hangman_game implements IHangman {
 				}
 				
 			}
-			for (int i = 0; i < str.length()&&found==1; i++) {
-				found=0;
+			for (int i = 0; i < str.length(); i++) {
+				
 				if (str.toUpperCase().charAt(i) == Character.toUpperCase(c)&&check[i]==true) 
 					found=1;
 			}
@@ -76,9 +76,6 @@ public class Hangman_game implements IHangman {
 		 return String.valueOf(show);
 		}
 		 
-		
-	
-
 	@Override
 	public void setMaxWrongGuesses(Integer max) {
 		// TODO Auto-generated method stub
