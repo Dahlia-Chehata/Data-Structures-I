@@ -7,9 +7,9 @@ import java.util.Random;
 public class Hangman_game implements IHangman {
 	  String[] temp=null;
 	 static String str ;
-	  int counter;
+	 static int counter;
 	  static char[] show ;
-	   boolean [] check;
+	  boolean [] check;
 	  
 
 
@@ -52,7 +52,7 @@ public class Hangman_game implements IHangman {
 			for (int i = 0; i < str.length(); i++) {
 				
 				if (str.toUpperCase().charAt(i) == Character.toUpperCase(c)&&check[i]==false) {
-					show[i] = c;
+					show[i] = Character.toUpperCase(c);
 					check[i]=true;
 					flag = 1;
 				}
@@ -71,7 +71,7 @@ public class Hangman_game implements IHangman {
 
 				counter--;
 				
-				if (counter <= 0)
+				if (counter == 0)
 					return null;
           
 		
