@@ -8,9 +8,8 @@ public class Hangman_game implements IHangman {
 	  String[] temp=null;
 	 static String str ;
 	 static int counter;
-	 
 	  static char[] show ;
-	   static boolean [] check;
+	  static boolean [] check;
 	  
 
 
@@ -43,11 +42,12 @@ public class Hangman_game implements IHangman {
 
 	@Override
 	public String guess(Character c) {
-     
+      
 		if (c==null)
 			return new String(show);
 		
-		int flag=0,found=1;
+		int flag=0;
+		int found=1;
      
 			for (int i = 0; i < str.length(); i++) {
 				
@@ -67,7 +67,7 @@ public class Hangman_game implements IHangman {
 			  return new String (show);
 				
 
-			if (flag == 0&&found==0) {
+			if (flag == 0) {
 
 				counter--;
 				
