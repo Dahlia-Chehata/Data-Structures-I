@@ -64,6 +64,8 @@ public class Hangman_game implements IHangman {
 			}
 				if (found==1)	
 			  return new String (show);
+				if (found==0)
+					return null;
 				
 
 			if (flag == 0) {
