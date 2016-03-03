@@ -34,6 +34,7 @@ public class Hangman_game implements IHangman {
 			str = temp[num];
 			
 			show=new char[str.length()] ;
+			 check= new boolean [str.length()];
 			for(int i=0;i<str.length();i++)
 				show[i]='-';
 		
@@ -42,7 +43,7 @@ public class Hangman_game implements IHangman {
 
 	@Override
 	public String guess(Character c) {
-      check= new boolean [str.length()];
+     
 		if (c==null)
 			return new String(show);
 		
