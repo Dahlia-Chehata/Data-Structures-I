@@ -71,7 +71,7 @@ public class Hangman_game implements IHangman {
 
 				counter--;
 				
-				if (counter == 0)
+				if (counter <= 0)
 					return null;
           
 		
