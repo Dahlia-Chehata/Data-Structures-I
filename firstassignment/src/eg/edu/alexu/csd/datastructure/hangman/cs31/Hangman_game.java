@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Hangman_game implements IHangman {
 	static  String[] temp;
-	  String str ;
+	 static String str ;
 	  int counter;
 	 
 	  static char[] show ;
@@ -68,8 +68,9 @@ public class Hangman_game implements IHangman {
 	@Override
 	public void setMaxWrongGuesses(Integer max) {
 		// TODO Auto-generated method stub
+		if (max>0)
 		counter= max;
-		if (max == null)
+		if (max == null||max<=0)
 			counter = 0;
 
 	}
