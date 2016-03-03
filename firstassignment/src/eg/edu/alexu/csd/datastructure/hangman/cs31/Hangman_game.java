@@ -56,14 +56,16 @@ public class Hangman_game implements IHangman {
 					check[i]=true;
 					flag = 1;
 				}
-				
 			}
+			if (flag==1)
+				return new String(show);
 			for (int i = 0; i < str.length(); i++) {
-				
-				if (str.toUpperCase().charAt(i) == Character.toUpperCase(c)&&check[i]==true) 
+		 if (str.toUpperCase().charAt(i) == Character.toUpperCase(c)&&check[i]==true)
+			
 					found=1;
 			}
-				
+			if (found==1)
+				return new String(show);
 
 			if (flag == 0&&found==0) {
 
@@ -73,7 +75,7 @@ public class Hangman_game implements IHangman {
 					return null;
 
 			}
-		 return String.valueOf(show);
+		  return new String(show);
 		}
 		 
 	@Override
