@@ -10,7 +10,7 @@ public class Hangman_game implements IHangman {
 	 static int counter;
 	 
 	  static char[] show ;
-	  static boolean [] check;
+	   boolean [] check;
 	  
 
 
@@ -64,8 +64,6 @@ public class Hangman_game implements IHangman {
 			}
 				if (found==1)	
 			  return new String (show);
-				if (found==0)
-					return null;
 				
 
 			if (flag == 0) {
