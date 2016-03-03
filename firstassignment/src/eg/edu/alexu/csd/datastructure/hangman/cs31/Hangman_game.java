@@ -10,6 +10,8 @@ public class Hangman_game implements IHangman {
 	 static int counter;
 	 
 	  static char[] show ;
+	  static boolean [] check;
+	  
 
 
 	@Override
@@ -40,15 +42,17 @@ public class Hangman_game implements IHangman {
 
 	@Override
 	public String guess(Character c) {
-     
+      check= new boolean [str.length()];
 		if (c==null)
 			return new String(show);
-		else {
+		
 		int flag=0;
      
 			for (int i = 0; i < str.length(); i++) {
-				if (str.toLowerCase().charAt(i) == Character.toLowerCase(c)) {
+				
+				if (str.toUpperCase().charAt(i) == Character.toUpperCase(c)&&check[i]==false) {
 					show[i] = c;
+					check[i]=true;
 					flag = 1;
 				}
 			}
@@ -65,7 +69,7 @@ public class Hangman_game implements IHangman {
 		}
 		 
 		
-	}
+	
 
 	@Override
 	public void setMaxWrongGuesses(Integer max) {
