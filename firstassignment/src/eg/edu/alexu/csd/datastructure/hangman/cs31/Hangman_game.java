@@ -10,7 +10,7 @@ public class Hangman_game implements IHangman {
 	 static int counter;
 	 
 	  static char[] show ;
-	   boolean [] check;
+	   static boolean [] check;
 	  
 
 
@@ -34,7 +34,7 @@ public class Hangman_game implements IHangman {
 			str = temp[num];
 			
 			show=new char[str.length()] ;
-			 check= new boolean [str.length()];
+			check= new boolean [str.length()];
 			for(int i=0;i<str.length();i++)
 				show[i]='-';
 		
