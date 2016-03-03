@@ -66,7 +66,7 @@ public class Hangman_game implements IHangman {
 			  return new String (show);
 				
 
-			if (flag == 0) {
+			if (flag == 0&&found==0) {
 
 				counter--;
 				
