@@ -5,7 +5,7 @@ import java.util.Random;
 
 
 public class Hangman_game implements IHangman {
-	static  String[] temp=null;
+	  String[] temp=null;
 	 static String str ;
 	 static int counter;
 	 
@@ -42,7 +42,7 @@ public class Hangman_game implements IHangman {
 	public String guess(Character c) {
      
 		if (c==null)
-			return String.valueOf(show);
+			return new String(show);
 		else {
 		int flag=0;
      
