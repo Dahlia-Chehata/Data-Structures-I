@@ -73,9 +73,10 @@ public class Hangman_game implements IHangman {
 				
 				if (counter == 0)
 					return null;
-
+          
+		return new String(show);
 			}
-		  return new String(show);
+		  
 		}
 		 
 	@Override
