@@ -7,7 +7,7 @@ import java.util.Random;
 public class Hangman_game implements IHangman {
 	static  String[] temp;
 	 static String str ;
-	  int counter;
+	 static int counter;
 	 
 	  static char[] show ;
 
@@ -43,6 +43,7 @@ public class Hangman_game implements IHangman {
      
 		if (c==null)
 			return String.valueOf(show);
+		else {
 		int flag=0;
      
 			for (int i = 0; i < str.length(); i++) {
@@ -61,6 +62,7 @@ public class Hangman_game implements IHangman {
 
 			}
 		 return String.valueOf(show);
+		}
 		 
 		
 	}
@@ -70,7 +72,7 @@ public class Hangman_game implements IHangman {
 		// TODO Auto-generated method stub
 		if (max>0)
 		counter= max;
-		if (max == null||max<=0)
+		if (max == null||max<0)
 			counter = 0;
 
 	}
