@@ -9,7 +9,7 @@ public class Hangman_game implements IHangman {
 	 static String str ;
 	 static int counter;
 	  static char[] show ;
-	  static boolean [] check=new boolean [str.length()];
+	  static boolean [] check;
 	  
 
 
@@ -33,7 +33,7 @@ public class Hangman_game implements IHangman {
 			str = temp[num];
 			
 			show=new char[str.length()] ;
-			//check= new boolean [str.length()];
+			check= new boolean [str.length()];
 			for(int i=0;i<str.length();i++)
 				show[i]='-';
 		
