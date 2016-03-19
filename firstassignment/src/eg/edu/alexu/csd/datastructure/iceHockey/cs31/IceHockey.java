@@ -103,6 +103,7 @@ int center_x,center_y;
 		// TODO Auto-generated method stub
 		this.team=team;
 		area=threshold;
+		if (photo !=null){
 		n=photo[0].length();
 		m=photo.length;
 		
@@ -126,7 +127,8 @@ int center_x,center_y;
 		
 		Arrays.sort(coordinates, c);
 		return coordinates;
-
+		}
+		return null;
 		
 		
 		}
