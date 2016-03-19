@@ -120,9 +120,16 @@ int center_x,center_y;
 	    	   }
 		}
 		myComparator c =new myComparator();
-		Arrays.sort(coordinates, c);
 		
-		return coordinates;
+		
+		if (coordinates[0] == null)
+			return java.util.Arrays.copyOfRange(coordinates, 0, index + 1);
+
+		Arrays.sort(coordinates, c);
+		return java.util.Arrays.copyOfRange(coordinates, 0, index);
+
+		
+		
 		}
 		
  }
