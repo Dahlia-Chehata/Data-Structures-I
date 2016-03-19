@@ -13,7 +13,9 @@ import java.util.Arrays;
 		  int x2=o2.x;
 		  int y1=o1.y;
 		  int y2=o2.y;
-	
+	   if (o1==null|| o2==null)
+		   
+		   return 1;
 	 if (x2>x1)
 		 return 1;
 	 else if (x1>x2)
@@ -34,7 +36,8 @@ import java.util.Arrays;
  
  char[][] photos ;
  boolean [][]visited;
- Point[] coordinates;
+ Point[] coordinates=new Point[100];
+ Point [] temp;
  
  int n,m,index=0,counter=0,team,area;
  int min_row = 50 , min_col=50, max_row=0, max_col=50; 
@@ -86,7 +89,7 @@ import java.util.Arrays;
 	 v=team;
 	 if (x<0 || y<0 || x>=m || y>=n) 
 		 return false;
-		if ((!isVisited(x,y)) && photos[x][y]==v)
+		if ((!isVisited(x,y)) && photos[x][y]==v+'0')
 			return true;
 		return false;
  }
@@ -119,11 +122,15 @@ import java.util.Arrays;
 	    	   }
 		}
 		myComparator c =new myComparator();
-		
-		
-		
 		Arrays.sort(coordinates, c);
-		return coordinates;
+		
+		int k=0;
+		while (coordinates[k]!=null)
+			k++;
+		  temp=new Point[k];
+		 for (int i=0;i<k;i++)
+			 temp[i]=coordinates[i];
+		return temp;
 		}
 		return null;
 		
