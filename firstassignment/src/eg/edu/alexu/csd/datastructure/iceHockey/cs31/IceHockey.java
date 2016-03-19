@@ -35,7 +35,7 @@ import java.util.Arrays;
  char[][] photos ;
  boolean [][]visited;
  Point[] coordinates;
- Point []temp;
+ 
  int n,m,index=0,counter=0,team,area;
  int min_row = 50 , min_col=50, max_row=0, max_col=50;
 int center_x,center_y;		 
@@ -50,6 +50,7 @@ int center_x,center_y;
 		if (can_move (i,j, team)){
 			visited[i][j] = true;
 			 counter++;
+			 visited[i][j] = false;
 			 if (i>max_row)
 				 i=max_row;
 			 if (i<min_row)
@@ -122,11 +123,9 @@ int center_x,center_y;
 		myComparator c =new myComparator();
 		
 		
-		if (coordinates[0] == null)
-			return java.util.Arrays.copyOfRange(coordinates, 0, index + 1);
-
+		
 		Arrays.sort(coordinates, c);
-		return java.util.Arrays.copyOfRange(coordinates, 0, index);
+		return coordinates;
 
 		
 		
