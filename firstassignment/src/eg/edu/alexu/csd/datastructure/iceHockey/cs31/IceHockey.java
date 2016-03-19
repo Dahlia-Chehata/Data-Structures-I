@@ -37,8 +37,7 @@ import java.util.Arrays;
  Point[] coordinates;
  
  int n,m,index=0,counter=0,team,area;
- int min_row = 50 , min_col=50, max_row=0, max_col=50;
-int center_x,center_y;		 
+ int min_row = 50 , min_col=50, max_row=0, max_col=50; 
  Point center;
  
  
@@ -69,10 +68,8 @@ int center_x,center_y;
 		 counter=0;
 		
 		if (A*4>=area){
-		  center_x= min_col+max_col+1;
-		  center_y =min_row+max_row+1;
-          center.x= center_x;
-          center.y= center_y;
+			center=new Point(min_col+max_col+1,min_row+max_row+1);
+		 
          
 }	 
 		else
