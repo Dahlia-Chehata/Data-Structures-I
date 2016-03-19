@@ -14,9 +14,9 @@ import java.util.Arrays;
 		  int y1=o1.y;
 		  int y2=o2.y;
 	   if (o1==null|| o2==null)
-		   
 		   return 1;
-	 if (x2>x1)
+   
+	   else if (x2>x1)
 		 return 1;
 	 else if (x1>x2)
 		 return-1;
@@ -117,7 +117,7 @@ import java.util.Arrays;
 		for (int i=0;i<m;i++){
 	    	   for (int j=0;j<n;j++){
 	    		   if (DFS(i,j,team)!=null)
-		     coordinates[index++]=new Point (DFS(i,j,team));
+		     coordinates[index++]=DFS(i,j,team);
 		          
 	    	   }
 		}
