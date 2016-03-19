@@ -50,7 +50,7 @@ int center_x,center_y;
 		if (can_move (i,j, team)){
 			visited[i][j] = true;
 			 counter++;
-			 visited[i][j] = false;
+			 
 			 if (i>max_row)
 				 i=max_row;
 			 if (i<min_row)
