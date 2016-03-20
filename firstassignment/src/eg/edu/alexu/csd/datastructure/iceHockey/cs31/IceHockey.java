@@ -127,17 +127,29 @@ import java.util.Arrays;
 		int k=0;
 		while (coordinates[k]!=null)
 			k++;
-		  temp=new Point[k];
+		 /* temp=new Point[k];
 		 for (int i=0;i<k;i++)
 			 temp[i]=coordinates[i];
-		return temp;
+		return temp;*/
+		if (k==0)
+			return java.util.Arrays.copyOfRange(coordinates, 0, index + 1);
+
+		else
+		return java.util.Arrays.copyOfRange(coordinates, 0, index);
 		}
 		return null;
 		
 		
 		}
+			
 		
- }
+	
+				
+	}
+	
+	
+		
+ 
  
  
 
