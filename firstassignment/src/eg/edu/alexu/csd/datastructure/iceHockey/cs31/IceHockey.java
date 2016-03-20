@@ -135,7 +135,8 @@ import java.util.Arrays;
 		return null;
 		
 	}
-		return null;
+		
+		return new Point[0];
  }
  }
 	
