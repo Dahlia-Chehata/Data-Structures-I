@@ -24,14 +24,16 @@ import java.util.Arrays;
 	 {
 		 if (y2>y1)
 			 return 1;
-		 else 
+		 else if (y2<y1)
 			 return -1;
 	 }
-	
+	return 0;
 	
 
  }
  }
+ 
+ 
  public class IceHockey implements IPlayersFinder {
  
  char[][] photos ;
@@ -138,16 +140,13 @@ import java.util.Arrays;
 			Arrays.sort(temp, c);
 		return temp;
 		}
-		
+		  else
 		return null;
 		
-		
-		}
-			
-		
-	
-				
 	}
+		return null;
+ }
+ }
 	
 	
 		
