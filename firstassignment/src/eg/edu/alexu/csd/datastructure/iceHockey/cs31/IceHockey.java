@@ -54,7 +54,8 @@ import java.util.Arrays;
 		if (can_move (i,j, team)){
 			visited[i][j] = true;
 			 counter++;
-			 
+				visited[i][j] = false;
+
 			 if (i>max_row)
 				 i=max_row;
 			 if (i<min_row)
@@ -131,9 +132,8 @@ import java.util.Arrays;
 			k++;
 		
 		  temp=new Point[k];
-		  if (k ==0)
-				return java.util.Arrays.copyOfRange(coordinates, 0, index + 1);
-		  else if (k>0){
+		  
+		  if (k>0){
 			int i=0,j=0;
 			while (coordinates[i]!=null)
 			 temp[j++]=coordinates[i++];
