@@ -132,10 +132,10 @@ import java.util.Arrays;
 			 temp[i]=coordinates[i];
 		return temp;*/
 		if (k==0)
-			return java.util.Arrays.copyOfRange(coordinates, 0, index + 1);
+			return java.util.Arrays.copyOfRange(coordinates, 0, k + 1);
 
 		else
-		return java.util.Arrays.copyOfRange(coordinates, 0, index);
+		return java.util.Arrays.copyOfRange(coordinates, 0, k);
 		}
 		return null;
 		
