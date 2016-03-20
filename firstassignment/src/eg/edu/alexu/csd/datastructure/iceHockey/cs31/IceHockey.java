@@ -122,21 +122,23 @@ import java.util.Arrays;
 	    	   }
 		}
 		myComparator c =new myComparator();
-		Arrays.sort(coordinates, c);
+		// Arrays.sort(coordinates, c);
 		
 		int k=0;
 		while (coordinates[k]!=null)
 			k++;
-		 /* temp=new Point[k];
-		 for (int i=0;i<k;i++)
-			 temp[i]=coordinates[i];
-		return temp;*/
-		if (k==0)
-			return java.util.Arrays.copyOfRange(coordinates, 0, k + 1);
-
-		else
-		return java.util.Arrays.copyOfRange(coordinates, 0, k);
+		
+		  temp=new Point[k];
+		  if (k ==0)
+				return java.util.Arrays.copyOfRange(coordinates, 0, index + 1);
+		  else if (k>0){
+			int i=0,j=0;
+			while (coordinates[i]!=null)
+			 temp[j++]=coordinates[i++];
+			Arrays.sort(temp, c);
+		return temp;
 		}
+		
 		return null;
 		
 		
