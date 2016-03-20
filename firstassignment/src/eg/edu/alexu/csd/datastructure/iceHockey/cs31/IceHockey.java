@@ -17,15 +17,15 @@ import java.util.Arrays;
 		   return 1;
    
 	   else if (x2>x1)
-		 return 1;
+		 return -1;
 	 else if (x1>x2)
-		 return-1;
+		 return 1;
 	 else
 	 {
 		 if (y2>y1)
-			 return 1;
-		 else if (y2<y1)
 			 return -1;
+		 else if (y2<y1)
+			 return 1;
 	 }
 	return 0;
 	
@@ -42,7 +42,7 @@ import java.util.Arrays;
  Point [] temp;
  
  int n,m,index=0,counter=0,team,area;
- int min_row = 50 , min_col=50, max_row=0, max_col=50; 
+ int min_row = 500 , min_col=500, max_row=-1, max_col=-1; 
  Point center;
  
  
@@ -70,19 +70,9 @@ import java.util.Arrays;
 			DFS(i,j+1, v); // right
 		}
 		 int A=counter;
-		 counter=0;
 		
-		if (A*4>=area){
+		if (A*4>=area)
 			center=new Point(min_col+max_col+1,min_row+max_row+1);
-		 
-         
-}	 
-		else
-			center=null;
-		min_row = 50 ;
-        min_col=50;
-        max_row=0;
-        max_col=0;
 	
         return center;
 			 
@@ -105,6 +95,7 @@ import java.util.Arrays;
 		// TODO Auto-generated method stub
 		this.team=team;
 		area=threshold;
+		
 		if (photo !=null){
 		n=photo[0].length();
 		m=photo.length;
@@ -118,21 +109,30 @@ import java.util.Arrays;
 		
 		for (int i=0;i<m;i++){
 	    	   for (int j=0;j<n;j++){
-	    		   if (DFS(i,j,team)!=null)
-		     coordinates[index++]=DFS(i,j,team);
+	    		   
+	    		   Point p =DFS(i,j,team);
+	    		   
+	    		   if (p!=null)
+		     coordinates[index++]=p;
+	    		   center = null;
+                   counter = 0;
+                   min_row = 500;
+                   min_col = 500;
+                   max_row = -1;
+                   max_col = -1;
 		          
 	    	   }
 		}
 		myComparator c =new myComparator();
 		
 		  if (index>0){
-			  java.util.Arrays.copyOfRange(coordinates, 0, index);
+			  coordinates=java.util.Arrays.copyOfRange(coordinates, 0, index);
 
 			Arrays.sort(coordinates, c);
 		return coordinates;
 		}
 		  else
-		return null;
+		return new Point[0] ;
 		
 	}
 		
