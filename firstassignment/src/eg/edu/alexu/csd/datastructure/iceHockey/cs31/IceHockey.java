@@ -39,28 +39,7 @@ public class IceHockey implements IPlayersFinder {
 	int n, m, index = 0, counter = 0, team, area;
 	int min_row = 500, min_col = 500, max_row = -1, max_col = -1;
 	Point center;
-	//added main method
-	/*public static void main(String[] args) {
-			Hockey Test = new Hockey();
-			String[] image = {
-					"44444H44S4",
-					"K444K4L444",
-					"4LJ44T44XH",
-					"444O4VIF44",
-					"44C4D4U444",
-					"4V4Y4KB4M4",
-					"G4W4HP4O4W",
-					"4444ZDQ4S4",
-					"4BR4Y4A444",
-					"4G4V4T4444"};
-			Integer team = 4;
-			Integer threashold = 16;
-			Point[] result = Test.findPlayers(image, team, threashold);
-			for(int counter = 0; counter < result.length; counter++)
-			{
-				System.out.println(result[counter].x + " " + result[counter].y);
-			}
-	}*/
+	
 
 	public Point DFS(int i, int j, int v) {
 		if (can_move(i, j, team)) {
@@ -79,8 +58,7 @@ public class IceHockey implements IPlayersFinder {
 			DFS(i, j - 1, v); // left
 			DFS(i, j + 1, v); // right
 		}
-		int A = counter;//"counter = 0" was removed because the counter was
-		//every time here
+		int A = counter;
 		if (A * 4 >= area) 
 			center = new Point(min_col + max_col + 1, min_row + max_row + 1);
 		return center;
@@ -126,7 +104,7 @@ public class IceHockey implements IPlayersFinder {
 					min_row = 500;
 					min_col = 500;
 					max_row = -1;
-					max_col = -1;//use negative values in a max variable
+					max_col = -1;
 				}
 			}
 			myComparator c = new myComparator();
@@ -134,7 +112,7 @@ public class IceHockey implements IPlayersFinder {
 			{
 				coordinates = java.util.Arrays.copyOfRange(coordinates, 0, index);
 				//you didn't set left handside in copyOfRange
-				Arrays.sort(coordinates, c);
+				Arrays.sort(coordinates, 0,index,c);
 				return coordinates;
 			} else
 				return new Point[0];
