@@ -34,7 +34,7 @@ class myComparator implements Comparator<Point> {
 public class IceHockey implements IPlayersFinder {
 	char[][] photos;
 	boolean[][] visited;
-	Point[] coordinates = new Point[100];
+	
 	Point[] temp;
 	int n, m, index = 0, counter = 0, team, area;
 	int min_row = 500, min_col = 500, max_row = -1, max_col = -1;
@@ -104,6 +104,7 @@ public class IceHockey implements IPlayersFinder {
 		// TODO Auto-generated method stub
 		this.team = team;
 		area = threshold;
+		Point[] coordinates = new Point[100];
 		if (photo.length==0)
 			return new Point[0];
 		if (photo != null) {
@@ -138,6 +139,6 @@ public class IceHockey implements IPlayersFinder {
 			} else
 				return new Point[0];
 		}
-		return new Point[0];
+		
 	}
 }
