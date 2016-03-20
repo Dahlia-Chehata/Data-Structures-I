@@ -139,6 +139,6 @@ public class IceHockey implements IPlayersFinder {
 			} else
 				return new Point[0];
 		}
-		
+		return new Point[0];
 	}
 }
