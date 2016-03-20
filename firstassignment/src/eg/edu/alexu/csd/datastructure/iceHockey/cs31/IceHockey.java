@@ -113,9 +113,12 @@ public class IceHockey implements IPlayersFinder {
 				coordinates = java.util.Arrays.copyOfRange(coordinates, 0, index);
 				//you didn't set left handside in copyOfRange
 				Arrays.sort(coordinates, 0,index,c);
+				index=0;
 				return coordinates;
-			} else
+			} else{
+				index=0;
 				return new Point[0];
+			}
 		}
 		return new Point[0];
 	}
