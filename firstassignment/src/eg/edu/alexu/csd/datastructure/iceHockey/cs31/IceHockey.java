@@ -104,6 +104,8 @@ public class IceHockey implements IPlayersFinder {
 		// TODO Auto-generated method stub
 		this.team = team;
 		area = threshold;
+		if (photo.length==0)
+			return new Point[0];
 		if (photo != null) {
 			n = photo[0].length();
 			m = photo.length;
