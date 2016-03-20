@@ -82,7 +82,7 @@ import java.util.Arrays;
 		min_row = 50 ;
         min_col=50;
         max_row=0;
-        max_col=50;
+        max_col=0;
 	
         return center;
 			 
