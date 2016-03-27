@@ -46,7 +46,7 @@ public class IceHockey implements IPlayersFinder {
 			visited[i][j] = true;
 			counter++;
 			if (i > max_row)
-				max_row = i;//this line was i = max_row
+				max_row = i;
 			if (i < min_row)
 				min_row = i;
 			if (j > max_col)
@@ -90,9 +90,11 @@ public class IceHockey implements IPlayersFinder {
 			m = photo.length;
 			photos = new char[m][n];
 			visited = new boolean[m][n];
+			
 			for (int i = 0; i < photo.length; i++) {
 				photos[i] = photo[i].toCharArray();
 			}
+			
 			for (int i = 0; i < m; i++) {
 				for (int j = 0; j < n; j++) 
 				{
@@ -111,7 +113,6 @@ public class IceHockey implements IPlayersFinder {
 			if (index > 0) 
 			{
 				coordinates = java.util.Arrays.copyOfRange(coordinates, 0, index);
-				//you didn't set left handside in copyOfRange
 				Arrays.sort(coordinates, 0,index,c);
 				index=0;
 				return coordinates;
@@ -122,4 +123,26 @@ public class IceHockey implements IPlayersFinder {
 		}
 		return new Point[0];
 	}
+	public static void main(String[] args) {
+        IceHockey Test = new IceHockey();
+        String[] image = {
+                "44444H44S4",
+                "K444K4L444",
+                "4LJ44T44XH",
+                "444O4VIF44",
+                "44C4D4U444",
+                "4V4Y4KB4M4",
+                "G4W4HP4O4W",
+                "4444ZDQ4S4",
+                "4BR4Y4A444",
+                "4G4V4T4444"};
+        Integer team = 4;
+        Integer threashold = 16;
+        Point[] result = Test.findPlayers(image, team, threashold);
+        for(int counter = 0; counter < result.length; counter++)
+        {
+            System.out.println(result[counter].x + " " + result[counter].y);
+        }
+}
+
 }
