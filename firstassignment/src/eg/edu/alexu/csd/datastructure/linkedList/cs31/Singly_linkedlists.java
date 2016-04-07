@@ -25,7 +25,7 @@ public class Singly_linkedlists implements ILinkedList{
 			size++;
 		}
 		
-		if (index==size){
+		else if (index==size){
 	    while (pointer!=null)
 	    	pointer=pointer.next;
 			 pointer.next = new_node;
@@ -33,7 +33,7 @@ public class Singly_linkedlists implements ILinkedList{
 			size++;
 
 		}
-	   if (index> 0 && index < size){
+		else  if (index> 0 && index < size){
 		   for (int i=0;i<index-1;i++){
 			   pointer=pointer.next;
 		   }
@@ -54,11 +54,17 @@ public class Singly_linkedlists implements ILinkedList{
 		SLNode pointer=head;
 		SLNode new_node=new SLNode();
 		new_node.value=element;
+		if (head==null){
+			new_node.next=null;
+			head=new_node;
+		}
+		else{
 		while (pointer !=null)
 			pointer=pointer.next;
 	
 	   pointer.next = new_node;
 	   new_node.next=null;
+	   }
 	   size++;
 	}
 	   
@@ -67,7 +73,7 @@ public class Singly_linkedlists implements ILinkedList{
 	public Object get(int index) throws RuntimeException{
 		// TODO Auto-generated method stub
 		SLNode pointer=head;
-		if (index>=0&&index<=size){
+		if (index>=0&&index<size){
 		for (int i=0;i<index;i++)
 			pointer =pointer.next;
 		
@@ -112,12 +118,22 @@ public class Singly_linkedlists implements ILinkedList{
 		// TODO Auto-generated method stub
 		SLNode pointer=head;
 		SLNode temp;
-		if (index>=0&&index<=size){
+		if(index==0){
+			temp=head;
+			head=head.next;
+			temp.next=null;
+			size--;
+		}
+		
+			
+		else if (index>0&&index<size){
 		for (int i=0;i<index-1;i++){
 			pointer=pointer.next;
 		}
 		temp=pointer.next;
 		pointer.next=temp.next;
+		temp.next=null;
+		size--;
 		}
 		else 
 			throw new RuntimeException();
@@ -139,7 +155,7 @@ public class Singly_linkedlists implements ILinkedList{
 		// TODO Auto-generated method stub
 		ILinkedList new_list = new Singly_linkedlists();
 		SLNode pointer=head;
-		if (fromIndex>=0&& fromIndex<size &&toIndex>0&&toIndex<=size ){
+		if (fromIndex>=0&& fromIndex<size &&toIndex>=0&&toIndex<size ){
 			for (int i=0;i<fromIndex;i++)
 				pointer=pointer.next;
 			for (int i=fromIndex;i<=toIndex;i++){
