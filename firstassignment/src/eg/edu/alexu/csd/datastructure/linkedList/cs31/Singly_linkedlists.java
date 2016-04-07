@@ -142,11 +142,7 @@ public class Singly_linkedlists implements ILinkedList{
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
-		SLNode pointer =head;
-		while (pointer!=null){
-			pointer=pointer.next;
-			size++;
-		}
+		
 		return size;
 	}
 
