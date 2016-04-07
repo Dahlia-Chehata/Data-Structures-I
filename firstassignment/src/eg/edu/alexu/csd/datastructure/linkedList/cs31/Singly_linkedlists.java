@@ -64,24 +64,31 @@ public class Singly_linkedlists implements ILinkedList{
 	   
 
 	@Override
-	public Object get(int index) {
+	public Object get(int index) throws RuntimeException{
 		// TODO Auto-generated method stub
 		SLNode pointer=head;
+		if (index>=0&&index<=size){
 		for (int i=0;i<index;i++)
 			pointer =pointer.next;
 		
 		return pointer.value;
+		}
+		else
+			throw new RuntimeException();
 	}
 
 	@Override
-	public void set(int index, Object element) {
+	public void set(int index, Object element) throws RuntimeException{
 		// TODO Auto-generated method stub
 		SLNode pointer=head;
+		 if (index>=0&&index<=size){
 		for (int i=0;i<index;i++)
 			pointer =pointer.next;
 		
 		pointer.value=element;
-		
+		 }
+		 else 
+			 throw new RuntimeException();
 		
 	}
 
@@ -101,15 +108,19 @@ public class Singly_linkedlists implements ILinkedList{
 	}
 
 	@Override
-	public void remove(int index) {
+	public void remove(int index) throws RuntimeException{
 		// TODO Auto-generated method stub
 		SLNode pointer=head;
 		SLNode temp;
+		if (index>=0&&index<=size){
 		for (int i=0;i<index-1;i++){
 			pointer=pointer.next;
 		}
 		temp=pointer.next;
 		pointer.next=temp.next;
+		}
+		else 
+			throw new RuntimeException();
 	}
 
 	@Override
@@ -124,9 +135,21 @@ public class Singly_linkedlists implements ILinkedList{
 	}
 
 	@Override
-	public ILinkedList sublist(int fromIndex, int toIndex) {
+	public ILinkedList sublist(int fromIndex, int toIndex)throws RuntimeException {
 		// TODO Auto-generated method stub
-		return null;
+		ILinkedList new_list = new Singly_linkedlists();
+		SLNode pointer=head;
+		if (fromIndex>=0&& fromIndex<size &&toIndex>0&&toIndex<=size ){
+			for (int i=0;i<fromIndex;i++)
+				pointer=pointer.next;
+			for (int i=fromIndex;i<=toIndex;i++){
+				new_list.add(pointer.value);
+				pointer=pointer.next;
+			}
+		return new_list;
+		}
+		else 
+			throw new RuntimeException();
 	}
 
 	@Override
