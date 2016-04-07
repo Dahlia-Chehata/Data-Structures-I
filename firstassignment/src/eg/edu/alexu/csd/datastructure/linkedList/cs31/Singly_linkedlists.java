@@ -87,7 +87,7 @@ public class Singly_linkedlists implements ILinkedList{
 	public void set(int index, Object element) throws RuntimeException{
 		// TODO Auto-generated method stub
 		SLNode pointer=head;
-		 if (index>=0&&index<=size){
+		 if (index>=0&&index<size){
 		for (int i=0;i<index;i++)
 			pointer =pointer.next;
 		
