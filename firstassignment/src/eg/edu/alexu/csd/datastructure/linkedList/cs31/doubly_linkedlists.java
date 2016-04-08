@@ -8,7 +8,7 @@ public class doubly_linkedlists implements ILinkedList {
      public doubly_linkedlists(){
     	 size=0;
     	 header= new DNode(null,null,null);
-    	 tailer =new DNode (null,null,header);
+    	 tailer =new DNode (header,null,null);
     	 header.next=tailer;
      }
 	@Override

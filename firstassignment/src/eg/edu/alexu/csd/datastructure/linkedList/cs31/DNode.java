@@ -12,8 +12,8 @@ public class DNode {
 	  prev=null;
   }
   public DNode (DNode p,Object o,DNode n){
-	  prev =p;
+	  prev =null;
 	  value=o;
-	  next=n;
+	  next=null;
   }
 }
