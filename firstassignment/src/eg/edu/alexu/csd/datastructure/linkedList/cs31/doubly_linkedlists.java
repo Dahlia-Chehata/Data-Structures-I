@@ -14,8 +14,9 @@ public class doubly_linkedlists implements ILinkedList {
 	@Override
 	public void add(int index, Object element)throws RuntimeException {
 		// TODO Auto-generated method stub
-		DNode new_node = new DNode (null,element,null);
+		DNode new_node = new DNode ();
 		DNode pointer=header.next;
+		new_node.value=element;
 		if (index==0){
 			new_node.next=pointer;
 			new_node.prev=header;
@@ -184,14 +185,14 @@ public class doubly_linkedlists implements ILinkedList {
 	public boolean contains(Object o) {
 		// TODO Auto-generated method stub
 		DNode pointer=header;
-		if (header==null)
+		if (isEmpty())
 			return false;
-		else {
+		
 			while (pointer!=null){
 				if (pointer.value==o)
 					return true;
 				pointer=pointer.next;
-			}
+			
 		}
 		return false;
 	}
