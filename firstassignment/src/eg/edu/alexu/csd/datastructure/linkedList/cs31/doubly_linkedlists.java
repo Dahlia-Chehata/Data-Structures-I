@@ -10,6 +10,7 @@ public class doubly_linkedlists implements ILinkedList {
     	 header= new DNode(null,null,null);
     	 tailer =new DNode (header,null,null);
     	 header.next=tailer;
+    	 
      }
 	@Override
 	public void add(int index, Object element)throws RuntimeException {
@@ -107,8 +108,8 @@ public class doubly_linkedlists implements ILinkedList {
 	public void clear() {
 		// TODO Auto-generated method stub
 		size=0;
-		header=null;
-		tailer=null;
+		header.next=tailer;
+		tailer.prev=header;
 	}
 
 	@Override
@@ -184,14 +185,13 @@ public class doubly_linkedlists implements ILinkedList {
 	}
 
 	@Override
-	public boolean contains(Object o) throws RuntimeException {
+	public boolean contains(Object o)  {
 		// TODO Auto-generated method stub
 		DNode pointer=header;
-		if (header==null)
-			throw new RuntimeException();
-			//return false;
+		if (isEmpty())
+			return false;
 		
-			while (pointer!=null){
+			while (pointer!=null&&pointer!=tailer){
 				if (pointer.value.equals(o))
 					return true;
 				pointer=pointer.next;
