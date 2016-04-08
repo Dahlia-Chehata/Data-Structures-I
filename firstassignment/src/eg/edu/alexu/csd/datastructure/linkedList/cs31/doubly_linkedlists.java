@@ -73,8 +73,9 @@ public class doubly_linkedlists implements ILinkedList {
 	@Override
 	public Object get(int index)throws RuntimeException {
 		// TODO Auto-generated method stub
-	  if (index>=0&&index<size){
 		DNode pointer=header.next;
+	  if (index>=0&&index<size){
+		
 		for (int i=0;i<index;i++){
 			pointer=pointer.next;
 		}
@@ -187,7 +188,7 @@ public class doubly_linkedlists implements ILinkedList {
 		if (isEmpty())
 			return false;
 		
-			while (pointer!=null){
+			while (pointer.next!=null){
 				if (pointer.value.equals(o))
 					return true;
 				pointer=pointer.next;
