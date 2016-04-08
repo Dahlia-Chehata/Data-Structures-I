@@ -170,7 +170,7 @@ public class Singly_linkedlists implements ILinkedList{
 	public boolean contains(Object o) {
 		// TODO Auto-generated method stub
 		SLNode pointer=head;
-		if (isEmpty())
+		if (head==null)
 			return false;
 		while (pointer!=null){
 			if (pointer.value==o)

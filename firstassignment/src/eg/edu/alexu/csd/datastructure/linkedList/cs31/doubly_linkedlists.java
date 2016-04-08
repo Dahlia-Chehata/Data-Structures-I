@@ -184,7 +184,7 @@ public class doubly_linkedlists implements ILinkedList {
 	public boolean contains(Object o) {
 		// TODO Auto-generated method stub
 		DNode pointer=header;
-		if (isEmpty())
+		if (header==null)
 			return false;
 		else {
 			while (pointer!=null){
