@@ -119,7 +119,7 @@ public class doubly_linkedlists implements ILinkedList {
 	@Override
 	public void remove(int index)throws RuntimeException {
 		// TODO Auto-generated method stub
-	    if (header==null)
+	    if (isEmpty())
 	    	throw new RuntimeException();
 		else if (index==0){
 			DNode removed=header.next;
@@ -150,7 +150,7 @@ public class doubly_linkedlists implements ILinkedList {
 			removed.prev=null;
 			temp.next=tailer;
 			tailer.prev=temp;
-			size--;
+			//size--;
 		}
 		else
 			  throw new RuntimeException();
