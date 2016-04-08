@@ -188,8 +188,8 @@ public class doubly_linkedlists implements ILinkedList {
 		// TODO Auto-generated method stub
 		DNode pointer=header;
 		if (header==null)
-			//throw new RuntimeException();
-			return false;
+			throw new RuntimeException();
+			//return false;
 		
 			while (pointer!=null){
 				if (pointer.value.equals(o))
