@@ -150,7 +150,7 @@ public class doubly_linkedlists implements ILinkedList {
 			removed.prev=null;
 			temp.next=tailer;
 			tailer.prev=temp;
-			//size--;
+			size--;
 		}
 		else
 			  throw new RuntimeException();
