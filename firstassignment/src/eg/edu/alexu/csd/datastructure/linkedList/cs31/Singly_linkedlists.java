@@ -1,6 +1,6 @@
 package eg.edu.alexu.csd.datastructure.linkedList.cs31;
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
-import eg.edu.alexu.csd.datastructure.linkedList.cs31.SLNode;
+
 
 public class Singly_linkedlists implements ILinkedList{
 	
@@ -15,7 +15,7 @@ public class Singly_linkedlists implements ILinkedList{
 	@Override
 	public void add(int index, Object element) throws RuntimeException{
 		// TODO Auto-generated method stub
-		SLNode new_node =new SLNode( );
+		SLNode new_node =new SLNode();
 		SLNode pointer=head;
 		new_node.value=element;
 		
@@ -26,7 +26,7 @@ public class Singly_linkedlists implements ILinkedList{
 		}
 		
 		else if (index==size){
-	    while (pointer!=null)
+	    while (pointer.next!=null)
 	    	pointer=pointer.next;
 			 pointer.next = new_node;
 			 new_node.next=null;
@@ -59,7 +59,7 @@ public class Singly_linkedlists implements ILinkedList{
 			head=new_node;
 		}
 		else{
-		while (pointer !=null)
+		while (pointer.next !=null)
 			pointer=pointer.next;
 	
 	   pointer.next = new_node;
@@ -168,7 +168,7 @@ public class Singly_linkedlists implements ILinkedList{
 	public boolean contains(Object o) {
 		// TODO Auto-generated method stub
 		SLNode pointer=head;
-		while (pointer!=null){
+		while (pointer.next!=null){
 			if (pointer.value==o)
 				return true;
 			pointer=pointer.next;
