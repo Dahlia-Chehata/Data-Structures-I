@@ -7,9 +7,9 @@ public class doubly_linkedlists implements ILinkedList {
      
      public doubly_linkedlists(){
     	 size=0;
-    	 header= new DNode(null,null,tailer);
+    	 header= new DNode(null,null,null);
     	 tailer =new DNode (header,null,null);
-    	 
+    	 header.next=tailer;
      }
 	@Override
 	public void add(int index, Object element)throws RuntimeException {
