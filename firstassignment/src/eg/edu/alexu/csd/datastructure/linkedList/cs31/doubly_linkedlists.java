@@ -130,7 +130,7 @@ public class doubly_linkedlists implements ILinkedList {
 		     header.next=temp;
 			size--;
 		}
-		else if (index>0 &&index<size-1){
+		else if (index>0 &&index<size){
 			DNode pointer=header.next;
 			for (int i=0;i<index-1;i++){
 				pointer=pointer.next;
@@ -143,7 +143,7 @@ public class doubly_linkedlists implements ILinkedList {
 			pointer.next=temp;
 			size--;
 		}
-		else if (index==size-1){
+		else if (index==size){
 			DNode removed=tailer.prev;
 			DNode temp=removed.prev;
 			removed.next=null;
