@@ -188,7 +188,7 @@ public class doubly_linkedlists implements ILinkedList {
 		if (isEmpty())
 			return false;
 		
-			while (pointer.next!=null){
+			while (pointer!=null){
 				if (pointer.value.equals(o))
 					return true;
 				pointer=pointer.next;
