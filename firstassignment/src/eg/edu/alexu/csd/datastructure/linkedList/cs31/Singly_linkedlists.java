@@ -173,7 +173,7 @@ public class Singly_linkedlists implements ILinkedList{
 		if (isEmpty())
 			return false;
 		while (pointer!=null){
-			if (pointer.value==o)
+			if (pointer.value.equals(o))
 				return true;
 			pointer=pointer.next;
 		}
