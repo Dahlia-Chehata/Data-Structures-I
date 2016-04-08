@@ -55,7 +55,7 @@ public class Singly_linkedlists implements ILinkedList{
 		SLNode new_node=new SLNode();
 		new_node.value=element;
 		if (head==null){
-			new_node.next=null;
+			//new_node.next=null;
 			head=new_node;
 		}
 		else{
@@ -108,7 +108,7 @@ public class Singly_linkedlists implements ILinkedList{
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
-		if (head==null &&size==0)
+		if (head==null)
 			return true;
 		return false;
 	}
@@ -118,7 +118,9 @@ public class Singly_linkedlists implements ILinkedList{
 		// TODO Auto-generated method stub
 		SLNode pointer=head;
 		SLNode temp;
-		if(index==0){
+		if(isEmpty())
+			throw  new RuntimeException();
+		else if(index==0){
 			temp=head;
 			head=head.next;
 			temp.next=null;
@@ -168,7 +170,9 @@ public class Singly_linkedlists implements ILinkedList{
 	public boolean contains(Object o) {
 		// TODO Auto-generated method stub
 		SLNode pointer=head;
-		while (pointer.next!=null){
+		if (isEmpty())
+			return false;
+		while (pointer!=null){
 			if (pointer.value==o)
 				return true;
 			pointer=pointer.next;
