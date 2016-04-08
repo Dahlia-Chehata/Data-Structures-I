@@ -184,11 +184,11 @@ public class doubly_linkedlists implements ILinkedList {
 	}
 
 	@Override
-	public boolean contains(Object o) {
+	public boolean contains(Object o) throws RuntimeException {
 		// TODO Auto-generated method stub
-		DNode pointer=header.next;
+		DNode pointer=header;
 		if (isEmpty())
-			return false;
+			throw new RuntimeException();
 		
 			while (pointer!=null){
 				if (pointer.value.equals(o))
