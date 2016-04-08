@@ -3,37 +3,37 @@ import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 
 public class doubly_linkedlists implements ILinkedList {
      public int size;
-     public DNode header, trailer;
+     public DNode header, tailer;
      
      public doubly_linkedlists(){
     	 size=0;
-    	 header= new DNode(null,null,trailer);
-    	 trailer =new DNode (header,null,null);
+    	 header= new DNode(null,null,tailer);
+    	 tailer =new DNode (header,null,null);
     	 
      }
 	@Override
 	public void add(int index, Object element)throws RuntimeException {
 		// TODO Auto-generated method stub
 		DNode new_node = new DNode (null,element,null);
+		DNode pointer=header.next;
 		if (index==0){
-			DNode temp=header.next;
-			new_node.next=header.next; //temp ya3ni
+			new_node.next=pointer;
 			new_node.prev=header;
 			header.next=new_node;
-			temp.prev=new_node;
+			pointer.prev=new_node;
 			size++;
 		
 		}
 		else if (index==size){
-			DNode temp= trailer.prev;
+			DNode temp= tailer.prev;
 			temp.next=new_node;
-			new_node.next=trailer;
-			trailer.prev=new_node;
+			new_node.next=tailer;
+			tailer.prev=new_node;
 			new_node.prev=temp;
 			size++;
 		}
 		else if (index>0&&index<size){
-			DNode pointer=new DNode();
+			
 			for (int i=0;i<index-1;i++){
 				pointer=pointer.next;
 			}
@@ -55,18 +55,19 @@ public class doubly_linkedlists implements ILinkedList {
 		if (size==0){
 			DNode temp=header.next;
 			header.next=new_node;
-			new_node.next=header.next;
+			new_node.next=temp;
 			new_node.prev=header;
 			temp.prev=new_node;
 		}
 		else{
-		DNode temp= trailer.prev;
+		DNode temp= tailer.prev;
 		temp.next=new_node;
-		new_node.next=trailer;
-		trailer.prev=new_node;
+		new_node.next=tailer;
+		tailer.prev=new_node;
 		new_node.prev=temp;
-		size++;
+		
 		}
+		size++;
 	}
 
 	@Override
@@ -86,8 +87,9 @@ public class doubly_linkedlists implements ILinkedList {
 	@Override
 	public void set(int index, Object element)throws RuntimeException {
 		// TODO Auto-generated method stub
-		 if (index>=0&&index<size){
-			 DNode pointer=header.next;
+		 DNode pointer=header.next;
+		if (index>=0&&index<size){
+			
 				for (int i=0;i<index;i++){
 					pointer=pointer.next;
 				}
@@ -103,7 +105,7 @@ public class doubly_linkedlists implements ILinkedList {
 		// TODO Auto-generated method stub
 		size=0;
 		header=null;
-		trailer=null;
+		tailer=null;
 	}
 
 	@Override
@@ -142,12 +144,12 @@ public class doubly_linkedlists implements ILinkedList {
 			size--;
 		}
 		else if (index==size-1){
-			DNode removed=trailer.prev;
+			DNode removed=tailer.prev;
 			DNode temp=removed.prev;
 			removed.next=null;
 			removed.prev=null;
-			temp.next=trailer;
-			trailer.prev=temp;
+			temp.next=tailer;
+			tailer.prev=temp;
 			size--;
 		}
 		else
