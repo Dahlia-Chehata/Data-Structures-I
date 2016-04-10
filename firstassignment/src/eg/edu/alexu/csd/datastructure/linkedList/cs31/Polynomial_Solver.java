@@ -48,6 +48,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
          Arrays.sort(array,0,array.length,c);
 		
 	    for (int i=0;i<array.length;i++){
+	    	if (array[i]==null)
+	    		throw  new RuntimeException();
 		      SLNode temp=new SLNode(array[i].x,array[i].y) ;
 	    	  the_list.add(temp);
 	    }
