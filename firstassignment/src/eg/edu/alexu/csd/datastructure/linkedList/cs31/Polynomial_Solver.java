@@ -11,7 +11,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	Singly_linkedlists C;
 	Singly_linkedlists R =new Singly_linkedlists();
      Point[] array;
-     int arr[][];
+    
      
      class myComparator implements Comparator<Point> {
 
@@ -194,8 +194,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
         return result;
 		
 	}
-	public int [][] determine_poly(char poly1, char poly2){
-		
+	public int [][] determine_polyadd(char poly1, char poly2){
+		 int arr[][];
 		
 		 clearPolynomial('R');
 	        if (poly1 == 'A' && poly2 == 'B' || poly1 == 'B' && poly2 == 'A') {
@@ -247,7 +247,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	                arr[i][0] = (int) R.get(i);
 	                arr[i][1] = (int) R.get_exp(i);
 	            }
-	           
+	            return arr;
 	        }
 	 
 	        if (poly1 == 'A' && poly2 == 'A' ) {
@@ -267,7 +267,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	                    arr[i][0] = (int) R.get(i);
 	                    arr[i][1] = (int) R.get_exp(i);
 	                }
-	            
+	                return arr;
 	              
 	            }
 	            if (poly1 == 'B' && poly2 == 'B' ) {
@@ -286,9 +286,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		                    arr[i][0] = (int) R.get(i);
 		                    arr[i][1] = (int) R.get_exp(i);
 		                }
-		               
+		                return arr;
 		            }
-	            return arr;
+	           return null;
 	            
 	}
 
@@ -297,11 +297,11 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		// TODO Auto-generated method stub
 		int [][]add;
 		 if (poly1=='A'&&poly2=='B'||poly1=='B'&&poly2=='A')
-	        add=determine_poly('A','B');
+	        add=determine_polyadd('A','B');
 		 else if (poly1=='A'&&poly2=='C'||poly1=='C'&&poly2=='A')
-		        add=determine_poly('A','C');
+		        add=determine_polyadd('A','C');
 		 else if (poly1=='B'&&poly2=='C'||poly1=='C'&&poly2=='B')
-		        add=determine_poly('B','C');
+		        add=determine_polyadd('B','C');
 
 		 else
 	        throw new RuntimeException("invalid input or operation");
@@ -310,17 +310,136 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		
 		
 	}
+	public int [][] determine_polysub(char poly1, char poly2){
+		int[][] arr;
+		
+		clearPolynomial('R');
+        if (poly1 == 'A' && poly2 == 'B' || poly1 == 'B' && poly2 == 'A') {
+            int a = 0;
+            int b = 0;
+            boolean finishedA = false;
+            boolean finishedB = false;
+            while (!finishedA && !finishedB) {
+                if ((int) A.get_exp(a) > (int) A.get_exp(b)) {
+                    R.addexp(A.get_exp(a));
+                    R.add(A.get(a));
+                    a++;
+                } else if ((int) A.get_exp(a) < (int) A.get_exp(b)) {
+                    R.addexp(B.get_exp(b));
+                    R.add(B.get(b));
+                    b++;
+                } else {
+                    R.addexp(A.get_exp(a));
+                    R.add((double) A.get(a) - (double) B.get(b));
+                    a++;
+                    b++;
+                }
+                if (a == A.size()) {
+                    finishedB = true;
+                }
+                if (b == B.size()) {
+                    finishedA = true;
+                }
+            }
+            if (finishedA) {
+                for (int i = b; i < B.size(); i++) {
+                    R.addexp(B.get_exp(i));
+                    R.add(B.get(i));
+                }
+            } else {
+                for (int i = a; i < A.size(); i++) {
+                    R.addexp(A.get_exp(i));
+                    R.add(A.get(i));
+                }
+            }
+             arr = new int[R.size()][2];
+            for (int i = 0; i < R.size(); i++) {
+                arr[i][0] = (int) R.get(i);
+                arr[i][1] = (int) R.get_exp(i);
+            }
+            return arr;
+        }
+		
+		
+		return null;
+	}
 
 	@Override
 	public int[][] subtract(char poly1, char poly2) {
 		// TODO Auto-generated method stub
-		return null;
+		int [][]sub;
+		 if (poly1=='A'&&poly2=='B'||poly1=='B'&&poly2=='A')
+	        sub=determine_polysub('A','B');
+		 else if (poly1=='A'&&poly2=='C'||poly1=='C'&&poly2=='A')
+		        sub=determine_polysub('A','C');
+		 else if (poly1=='B'&&poly2=='C'||poly1=='C'&&poly2=='B')
+		        sub=determine_polysub('B','C');
+		 else if(poly1=='A'&&poly2=='A'||poly1=='B'&&poly2=='B'||poly1=='C'&&poly2=='C')
+		 {
+			 sub =new int [1][2];
+			 sub[0][1]=0;
+			 sub[1][1]=0;
+			 
+		 }
+		 else
+	        throw new RuntimeException("invalid input or operation");
+		 
+		return sub;
+		
 	}
 
 	@Override
 	public int[][] multiply(char poly1, char poly2) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		 clearPolynomial('R');
+		 
+	        double[] array = new double[10000000];
+	 
+	        if (poly1 == 'A' && poly2 == 'B' || poly1 == 'B' && poly2 == 'A') {
+	            
+	            for (int a = 0; a < A.size(); a++) {
+	                for (int b = 0; b < B.size(); b++) {
+	                    array[(int) A.get_exp(a) + (int) A.get_exp(b)] = (double) A.get(a) * (double) B.get(b);
+	                }
+	                int[][] array1 = new int[R.size()][2];
+	                for (int i = (int) A.get_exp(0) + (int) B.get_exp(0); i >= 0; i++) {
+	                    array1[i][0] = (int) R.get(i);
+	                    array1[i][1] = (int) R.get(i);
+	                }
+	                return array1;
+	            }
+	        } else if (poly1 == 'A' && poly2 == 'C' || poly1 == 'C' && poly2 == 'A') {
+	            int a;
+	            int c;
+	            for (a = 0; a < A.size(); a++) {
+	                for (c = 0; c < B.size(); c++) {
+	                    array[(int) A.get_exp(a) + (int) A.get_exp(c)] = (double) A.get(a) * (double) B.get(c);
+	                }
+	                int[][] array1 = new int[R.size()][2];
+	                for (int i = (int) A.get_exp(0) + (int) B.get_exp(0); i >= 0; i++) {
+	                    array1[i][0] = (int) R.get(i);
+	                    array1[i][1] = (int) R.get_exp(i);
+	                }
+	                return array1;
+	            }
+	        } else if (poly1 == 'B' && poly2 == 'C' || poly1 == 'C' && poly2 == 'B') {
+	            int b;
+	            int c;
+	            for (b = 0; b < A.size(); b++) {
+	                for (c = 0; c < B.size(); c++) {
+	                    array[(int) A.get_exp(b) + (int) A.get_exp(c)] = (double) A.get(b) * (double) B.get(c);
+	                }
+	                int[][] array1 = new int[R.size()][2];
+	                for (int i = (int) A.get_exp(0) + (int) B.get_exp(0); i >= 0; i++) {
+	                    array1[i][0] = (int) R.get(i);
+	                    array1[i][1] = (int) R.get_exp(i);
+	                }
+	                return array1;
+	            }
+	        }
+	        throw new RuntimeException("invalid input or operation");
+	    }
 	}
 
-}
+
