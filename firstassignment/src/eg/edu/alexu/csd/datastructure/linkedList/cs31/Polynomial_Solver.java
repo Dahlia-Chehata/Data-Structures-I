@@ -18,14 +18,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
     		@Override
     		public int compare(Point o1, Point o2) {
     			// TODO Auto-generated method stub
-    			int x1 = o1.x;
-    			int x2 = o2.x;
-    			int y1 = o1.y;
-    			int y2 = o2.y;
-    			if (y2 !=y1)
-    				return y2- y1 ;
-    			else 
-    			return x1-x2;
+    			
+    				return o2.y-o1.y;
     			
     			
     		}
@@ -165,27 +159,39 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	}
 
 	@Override
-	public float evaluatePolynomial(char poly, float value) {
+	public float evaluatePolynomial(char poly, float value) throws RuntimeException {
 		// TODO Auto-generated method stub
+		
 		float result = 0;
         switch (poly) {
         case 'A':
-            for (int i = 0; i < A.size; i++) {
+        	if (!A.isEmpty())
+            {for (int i = 0; i < A.size; i++) {
             	Point point = new Point((int) A.get(i),(int) A.get_exp(i));
                 result += point.getX() * Math.pow(value, point.getY());
-            }
+            }}
+        	else 
+        		throw new RuntimeException ();
             break;
         case 'B':
+        	if (!B.isEmpty()){
             for (int i = 0; i < B.size(); i++) {
                 Point point = new Point((int) B.get(i),(int) B.get_exp(i));
                 result += point.getX() * Math.pow(value, point.getY());
-            }
-            break;
+            }}
+            
+            else 
+        		throw new RuntimeException ();
+
+            	break;
         case 'C':
+        	if (!C.isEmpty()){
             for (int i = 0; i < C.size(); i++) {
             	Point point = new Point((int) C.get(i),(int) C.get_exp(i));
                 result += point.getX() * Math.pow(value, point.getY());
-            }
+            }}
+        	else 
+        		throw new RuntimeException ();
             break;
         default:
             throw new RuntimeException("invalid input or operation");
@@ -304,8 +310,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		        add=determine_polyadd('B','C');
 
 		 else
-	        return null;
-			 //throw new RuntimeException("invalid input or operationbbbbb");
+			 throw new RuntimeException("invalid input or operationbbbbb");
 		 
 		return add;
 		
