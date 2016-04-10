@@ -22,7 +22,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
     			int x2 = o2.x;
     			int y1 = o1.y;
     			int y2 = o2.y;
-    			if (y2 !=y1)
+    			if (y2 >y1)
     				return y1 - y2 ;
     			else 
     			return x1-x2;
