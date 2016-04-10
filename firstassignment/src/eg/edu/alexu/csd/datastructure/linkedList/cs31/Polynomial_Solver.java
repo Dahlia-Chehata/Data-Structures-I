@@ -232,10 +232,10 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	                    b++;
 	                }
 	                if (a == A.size()) 
-	                	finishedB = true;
+	                	finishedA = true;
 	                
 	                if (b == B.size()) 
-	                    finishedA = true;
+	                    finishedB = true;
 	                
 	            }
 	            
