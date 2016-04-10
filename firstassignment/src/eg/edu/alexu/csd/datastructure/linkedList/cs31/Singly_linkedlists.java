@@ -12,7 +12,7 @@ public class Singly_linkedlists implements ILinkedList{
 		size = 0;
 		}
 	
-
+	
 	@Override
 	public void add(int index, Object element) throws RuntimeException{
 		// TODO Auto-generated method stub
@@ -67,6 +67,24 @@ public class Singly_linkedlists implements ILinkedList{
 	   new_node.next=null;
 	   }
 	   size++;
+	}
+	public void addexp(Object element) {
+		// TODO Auto-generated method stub
+		SLNode pointer=head;
+		SLNode new_node=new SLNode();
+		new_node.exp=element;
+		if (head==null){
+			//new_node.next=null;
+			head=new_node;
+		}
+		else{
+		while (pointer.next !=null)
+			pointer=pointer.next;
+	
+	   pointer.next = new_node;
+	   new_node.next=null;
+	   }
+	  // size++;
 	}
 	   
 
