@@ -4,6 +4,26 @@ import java.awt.Point;
 import java.util.Comparator;
 import java.util.Arrays;
 
+     class myComparator implements Comparator<Point> {
+
+    		@Override
+    		public int compare(Point o1, Point o2) {
+    			// TODO Auto-generated method stub
+    			
+    			if (o2.x > o1.x)
+    				return 1;
+    			else if (o1.x > o2.x)
+    				return -1;
+    			/*else {
+    				if (y2 > y1)
+    					return -11;
+    				else if (y2 < y1)
+    					return 1;*/
+    			return 0;
+    			
+    			
+    		}
+     }
 public class Polynomial_Solver implements IPolynomialSolver {
      
 	Singly_linkedlists A ;
@@ -13,17 +33,6 @@ public class Polynomial_Solver implements IPolynomialSolver {
      Point[] array;
     
      
-     class myComparator implements Comparator<Point> {
-
-    		@Override
-    		public int compare(Point o1, Point o2) {
-    			// TODO Auto-generated method stub
-    			
-    				return o2.y-o1.y;
-    			
-    			
-    		}
-     }
     	
 	@Override
 	public void setPolynomial(char poly, int[][] terms) throws RuntimeException {
