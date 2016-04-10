@@ -312,7 +312,12 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		        add=determine_polyadd('A','C');
 		 else if (poly1=='B'&&poly2=='C'||poly1=='C'&&poly2=='B')
 		        add=determine_polyadd('B','C');
-
+		 else if (poly1=='A'&&poly2=='A')
+			 add=determine_polyadd('A','A');
+		 else if(poly1=='B'&&poly2=='B')
+			 add=determine_polyadd('B','B');
+		 else if(poly1=='C'&&poly2=='C')
+			 add=determine_polyadd('C','C');
 		 else
 			 throw new RuntimeException("invalid input or operationbbbbb");
 		 
