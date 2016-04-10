@@ -125,8 +125,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
             }
             break;
         case 'R':
-           // if (R.isEmpty())
-             //   return null;
+            if (R.isEmpty())
+               return null;
             for (int i = 0; i < R.size(); i++) {
                 if (R.get(i).equals(1))
                     message += "+";
@@ -304,7 +304,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		        add=determine_polyadd('B','C');
 
 		 else
-	        throw new RuntimeException("invalid input or operationbbbbb");
+	        return null;
+			 //throw new RuntimeException("invalid input or operationbbbbb");
 		 
 		return add;
 		
