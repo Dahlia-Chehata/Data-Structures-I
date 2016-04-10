@@ -10,9 +10,9 @@ import java.util.Arrays;
     		public int compare(Point o1, Point o2) {
     			// TODO Auto-generated method stub
     			
-    			if (o2.x > o1.x)
+    			if (o2.y > o1.y)
     				return 1;
-    			else if (o1.x > o2.x)
+    			else if (o1.y > o2.y)
     				return -1;
     			/*else {
     				if (y2 > y1)
