@@ -228,8 +228,10 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	                    R.add(B.get(b));
 	                    b++;
 	                } else {
-	                    R.addexp(A.get_exp(a));
-	                    R.add((double) A.get(a) + (double) B.get(b));
+	                    R.addexp(A.get_exp(a)); 
+	                    double tempo=(double)  A.get(a) + (double) B.get(b);
+	                    R.add(tempo);
+	                  
 	                    a++;
 	                    b++;
 	                }
