@@ -126,7 +126,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
             break;
         case 'R':
             if (R.isEmpty())
-                throw new RuntimeException("Check your inputs");
+                throw new RuntimeException("aaaaa");
             for (int i = 0; i < R.size(); i++) {
                 if (R.get(i).equals(1))
                     message += "+";
@@ -159,7 +159,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	        case 'R': R.clear();break;
 	       
 	        default:
-	            throw new RuntimeException("invalid input or operation");
+	            throw new RuntimeException("invalid input or operationzzzzz");
 	 
 	        }
 	}
@@ -188,7 +188,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
             }
             break;
         default:
-            throw new RuntimeException("invalid input or operation");
+            throw new RuntimeException("invalid input or operationxxxxx");
         }
  
         return result;
@@ -304,7 +304,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		        add=determine_polyadd('B','C');
 
 		 else
-	        throw new RuntimeException("invalid input or operation");
+	        throw new RuntimeException("invalid input or operationbbbbb");
 		 
 		return add;
 		
@@ -382,7 +382,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			 
 		 }
 		 else
-	        throw new RuntimeException("invalid input or operation");
+	        throw new RuntimeException("invalid input or operationdddd");
 		 
 		return sub;
 		
@@ -438,7 +438,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	                return array1;
 	            }
 	        }
-	        throw new RuntimeException("invalid input or operation");
+	        throw new RuntimeException("invalid input or operationsssssss");
 	    }
 	}
 
