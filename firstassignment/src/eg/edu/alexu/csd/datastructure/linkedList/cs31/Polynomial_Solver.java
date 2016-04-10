@@ -10,8 +10,6 @@ import java.util.Arrays;
     		public int compare(Point o1, Point o2) {
     			// TODO Auto-generated method stub
     			
-    			
-    			
     			return o2.y-o1.y;
     			
     			
@@ -32,6 +30,10 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		// TODO Auto-generated method stub
 		
 		Singly_linkedlists the_list= new Singly_linkedlists();
+		if (terms.length==0)
+				throw  new RuntimeException();
+		/*if (terms==null)
+			throw  new RuntimeException();*/
 		
 		array=new Point [terms.length];
 		
