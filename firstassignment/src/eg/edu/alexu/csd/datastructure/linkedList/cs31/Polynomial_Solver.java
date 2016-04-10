@@ -11,14 +11,10 @@ import java.util.Arrays;
     			// TODO Auto-generated method stub
     			
     			if (o2.y > o1.y)
-    				return 1;
-    			else if (o1.y > o2.y)
     				return -1;
-    			/*else {
-    				if (y2 > y1)
-    					return -11;
-    				else if (y2 < y1)
-    					return 1;*/
+    			else if (o1.y > o2.y)
+    				return 1;
+    			
     			return 0;
     			
     			
