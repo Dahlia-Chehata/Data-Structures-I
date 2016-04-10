@@ -32,6 +32,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		Singly_linkedlists the_list= new Singly_linkedlists();
 		if (terms.length==0)
 				throw  new RuntimeException();
+		
 		/*if (terms==null)
 			throw  new RuntimeException();*/
 		
@@ -45,7 +46,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				
 		}
 		myComparator c = new myComparator();
-         Arrays.sort(array,0,array.length,c);
+         Arrays.sort(array, c);  
 		
 	    for (int i=0;i<array.length;i++){
 	    	if (array[i]==null)
