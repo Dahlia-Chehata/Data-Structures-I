@@ -17,10 +17,10 @@ import java.util.Arrays;
      }
 public class Polynomial_Solver implements IPolynomialSolver {
      
-	Singly_linkedlists A ;
-	Singly_linkedlists B ;
-	Singly_linkedlists C;
-	Singly_linkedlists R =new Singly_linkedlists();
+	 static Singly_linkedlists A =new Singly_linkedlists();;
+	static Singly_linkedlists B=new Singly_linkedlists(); ;
+	static Singly_linkedlists C=new Singly_linkedlists();;
+	static Singly_linkedlists R =new Singly_linkedlists();
      Point[] array;
     
      
@@ -29,7 +29,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	public void setPolynomial(char poly, int[][] terms) throws RuntimeException {
 		// TODO Auto-generated method stub
 		
-		Singly_linkedlists the_list= new Singly_linkedlists();
+		
 		if (terms.length==0)
 				throw  new RuntimeException();
 		
@@ -48,17 +48,28 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		myComparator c = new myComparator();
          Arrays.sort(array, c);  
 		
-	    for (int i=0;i<array.length;i++){
+	    
+	    switch (poly){
+		case'A':
+		{for (int i=0;i<array.length;i++){
 	    	if (array[i]==null)
 	    		throw  new RuntimeException();
 		      SLNode temp=new SLNode(array[i].x,array[i].y) ;
-	    	  the_list.add(temp);
-	    }
-	    
-	    switch (poly){
-		case'A': A=the_list;break;
-		case'B': B=the_list;break;
-		case'C': C=the_list;break;
+	    	  A.add(temp);
+	    }};break;
+		case'B': 
+		{for (int i=0;i<array.length;i++){
+	    	if (array[i]==null)
+	    		throw  new RuntimeException();
+		      SLNode temp=new SLNode(array[i].x,array[i].y) ;
+	    	  B.add(temp);
+	    }};break;
+		case'C': {for (int i=0;i<array.length;i++){
+	    	if (array[i]==null)
+	    		throw  new RuntimeException();
+		      SLNode temp=new SLNode(array[i].x,array[i].y) ;
+	    	  C.add(temp);
+	    }};break;
 		default :throw new RuntimeException();
 		}
 	    
@@ -487,6 +498,17 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	        }
 	        throw new RuntimeException("invalid input or operation");
 	    }
-	}
-
-
+	
+/*public static void main(String[] args){
+	//Singly_linkedlists A =new Singly_linkedlists() ;
+	int[][] terms=
+		   {{2,3},{4,2},{5,4}};
+	  IPolynomialSolver app= new Polynomial_Solver();
+	   app.setPolynomial('A',terms);
+	   for (int i=0 ; i< A.size() ; i++){
+			System.out.print(A.get(i)+" ");
+			System.out.print(A.get_exp(i)+" ");
+		}
+		System.out.println();
+}*/
+}
