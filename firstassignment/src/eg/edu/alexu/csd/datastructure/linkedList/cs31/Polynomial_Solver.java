@@ -57,7 +57,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		{for (int i=0;i<array.length;i++){
 	    	if (array[i]==null)
 	    		throw  new RuntimeException();
-		       temp=new SLNode((Object)array[i].x,(Object)array[i].y);
+		       temp=new SLNode(array[i].x,array[i].y);
 		      
 	    	  A.add(temp);
 	    }};break;
