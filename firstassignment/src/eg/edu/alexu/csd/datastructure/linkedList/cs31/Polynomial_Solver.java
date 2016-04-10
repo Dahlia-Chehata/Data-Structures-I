@@ -22,6 +22,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	static Singly_linkedlists C=new Singly_linkedlists();;
 	static Singly_linkedlists R =new Singly_linkedlists();
      Point[] array;
+     SLNode temp;
     
      
     	
@@ -54,7 +55,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		{for (int i=0;i<array.length;i++){
 	    	if (array[i]==null)
 	    		throw  new RuntimeException();
-		      SLNode temp=new SLNode(array[i].x,array[i].y) ;
+		       temp=new SLNode(array[i].x,array[i].y) ;
 	    	  A.add(temp);
 	    }};break;
 		case'B': 
@@ -499,7 +500,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	        throw new RuntimeException("invalid input or operation");
 	    }
 	
-/*public static void main(String[] args){
+public static void main(String[] args){
 	//Singly_linkedlists A =new Singly_linkedlists() ;
 	int[][] terms=
 		   {{2,3},{4,2},{5,4}};
@@ -507,8 +508,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	   app.setPolynomial('A',terms);
 	   for (int i=0 ; i< A.size() ; i++){
 			System.out.print(A.get(i)+" ");
-			System.out.print(A.get_exp(i)+" ");
+			//System.out.print(A.get_exp(i)+" ");
 		}
 		System.out.println();
-}*/
+}
 }
