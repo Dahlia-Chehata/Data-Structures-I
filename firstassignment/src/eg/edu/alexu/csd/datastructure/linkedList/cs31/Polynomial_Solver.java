@@ -199,6 +199,15 @@ public class Polynomial_Solver implements IPolynomialSolver {
         	else 
         		throw new RuntimeException ();
             break;
+        case 'R':
+        	if (!R.isEmpty()){
+            for (int i = 0; i < R.size(); i++) {
+            	Point point = new Point((int) R.get(i),(int) R.get_exp(i));
+                result += point.getX() * Math.pow(value, point.getY());
+            }}
+        	else 
+        		throw new RuntimeException ();
+            break;
         default:
             throw new RuntimeException("invalid input or operation");
         }
@@ -380,7 +389,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
         }
 		
 		
-		return null;
+		return arr;
 	}
 
 	@Override
