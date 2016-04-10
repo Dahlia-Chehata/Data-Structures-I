@@ -389,7 +389,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
         }
 		
 		
-		return arr;
+		return null;
 	}
 
 	@Override
