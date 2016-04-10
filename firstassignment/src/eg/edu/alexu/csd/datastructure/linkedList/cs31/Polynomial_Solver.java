@@ -510,7 +510,7 @@ public static void main(String[] args){
 	  IPolynomialSolver app= new Polynomial_Solver();
 	   app.setPolynomial('A',terms);
 	   for (int i=0 ; i< A.size() ; i++){
-			System.out.print((int)A.get(i)+" ");
+			System.out.print(A.get(i)+" ");
 			//System.out.print(A.get_exp(i)+" ");
 		}
 		System.out.println();
