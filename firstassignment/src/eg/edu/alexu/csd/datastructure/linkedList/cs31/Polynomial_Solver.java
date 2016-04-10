@@ -34,17 +34,19 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		if (terms.length==0)
 				throw  new RuntimeException();
 		
-		/*if (terms==null)
-			throw  new RuntimeException();*/
+		
 		
 		array=new Point [terms.length];
 		
 		for (int i=0;i<terms.length;i++){
 		   if (terms[i][1]<0)
 			   throw new RuntimeException();
-		
-			array[i]=new Point (terms[i][0],terms[i][1]);
-				
+		   
+			
+			array[i]=new Point();
+			array[i].setLocation(terms[i][0],terms[i][1]);
+					
+			
 		}
 		myComparator c = new myComparator();
          Arrays.sort(array, c);  
@@ -55,7 +57,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		{for (int i=0;i<array.length;i++){
 	    	if (array[i]==null)
 	    		throw  new RuntimeException();
-		       temp=new SLNode(array[i].x,array[i].y) ;
+		       temp=new SLNode((Object)array[i].x,(Object)array[i].y);
+		      
 	    	  A.add(temp);
 	    }};break;
 		case'B': 
@@ -507,7 +510,7 @@ public static void main(String[] args){
 	  IPolynomialSolver app= new Polynomial_Solver();
 	   app.setPolynomial('A',terms);
 	   for (int i=0 ; i< A.size() ; i++){
-			System.out.print(A.get(i)+" ");
+			System.out.print((int)A.get(i)+" ");
 			//System.out.print(A.get_exp(i)+" ");
 		}
 		System.out.println();
