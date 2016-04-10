@@ -57,6 +57,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		case'A': A=the_list;break;
 		case'B': B=the_list;break;
 		case'C': C=the_list;break;
+		default :throw new RuntimeException();
 		}
 	    
 	}
@@ -142,8 +143,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
             }
             break;
  
-        }
- 
+        
+		default:throw new RuntimeException();
+		}
         return message;
 		
 	}
