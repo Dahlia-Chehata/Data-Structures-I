@@ -46,7 +46,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				
 		}
 		myComparator c = new myComparator();
-         Arrays.sort(array,0,terms.length,c);
+         Arrays.sort(array,0,array.length,c);
 		
 	    for (int i=0;i<array.length;i++){
 		      SLNode temp=new SLNode(array[i].x,array[i].y) ;
