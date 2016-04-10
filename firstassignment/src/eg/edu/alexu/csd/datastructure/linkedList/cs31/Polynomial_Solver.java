@@ -1,45 +1,172 @@
 package eg.edu.alexu.csd.datastructure.linkedList.cs31;
 import eg.edu.alexu.csd.datastructure.linkedList.IPolynomialSolver;
-import  eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
+import java.awt.Point;
+import java.util.Comparator;
+import java.util.Arrays;
+
 public class Polynomial_Solver implements IPolynomialSolver {
      
-   	ILinkedList A =new Singly_linkedlists();
-     ILinkedList B =new Singly_linkedlists();
-     ILinkedList C =new Singly_linkedlists();
-     ILinkedList R =new Singly_linkedlists();
+	Singly_linkedlists A ;
+	Singly_linkedlists B ;
+	Singly_linkedlists C;
+	Singly_linkedlists R =new Singly_linkedlists();
+     Point[] array;
+     
+     class myComparator implements Comparator<Point> {
 
+    		@Override
+    		public int compare(Point o1, Point o2) {
+    			// TODO Auto-generated method stub
+    			int x1 = o1.x;
+    			int x2 = o2.x;
+    			int y1 = o1.y;
+    			int y2 = o2.y;
+    			if (y2 !=y1)
+    				return y1 - y2 ;
+    			else 
+    			return x1-x2;
+    			
+    			
+    		}
+     }
+    	
 	@Override
-	public void setPolynomial(char poly, int[][] terms) {
+	public void setPolynomial(char poly, int[][] terms) throws RuntimeException {
 		// TODO Auto-generated method stub
-		ILinkedList the_list =new Singly_linkedlists();
-		switch (poly){
-		case'A': the_list=A;break;
-		case'B': the_list=B;break;
-		case'C': the_list=C;break;
-		}
+		
+		Singly_linkedlists the_list= new Singly_linkedlists();
+		
+		array=new Point [terms.length];
+		
 		for (int i=0;i<terms.length;i++){
-			for (int j=0;j<terms[0].length;j++){
-				the_list.add(i);
+		   if (terms[i][1]<0)
+			   throw new RuntimeException();
+		
+			array[i]=new Point (terms[i][0],terms[i][1]);
 				
-			}
 		}
+		myComparator c = new myComparator();
+         Arrays.sort(array,0,terms.length,c);
+		
+	    for (int i=0;i<array.length;i++){
+		      SLNode temp=new SLNode(array[i].x,array[i].y) ;
+	    	  the_list.add(temp);
+	    }
+	    
+	    switch (poly){
+		case'A': A=the_list;break;
+		case'B': B=the_list;break;
+		case'C': C=the_list;break;
+		}
+	    
 	}
 
 	@Override
 	public String print(char poly) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		String message = new String();
+        
+		switch (poly) {
+        case 'A':
+            if (A.isEmpty())
+                return null;  //throw exception
+            for (int i = 0; i < A.size(); i++) {
+            	 
+                if (A.get(i).equals(1))
+                    message += "+";
+                else if (A.get(i).equals(-1))
+                    message += "-";
+                else
+                    message += A.get(i);
+                if (!A.get_exp(i).equals(0)) {
+                    if (A.get_exp(i).equals(1))
+                        message += "x";
+                    else
+                        message += "x^" + A.get_exp(i);
+                }
+            }
+            break;
+        case 'B':
+            if (B.isEmpty())
+                return null;
+            for (int i = 0; i < B.size(); i++) {
+                if (B.get(i).equals(1))
+                    message += "+";
+                else if (B.get(i).equals(-1))
+                    message += "-";
+                else
+                    message += B.get(i);
+                if (!B.get_exp(i).equals(0)) {
+                    if (B.get_exp(i).equals(1))
+                        message += "x";
+                    else
+                        message += "x^" + B.get_exp(i);
+                }
+            }
+            break;
+        case 'C':
+            if (C.isEmpty())
+                return null;
+            for (int i = 0; i < C.size(); i++) {
+                if (C.get(i).equals(1))
+                    message += "+";
+                else if (C.get(i).equals(-1))
+                    message += "-";
+                else
+                    message += C.get(i);
+                if (!C.get_exp(i).equals(0)) {
+                    if (C.get_exp(i).equals(1))
+                        message += "x";
+                    else
+                        message += "x^" + C.get_exp(i);
+                }
+            }
+            break;
+        case 'R':
+            if (R.isEmpty())
+                throw new RuntimeException("Check your inputs");
+            for (int i = 0; i < R.size(); i++) {
+                if (R.get(i).equals(1))
+                    message += "+";
+                else if (R.get(i).equals(-1))
+                    message += "-";
+                else
+                    message += R.get(i);
+                if (!R.get_exp(i).equals(0)) {
+                    if (R.get_exp(i).equals(1))
+                        message += "x";
+                    else
+                        message += "x^" + R.get_exp(i);
+                }
+            }
+            break;
+ 
+        }
+ 
+        return message;
+		
 	}
 
 	@Override
 	public void clearPolynomial(char poly) {
 		// TODO Auto-generated method stub
-		
+		 switch (poly) {
+	        case 'A': A.clear();break;
+	        case 'B': B.clear();break;
+	        case 'C': C.clear(); break;
+	        case 'R': R.clear();break;
+	       
+	        default:
+	            throw new RuntimeException("invalid input or operation");
+	 
+	        }
 	}
 
 	@Override
 	public float evaluatePolynomial(char poly, float value) {
 		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 
