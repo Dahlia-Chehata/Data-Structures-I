@@ -68,25 +68,7 @@ public class Singly_linkedlists implements ILinkedList{
 	   }
 	   size++;
 	}
-	public void addexp(Object element) {
-		// TODO Auto-generated method stub
-		SLNode pointer=head;
-		SLNode new_node=new SLNode();
-		new_node.exp=element;
-		if (head==null){
-			//new_node.next=null;
-			head=new_node;
-		}
-		else{
-		while (pointer.next !=null)
-			pointer=pointer.next;
 	
-	   pointer.next = new_node;
-	   new_node.next=null;
-	   }
-	  // size++;
-	}
-	   
 
 	@Override
 	public Object get(int index) throws RuntimeException{
@@ -102,20 +84,6 @@ public class Singly_linkedlists implements ILinkedList{
 			throw new RuntimeException();
 	}
 	
-	public Object get_exp(int index) throws RuntimeException{
-		// TODO Auto-generated method stub
-		SLNode pointer=head;
-		if (index>=0&&index<size){
-		for (int i=0;i<index;i++)
-			pointer =pointer.next;
-		
-		return pointer.exp;
-		}
-		else
-			throw new RuntimeException();
-	}
-	
-
 	@Override
 	public void set(int index, Object element) throws RuntimeException{
 		// TODO Auto-generated method stub
