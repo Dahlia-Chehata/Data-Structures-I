@@ -12,7 +12,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	static Singly_linkedlists C = new Singly_linkedlists();
 	static Singly_linkedlists R = new Singly_linkedlists();
 	Point[] array;
-	SLNode temp;
+	
 
 	@Override
 	public void setPolynomial(char poly, int[][] terms) throws RuntimeException {
@@ -262,13 +262,19 @@ public class Polynomial_Solver implements IPolynomialSolver {
 
 	}
 
-	public int[][] determine_polyadd(char poly1, char poly2) {
-		int arr[][];
+	
+	@Override
+	public int[][] add(char poly1, char poly2) {
+		// TODO Auto-generated method stub
+		
+		Singly_linkedlists first = new Singly_linkedlists();
+		Singly_linkedlists second = new Singly_linkedlists();
+       int arr[][];
 
-		clearPolynomial('R');
+		
 		Point pta = new Point();
 		Point ptb = new Point();
-		if (poly1 == 'A' && poly2 == 'B' || poly1 == 'B' && poly2 == 'A') {
+		 
 			int a = 0;
 			int b = 0;
 
@@ -276,8 +282,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			boolean finishedB = false;
 
 			while (!finishedA && !finishedB) {
-					pta=(Point) A.get(a);
-					ptb=(Point) B.get(b);
+					pta=(Point) first.get(a);
+					ptb=(Point) second.get(b);
 
 				if (pta.y > ptb.y) {
 					R.add(pta);
@@ -294,22 +300,22 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					a++;
 					b++;
 				}
-				if (a == A.size())
+				if (a == first.size())
 					finishedA = true;
 
-				if (b == B.size())
+				if (b == second.size())
 					finishedB = true;
 
 			}
 
 			if (finishedA) {
-				for (int i = b; i < B.size(); i++) {
-					R.add((Point) B.get(i));
+				for (int i = b; i < second.size(); i++) {
+					R.add((Point) second.get(i));
 					
 				}
 			} else {
-				for (int i = a; i < A.size(); i++) {
-					R.add((Point) A.get(i));
+				for (int i = a; i < first.size(); i++) {
+					R.add((Point) first.get(i));
 					
 				}
 			}
@@ -320,182 +326,148 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				arr[i][0] = pt.x;
 				arr[i][1] = pt.y;
 			}
-			return arr;
-		}
-
-		if (poly1 == 'A' && poly2 == 'A') {
-			int a = 0;
-			boolean finishedA = false;
-			while (!finishedA) {
-				Point pt = new Point();
-				Point result = new Point();
-				pt=(Point) A.get(a);
-				result.setLocation((pt.getX() * 2), pt.y);
-				R.add(result);
-				a++;
-
-				if (a == A.size)
-					finishedA = true;
-			}
-
-			arr = new int[R.size()][2];
-			for (int i = 0; i < R.size(); i++) {
-				Point pt = new Point();
-				pt=(Point) R.get(i);
-				arr[i][0] = pt.x;
-				arr[i][1] = pt.y;
-			}
-			return arr;
-
-		}
-		if (poly1 == 'B' && poly2 == 'B') {
-			int b = 0;
-			boolean finishedB = false;
-			while (!finishedB) {
-				Point pt = new Point();
-				Point result = new Point();
-				pt=(Point) B.get(b);
-				result.setLocation((pt.getX() * 2), pt.y);
-				R.add(result);
-				b++;
-				if (b == B.size)
-					finishedB = true;
-			}
-
-			arr = new int[R.size()][2];
-			for (int i = 0; i < R.size(); i++) {
-				Point pt = new Point();
-				pt=(Point) R.get(i);
-				arr[i][0] = pt.x;
-				arr[i][1] = pt.y;
-			}
-			return arr;
-		}
-		return null;
-
-	}
-
-	@Override
-	public int[][] add(char poly1, char poly2) {
-		// TODO Auto-generated method stub
-		int[][] add;
-		if (poly1 == 'A' && poly2 == 'B' || poly1 == 'B' && poly2 == 'A')
-			add = determine_polyadd('A', 'B');
-		else if (poly1 == 'A' && poly2 == 'C' || poly1 == 'C' && poly2 == 'A')
-			add = determine_polyadd('A', 'C');
-		else if (poly1 == 'B' && poly2 == 'C' || poly1 == 'C' && poly2 == 'B')
-			add = determine_polyadd('B', 'C');
-		else if (poly1 == 'A' && poly2 == 'A')
-			add = determine_polyadd('A', 'A');
-		else if (poly1 == 'B' && poly2 == 'B')
-			add = determine_polyadd('B', 'B');
-		else if (poly1 == 'C' && poly2 == 'C')
-			add = determine_polyadd('C', 'C');
-		else
-			throw new RuntimeException("invalid input or operationbbbbb");
-
-		return add;
-
-	}
-
-	public int[][] determine_polysub(char poly1, char poly2) {
-		int[][] arr;
-       Point pta=new Point();
-       
-       Point ptb=new Point();
-		clearPolynomial('R');
-		if (poly1 == 'A' && poly2 == 'B' || poly1 == 'B' && poly2 == 'A') {
-			int a = 0;
-			int b = 0;
 			
-			pta= (Point)A.get(a);
-			ptb= (Point)B.get(b);
-			
-			boolean finishedA = false;
-			boolean finishedB = false;
-			while (!finishedA && !finishedB) {
-				
-				if (pta.y > ptb.y) {
-					R.add(pta);
-					a++;
-				} 
-				
-				else  if (pta.y<ptb.y) {
-					R.add(ptb);
-					b++;
-				} else {
-					Point result = new Point();
-					result.setLocation(pta.getX() -  ptb.getY(), pta.y);
-					R.add(result);
-					a++;
-					b++;
-				}
-				if (a == A.size()) {
-					finishedB = true;
-				}
-				if (b == B.size()) {
-					finishedA = true;
-				}
+			switch(poly1)
+			{
+			case 'A':
+				first = A;
+				break;
+			case 'B':
+				first = B;
+				break;
+			case 'C':
+				first = C;
+				break;
+				default :throw new RuntimeException();
 			}
-			if (finishedA) {
-				for (int i = b; i < B.size(); i++) {
-					R.add((Point) B.get(i));
-					
-				}
-			} else {
-				for (int i = a; i < A.size(); i++) {
-					R.add((Point) A.get(i));
-					
-				}
-			}
-			arr = new int[R.size()][2];
-			for (int i = 0; i < R.size(); i++) {
-				Point pt = new Point();
-				pt=(Point) R.get(i);
-				arr[i][0] = pt.x;
-				arr[i][1] = pt.y;
+			switch(poly2)
+			{
+			case 'A':
+				second = A;
+				break;
+			case 'B':
+				second = B;
+				break;
+			case 'C':
+				second = C;
+				break;
+			default :throw new RuntimeException();
+
 			}
 			return arr;
-		
-		}
-
-		return null;
 	}
 
+	
 	@Override
 	public int[][] subtract(char poly1, char poly2) {
 		// TODO Auto-generated method stub
-		int[][] sub;
-		if (poly1 == 'A' && poly2 == 'B' || poly1 == 'B' && poly2 == 'A')
-			sub = determine_polysub('A', 'B');
-		else if (poly1 == 'A' && poly2 == 'C' || poly1 == 'C' && poly2 == 'A')
-			sub = determine_polysub('A', 'C');
-		else if (poly1 == 'B' && poly2 == 'C' || poly1 == 'C' && poly2 == 'B')
-			sub = determine_polysub('B', 'C');
-		else if (poly1 == 'A' && poly2 == 'A' || poly1 == 'B' && poly2 == 'B' || poly1 == 'C' && poly2 == 'C') {
-			sub = new int[1][2];
-			sub[0][1] = 0;
-			sub[1][1] = 0;
+		Singly_linkedlists first = new Singly_linkedlists();
+		Singly_linkedlists second = new Singly_linkedlists();
+		int[][] arr;
+	       Point pta=new Point();
+	       
+	       Point ptb=new Point();
+			clearPolynomial('R');
+			
+				int a = 0;
+				int b = 0;
+				
+				pta= (Point)first.get(a);
+				ptb= (Point)second.get(b);
+				
+				boolean finishedA = false;
+				boolean finishedB = false;
+				while (!finishedA && !finishedB) {
+					
+					if (pta.y > ptb.y) {
+						R.add(pta);
+						a++;
+					} 
+					
+					else  if (pta.y<ptb.y) {
+						R.add(ptb);
+						b++;
+					} else {
+						Point result = new Point();
+						result.setLocation(pta.getX() -  ptb.getY(), pta.y);
+						R.add(result);
+						a++;
+						b++;
+					}
+					if (a == first.size()) {
+						finishedB = true;
+					}
+					if (b == second.size()) {
+						finishedA = true;
+					}
+				}
+				if (finishedA) {
+					for (int i = b; i < second.size(); i++) {
+						R.add((Point) second.get(i));
+						
+					}
+				} else {
+					for (int i = a; i < A.size(); i++) {
+						R.add((Point) first.get(i));
+						
+					}
+				}
+				arr = new int[R.size()][2];
+				for (int i = 0; i < R.size(); i++) {
+					Point pt = new Point();
+					pt=(Point) R.get(i);
+					arr[i][0] = pt.x;
+					arr[i][1] = pt.y;
+				}
+				switch(poly1)
+				{
+				case 'A':
+					first = A;
+					break;
+				case 'B':
+					first = B;
+					break;
+				case 'C':
+					first = C;
+					break;
+					default :throw new RuntimeException();
+				}
+				switch(poly2)
+				{
+				case 'A':
+					second = A;
+					break;
+				case 'B':
+					second = B;
+					break;
+				case 'C':
+					second = C;
+					break;
+				default :throw new RuntimeException();
 
-		} else
-			throw new RuntimeException("invalid input or operation");
-
-		return sub;
-
+				}
+				return arr;
+			
 	}
-	public int[][] multiplication(char poly1, char poly2) {
-		clearPolynomial('R');
-	     Point pta=new Point();
+	
+
+	@Override
+	public int[][] multiply(char poly1, char poly2) {
+		// TODO Auto-generated method stub
+		Singly_linkedlists first = new Singly_linkedlists();
+		Singly_linkedlists second = new Singly_linkedlists();
+		
+		Point pta=new Point();
 	     Point ptb=new Point();
 			double[] array = new double[10000000];
 			double[] arrind = new double[10000000];
 	  int ind=1;
 			
 
-				for (int a = 0; a < A.size(); a++) {
-					for (int b = 0; b < B.size(); b++) {
-						pta= (Point)A.get(a);
-						ptb= (Point)B.get(b);
+				for (int a = 0; a < first.size(); a++) {
+					for (int b = 0; b < second.size(); b++) {
+						pta= (Point)first.get(a);
+						ptb= (Point)second.get(b);
 						for (int k=0;k<ind;k++){
 	            	    if (arrind[k]!=pta.y + ptb.y)
 	            	    	arrind[ind++]=pta.y + ptb.y;
@@ -515,29 +487,38 @@ public class Polynomial_Solver implements IPolynomialSolver {
 						array1[i][0] = pt.x;
 						array1[i][1] = pt.y;
 					}
+					
+					switch(poly1)
+					{
+					case 'A':
+						first = A;
+						break;
+					case 'B':
+						first = B;
+						break;
+					case 'C':
+						first = C;
+						break;
+						default :throw new RuntimeException();
+					}
+					switch(poly2)
+					{
+					case 'A':
+						second = A;
+						break;
+					case 'B':
+						second = B;
+						break;
+					case 'C':
+						second = C;
+						break;
+					default :throw new RuntimeException();
+
+					}
+					
+					
 					return array1;
 					
-	}
-
-	@Override
-	public int[][] multiply(char poly1, char poly2) {
-		// TODO Auto-generated method stub
-		int arr[][];
-		if (poly1 == 'A' && poly2 == 'B' || poly1 == 'B' && poly2 == 'A') 
-			arr=multiplication('A','B');
-			else if (poly1 == 'A' && poly2 == 'C' || poly1 == 'C' && poly2 == 'A')
-				arr=multiplication('A','C');
-			else if (poly1 == 'B' && poly2 == 'C' || poly1 == 'C' && poly2 == 'B')
-				arr=multiplication('B','C');
-			else if (poly1 == 'B' && poly2 == 'B' )
-				arr=multiplication('B','B');
-			else if (poly1 == 'C' && poly2 == 'C' )
-				arr=multiplication('C','C');
-			else if (poly1 == 'A' && poly2 == 'A')
-				arr=multiplication('A','A');
-			else
-				throw new RuntimeException("invalid input or operation");
-		return arr;
 	}
 
 	public static void main(String[] args) {
