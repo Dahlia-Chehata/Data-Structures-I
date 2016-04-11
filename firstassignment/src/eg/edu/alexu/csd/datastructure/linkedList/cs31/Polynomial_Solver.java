@@ -269,7 +269,35 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		
 		Singly_linkedlists first = new Singly_linkedlists();
 		Singly_linkedlists second = new Singly_linkedlists();
-       int arr[][];
+      
+		switch(poly1)
+		{
+		case 'A':
+			first = A;
+			break;
+		case 'B':
+			first = B;
+			break;
+		case 'C':
+			first = C;
+			break;
+			default :throw new RuntimeException();
+		}
+		switch(poly2)
+		{
+		case 'A':
+			second = A;
+			break;
+		case 'B':
+			second = B;
+			break;
+		case 'C':
+			second = C;
+			break;
+		default :throw new RuntimeException();
+
+		}
+		int arr[][];
 
 		
 		Point pta = new Point();
@@ -327,33 +355,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				arr[i][1] = pt.y;
 			}
 			
-			switch(poly1)
-			{
-			case 'A':
-				first = A;
-				break;
-			case 'B':
-				first = B;
-				break;
-			case 'C':
-				first = C;
-				break;
-				default :throw new RuntimeException();
-			}
-			switch(poly2)
-			{
-			case 'A':
-				second = A;
-				break;
-			case 'B':
-				second = B;
-				break;
-			case 'C':
-				second = C;
-				break;
-			default :throw new RuntimeException();
-
-			}
+			
 			return arr;
 	}
 
@@ -363,6 +365,33 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		// TODO Auto-generated method stub
 		Singly_linkedlists first = new Singly_linkedlists();
 		Singly_linkedlists second = new Singly_linkedlists();
+		switch(poly1)
+		{
+		case 'A':
+			first = A;
+			break;
+		case 'B':
+			first = B;
+			break;
+		case 'C':
+			first = C;
+			break;
+			default :throw new RuntimeException();
+		}
+		switch(poly2)
+		{
+		case 'A':
+			second = A;
+			break;
+		case 'B':
+			second = B;
+			break;
+		case 'C':
+			second = C;
+			break;
+		default :throw new RuntimeException();
+
+		}
 		int[][] arr;
 	       Point pta=new Point();
 	       
@@ -419,33 +448,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					arr[i][0] = pt.x;
 					arr[i][1] = pt.y;
 				}
-				switch(poly1)
-				{
-				case 'A':
-					first = A;
-					break;
-				case 'B':
-					first = B;
-					break;
-				case 'C':
-					first = C;
-					break;
-					default :throw new RuntimeException();
-				}
-				switch(poly2)
-				{
-				case 'A':
-					second = A;
-					break;
-				case 'B':
-					second = B;
-					break;
-				case 'C':
-					second = C;
-					break;
-				default :throw new RuntimeException();
-
-				}
+				
 				return arr;
 			
 	}
@@ -456,7 +459,33 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		// TODO Auto-generated method stub
 		Singly_linkedlists first = new Singly_linkedlists();
 		Singly_linkedlists second = new Singly_linkedlists();
-		
+		switch(poly1)
+		{
+		case 'A':
+			first = A;
+			break;
+		case 'B':
+			first = B;
+			break;
+		case 'C':
+			first = C;
+			break;
+			default :throw new RuntimeException();
+		}
+		switch(poly2)
+		{
+		case 'A':
+			second = A;
+			break;
+		case 'B':
+			second = B;
+			break;
+		case 'C':
+			second = C;
+			break;
+		default :throw new RuntimeException();
+
+		}
 		Point pta=new Point();
 	     Point ptb=new Point();
 			double[] array = new double[10000000];
@@ -488,33 +517,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 						array1[i][1] = pt.y;
 					}
 					
-					switch(poly1)
-					{
-					case 'A':
-						first = A;
-						break;
-					case 'B':
-						first = B;
-						break;
-					case 'C':
-						first = C;
-						break;
-						default :throw new RuntimeException();
-					}
-					switch(poly2)
-					{
-					case 'A':
-						second = A;
-						break;
-					case 'B':
-						second = B;
-						break;
-					case 'C':
-						second = C;
-						break;
-					default :throw new RuntimeException();
-
-					}
+					
 					
 					
 					return array1;
@@ -535,3 +538,14 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		System.out.println();
 	}
 }
+/*int[] arrInd = new int[1000];
+for (int counter2 = 0; counter2 < size1; counter2++) {
+	int exp1 = (int) ((Point) (first.get(counter2))).getY();
+	int coef1 = (int) ((Point) (first.get(counter2))).getX();
+	arrInd[exp1] += coef1;
+}
+for (int counter2 = 0; counter2 < size2; counter2++) {
+	int exp1 = (int) ((Point) (second.get(counter2))).getY();
+	int coef1 = (int) ((Point) (second.get(counter2))).getX();
+	arrInd[exp1] += coef1;
+}*/
