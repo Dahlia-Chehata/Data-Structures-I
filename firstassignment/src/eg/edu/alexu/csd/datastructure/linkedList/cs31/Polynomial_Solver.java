@@ -2,19 +2,8 @@ package eg.edu.alexu.csd.datastructure.linkedList.cs31;
 
 import eg.edu.alexu.csd.datastructure.linkedList.IPolynomialSolver;
 import java.awt.Point;
-import java.util.Comparator;
-import java.util.Arrays;
 
-class myComparator implements Comparator<Point> {
 
-	@Override
-	public int compare(Point o1, Point o2) {
-		// TODO Auto-generated method stub
-
-		return o2.y - o1.y;
-
-	}
-}
 
 public class Polynomial_Solver implements IPolynomialSolver {
 
@@ -31,6 +20,11 @@ public class Polynomial_Solver implements IPolynomialSolver {
 
 		if (terms.length == 0)
 			throw new RuntimeException();
+		for(int counter = 0; counter < terms.length - 1; counter++)
+		{
+			if(terms[counter][1] < terms[counter + 1][1])
+				throw new RuntimeException();
+		}
 
 		array = new Point[terms.length];
 
@@ -41,8 +35,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			array[i] = new Point(terms[i][0], terms[i][1]);
 
 		}
-		myComparator c = new myComparator();
-		Arrays.sort(array, c);
+		
 
 		switch (poly) {
 		case 'A': {
@@ -71,8 +64,6 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				if (array[i] == null)
 					throw new RuntimeException();
 				
-				SLNode temp = new SLNode();
-				temp.value = (Object) array[i];
 				C.add(array[i]);
 			}
 		}
