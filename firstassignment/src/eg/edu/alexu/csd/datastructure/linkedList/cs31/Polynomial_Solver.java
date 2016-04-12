@@ -522,10 +522,11 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					    }
 					}*/
 				   int[][] arrr=new int [counter][2];
-				   int count=counter;
+				   int count=counter-1;
 				   for(int j = 0; j < counter; j++){ 
-					   arrr[count--][0]=arr[j][0];
-					   arrr[count--][1]=arr[j][1];
+					   arrr[count][0]=arr[j][0];
+					   arrr[count][1]=arr[j][1];
+					   count--;
 				   }
 					
 					return arrr;
