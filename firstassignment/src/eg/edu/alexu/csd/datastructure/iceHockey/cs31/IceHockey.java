@@ -38,7 +38,7 @@ public class IceHockey implements IPlayersFinder {
 	
 	Point[] temp;
 	int n, m, index = 0, counter = 0, team, area;
-	int minRow = 500, min_col = 500, max_row = -1, max_col = -1;
+	int minRow = 500, minCol = 500, maxRow = -1, maxCol = -1;
 	Point center;
 	
 
@@ -47,13 +47,13 @@ public class IceHockey implements IPlayersFinder {
 			visited[i][j] = true;
 			counter++;
 			if (i > max_row)
-				max_row = i;
+				maxRow = i;
 			if (i < minRow)
 				minRow = i;
-			if (j > max_col)
-				max_col = j;
-			if (j < min_col)
-				min_col = j;
+			if (j > maxCol)
+				maxCol = j;
+			if (j < minCol)
+				minCol = j;
 			DFS(i - 1, j, v); // up
 			DFS(i + 1, j, v); // down
 			DFS(i, j - 1, v); // left
@@ -61,7 +61,7 @@ public class IceHockey implements IPlayersFinder {
 		}
 		int A = counter;
 		if (A * 4 >= area) 
-			center = new Point(min_col + max_col + 1, minRow + max_row + 1);
+			center = new Point(minCol + maxCol + 1, minRow + maxRow + 1);
 		return center;
 	}
 
@@ -84,7 +84,7 @@ public class IceHockey implements IPlayersFinder {
 		this.team = team;
 		area = threshold;
 		Point[] coordinates = new Point[100];
-		if (photo.length==0)
+		if (photo.length == 0)
 			return new Point[0];
 		if (photo != null) {
 			n = photo[0].length();
@@ -105,9 +105,9 @@ public class IceHockey implements IPlayersFinder {
 					center = null;
 					counter = 0;
 					minRow = 500;
-					min_col = 500;
-					max_row = -1;
-					max_col = -1;
+					minCol = 500;
+					maxRow = -1;
+					maxCol = -1;
 				}
 			}
 			mycomparator c = new mycomparator();

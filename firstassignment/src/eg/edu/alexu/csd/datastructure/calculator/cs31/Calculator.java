@@ -13,9 +13,8 @@ public class Calculator implements ICalculator {
 		// TODO Auto-generated method stub
 		if (y == 0) {
 			System.out.println("error");
-			return 0;}
-		
-
+			return 0;  
+			}
 		else if (y == x)
 			return 1;
 		else if (x < 0 && y < 0) {
