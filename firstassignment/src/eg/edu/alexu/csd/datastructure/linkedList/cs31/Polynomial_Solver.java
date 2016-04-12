@@ -338,14 +338,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		
 	
 		   int[][]arr= Arrays.copyOfRange(array1, 0, counter);
-		   /*for(int i = 0; i < arr.length / 2; i++)
-			   for(int j = 0; j <  2; j++)
-
-		   {
-		       int temp = arr[i][j];
-		       arr[i][j] = arr[arr.length - i - 1];
-		       arr[arr.length - i - 1] = temp;
-		   }*/
+		   
 		  for(int j = 0; j < arr.length/2; j++){
 			    for(int i = 0; i < arr[j].length ; i++) {
 			        int temp = arr[j][i];
@@ -432,6 +425,13 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		
 	
 		   int[][]arr= Arrays.copyOfRange(array1, 0, counter);
+		   for(int j = 0; j < arr.length/2; j++){
+			    for(int i = 0; i < arr[j].length ; i++) {
+			        int temp = arr[j][i];
+			        arr[j][i] = arr[arr.length-j-1][i];
+			        arr[arr.length-j-1][i] = temp;
+			    }
+			}
 			
 			return arr;
 			
@@ -514,6 +514,13 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				
 			
 				   int[][]arr= Arrays.copyOfRange(array1, 0, counter);
+				   for(int j = 0; j < arr.length/2; j++){
+					    for(int i = 0; i < arr[j].length ; i++) {
+					        int temp = arr[j][i];
+					        arr[j][i] = arr[arr.length-j-1][i];
+					        arr[arr.length-j-1][i] = temp;
+					    }
+					}
 					
 					return arr;
 	}
