@@ -310,7 +310,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		default :throw new RuntimeException();
 
 		}
-		int[] array = new int[1000];
+		int[] array = new int[5];
 		for (int i= 0; i < first.size; i++) {
 			int exp =  ((Point) (first.get(i))).y;
 			int coef =((Point) (first.get(i))).x;
@@ -338,6 +338,21 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		
 	
 		   int[][]arr= Arrays.copyOfRange(array1, 0, counter);
+		   /*for(int i = 0; i < arr.length / 2; i++)
+			   for(int j = 0; j <  2; j++)
+
+		   {
+		       int temp = arr[i][j];
+		       arr[i][j] = arr[arr.length - i - 1];
+		       arr[arr.length - i - 1] = temp;
+		   }*/
+		  for(int j = 0; j < arr.length/2; j++){
+			    for(int i = 0; i < arr[j].length ; i++) {
+			        int temp = arr[j][i];
+			        arr[j][i] = arr[arr.length-j-1][i];
+			        arr[arr.length-j-1][i] = temp;
+			    }
+			}
 			return arr;
 			
 		
@@ -522,8 +537,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		//System.out.println();
 		int[][] arr= app.add('A', 'B');
 		for (int i = 0; i < arr.length; i++)
-			for (int j = 0; j < arr.length; j++)
+			for (int j = 0; j <2; j++)
 			System.out.print(arr[i][j]);
+		System.out.println();
 	}
 }
 
