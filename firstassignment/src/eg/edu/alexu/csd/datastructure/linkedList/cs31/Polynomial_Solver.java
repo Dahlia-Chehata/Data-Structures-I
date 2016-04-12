@@ -350,12 +350,18 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		switch(poly1)
 		{
 		case 'A':
+			if (A.isEmpty())
+				throw new RuntimeException();
 			first = A;
 			break;
 		case 'B':
+			if (B.isEmpty())
+				throw new RuntimeException();
 			first = B;
 			break;
 		case 'C':
+			if (C.isEmpty())
+				throw new RuntimeException();
 			first = C;
 			break;
 			default :throw new RuntimeException();
@@ -363,12 +369,18 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		switch(poly2)
 		{
 		case 'A':
+			if (A.isEmpty())
+				throw new RuntimeException();
 			second = A;
 			break;
 		case 'B':
+			if (B.isEmpty())
+				throw new RuntimeException();
 			second = B;
 			break;
 		case 'C':
+			if (C.isEmpty())
+				throw new RuntimeException();
 			second = C;
 			break;
 		default :throw new RuntimeException();
@@ -416,12 +428,18 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		switch(poly1)
 		{
 		case 'A':
+			if (A.isEmpty())
+				throw new RuntimeException();
 			first = A;
 			break;
 		case 'B':
+			if (B.isEmpty())
+				throw new RuntimeException();
 			first = B;
 			break;
 		case 'C':
+			if (C.isEmpty())
+				throw new RuntimeException();
 			first = C;
 			break;
 			default :throw new RuntimeException();
@@ -429,16 +447,21 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		switch(poly2)
 		{
 		case 'A':
+			if (A.isEmpty())
+				throw new RuntimeException();
 			second = A;
 			break;
 		case 'B':
+			if (B.isEmpty())
+				throw new RuntimeException();
 			second = B;
 			break;
 		case 'C':
+			if (C.isEmpty())
+				throw new RuntimeException();
 			second = C;
 			break;
 		default :throw new RuntimeException();
-
 		}
 		Point pta=new Point();
 	     Point ptb=new Point();
