@@ -2,7 +2,7 @@ package eg.edu.alexu.csd.datastructure.linkedList.cs31;
 
 import eg.edu.alexu.csd.datastructure.linkedList.IPolynomialSolver;
 import java.awt.Point;
-
+import java.util.Arrays;
 
 
 public class Polynomial_Solver implements IPolynomialSolver {
@@ -269,7 +269,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		
 		Singly_linkedlists first = new Singly_linkedlists();
 		Singly_linkedlists second = new Singly_linkedlists();
-		int[][] array1;
+		
 		switch(poly1)
 		{
 		case 'A':
@@ -308,23 +308,22 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			int coef =  ((Point) (second.get(i))).x;
 			array[exp] += coef;
 		}
+		int counter=0;
+		int[][] array1=new int[1000][2];
 		for (int i=0;i< array.length;i++){
 			if (array[i]!=0){
+				counter++;
 			Point result=new Point ();
 			result.setLocation(i,array[i]);
 			     R.add(result);
+			     array1[i][0] = array[i];
+					array1[i][1]=i;
 		}
 	}
 		
 	
-		     array1 = new int[R.size()][2];
-			for (int i =0;i<R.size();i++) {
-				
-				array1[i][0] = array[i];
-				array1[i][1]=i;
-			}
-			
-			return array1;
+		   int[][]arr= Arrays.copyOfRange(array1, 0, counter);
+			return arr;
 			
 		
 	}
