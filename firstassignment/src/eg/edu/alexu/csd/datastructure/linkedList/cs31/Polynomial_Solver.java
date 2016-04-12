@@ -336,7 +336,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		}
 	}
 		
-	
+	     if (counter!=0){
 		   int[][]arr= Arrays.copyOfRange(array1, 0, counter);
 		   
 		   int[][] arrr=new int [counter][2];
@@ -349,7 +349,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			
 			return arrr;
 			
-		
+	}
+	return new int[][]{{0,0}};
 	}
 
 	
@@ -423,18 +424,22 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					k++;
 		}
 	}
-		
+		int[][] arrr=new int [counter][2];
+		   if (counter!=0){
 	
 		   int[][]arr= Arrays.copyOfRange(array1, 0, counter);
-		   int[][] arrr=new int [counter][2];
+		   
 		   int count=counter-1;
 		   for(int j = 0; j < counter; j++){ 
 			   arrr[count][0]=arr[j][0];
 			   arrr[count][1]=arr[j][1];
 			   count--;
 		   }
+		   return arrr;
+		   }
+		   
 			
-			return arrr;
+			return new int[][]{{0,0}};
 			
 		
 	}
@@ -513,7 +518,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				}
 			}
 				
-			
+			if (counter!=0){
 				   int[][]arr= Arrays.copyOfRange(array1, 0, counter);
 				   /*for(int j = 0; j < arr.length/2; j++){
 					    for(int i = 0; i < arr[j].length ; i++) {
@@ -531,6 +536,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				   }
 					
 					return arrr;
+			}
+			return new int[][]{{0,0}};
 	}
 
 
