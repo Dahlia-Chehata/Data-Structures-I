@@ -373,22 +373,23 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			int coef =  ((Point) (second.get(i))).x;
 			array[exp] -= coef;
 		}
+		int[][] array1=new int[1000][2];
+		int counter=0;
 		for (int i=0;i< array.length;i++){
 			if (array[i]!=0){
+				counter++;
 			Point result=new Point ();
 			result.setLocation(i,array[i]);
 			     R.add(result);
+			     array1[i][0] = array[i];
+					array1[i][1]=i;
 		}
 	}
+		
 	
-			int[][] array1 = new int[R.size()][2];
-			for (int i =0;i<R.size();i++) {
-				
-				array1[i][0] = array[i];
-				array1[i][1]=i;
-			}
+		   int[][]arr= Arrays.copyOfRange(array1, 0, counter);
 			
-			return array1;
+			return arr;
 			
 		
 	}
@@ -441,22 +442,23 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					}
 				} 
 				
+				int[][] array1=new int[1000][2];
+				int counter=0;
 				for (int i=0;i< array.length;i++){
 					if (array[i]!=0){
+						counter++;
 					Point result=new Point ();
 					result.setLocation(i,array[i]);
 					     R.add(result);
+					     array1[i][0] =(int) array[i];
+							array1[i][1]=i;
 				}
 			}
+				
 			
-					int[][] array1 = new int[R.size()][2];
-					for (int i =0;i<R.size();i++) {
-						array1[i][0] =(int) array[i];
-						array1[i][1]=i;
-					}
+				   int[][]arr= Arrays.copyOfRange(array1, 0, counter);
 					
-					return array1;
-					
+					return arr;
 	}
 }
 
