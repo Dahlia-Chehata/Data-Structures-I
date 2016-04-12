@@ -384,10 +384,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	
 			int[][] array1 = new int[R.size()][2];
 			for (int i =0;i<R.size();i++) {
-				Point pt=new Point();
-				pt= (Point)R.get(i);
-				array1[i][0] = pt.x;
-				array1[i][1] = pt.y;
+				
+				array1[i][0] = array[i];
+				array1[i][1]=i;
 			}
 			
 			return array1;
@@ -453,10 +452,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			
 					int[][] array1 = new int[R.size()][2];
 					for (int i =0;i<R.size();i++) {
-						Point pt=new Point();
-						pt= (Point)R.get(i);
-						array1[i][0] = pt.x;
-						array1[i][1] = pt.y;
+						array1[i][0] =(int) array[i];
+						array1[i][1]=i;
 					}
 					
 					return array1;
