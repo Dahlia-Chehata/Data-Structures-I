@@ -266,7 +266,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	@Override
 	public int[][] add(char poly1, char poly2) {
 		// TODO Auto-generated method stub
-		clearPolynomial('R');
+		
 		Singly_linkedlists first = new Singly_linkedlists();
 		Singly_linkedlists second = new Singly_linkedlists();
       
@@ -333,7 +333,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	@Override
 	public int[][] subtract(char poly1, char poly2) {
 		// TODO Auto-generated method stub
-		clearPolynomial('R');
+		
 		Singly_linkedlists first = new Singly_linkedlists();
 		Singly_linkedlists second = new Singly_linkedlists();
 		switch(poly1)
@@ -399,7 +399,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	@Override
 	public int[][] multiply(char poly1, char poly2) {
 		// TODO Auto-generated method stub
-		clearPolynomial('R');
+		
 		Singly_linkedlists first = new Singly_linkedlists();
 		Singly_linkedlists second = new Singly_linkedlists();
 		switch(poly1)
