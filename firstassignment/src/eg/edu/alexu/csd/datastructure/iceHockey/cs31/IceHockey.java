@@ -46,7 +46,7 @@ public class IceHockey implements IPlayersFinder {
 		if (can_move(i, j, team)) {
 			visited[i][j] = true;
 			counter++;
-			if (i > max_row)
+			if (i > maxRow)
 				maxRow = i;
 			if (i < minRow)
 				minRow = i;
