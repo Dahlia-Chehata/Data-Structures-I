@@ -297,66 +297,36 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		default :throw new RuntimeException();
 
 		}
-		int arr[][];
-
+		int[] array = new int[1000];
+		for (int i= 0; i < first.size; i++) {
+			int exp =  ((Point) (first.get(i))).y;
+			int coef =((Point) (first.get(i))).x;
+			array[exp] += coef;
+		}
+		for (int i= 0; i < second.size; i++) {
+			int exp =  ((Point) (second.get(i))).y;
+			int coef =  ((Point) (second.get(i))).x;
+			array[exp] += coef;
+		}
+		for (int i=0;i< array.length;i++){
+			if (array[i]!=0){
+			Point result=new Point ();
+			result.setLocation(i,array[i]);
+			     R.add(result);
+		}
+	}
+	
+			int[][] array1 = new int[R.size()][2];
+			for (int i =0;i<R.size();i++) {
+				Point pt=new Point();
+				pt= (Point)R.get(i);
+				array1[i][0] = pt.x;
+				array1[i][1] = pt.y;
+			}
+			
+			return array1;
+			
 		
-		Point pta = new Point();
-		Point ptb = new Point();
-		 
-			int a = 0;
-			int b = 0;
-
-			boolean finishedA = false;
-			boolean finishedB = false;
-
-			while (!finishedA && !finishedB) {
-					pta=(Point) first.get(a);
-					ptb=(Point) second.get(b);
-
-				if (pta.y > ptb.y) {
-					R.add(pta);
-					a++;
-				} 
-				else if (ptb.y > pta.y) {
-					R.add(ptb);
-					b++;
-				} else {
-					Point result = new Point();
-					result.setLocation(pta.getX() +  ptb.getY(), pta.y);
-					R.add(result);
-				
-					a++;
-					b++;
-				}
-				if (a == first.size())
-					finishedA = true;
-
-				if (b == second.size())
-					finishedB = true;
-
-			}
-
-			if (finishedA) {
-				for (int i = b; i < second.size(); i++) {
-					R.add((Point) second.get(i));
-					
-				}
-			} else {
-				for (int i = a; i < first.size(); i++) {
-					R.add((Point) first.get(i));
-					
-				}
-			}
-			arr = new int[R.size()][2];
-			for (int i = 0; i < R.size(); i++) {
-				Point pt = new Point();
-				pt=(Point) R.get(i);
-				arr[i][0] = pt.x;
-				arr[i][1] = pt.y;
-			}
-			
-			
-			return arr;
 	}
 
 	
@@ -393,65 +363,36 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		default :throw new RuntimeException();
 
 		}
-		int[][] arr;
-	       Point pta=new Point();
-	       
-	       Point ptb=new Point();
-			clearPolynomial('R');
+		int[] array = new int[1000];
+		for (int i= 0; i < first.size; i++) {
+			int exp =  ((Point) (first.get(i))).y;
+			int coef =((Point) (first.get(i))).x;
+			array[exp] -= coef;
+		}
+		for (int i= 0; i < second.size; i++) {
+			int exp =  ((Point) (second.get(i))).y;
+			int coef =  ((Point) (second.get(i))).x;
+			array[exp] -= coef;
+		}
+		for (int i=0;i< array.length;i++){
+			if (array[i]!=0){
+			Point result=new Point ();
+			result.setLocation(i,array[i]);
+			     R.add(result);
+		}
+	}
+	
+			int[][] array1 = new int[R.size()][2];
+			for (int i =0;i<R.size();i++) {
+				Point pt=new Point();
+				pt= (Point)R.get(i);
+				array1[i][0] = pt.x;
+				array1[i][1] = pt.y;
+			}
 			
-				int a = 0;
-				int b = 0;
-				
-				pta= (Point)first.get(a);
-				ptb= (Point)second.get(b);
-				
-				boolean finishedA = false;
-				boolean finishedB = false;
-				while (!finishedA && !finishedB) {
-					
-					if (pta.y > ptb.y) {
-						R.add(pta);
-						a++;
-					} 
-					
-					else  if (pta.y<ptb.y) {
-						R.add(ptb);
-						b++;
-					} else {
-						Point result = new Point();
-						result.setLocation(pta.getX() -  ptb.getY(), pta.y);
-						R.add(result);
-						a++;
-						b++;
-					}
-					if (a == first.size()) {
-						finishedB = true;
-					}
-					if (b == second.size()) {
-						finishedA = true;
-					}
-				}
-				if (finishedA) {
-					for (int i = b; i < second.size(); i++) {
-						R.add((Point) second.get(i));
-						
-					}
-				} else {
-					for (int i = a; i < A.size(); i++) {
-						R.add((Point) first.get(i));
-						
-					}
-				}
-				arr = new int[R.size()][2];
-				for (int i = 0; i < R.size(); i++) {
-					Point pt = new Point();
-					pt=(Point) R.get(i);
-					arr[i][0] = pt.x;
-					arr[i][1] = pt.y;
-				}
-				
-				return arr;
+			return array1;
 			
+		
 	}
 	
 
@@ -491,26 +432,25 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		Point pta=new Point();
 	     Point ptb=new Point();
 			double[] array = new double[10000000];
-			double[] arrind = new double[10000000];
-	  int ind=1;
+			
 			
 
 				for (int a = 0; a < first.size(); a++) {
 					for (int b = 0; b < second.size(); b++) {
 						pta= (Point)first.get(a);
 						ptb= (Point)second.get(b);
-						for (int k=0;k<ind;k++){
-	            	    if (arrind[k]!=pta.y + ptb.y)
-	            	    	arrind[ind++]=pta.y + ptb.y;
-	               }
 						array[pta.y + ptb.y] += pta.getX() * ptb.getX();
 					}
 				} 
-				for (int i =0;i<ind-1;i++){
+				
+				for (int i=0;i< array.length;i++){
+					if (array[i]!=0){
 					Point result=new Point ();
-					result.setLocation( arrind[i],array[i]);
-					R.add(result);
+					result.setLocation(i,array[i]);
+					     R.add(result);
 				}
+			}
+			
 					int[][] array1 = new int[R.size()][2];
 					for (int i =0;i<R.size();i++) {
 						Point pt=new Point();
@@ -518,9 +458,6 @@ public class Polynomial_Solver implements IPolynomialSolver {
 						array1[i][0] = pt.x;
 						array1[i][1] = pt.y;
 					}
-					
-					
-					
 					
 					return array1;
 					
@@ -540,14 +477,64 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		System.out.println();
 	}
 }
-/*int[] arrInd = new int[1000];
-for (int counter2 = 0; counter2 < size1; counter2++) {
-	int exp1 = (int) ((Point) (first.get(counter2))).getY();
-	int coef1 = (int) ((Point) (first.get(counter2))).getX();
-	arrInd[exp1] += coef1;
-}
-for (int counter2 = 0; counter2 < size2; counter2++) {
-	int exp1 = (int) ((Point) (second.get(counter2))).getY();
-	int coef1 = (int) ((Point) (second.get(counter2))).getX();
-	arrInd[exp1] += coef1;
-}*/
+/*
+/*int arr[][];
+
+
+Point pta = new Point();
+Point ptb = new Point();
+ 
+	int a = 0;
+	int b = 0;
+
+	boolean finishedA = false;
+	boolean finishedB = false;
+
+	while (!finishedA && !finishedB) {
+			pta=(Point) first.get(a);
+			ptb=(Point) second.get(b);
+
+		if (pta.y > ptb.y) {
+			R.add(pta);
+			a++;
+		} 
+		else if (ptb.y > pta.y) {
+			R.add(ptb);
+			b++;
+		} else {
+			Point result = new Point();
+			result.setLocation(pta.getX() +  ptb.getY(), pta.y);
+			R.add(result);
+		
+			a++;
+			b++;
+		}
+		if (a == first.size())
+			finishedA = true;
+
+		if (b == second.size())
+			finishedB = true;
+
+	}
+
+	if (finishedA) {
+		for (int i = b; i < second.size(); i++) {
+			R.add((Point) second.get(i));
+			
+		}
+	} else {
+		for (int i = a; i < first.size(); i++) {
+			R.add((Point) first.get(i));
+			
+		}
+	}
+	arr = new int[R.size()][2];
+	for (int i = 0; i < R.size(); i++) {
+		Point pt = new Point();
+		pt=(Point) R.get(i);
+		arr[i][0] = pt.x;
+		arr[i][1] = pt.y;
+	}
+	
+	
+	return arr;*/
