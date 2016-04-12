@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
 
-class myComparator implements Comparator<Point> {
+class mycomparator implements Comparator<Point> {
 
 	@Override
 	public int compare(Point o1, Point o2) {
@@ -33,12 +33,12 @@ class myComparator implements Comparator<Point> {
 }
 
 public class IceHockey implements IPlayersFinder {
-	char[][] photos;
+	char[][]photos;
 	boolean[][] visited;
 	
 	Point[] temp;
 	int n, m, index = 0, counter = 0, team, area;
-	int min_row = 500, min_col = 500, max_row = -1, max_col = -1;
+	int minRow = 500, min_col = 500, max_row = -1, max_col = -1;
 	Point center;
 	
 
@@ -48,8 +48,8 @@ public class IceHockey implements IPlayersFinder {
 			counter++;
 			if (i > max_row)
 				max_row = i;
-			if (i < min_row)
-				min_row = i;
+			if (i < minRow)
+				minRow = i;
 			if (j > max_col)
 				max_col = j;
 			if (j < min_col)
@@ -61,7 +61,7 @@ public class IceHockey implements IPlayersFinder {
 		}
 		int A = counter;
 		if (A * 4 >= area) 
-			center = new Point(min_col + max_col + 1, min_row + max_row + 1);
+			center = new Point(min_col + max_col + 1, minRow + max_row + 1);
 		return center;
 	}
 
@@ -79,7 +79,7 @@ public class IceHockey implements IPlayersFinder {
 	}
 
 	@Override
-	public Point[] findPlayers(String[] photo, int team, int threshold) {
+	public Point[] findPlayers(String[] photo,int team,int threshold) {
 		// TODO Auto-generated method stub
 		this.team = team;
 		area = threshold;
@@ -104,13 +104,13 @@ public class IceHockey implements IPlayersFinder {
 						coordinates[index++] = p;
 					center = null;
 					counter = 0;
-					min_row = 500;
+					minRow = 500;
 					min_col = 500;
 					max_row = -1;
 					max_col = -1;
 				}
 			}
-			myComparator c = new myComparator();
+			mycomparator c = new mycomparator();
 			if (index > 0) 
 			{
 				coordinates = java.util.Arrays.copyOfRange(coordinates, 0, index);
