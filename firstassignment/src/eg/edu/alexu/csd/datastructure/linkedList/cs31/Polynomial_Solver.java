@@ -367,7 +367,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		for (int i= 0; i < first.size; i++) {
 			int exp =  ((Point) (first.get(i))).y;
 			int coef =((Point) (first.get(i))).x;
-			array[exp] -= coef;
+			array[exp] += coef;
 		}
 		for (int i= 0; i < second.size; i++) {
 			int exp =  ((Point) (second.get(i))).y;
