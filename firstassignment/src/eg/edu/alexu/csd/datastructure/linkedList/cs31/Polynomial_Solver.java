@@ -326,10 +326,10 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			if (array[i]!=0){
 				counter++;
 			Point result=new Point ();
-			result.setLocation(i,array[i]);
+			result.setLocation(array[i],i);
 			     R.add(result);
-			     array1[i][0] = i;
-					array1[i][1]=array[i];
+			     array1[i][0] = array[i];
+					array1[i][1]=i;
 		}
 	}
 		
