@@ -321,6 +321,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			array[exp] += coef;
 		}
 		int counter=0;
+		int k=0;
 		int[][] array1=new int[1000][2];
 		for (int i=0;i< array.length;i++){
 			if (array[i]!=0){
@@ -328,8 +329,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			Point result=new Point ();
 			result.setLocation(array[i],i);
 			     R.add(result);
-			     array1[i][0] = array[i];
-					array1[i][1]=i;
+			     array1[k][0] = array[i];
+					array1[k][1]=i;
+					k++;
 		}
 	}
 		
@@ -399,14 +401,16 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		}
 		int[][] array1=new int[1000][2];
 		int counter=0;
+		int k=0;
 		for (int i=0;i< array.length;i++){
 			if (array[i]!=0){
 				counter++;
 			Point result=new Point ();
 			result.setLocation(array[i],i);
 			     R.add(result);
-			     array1[i][0] = array[i];
-					array1[i][1]=i;
+			     array1[k][0] = array[i];
+					array1[k][1]=i;
+					k++;
 		}
 	}
 		
@@ -479,14 +483,16 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				
 				int[][] array1=new int[1000][2];
 				int counter=0;
+				int k=0;
 				for (int i=0;i< array.length;i++){
 					if (array[i]!=0){
 						counter++;
 					Point result=new Point ();
 					result.setLocation(array[i],i);
 					     R.add(result);
-					     array1[i][0] =(int) array[i];
-							array1[i][1]=i;
+					     array1[k][0] =(int) array[i];
+							array1[k][1]=i;
+							k++;
 				}
 			}
 				
@@ -495,23 +501,29 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					
 					return arr;
 	}
-}
 
-	/*public static void main(String[] args) {
+
+	public static void main(String[] args) {
 		// Singly_linkedlists A =new Singly_linkedlists() ;
-		int[][] terms = { { 2, 3 }, { 4, 2 }, { 5, 4 } };
+		int[][] terms = { { 2, 3 }, { 4, 2 }, { 5, 1 } };
 		IPolynomialSolver app = new Polynomial_Solver();
 		app.setPolynomial('A', terms);
-		for (int i = 0; i < A.size(); i++) {
+		app.setPolynomial('B', terms);
+
+		//for (int i = 0; i < A.size(); i++) {
 			// Point pt= new Point ();
 			// pt = (Point)(A.get(i));
-			System.out.print(A.get(i) + " ");
-			app.print('A');
-		}
-		System.out.println();
+			//System.out.print(A.get(i) + " ");
+			//app.print('A');
+		//}
+		//System.out.println();
+		int[][] arr= app.add('A', 'B');
+		for (int i = 0; i < arr.length; i++)
+			for (int j = 0; j < arr.length; j++)
+			System.out.print(arr[i][j]);
 	}
 }
-/*
+
 /*int arr[][];
 
 
