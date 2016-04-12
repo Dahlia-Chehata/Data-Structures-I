@@ -267,7 +267,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	@Override
 	public int[][] add(char poly1, char poly2)throws RuntimeException {
 		// TODO Auto-generated method stub
-		
+		R.clear();
 		Singly_linkedlists first = new Singly_linkedlists();
 		Singly_linkedlists second = new Singly_linkedlists();
 		
@@ -355,7 +355,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	@Override
 	public int[][] subtract(char poly1, char poly2)throws RuntimeException {
 		// TODO Auto-generated method stub
-		
+		R.clear();
 		Singly_linkedlists first = new Singly_linkedlists();
 		Singly_linkedlists second = new Singly_linkedlists();
 		switch(poly1)
@@ -442,7 +442,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	@Override
 	public int[][] multiply(char poly1, char poly2) throws RuntimeException{
 		// TODO Auto-generated method stub
-		
+		R.clear();
 		Singly_linkedlists first = new Singly_linkedlists();
 		Singly_linkedlists second = new Singly_linkedlists();
 		switch(poly1)
@@ -542,7 +542,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			//app.print('A');
 		//}
 		//System.out.println();
-		int[][] arr= app.add('A', 'B');
+		int[][] arr= app.multiply('A', 'A');
 		for (int i = 0; i < arr.length; i++)
 			for (int j = 0; j <2; j++)
 			System.out.print(arr[i][j]);
