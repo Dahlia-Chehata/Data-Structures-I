@@ -310,7 +310,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		default :throw new RuntimeException();
 
 		}
-		int[] array = new int[5];
+		int[] array = new int[10000];
 		for (int i= 0; i < first.size; i++) {
 			int exp =  ((Point) (first.get(i))).y;
 			int coef =((Point) (first.get(i))).x;
