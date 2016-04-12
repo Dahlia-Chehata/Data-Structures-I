@@ -7,10 +7,10 @@ import java.awt.Point;
 
 public class Polynomial_Solver implements IPolynomialSolver {
 
-	static Singly_linkedlists A = new Singly_linkedlists();
-	static Singly_linkedlists B = new Singly_linkedlists();
-	static Singly_linkedlists C = new Singly_linkedlists();
-	static Singly_linkedlists R = new Singly_linkedlists();
+	 Singly_linkedlists A = new Singly_linkedlists();
+	Singly_linkedlists B = new Singly_linkedlists();
+	 Singly_linkedlists C = new Singly_linkedlists();
+	 Singly_linkedlists R = new Singly_linkedlists();
 	Point[] array;
 	
 
@@ -269,7 +269,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		
 		Singly_linkedlists first = new Singly_linkedlists();
 		Singly_linkedlists second = new Singly_linkedlists();
-      
+		int[][] array1;
 		switch(poly1)
 		{
 		case 'A':
@@ -315,13 +315,13 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			     R.add(result);
 		}
 	}
+		
 	
-			int[][] array1 = new int[R.size()][2];
+		     array1 = new int[R.size()][2];
 			for (int i =0;i<R.size();i++) {
-				Point pt=new Point();
-				pt= (Point)R.get(i);
-				array1[i][0] = pt.x;
-				array1[i][1] = pt.y;
+				
+				array1[i][0] = array[i];
+				array1[i][1]=i;
 			}
 			
 			return array1;
@@ -462,8 +462,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					return array1;
 					
 	}
+}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		// Singly_linkedlists A =new Singly_linkedlists() ;
 		int[][] terms = { { 2, 3 }, { 4, 2 }, { 5, 4 } };
 		IPolynomialSolver app = new Polynomial_Solver();
