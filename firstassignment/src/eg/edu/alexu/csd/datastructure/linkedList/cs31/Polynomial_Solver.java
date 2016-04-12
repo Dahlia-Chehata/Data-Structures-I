@@ -1,9 +1,10 @@
 package eg.edu.alexu.csd.datastructure.linkedList.cs31;
 
 import eg.edu.alexu.csd.datastructure.linkedList.IPolynomialSolver;
+
 import java.awt.Point;
 import java.util.Arrays;
-
+import java.util.Collections;
 
 public class Polynomial_Solver implements IPolynomialSolver {
 
@@ -344,7 +345,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 
 	
 	@Override
-	public int[][] subtract(char poly1, char poly2) {
+	public int[][] subtract(char poly1, char poly2)throws RuntimeException {
 		// TODO Auto-generated method stub
 		
 		Singly_linkedlists first = new Singly_linkedlists();
@@ -424,7 +425,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	
 
 	@Override
-	public int[][] multiply(char poly1, char poly2) {
+	public int[][] multiply(char poly1, char poly2) throws RuntimeException{
 		// TODO Auto-generated method stub
 		
 		Singly_linkedlists first = new Singly_linkedlists();
@@ -506,9 +507,11 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	public static void main(String[] args) {
 		// Singly_linkedlists A =new Singly_linkedlists() ;
 		int[][] terms = { { 2, 3 }, { 4, 2 }, { 5, 1 } };
+		int[][] terms1 = { { 7, 3 }, { 6, 2 }, { 4, 0 } };
+
 		IPolynomialSolver app = new Polynomial_Solver();
 		app.setPolynomial('A', terms);
-		app.setPolynomial('B', terms);
+		app.setPolynomial('B', terms1);
 
 		//for (int i = 0; i < A.size(); i++) {
 			// Point pt= new Point ();
