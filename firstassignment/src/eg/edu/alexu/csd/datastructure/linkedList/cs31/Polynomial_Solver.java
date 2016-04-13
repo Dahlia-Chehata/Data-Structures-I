@@ -563,14 +563,11 @@ System.out.print(arrr[count][1]+"),");
 			System.out.println("7- Clear a polynomial variable");
 			System.out.println("====================================================================");
 			Scanner scan = new Scanner(System.in);
-
-
-int choice = scan.nextInt();
+			int choice = scan.nextInt();
 			switch (choice) {
 			case 1:
 				System.out.println("Insert the variable name : A, B or C");
 				int i = 0;
-
 				int[][] terms = null;
 				while (i == 0) {
 					char variableName = scan.next().charAt(0);
@@ -579,7 +576,6 @@ int choice = scan.nextInt();
 						System.out.println("Insert the polynomial terms in the form :");
 						System.out.println("(coeff1 , exponent1 ), (coeff2 , exponent2 ), ..");
 						String poly = (scan.next());
-
 						for (int h = 0; h < poly.length(); h++) {
 							if (Character.isDigit(poly.charAt(h))) {
 								count++;
@@ -591,9 +587,7 @@ int choice = scan.nextInt();
 						for (int h = 0; h < poly.length(); h++) {
 							if (h > 0 && h < poly.length() - 1 && Character.isDigit(poly.charAt(h))
 									&& poly.charAt(h - 1) == '-') {
-								System.out.println((poly.charAt(h)));
 								terms[row][column] = -1 * (poly.charAt(h) - 48);
-								System.out.println(terms[0][0]);
 								column++;
 								if (column > 1) {
 									column = 0;
@@ -601,17 +595,14 @@ int choice = scan.nextInt();
 								}
 							}
 							if (Character.isDigit(poly.charAt(h)) && poly.charAt(h - 1) != '-') {
-
 								terms[row][column] = poly.charAt(h) - 48;
 								column++;
 								if (column > 1) {
 									column = 0;
 									row++;
 								}
-
 							}
 						}
-
 						polyn.setPolynomial('A', terms);
 						System.out.println("Polynomial A is set");
 						setA = true;
@@ -628,14 +619,14 @@ int choice = scan.nextInt();
 							}
 						}
 						terms = new int[count / 2][2];
-						 row = 0;
-						 column = 0;
+						row = 0;
+						column = 0;
 						for (int h = 0; h < poly.length(); h++) {
 							if (h > 0 && h < poly.length() - 1 && Character.isDigit(poly.charAt(h))
 									&& poly.charAt(h - 1) == '-') {
-								System.out.println((poly.charAt(h)));
+
 								terms[row][column] = -1 * (poly.charAt(h) - 48);
-								System.out.println(terms[0][0]);
+
 								column++;
 								if (column > 1) {
 									column = 0;
@@ -643,14 +634,12 @@ int choice = scan.nextInt();
 								}
 							}
 							if (Character.isDigit(poly.charAt(h)) && poly.charAt(h - 1) != '-') {
-
 								terms[row][column] = poly.charAt(h) - 48;
 								column++;
 								if (column > 1) {
 									column = 0;
 									row++;
 								}
-
 							}
 						}
 						polyn.setPolynomial('B', terms);
@@ -669,14 +658,14 @@ int choice = scan.nextInt();
 							}
 						}
 						terms = new int[count / 2][2];
-						 row = 0;
-						 column = 0;
+						row = 0;
+						column = 0;
 						for (int h = 0; h < poly.length(); h++) {
 							if (h > 0 && h < poly.length() - 1 && Character.isDigit(poly.charAt(h))
 									&& poly.charAt(h - 1) == '-') {
-								System.out.println((poly.charAt(h)));
+
 								terms[row][column] = -1 * (poly.charAt(h) - 48);
-								System.out.println(terms[0][0]);
+
 								column++;
 								if (column > 1) {
 									column = 0;
@@ -684,14 +673,12 @@ int choice = scan.nextInt();
 								}
 							}
 							if (Character.isDigit(poly.charAt(h)) && poly.charAt(h - 1) != '-') {
-
 								terms[row][column] = poly.charAt(h) - 48;
 								column++;
 								if (column > 1) {
 									column = 0;
 									row++;
 								}
-
 							}
 						}
 						polyn.setPolynomial('C', terms);
@@ -704,30 +691,25 @@ int choice = scan.nextInt();
 						i = 0;
 						break;
 					}
-
 				}
 				break;
-
-			case 2:// na2s el print mn el func
+			case 2:
 				System.out.println("Insert the variable name : A, B, C or R");
 				i = 0;
 				char variableName = scan.next().charAt(0);
 				while (i == 0) {
-
 					switch (variableName) {
 					case 'A':
 						if (setA == true) {
 							System.out.println("A Value in A:");
 							polyn.print('A');
 							i = 1;
-
 						}
 						break;
 					case 'B':
 						if (setB == true) {
 							System.out.println("B Value in B:");
 							polyn.print('B');
-
 							i = 1;
 						}
 						break;
@@ -748,58 +730,54 @@ int choice = scan.nextInt();
 						i = 0;
 						break;
 					}
-
 				}
 				break;
 			case 3:
-				// System.out.println("Insert first operand variable name : A, B
-				// or C");
-				// variableName = scan.next().charAt(0);
 				i = 0;
+				int y = 0;
 				while (i == 0) {
 					System.out.println("Insert first operand variable name : A, B or C");
 					variableName = scan.next().charAt(0);
 					switch (variableName) {
-					case 'A':// check if set or not
+					case 'A':
 						if (setA == true) {
 							i = 1;
-							System.out.println("Insert second operand variable name : A, B or C");
-							variableName = scan.next().charAt(0);
-							switch (variableName) {
-							case 'A':
-								if (setA == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.add('A', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
+							while (y == 0) {
+								System.out.println("Insert second operand variable name : A, B or C");
+								variableName = scan.next().charAt(0);
+								switch (variableName) {
+								case 'A':
+									if (setA == true) {
+										y = 1;
+										System.out.println("Result set in R:");
+										polyn.add('A', variableName);
+									} else {
+										System.out.println("Variable not set");
+										y = 0;
+									}
+									break;
+								case 'B':
+									if (setB == true) {
+										y = 1;
+										System.out.println("Result set in R:");
+										polyn.add('A', variableName);
+									} else {
+										System.out.println("Variable not set");
+										y = 0;
+									}
+									break;
+								case 'C':
+									if (setC == true) {
+										y = 1;
+										System.out.println("Result set in R:");
+										polyn.add('A', variableName);
+									} else {
+										System.out.println("Variable not set");
+										y = 0;
+									}
+									break;
 								}
-								break;
-							case 'B':
-								if (setB == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.add('A', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
-								}
-								break;
-							case 'C':
-								if (setC == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.add('A', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
-								}
-								break;
-
 							}
-
-							// print mn el func
 						} else {
 							System.out.println("Variable not set");
 							i = 0;
@@ -808,85 +786,87 @@ int choice = scan.nextInt();
 					case 'B':
 						if (setB == true) {
 							i = 1;
-							System.out.println("Insert second operand variable name : A, B or C");
-							variableName = scan.next().charAt(0);
-							switch (variableName) {
-							case 'A':
-								if (setA == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.add('B', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
+							y = 0;
+							while (y == 0) {
+								System.out.println("Insert second operand variable name : A, B or C");
+								variableName = scan.next().charAt(0);
+								switch (variableName) {
+								case 'A':
+									if (setA == true) {
+										y = 1;
+										System.out.println("Result set in R:");
+										polyn.add('B', variableName);
+									} else {
+										System.out.println("Variable not set");
+										y = 0;
+									}
+									break;
+								case 'B':
+									if (setB == true) {
+										y = 1;
+										System.out.println("Result set in R:");
+										polyn.add('B', variableName);
+									} else {
+										System.out.println("Variable not set");
+										y = 0;
+									}
+									break;
+								case 'C':
+									if (setC == true) {
+										y = 1;
+										System.out.println("Result set in R:");
+										polyn.add('B', variableName);
+									} else {
+										System.out.println("Variable not set");
+										y = 0;
+									}
+									break;
 								}
-								break;
-							case 'B':
-								if (setB == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.add('B', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
-								}
-								break;
-							case 'C':
-								if (setC == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.add('B', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
-								}
-								break;
-
 							}
-
 						} else {
 							i = 0;
 							System.out.println("Variable not set");
 						}
 						break;
 					case 'C':
-
 						if (setC == true) {
 							i = 1;
-							System.out.println("Insert second operand variable name : A, B or C");
-							variableName = scan.next().charAt(0);
-							switch (variableName) {
-							case 'A':
-								if (setA == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.add('C', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
+							y = 0;
+							while (y == 0) {
+								System.out.println("Insert second operand variable name : A, B or C");
+								variableName = scan.next().charAt(0);
+								switch (variableName) {
+								case 'A':
+									if (setA == true) {
+										y = 1;
+										System.out.println("Result set in R:");
+										polyn.add('C', variableName);
+									} else {
+										System.out.println("Variable not set");
+										y = 0;
+									}
+									break;
+								case 'B':
+									if (setB == true) {
+										y = 1;
+										System.out.println("Result set in R:");
+										polyn.add('C', variableName);
+									} else {
+										System.out.println("Variable not set");
+										y = 0;
+									}
+									break;
+								case 'C':
+									if (setC == true) {
+										y = 1;
+										System.out.println("Result set in R:");
+										polyn.add('C', variableName);
+									} else {
+										System.out.println("Variable not set");
+										y = 0;
+									}
+									break;
 								}
-								break;
-							case 'B':
-								if (setB == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.add('C', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
-								}
-								break;
-							case 'C':
-								if (setC == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.add('C', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
-								}
-								break;
-
 							}
 						} else {
 							System.out.println("Variable not set");
@@ -896,55 +876,52 @@ int choice = scan.nextInt();
 					}
 				}
 				break;
-
 			case 4:
-				// System.out.println("Insert first operand variable name : A, B
-				// or C");
-				// variableName = scan.next().charAt(0);
 				i = 0;
+				int f = 0;
 				while (i == 0) {
 					System.out.println("Insert first operand variable name : A, B or C");
 					variableName = scan.next().charAt(0);
 					switch (variableName) {
-					case 'A':// check if set or not
+					case 'A':
 						if (setA == true) {
 							i = 1;
-							System.out.println("Insert second operand variable name : A, B or C");
-							variableName = scan.next().charAt(0);
-							switch (variableName) {
-							case 'A':
-								if (setA == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.subtract('A', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
+							while (f == 0) {
+								System.out.println("Insert second operand variable name : A, B or C");
+								variableName = scan.next().charAt(0);
+								switch (variableName) {
+								case 'A':
+									if (setA == true) {
+										f = 1;
+										System.out.println("Result set in R:");
+										polyn.subtract('A', variableName);
+									} else {
+										System.out.println("Variable not set");
+										f = 0;
+									}
+									break;
+								case 'B':
+									if (setB == true) {
+										f = 1;
+										System.out.println("Result set in R:");
+										polyn.subtract('A', variableName);
+									} else {
+										System.out.println("Variable not set");
+										f = 0;
+									}
+									break;
+								case 'C':
+									if (setC == true) {
+										f = 1;
+										System.out.println("Result set in R:");
+										polyn.subtract('A', variableName);
+									} else {
+										System.out.println("Variable not set");
+										f = 0;
+									}
+									break;
 								}
-								break;
-							case 'B':
-								if (setB == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.subtract('A', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
-								}
-								break;
-							case 'C':
-								if (setC == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.subtract('A', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
-								}
-								break;
-
 							}
-							// print mn el func
 						} else {
 							i = 0;
 							System.out.println("Variable not set");
@@ -953,40 +930,42 @@ int choice = scan.nextInt();
 					case 'B':
 						if (setB == true) {
 							i = 1;
-							System.out.println("Insert second operand variable name : A, B or C");
-							variableName = scan.next().charAt(0);
-							switch (variableName) {
-							case 'A':
-								if (setA == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.subtract('B', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
+							f = 0;
+							while (f == 0) {
+								System.out.println("Insert second operand variable name : A, B or C");
+								variableName = scan.next().charAt(0);
+								switch (variableName) {
+								case 'A':
+									if (setA == true) {
+										f = 1;
+										System.out.println("Result set in R:");
+										polyn.subtract('B', variableName);
+									} else {
+										System.out.println("Variable not set");
+										f = 0;
+									}
+									break;
+								case 'B':
+									if (setB == true) {
+										f = 1;
+										System.out.println("Result set in R:");
+										polyn.subtract('B', variableName);
+									} else {
+										System.out.println("Variable not set");
+										f = 0;
+									}
+									break;
+								case 'C':
+									if (setC == true) {
+										f = 1;
+										System.out.println("Result set in R:");
+										polyn.subtract('B', variableName);
+									} else {
+										System.out.println("Variable not set");
+										f = 0;
+									}
+									break;
 								}
-								break;
-							case 'B':
-								if (setB == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.subtract('B', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
-								}
-								break;
-							case 'C':
-								if (setC == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.subtract('B', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
-								}
-								break;
-
 							}
 						} else {
 							System.out.println("Variable not set");
@@ -996,40 +975,42 @@ int choice = scan.nextInt();
 					case 'C':
 						if (setC == true) {
 							i = 1;
-							System.out.println("Insert second operand variable name : A, B or C");
-							variableName = scan.next().charAt(0);
-							switch (variableName) {
-							case 'A':
-								if (setA == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.subtract('C', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
+							f = 0;
+							while (f == 0) {
+								System.out.println("Insert second operand variable name : A, B or C");
+								variableName = scan.next().charAt(0);
+								switch (variableName) {
+								case 'A':
+									if (setA == true) {
+										f = 1;
+										System.out.println("Result set in R:");
+										polyn.subtract('C', variableName);
+									} else {
+										System.out.println("Variable not set");
+										f = 0;
+									}
+									break;
+								case 'B':
+									if (setB == true) {
+										f = 1;
+										System.out.println("Result set in R:");
+										polyn.subtract('C', variableName);
+									} else {
+										System.out.println("Variable not set");
+										f = 0;
+									}
+									break;
+								case 'C':
+									if (setC == true) {
+										f = 1;
+										System.out.println("Result set in R:");
+										polyn.subtract('C', variableName);
+									} else {
+										System.out.println("Variable not set");
+										f = 0;
+									}
+									break;
 								}
-								break;
-							case 'B':
-								if (setB == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.subtract('C', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
-								}
-								break;
-							case 'C':
-								if (setC == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.subtract('C', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
-								}
-								break;
-
 							}
 						} else {
 							System.out.println("Variable not set");
@@ -1040,54 +1021,51 @@ int choice = scan.nextInt();
 				}
 				break;
 			case 5:
-				// System.out.println("Insert first operand variable name : A, B
-				// or C");
-				// variableName = scan.next().charAt(0);
 				i = 0;
+				int x = 0;
 				while (i == 0) {
 					System.out.println("Insert first operand variable name : A, B or C");
 					variableName = scan.next().charAt(0);
 					switch (variableName) {
-					case 'A':// check if set or not
+					case 'A':
 						if (setA == true) {
 							i = 1;
-
-							System.out.println("Insert second operand variable name : A, B or C");
-							variableName = scan.next().charAt(0);
-							switch (variableName) {
-							case 'A':
-								if (setA == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.multiply('A', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
+							while (x == 0) {
+								System.out.println("Insert second operand variable name : A, B or C");
+								variableName = scan.next().charAt(0);
+								switch (variableName) {
+								case 'A':
+									if (setA == true) {
+										x = 1;
+										System.out.println("Result set in R:");
+										polyn.multiply('A', variableName);
+									} else {
+										System.out.println("Variable not set");
+										x = 0;
+									}
+									break;
+								case 'B':
+									if (setB == true) {
+										x = 1;
+										System.out.println("Result set in R:");
+										polyn.multiply('A', variableName);
+									} else {
+										System.out.println("Variable not set");
+										x = 0;
+									}
+									break;
+								case 'C':
+									if (setC == true) {
+										x = 1;
+										System.out.println("Result set in R:");
+										polyn.multiply('A', variableName);
+									} else {
+										System.out.println("Variable not set");
+										x = 0;
+									}
+									break;
 								}
-								break;
-							case 'B':
-								if (setB == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.multiply('A', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
-								}
-								break;
-							case 'C':
-								if (setC == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.multiply('A', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
-								}
-								break;
-
 							}
-							// print mn el func
 						} else {
 							System.out.println("Variable not set");
 							i = 0;
@@ -1096,40 +1074,42 @@ int choice = scan.nextInt();
 					case 'B':
 						if (setB == true) {
 							i = 1;
-							System.out.println("Insert second operand variable name : A, B or C");
-							variableName = scan.next().charAt(0);
-							switch (variableName) {
-							case 'A':
-								if (setA == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.multiply('B', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
+							x = 0;
+							while (x == 0) {
+								System.out.println("Insert second operand variable name : A, B or C");
+								variableName = scan.next().charAt(0);
+								switch (variableName) {
+								case 'A':
+									if (setA == true) {
+										x = 1;
+										System.out.println("Result set in R:");
+										polyn.multiply('B', variableName);
+									} else {
+										System.out.println("Variable not set");
+										x = 0;
+									}
+									break;
+								case 'B':
+									if (setB == true) {
+										x = 1;
+										System.out.println("Result set in R:");
+										polyn.multiply('B', variableName);
+									} else {
+										System.out.println("Variable not set");
+										x = 0;
+									}
+									break;
+								case 'C':
+									if (setC == true) {
+										x = 1;
+										System.out.println("Result set in R:");
+										polyn.multiply('B', variableName);
+									} else {
+										System.out.println("Variable not set");
+										x = 0;
+									}
+									break;
 								}
-								break;
-							case 'B':
-								if (setB == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.multiply('B', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
-								}
-								break;
-							case 'C':
-								if (setC == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.multiply('B', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
-								}
-								break;
-
 							}
 						} else {
 							System.out.println("Variable not set");
@@ -1139,40 +1119,42 @@ int choice = scan.nextInt();
 					case 'C':
 						if (setC == true) {
 							i = 1;
-							System.out.println("Insert second operand variable name : A, B or C");
-							variableName = scan.next().charAt(0);
-							switch (variableName) {
-							case 'A':
-								if (setA == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.multiply('C', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
+							x = 0;
+							while (x == 0) {
+								System.out.println("Insert second operand variable name : A, B or C");
+								variableName = scan.next().charAt(0);
+								switch (variableName) {
+								case 'A':
+									if (setA == true) {
+										x = 1;
+										System.out.println("Result set in R:");
+										polyn.multiply('C', variableName);
+									} else {
+										System.out.println("Variable not set");
+										x = 0;
+									}
+									break;
+								case 'B':
+									if (setB == true) {
+										x = 1;
+										System.out.println("Result set in R:");
+										polyn.multiply('C', variableName);
+									} else {
+										System.out.println("Variable not set");
+										x = 0;
+									}
+									break;
+								case 'C':
+									if (setC == true) {
+										x = 1;
+										System.out.println("Result set in R:");
+										polyn.multiply('C', variableName);
+									} else {
+										System.out.println("Variable not set");
+										x = 0;
+									}
+									break;
 								}
-								break;
-							case 'B':
-								if (setB == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.multiply('C', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
-								}
-								break;
-							case 'C':
-								if (setC == true) {
-									i = 1;
-									System.out.println("Result set in R:");
-									polyn.multiply('C', variableName);
-								} else {
-									System.out.println("Variable not set");
-									i = 0;
-								}
-								break;
-
 							}
 						} else {
 							System.out.println("Variable not set");
@@ -1194,7 +1176,6 @@ int choice = scan.nextInt();
 							System.out.println("Insert the value to Evaluate the polynomial:");
 							value = scan.nextInt();
 							polyn.evaluatePolynomial('A', value);
-							// print mn el func
 							k = 1;
 						}
 						break;
@@ -1226,7 +1207,6 @@ int choice = scan.nextInt();
 						break;
 					}
 				}
-
 				break;
 			case 7:
 				System.out.println("Insert the the variable name : A, B, C ");
@@ -1252,7 +1232,6 @@ int choice = scan.nextInt();
 							l = 1;
 						}
 						break;
-
 					default:
 						System.out.println("Insert the the variable name : A, B, C ");
 						l = 0;
@@ -1263,13 +1242,11 @@ int choice = scan.nextInt();
 			default:
 				System.out.println("Wrong Entry \n ");
 				break;
-
 			}
 			System.out.println("\nDo you want to continue (Type y or n) \n");
 			ch = scan.next().charAt(0);
 			System.out.println("====================================================================");
 		} while (ch == 'Y' || ch == 'y');
-
 	}
 }
 
