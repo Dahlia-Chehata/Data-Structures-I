@@ -1,4 +1,5 @@
 package eg.edu.alexu.csd.datastructure.linkedList.cs31;
+
 import java.awt.Point;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -446,12 +447,12 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		int count = counter - 1;
 		for (int j = 0; j < counter; j++) {
 			arrr[count][0] = arr[j][0];
-System.out.print("("+arrr[count][0]+",");
+			System.out.print("(" + arrr[count][0] + ",");
 			arrr[count][1] = arr[j][1];
-System.out.print(arrr[count][1]+"),");
+			System.out.print(arrr[count][1] + "),");
 			count--;
 		}
-		
+
 		return arrr;
 
 	}
@@ -534,9 +535,9 @@ System.out.print(arrr[count][1]+"),");
 		int count = counter - 1;
 		for (int j = 0; j < counter; j++) {
 			arrr[count][0] = arr[j][0];
-			System.out.print("("+arrr[count][0]+",");
+			System.out.print("(" + arrr[count][0] + ",");
 			arrr[count][1] = arr[j][1];
-			System.out.print(arrr[count][1]+"),");
+			System.out.print(arrr[count][1] + "),");
 			count--;
 		}
 
@@ -545,7 +546,7 @@ System.out.print(arrr[count][1]+"),");
 
 	public static void main(String[] args) {
 		IPolynomialSolver polyn = new Polynomial_Solver();
-		
+
 		char ch;
 		int count = 0;
 		boolean setA = false;
@@ -1250,87 +1251,53 @@ System.out.print(arrr[count][1]+"),");
 	}
 }
 
-	/*public static void main(String[] args) {
-		// Singly_linkedlists A =new Singly_linkedlists() ;
-		int[][] terms = { { 2, 3 }, { 4, 2 }, { 5, 1 } };
-		int[][] terms1 = { { 7, 3 }, { 6, 2 }, { 4, 0 } };
+/*
+ * public static void main(String[] args) { // Singly_linkedlists A =new
+ * Singly_linkedlists() ; int[][] terms = { { 2, 3 }, { 4, 2 }, { 5, 1 } };
+ * int[][] terms1 = { { 7, 3 }, { 6, 2 }, { 4, 0 } };
+ * 
+ * IPolynomialSolver app = new Polynomial_Solver(); app.setPolynomial('A',
+ * terms); app.setPolynomial('B', terms1);
+ * 
+ * //for (int i = 0; i < A.size(); i++) { // Point pt= new Point (); // pt =
+ * (Point)(A.get(i)); //System.out.print(A.get(i) + " "); //app.print('A'); //}
+ * //System.out.println(); int[][] arr= app.multiply('A', 'A'); for (int i = 0;
+ * i < arr.length; i++) for (int j = 0; j <2; j++) System.out.print(arr[i][j]);
+ * System.out.println(); } }
+ */
 
-		IPolynomialSolver app = new Polynomial_Solver();
-		app.setPolynomial('A', terms);
-		app.setPolynomial('B', terms1);
-
-		//for (int i = 0; i < A.size(); i++) {
-			// Point pt= new Point ();
-			// pt = (Point)(A.get(i));
-			//System.out.print(A.get(i) + " ");
-			//app.print('A');
-		//}
-		//System.out.println();
-		int[][] arr= app.multiply('A', 'A');
-		for (int i = 0; i < arr.length; i++)
-			for (int j = 0; j <2; j++)
-			System.out.print(arr[i][j]);
-		System.out.println();
-	}
-}*/
-
-/*int arr[][];
-
-
-Point pta = new Point();
-Point ptb = new Point();
- 
-	int a = 0;
-	int b = 0;
-
-	boolean finishedA = false;
-	boolean finishedB = false;
-
-	while (!finishedA && !finishedB) {
-			pta=(Point) first.get(a);
-			ptb=(Point) second.get(b);
-
-		if (pta.y > ptb.y) {
-			R.add(pta);
-			a++;
-		} 
-		else if (ptb.y > pta.y) {
-			R.add(ptb);
-			b++;
-		} else {
-			Point result = new Point();
-			result.setLocation(pta.getX() +  ptb.getY(), pta.y);
-			R.add(result);
-		
-			a++;
-			b++;
-		}
-		if (a == first.size())
-			finishedA = true;
-
-		if (b == second.size())
-			finishedB = true;
-
-	}
-
-	if (finishedA) {
-		for (int i = b; i < second.size(); i++) {
-			R.add((Point) second.get(i));
-			
-		}
-	} else {
-		for (int i = a; i < first.size(); i++) {
-			R.add((Point) first.get(i));
-			
-		}
-	}
-	arr = new int[R.size()][2];
-	for (int i = 0; i < R.size(); i++) {
-		Point pt = new Point();
-		pt=(Point) R.get(i);
-		arr[i][0] = pt.x;
-		arr[i][1] = pt.y;
-	}
-	
-	
-	return arr;*/
+/*
+ * int arr[][];
+ * 
+ * 
+ * Point pta = new Point(); Point ptb = new Point();
+ * 
+ * int a = 0; int b = 0;
+ * 
+ * boolean finishedA = false; boolean finishedB = false;
+ * 
+ * while (!finishedA && !finishedB) { pta=(Point) first.get(a); ptb=(Point)
+ * second.get(b);
+ * 
+ * if (pta.y > ptb.y) { R.add(pta); a++; } else if (ptb.y > pta.y) { R.add(ptb);
+ * b++; } else { Point result = new Point(); result.setLocation(pta.getX() +
+ * ptb.getY(), pta.y); R.add(result);
+ * 
+ * a++; b++; } if (a == first.size()) finishedA = true;
+ * 
+ * if (b == second.size()) finishedB = true;
+ * 
+ * }
+ * 
+ * if (finishedA) { for (int i = b; i < second.size(); i++) { R.add((Point)
+ * second.get(i));
+ * 
+ * } } else { for (int i = a; i < first.size(); i++) { R.add((Point)
+ * first.get(i));
+ * 
+ * } } arr = new int[R.size()][2]; for (int i = 0; i < R.size(); i++) { Point pt
+ * = new Point(); pt=(Point) R.get(i); arr[i][0] = pt.x; arr[i][1] = pt.y; }
+ * 
+ * 
+ * return arr;
+ */
