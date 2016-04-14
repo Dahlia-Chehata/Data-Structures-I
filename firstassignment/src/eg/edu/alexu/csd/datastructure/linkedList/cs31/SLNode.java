@@ -7,7 +7,5 @@ public class SLNode {
 	public SLNode() {
 		value = null;
 		next = null;
-
 	}
-
 }

@@ -19,10 +19,11 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	  throws RuntimeException {
 		// TODO Auto-generated method stub
 
-		if (terms.length == 0)
+		if (terms.length == 0) {
 			throw new RuntimeException();
+		}
 		for (int counter = 0; counter < terms.length - 1; counter++) {
-			if (terms[counter][1] < terms[counter + 1][1]){
+			if (terms[counter][1] < terms[counter + 1][1]) {
 				throw new RuntimeException();
 			}
 		}
@@ -30,7 +31,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		array = new Point[terms.length];
 
 		for (int i = 0; i < terms.length; i++) {
-			if (terms[i][1] < 0){
+			if (terms[i][1] < 0) {
 				throw new RuntimeException();
 			}
 			array[i] = new Point(terms[i][0], terms[i][1]);
@@ -40,9 +41,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		switch (poly) {
 		case 'A':
 			for (int i = 0; i < array.length; i++) {
-				if (array[i] == null)
+				if (array[i] == null) {
 					throw new RuntimeException();
-
+				}
 				A.add(array[i]);
 
 			}
@@ -50,8 +51,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			break;
 		case 'B':
 			for (int i = 0; i < array.length; i++) {
-				if (array[i] == null)
+				if (array[i] == null) {
 					throw new RuntimeException();
+				}
 
 				B.add(array[i]);
 
@@ -60,7 +62,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			break;
 		case 'C':
 			for (int i = 0; i < array.length; i++) {
-				if (array[i] == null){
+				if (array[i] == null) {
 					throw new RuntimeException();
 				}
 
@@ -83,94 +85,119 @@ public class Polynomial_Solver implements IPolynomialSolver {
 
 		switch (poly) {
 		case 'A':
-			if (A.isEmpty())
-				return null; // throw exception
+			if (A.isEmpty()) {
+				return null; 
+			}// throw exception
 			for (int i = 0; i < A.size(); i++) {
 				Point pt = new Point();
 				pt = (Point) A.get(i);
-				if (pt.x == 1)
+				if (pt.x == 1) {
 					message += "+";
-
-				else if (pt.x == -1)
+				}
+				else if (pt.x == -1) {
 					message += "";
-				else
+				}
+				else {
 					message += pt.x;
+				}
 				if (pt.y != 0) {
-					if (pt.y == 1)
+					if (pt.y == 1) {
 						message += "x";
-					else
+					}
+					else {
 						message += "x^" + pt.y;
-				} else
+					}
+				} else {
 					message += pt.x;
+				}
 			}
 			// System.out.println(message);
 			break;
 		case 'B':
-			if (B.isEmpty())
+			if (B.isEmpty()) {
 				return null;
+			}
 			for (int i = 0; i < B.size(); i++) {
 				Point pt = new Point();
 				pt = (Point) B.get(i);
-				if (pt.x == 1)
+				if (pt.x == 1) {
 					message += "+";
-				else if (pt.x == -1)
+				}
+				else if (pt.x == -1) {
 					message += "";
-				else
+				}
+				else {
 					message += pt.x;
+				}
 				if (pt.y != 0) {
-					if (pt.y == 1)
+					if (pt.y == 1) {
 						message += "x";
-					else
+					}
+					else {
 						message += "x^" + pt.y;
-				} else
+					}
+				} else {
 					message += pt.x;
-
+				}
 			}
 			// System.out.println(message);
 			break;
 		case 'C':
-			if (C.isEmpty())
+			if (C.isEmpty()) {
 				return null;
+			}
 			for (int i = 0; i < C.size(); i++) {
 				Point pt = new Point();
 				pt = (Point) C.get(i);
-				if (pt.x == 1)
+				if (pt.x == 1) {
 					message += "+";
-				else if (pt.x == -1)
+				}
+				else if (pt.x == -1) {
 					message += "";
-				else
+				}
+				else {
 					message += pt.x;
+				}
 				if (pt.y != 0) {
-					if (pt.y == 1)
+					if (pt.y == 1) {
 						message += "x";
-					else
+					}
+					else {
 						message += "x^" + pt.y;
-				} else
+					}
+				} else {
 					message += pt.x;
+				}
 
 			}
 			// System.out.println(message);
 			break;
 		case 'R':
-			if (R.isEmpty())
+			if (R.isEmpty()) {
 				return null;
+			}
 			for (int i = 0; i < R.size(); i++) {
 				Point pt = new Point();
 				pt = (Point) R.get(i);
-				if (pt.x == 1)
+				if (pt.x == 1){
 					message += "+";
-				else if (pt.x == -1)
+				}
+				else if (pt.x == -1){
 					message += "";
-				else
+				}
+				else {
 					message += pt.x;
+				}
 				if (pt.y != 0) {
-					if (pt.y == 1)
+					if (pt.y == 1) {
 						message += "x";
-					else
+					}
+					else {
 						message += "x^" + pt.y;
-				} else
+					}
+				} else {
 					message += pt.x;
-
+				}
 			}
 			// System.out.println(message);
 			break;
@@ -189,26 +216,30 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		// TODO Auto-generated method stub
 		switch (poly) {
 		case 'A':
-			if (A.isEmpty())
+			if (A.isEmpty()) {
 				throw new RuntimeException();
+			}
 			A.clear();
 			break;
 
 		case 'B':
-			if (B.isEmpty())
+			if (B.isEmpty()) {
 				throw new RuntimeException();
+			}
 			B.clear();
 			break;
 
 		case 'C':
-			if (C.isEmpty())
+			if (C.isEmpty()) {
 				throw new RuntimeException();
+			}
 			C.clear();
 			break;
 
-		case 'R':
-			if (R.isEmpty())
+		case 'R': 
+			if (R.isEmpty()) {
 				throw new RuntimeException();
+			}
 			R.clear();
 			break;
 
@@ -235,8 +266,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					result += x * Math.pow(value, y);
 				}
 				System.out.println(result);
-			} else
+			} else {
 				throw new RuntimeException();
+			}
 			break;
 		case 'B':
 			if (!B.isEmpty()) {
@@ -250,8 +282,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				System.out.println(result);
 			}
 
-			else
+			else {
 				throw new RuntimeException();
+			}
 
 			break;
 		case 'C':
@@ -264,8 +297,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					result += x * Math.pow(value, y);
 				}
 				System.out.println(result);
-			} else
+			} else {
 				throw new RuntimeException();
+			}
 			break;
 		case 'R':
 			if (!R.isEmpty()) {
@@ -278,8 +312,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 
 				}
 				System.out.println(result);
-			} else
+			} else {
 				throw new RuntimeException();
+			}
 			break;
 		default:
 			throw new RuntimeException("invalid input");
@@ -298,18 +333,21 @@ public class Polynomial_Solver implements IPolynomialSolver {
 
 		switch (poly1) {
 		case 'A':
-			if (A.isEmpty())
+			if (A.isEmpty()) {
 				throw new RuntimeException();
+			}
 			first = A;
 			break;
 		case 'B':
-			if (B.isEmpty())
+			if (B.isEmpty()) {
 				throw new RuntimeException();
+			}
 			first = B;
 			break;
 		case 'C':
-			if (C.isEmpty())
+			if (C.isEmpty()) {
 				throw new RuntimeException();
+			}
 			first = C;
 			break;
 		default:
@@ -317,18 +355,21 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		}
 		switch (poly2) {
 		case 'A':
-			if (A.isEmpty())
+			if (A.isEmpty()) {
 				throw new RuntimeException();
+			}
 			second = A;
 			break;
 		case 'B':
-			if (B.isEmpty())
+			if (B.isEmpty()) {
 				throw new RuntimeException();
+			}
 			second = B;
 			break;
 		case 'C':
-			if (C.isEmpty())
+			if (C.isEmpty()) {
 				throw new RuntimeException();
+			}
 			second = C;
 			break;
 		default:
@@ -389,18 +430,21 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		Singly_linkedlists second = new Singly_linkedlists();
 		switch (poly1) {
 		case 'A':
-			if (A.isEmpty())
+			if (A.isEmpty()) {
 				throw new RuntimeException();
+			}
 			first = A;
 			break;
 		case 'B':
-			if (B.isEmpty())
+			if (B.isEmpty()) {
 				throw new RuntimeException();
+			}
 			first = B;
 			break;
 		case 'C':
-			if (C.isEmpty())
+			if (C.isEmpty()) {
 				throw new RuntimeException();
+			}
 			first = C;
 			break;
 		default:
@@ -408,18 +452,21 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		}
 		switch (poly2) {
 		case 'A':
-			if (A.isEmpty())
+			if (A.isEmpty()) {
 				throw new RuntimeException();
+			}
 			second = A;
 			break;
 		case 'B':
-			if (B.isEmpty())
+			if (B.isEmpty()) {
 				throw new RuntimeException();
+			}
 			second = B;
 			break;
 		case 'C':
-			if (C.isEmpty())
+			if (C.isEmpty()) {
 				throw new RuntimeException();
+			}
 			second = C;
 			break;
 		default:
@@ -478,18 +525,21 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		Singly_linkedlists second = new Singly_linkedlists();
 		switch (poly1) {
 		case 'A':
-			if (A.isEmpty())
+			if (A.isEmpty()) {
 				throw new RuntimeException();
+			}
 			first = A;
 			break;
 		case 'B':
-			if (B.isEmpty())
+			if (B.isEmpty()) {
 				throw new RuntimeException();
+			}
 			first = B;
 			break;
 		case 'C':
-			if (C.isEmpty())
+			if (C.isEmpty()) {
 				throw new RuntimeException();
+			}
 			first = C;
 			break;
 		default:
@@ -497,18 +547,21 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		}
 		switch (poly2) {
 		case 'A':
-			if (A.isEmpty())
+			if (A.isEmpty()) {
 				throw new RuntimeException();
+			}
 			second = A;
 			break;
 		case 'B':
-			if (B.isEmpty())
+			if (B.isEmpty()) {
 				throw new RuntimeException();
+			}
 			second = B;
 			break;
 		case 'C':
-			if (C.isEmpty())
+			if (C.isEmpty()) {
 				throw new RuntimeException();
+			}
 			second = C;
 			break;
 		default:

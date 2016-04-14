@@ -26,8 +26,9 @@ public class Singly_linkedlists implements ILinkedList {
 		}
 
 		else if (index == size) {
-			while (pointer.next != null)
+			while (pointer.next != null) {
 				pointer = pointer.next;
+			}
 			pointer.next = new_node;
 			new_node.next = null;
 			size++;
@@ -43,8 +44,9 @@ public class Singly_linkedlists implements ILinkedList {
 			size++;
 		}
 
-		else
+		else {
 			throw new RuntimeException();
+		}
 	}
 
 	@Override
@@ -57,8 +59,9 @@ public class Singly_linkedlists implements ILinkedList {
 			// new_node.next=null;
 			head = new_node;
 		} else {
-			while (pointer.next != null)
+			while (pointer.next != null) {
 				pointer = pointer.next;
+			}
 
 			pointer.next = new_node;
 			new_node.next = null;
@@ -71,12 +74,13 @@ public class Singly_linkedlists implements ILinkedList {
 		// TODO Auto-generated method stub
 		SLNode pointer = head;
 		if (index >= 0 && index < size) {
-			for (int i = 0; i < index; i++)
+			for (int i = 0; i < index; i++) {
 				pointer = pointer.next;
-
+			}
 			return pointer.value;
-		} else
+		} else {
 			throw new RuntimeException();
+		}
 	}
 
 	@Override
@@ -84,12 +88,13 @@ public class Singly_linkedlists implements ILinkedList {
 		// TODO Auto-generated method stub
 		SLNode pointer = head;
 		if (index >= 0 && index < size) {
-			for (int i = 0; i < index; i++)
+			for (int i = 0; i < index; i++){
 				pointer = pointer.next;
-
+			}
 			pointer.value = element;
-		} else
+		} else {
 			throw new RuntimeException();
+		}
 
 	}
 
@@ -103,8 +108,9 @@ public class Singly_linkedlists implements ILinkedList {
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
-		if (head == null)
+		if (head == null) {
 			return true;
+		}
 		return false;
 	}
 
@@ -113,8 +119,9 @@ public class Singly_linkedlists implements ILinkedList {
 		// TODO Auto-generated method stub
 		SLNode pointer = head;
 		SLNode temp;
-		if (isEmpty())
+		if (isEmpty()) {
 			throw new RuntimeException();
+		}
 		else if (index == 0) {
 			temp = head;
 			head = head.next;
@@ -130,8 +137,9 @@ public class Singly_linkedlists implements ILinkedList {
 			pointer.next = temp.next;
 			temp.next = null;
 			size--;
-		} else
+		} else {
 			throw new RuntimeException();
+		}
 	}
 
 	@Override
@@ -147,26 +155,30 @@ public class Singly_linkedlists implements ILinkedList {
 		ILinkedList new_list = new Singly_linkedlists();
 		SLNode pointer = head;
 		if (fromIndex >= 0 && fromIndex < size && toIndex >= 0 && toIndex < size) {
-			for (int i = 0; i < fromIndex; i++)
+			for (int i = 0; i < fromIndex; i++) {
 				pointer = pointer.next;
+			}
 			for (int i = fromIndex; i <= toIndex; i++) {
 				new_list.add(pointer.value);
 				pointer = pointer.next;
 			}
 			return new_list;
-		} else
+		} else {
 			throw new RuntimeException();
+		}
 	}
 
 	@Override
 	public boolean contains(Object o) {
 		// TODO Auto-generated method stub
 		SLNode pointer = head;
-		if (isEmpty())
+		if (isEmpty()) {
 			return false;
+		}
 		while (pointer != null) {
-			if (pointer.value.equals(o))
+			if (pointer.value.equals(o)) {
 				return true;
+			}
 			pointer = pointer.next;
 		}
 		return false;

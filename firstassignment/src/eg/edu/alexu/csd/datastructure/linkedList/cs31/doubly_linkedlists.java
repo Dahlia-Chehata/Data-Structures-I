@@ -97,8 +97,9 @@ public class doubly_linkedlists implements ILinkedList {
 			pointer.value = element;
 		}
 
-		else
+		else {
 			throw new RuntimeException();
+		}
 	}
 
 	@Override
@@ -112,16 +113,18 @@ public class doubly_linkedlists implements ILinkedList {
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
-		if (size == 0)
+		if (size == 0) {
 			return true;
+		}
 		return false;
 	}
 
 	@Override
 	public void remove(int index) throws RuntimeException {
 		// TODO Auto-generated method stub
-		if (isEmpty())
+		if (isEmpty()) {
 			throw new RuntimeException();
+		}
 		else if (index == 0) {
 			DNode removed = header.next;
 			DNode temp = removed.next;
@@ -150,8 +153,9 @@ public class doubly_linkedlists implements ILinkedList {
 			temp.next = tailer;
 			tailer.prev = temp;
 			size--;
-		} else
+		} else {
 			throw new RuntimeException();
+		}
 	}
 
 	@Override
@@ -166,29 +170,32 @@ public class doubly_linkedlists implements ILinkedList {
 		ILinkedList new_list = new doubly_linkedlists();
 		DNode pointer = header.next;
 		if (fromIndex >= 0 && fromIndex < size && toIndex >= 0 && toIndex < size) {
-			for (int i = 0; i < fromIndex; i++)
+			for (int i = 0; i < fromIndex; i++) {
 				pointer = pointer.next;
+			}
 			for (int i = fromIndex; i <= toIndex; i++) {
 				new_list.add(pointer.value);
 				pointer = pointer.next;
 			}
 			return new_list;
-		} else
+		} else {
 			throw new RuntimeException();
+		}
 	}
 
 	@Override
 	public boolean contains(Object o) {
 		// TODO Auto-generated method stub
 		DNode pointer = header.next;
-		if (isEmpty())
+		if (isEmpty()) {
 			return false;
+		}
 
 		while (pointer != null && pointer != tailer) {
-			if (pointer.value.equals(o))
+			if (pointer.value.equals(o)) {
 				return true;
+			}
 			pointer = pointer.next;
-
 		}
 		return false;
 	}
