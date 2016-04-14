@@ -109,7 +109,7 @@ public class IceHockey implements IPlayersFinder {
 			}
 			mycomparator c = new mycomparator();
 			if (index > 0) {
-				coordinates = java.util.Arrays.copyOfRange(coordinates, 0, index);
+				coordinates = Arrays.copyOfRange(coordinates, 0, index);
 				Arrays.sort(coordinates, 0, index, c);
 				index = 0;
 				return coordinates;
