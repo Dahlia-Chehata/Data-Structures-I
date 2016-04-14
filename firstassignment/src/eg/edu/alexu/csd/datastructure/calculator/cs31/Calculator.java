@@ -18,17 +18,17 @@ public class Calculator implements ICalculator {
 			return 0;
 		} else if (y == x) {
 			return 1;
-		}
-		else if (x < 0 && y < 0) {
+		} else if (x < 0 && y < 0) {
 			x = -x;
 			y = -y;
 			return (float) x / y;
 		} else if (x == 0) {
 			return 0;
-		}
-		else {
+		} else {
 			return (float) x / y;
 		}
 	}
 
 }
+		
+		

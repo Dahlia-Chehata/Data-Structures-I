@@ -97,13 +97,10 @@ public class doubly_linkedlists implements ILinkedList {
 				pointer = pointer.next;
 			}
 			pointer.value = element;
-		}
-
-		else {
+		} else {
 			throw new RuntimeException();
 		}
 	}
-
 	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
@@ -126,8 +123,7 @@ public class doubly_linkedlists implements ILinkedList {
 		// TODO Auto-generated method stub
 		if (isEmpty()) {
 			throw new RuntimeException();
-		}
-		else if (index == 0) {
+		}else if (index == 0) {
 			DNode removed = header.next;
 			DNode temp = removed.next;
 			temp.prev = header;
@@ -160,6 +156,7 @@ public class doubly_linkedlists implements ILinkedList {
 		}
 	}
 
+		
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
