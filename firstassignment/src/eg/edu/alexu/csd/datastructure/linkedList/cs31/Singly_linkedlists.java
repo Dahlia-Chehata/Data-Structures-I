@@ -3,7 +3,7 @@ package eg.edu.alexu.csd.datastructure.linkedList.cs31;
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 
 
-public class Singly_linkedlists implements ILinkedList{
+public class Singly_linkedlists implements ILinkedList {
 	
 	public SLNode head; 
 	public int size; 
