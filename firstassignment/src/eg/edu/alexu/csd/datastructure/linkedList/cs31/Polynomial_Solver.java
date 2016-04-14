@@ -185,30 +185,30 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	public void clearPolynomial(char poly) throws RuntimeException {
 		// TODO Auto-generated method stub
 		switch (poly) {
-		case 'A': {
+		case 'A': 
 			if (A.isEmpty())
 				throw new RuntimeException();
 			A.clear();
 			break;
-		}
-		case 'B': {
+		
+		case 'B': 
 			if (B.isEmpty())
 				throw new RuntimeException();
 			B.clear();
 			break;
-		}
-		case 'C': {
+		
+		case 'C': 
 			if (C.isEmpty())
 				throw new RuntimeException();
 			C.clear();
 			break;
-		}
-		case 'R': {
+		
+		case 'R': 
 			if (R.isEmpty())
 				throw new RuntimeException();
 			R.clear();
 			break;
-		}
+		
 
 		default:
 			throw new RuntimeException("invalid input or operation");
