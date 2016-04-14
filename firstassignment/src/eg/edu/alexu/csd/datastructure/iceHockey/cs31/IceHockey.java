@@ -77,7 +77,7 @@ public class IceHockey implements IPlayersFinder {
 	}
 
 	@Override
-	public Point[] findPlayers(String[] photo,int team, int threshold) {
+	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
 		this.team = team;
 		area = threshold;
@@ -122,19 +122,19 @@ public class IceHockey implements IPlayersFinder {
 	}
 
 	/*
-	 * public static void main(String[] args) 
-	 * { 
+	 * public static void main(String[] args) {
 	 * IceHockey Test = newIceHockey();
-	 *  String[] image = 
-	 * { "44444H44S4", "K444K4L444", "4LJ44T44XH",
-	 * "444O4VIF44", "44C4D4U444", "4V4Y4KB4M4", 
-	 * "G4W4HP4O4W", "4444ZDQ4S4",
-	 * "4BR4Y4A444", "4G4V4T4444" }; 
-	 * Integer team = 4; Integer threashold = 16;
-	 * Point[] result = Test.findPlayers(image, team, threashold);
-	 *  for (int counter = 0; counter < result.length; counter++) {
-	 * 
-	 * System.out.println(result[counter].x + " " + result[counter].y); } }
+	 * String[] image =
+	 *  { "44444H44S4", "K444K4L444", 
+	 *  "4LJ44T44XH","444O4VIF44",
+	 *  "44C4D4U444", "4V4Y4KB4M4",
+	 *  "G4W4HP4O4W", "4444ZDQ4S4",
+	 * "4BR4Y4A444", "4G4V4T4444" };|
+	 *  Integer team = 4; Integer threashold = 16;
+	 * Point[] result = Test.findPlayers(image, team, threashold); 
+	 * for (int counter = 0; counter < result.length; counter++) {
+	 * System.out.println(result[counter].x + " " + result[counter].y);}
+	 *  }
 	 */
 
 }

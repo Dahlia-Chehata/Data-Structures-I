@@ -59,7 +59,9 @@ public class Hangman_game implements IHangman {
 		if (flag == 1)
 			return new String(show);
 		for (int i = 0; i < str.length(); i++) {
-			if (str.toUpperCase().charAt(i) == Character.toUpperCase(c) && check[i] == true)
+			char k=str.toUpperCase().charAt(i);
+	           char l=Character.toUpperCase(c);
+			if (k == l && check[i] == true)
 
 				found = 1;
 		}
