@@ -45,8 +45,9 @@ public class doubly_linkedlists implements ILinkedList {
 			new_node.prev = pointer;
 			temp.prev = new_node;
 			size++;
-		} else
+		} else {
 			throw new RuntimeException();
+		}
 	}
 
 	@Override
@@ -81,8 +82,9 @@ public class doubly_linkedlists implements ILinkedList {
 				pointer = pointer.next;
 			}
 			return pointer.value;
-		} else
+		} else {
 			throw new RuntimeException();
+		}
 	}
 
 	@Override
