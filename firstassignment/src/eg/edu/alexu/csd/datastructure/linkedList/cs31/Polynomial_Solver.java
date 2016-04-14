@@ -95,21 +95,22 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					message += "+";
 				}else if (pt.x == -1) {
 					message += "";
-				}else {
-					message += pt.x;
 				}
 				
+				else {
+					message += pt.x;
+				}
 				if (pt.y != 0) {
 					if (pt.y == 1) {
 						message += "x";
-					}else {
+					}
+					else {
 						message += "x^" + pt.y;
-					}} else {
+					}
+				} else {
 					message += pt.x;
 				}
-			}	
-				
-				
+			}
 			// System.out.println(message);
 			break;
 		case 'B':
@@ -124,21 +125,21 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				}
 				else if (pt.x == -1) {
 					message += "";
-				}else {
+				}
+				else {
 					message += pt.x;
 				}
 				if (pt.y != 0) {
 					if (pt.y == 1) {
 						message += "x";
-					}else {
+					}
+					else {
 						message += "x^" + pt.y;
-					}} else {
+					}
+				} else {
 					message += pt.x;
 				}
-				
 			}
-				
-					
 			// System.out.println(message);
 			break;
 		case 'C':
