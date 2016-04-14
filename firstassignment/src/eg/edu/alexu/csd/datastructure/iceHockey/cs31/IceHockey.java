@@ -12,21 +12,19 @@ class myCOMP implements Comparator<Point> {
 		// TODO Auto-generated method stub
 		 if (o2.x > o1.x) {
 			return -1;    
-		 }              
-		 else if (o1.x > o2.x) {
-			return 1;
-		 }
-		 else {
+		 }else if (o1.x > o2.x) {
+			return 1;              
+		 } else {
 			if (o2.y > o1.y) {
 				return -1;
-			}
-			else if (o2.y <o1.y) {
+			}else if (o2.y <o1.y) {
 				return 1;
 			}
 		}
 		return 0;
 	}
 }
+		
 
 public class IceHockey implements IPlayersFinder {
 	char[][] photos;
@@ -42,14 +40,11 @@ public class IceHockey implements IPlayersFinder {
 			counter++;
 			if (i > maxRow) {
 				maxRow = i;
-			}
-			if (i < minRow) {
+			}if (i < minRow) {
 				minRow = i;
-			}
-			if (j > maxCol) {
+			}if (j > maxCol) {
 				maxCol = j;
-			}
-			if (j < minCol){
+			}if (j < minCol){
 				minCol = j;
 			}
 			dfs(i - 1, j, v); // up
@@ -57,8 +52,8 @@ public class IceHockey implements IPlayersFinder {
 			dfs(i, j - 1, v); // left
 			dfs(i, j + 1, v); // right
 		}
-		int A = counter;
-		if (A * 4 >= area) {
+		int AA = counter;
+		if (AA * 4 >= area) {
 			int xx = minCol + maxCol + 1;
 			int yy = minRow + maxRow + 1;
 			center = new Point(xx,yy);
