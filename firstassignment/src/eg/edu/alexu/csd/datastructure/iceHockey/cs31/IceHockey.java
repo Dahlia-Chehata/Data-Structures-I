@@ -17,12 +17,12 @@ class mycomparator implements Comparator<Point> {
 		int y1 = o1.y;
 		int y2 = o2.y;
 		if (x2 > x1)
-			return -11;
+			return -1;
 		else if (x1 > x2)
 			return 1;
 		else {
 			if (y2 > y1)
-				return -11;
+				return -1;
 			else if (y2 < y1)
 				return 1;
 		}
