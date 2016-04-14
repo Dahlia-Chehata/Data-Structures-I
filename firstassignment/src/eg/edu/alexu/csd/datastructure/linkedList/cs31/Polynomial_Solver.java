@@ -18,7 +18,6 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	public void setPolynomial(char poly, int[][] terms) 
 	  throws RuntimeException {
 		// TODO Auto-generated method stub
-
 		if (terms.length == 0) {
 			throw new RuntimeException();
 		}
@@ -27,17 +26,13 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				throw new RuntimeException();
 			}
 		}
-
 		array = new Point[terms.length];
-
 		for (int i = 0; i < terms.length; i++) {
 			if (terms[i][1] < 0) {
 				throw new RuntimeException();
 			}
 			array[i] = new Point(terms[i][0], terms[i][1]);
-
 		}
-
 		switch (poly) {
 		case 'A':
 			for (int i = 0; i < array.length; i++) {
@@ -45,18 +40,14 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					throw new RuntimeException();
 				}
 				A.add(array[i]);
-
-			}
-			;
+			};
 			break;
 		case 'B':
 			for (int i = 0; i < array.length; i++) {
 				if (array[i] == null) {
 					throw new RuntimeException();
 				}
-
 				B.add(array[i]);
-
 			}
 			;
 			break;
@@ -67,22 +58,17 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				}
 
 				C.add(array[i]);
-
 			}
 			;
 			break;
 		default:
 			throw new RuntimeException();
 		}
-
 	}
-
 	@Override
 	public String print(char poly) {
 		// TODO Auto-generated method stub
-
 		String message = new String();
-
 		switch (poly) {
 		case 'A':
 			if (A.isEmpty()) {
@@ -134,9 +120,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				} else {
 					message += pt.x;
 				}
-			}
-					
-				
+			}	
 			// System.out.println(message);
 			break;
 		case 'C':
@@ -165,7 +149,6 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				} else {
 					message += pt.x;
 				}
-
 			}
 			// System.out.println(message);
 			break;
@@ -198,16 +181,12 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			}
 			// System.out.println(message);
 			break;
-
 		default:
 			throw new RuntimeException();
 		}
 		System.out.println(message);
-
 		return message;
-
 	}
-
 	@Override
 	public void clearPolynomial(char poly) throws RuntimeException {
 		// TODO Auto-generated method stub
@@ -218,39 +197,32 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			}
 			A.clear();
 			break;
-
 		case 'B':
 			if (B.isEmpty()) {
 				throw new RuntimeException();
 			}
 			B.clear();
 			break;
-
 		case 'C':
 			if (C.isEmpty()) {
 				throw new RuntimeException();
 			}
 			C.clear();
 			break;
-
 		case 'R': 
 			if (R.isEmpty()) {
 				throw new RuntimeException();
 			}
 			R.clear();
 			break;
-
 		default:
 			throw new RuntimeException("invalid input");
-
 		}
 	}
-
 	@Override
 	public float evaluatePolynomial(char poly, float value) 
 			throws RuntimeException {
 		// TODO Auto-generated method stub
-
 		float result = 0;
 		switch (poly) {
 		case 'A':
@@ -306,7 +278,6 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					double y = point.getY();
 					double x = point.getX();
 					result += x * Math.pow(value, y);
-
 				}
 				System.out.println(result);
 			} else {
@@ -316,18 +287,14 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		default:
 			throw new RuntimeException("invalid input");
 		}
-
 		return result;
-
 	}
-
 	@Override
 	public int[][] add(char poly1, char poly2) throws RuntimeException {
 		// TODO Auto-generated method stub
 		R.clear();
 		Singly_linkedlists first = new Singly_linkedlists();
 		Singly_linkedlists second = new Singly_linkedlists();
-
 		switch (poly1) {
 		case 'A':
 			if (A.isEmpty()) {
@@ -371,7 +338,6 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			break;
 		default:
 			throw new RuntimeException();
-
 		}
 		int[] array = new int[10000];
 		for (int i = 0; i < first.size; i++) {
@@ -401,7 +367,6 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		if (counter == 0) {
 			return new int[][] { { 0, 0 } };
 		}
-
 		int[][] arr = Arrays.copyOfRange(array1, 0, counter);
 
 		int[][] arrr = new int[counter][2];
@@ -413,11 +378,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			System.out.println(arrr[count][1] + "),");
 			count--;
 		}
-
 		return arrr;
-
 	}
-
 	@Override
 	public int[][] subtract(char poly1, char poly2) 
 			throws RuntimeException {
@@ -508,11 +470,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			System.out.print(arrr[count][1] + "),");
 			count--;
 		}
-
 		return arrr;
-
 	}
-
 	@Override
 	public int[][] multiply(char poly1, char poly2) 
 			throws RuntimeException {
@@ -575,7 +534,6 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				array[pta.y + ptb.y] += pta.getX() * ptb.getX();
 			}
 		}
-
 		int[][] array1 = new int[1000][2];
 		int counter = 0;
 		int k = 0;
@@ -606,10 +564,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 
 		return arrr;
 	}
-
 	public static void main(String[] args) {
 		IPolynomialSolver polyn = new Polynomial_Solver();
-
 		char ch;
 		int count = 0;
 		boolean setA = false;

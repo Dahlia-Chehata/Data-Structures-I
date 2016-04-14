@@ -35,7 +35,7 @@ public class IceHockey implements IPlayersFinder {
 	Point center;
 
 	public Point dfs(int i, int j, int v) {
-		if (can_move(i, j, team)) {
+		if (canmove(i, j, team)) {
 			visited[i][j] = true;
 			counter++;
 			if (i > maxRow) {
@@ -64,7 +64,7 @@ public class IceHockey implements IPlayersFinder {
 		return center;
 	}
 
-	public boolean can_move(int xx, int yy, int vv) {
+	public boolean canmove(int xx, int yy, int vv) {
 		vv = team;
 		if (xx < 0 || yy < 0 || xx >= m || yy >= n) {
 			return false;
