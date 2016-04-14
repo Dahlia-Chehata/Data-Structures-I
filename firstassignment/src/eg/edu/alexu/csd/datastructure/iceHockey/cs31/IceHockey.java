@@ -58,8 +58,7 @@ public class IceHockey implements IPlayersFinder {
 		}
 		int A = counter;
 		if (A * 4 >= area)
-			center = new Point();
-		center.setLocation(minCol + maxCol + 1, minRow + maxRow + 1);
+			center = new Point(minCol + maxCol + 1, minRow + maxRow + 1);
 		return center;
 	}
 
@@ -82,6 +81,7 @@ public class IceHockey implements IPlayersFinder {
 		this.team = team;
 		area = threshold;
 		Point[] coor = new Point[100];
+		
 		if (photo.length == 0)
 			return new Point[0];
 		if (photo != null) {
