@@ -15,8 +15,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	Point[] array;
 
 	@Override
-	public void setPolynomial(char poly, int[][] terms)
-			throws RuntimeException {
+	public void setPolynomial(char poly, int[][] terms) throws RuntimeException {
 		// TODO Auto-generated method stub
 
 		if (terms.length == 0)
@@ -217,8 +216,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	}
 
 	@Override
-	public float evaluatePolynomial(char poly, float value) 
-			throws RuntimeException {
+	public float evaluatePolynomial(char poly, float value) throws RuntimeException {
 		// TODO Auto-generated method stub
 
 		float result = 0;
@@ -228,8 +226,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				for (int i = 0; i < A.size; i++) {
 					Point point = new Point();
 					point = (Point) A.get(i);
-					double y=point.getY();
-					double x=point.getX();
+					double y = point.getY();
+					double x = point.getX();
 					result += x * Math.pow(value, y);
 				}
 				System.out.println(result);
@@ -241,8 +239,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				for (int i = 0; i < B.size(); i++) {
 					Point point = new Point();
 					point = (Point) B.get(i);
-					double y=point.getY();
-					double x=point.getX();
+					double y = point.getY();
+					double x = point.getX();
 					result += x * Math.pow(value, y);
 				}
 				System.out.println(result);
@@ -257,8 +255,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				for (int i = 0; i < C.size(); i++) {
 					Point point = new Point();
 					point = (Point) C.get(i);
-					double y=point.getY();
-					double x=point.getX();
+					double y = point.getY();
+					double x = point.getX();
 					result += x * Math.pow(value, y);
 				}
 				System.out.println(result);
@@ -270,8 +268,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				for (int i = 0; i < R.size(); i++) {
 					Point point = new Point();
 					point = (Point) R.get(i);
-					double y=point.getY();
-					double x=point.getX();
+					double y = point.getY();
+					double x = point.getX();
 					result += x * Math.pow(value, y);
 
 				}
@@ -379,8 +377,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	}
 
 	@Override
-	public int[][] subtract(char poly1, char poly2) 
-			throws RuntimeException {
+	public int[][] subtract(char poly1, char poly2) throws RuntimeException {
 		// TODO Auto-generated method stub
 		R.clear();
 		Singly_linkedlists first = new Singly_linkedlists();
@@ -468,8 +465,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	}
 
 	@Override
-	public int[][] multiply(char poly1, char poly2) 
-			throws RuntimeException {
+	public int[][] multiply(char poly1, char poly2) throws RuntimeException {
 		// TODO Auto-generated method stub
 		R.clear();
 		Singly_linkedlists first = new Singly_linkedlists();
@@ -567,16 +563,15 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			System.out.println("Please choose an action");
 			System.out.println("-----------------------");
 			System.out.println("1- Set a polynomial variable");
-			System.out.println
-			("2- Print the value of a polynomial variable");
+			System.out.println("2- Print the value "
+			+ "of a polynomial variable");
 			System.out.println("3- Add two polynomials");
 			System.out.println("4- Subtract two polynomials");
 			System.out.println("5- Multiply two polynomials");
-			System.out.println
-			("6- Evaluate a polynomial at some point");
+			System.out.println("6- Evaluate a polynomial at some point");
 			System.out.println("7- Clear a polynomial variable");
-			System.out.println
-			("====================================================================");
+			System.out.println("=================================" 
+			+ "===================================");
 			Scanner scan = new Scanner(System.in);
 			int choice = scan.nextInt();
 			switch (choice) {
@@ -1267,4 +1262,3 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		} while (ch == 'Y' || ch == 'y');
 	}
 }
-
