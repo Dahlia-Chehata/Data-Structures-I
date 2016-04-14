@@ -1,13 +1,11 @@
 package eg.edu.alexu.csd.datastructure.iceHockey.cs31;
-
+import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.awt.Point;
 
-import java.util.Comparator;
-import java.util.Arrays;
 
-import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
-
-class mycomparator implements Comparator<Point> {
+class myComp implements Comparator<Point> {
 
 	@Override
 	public int compare(Point o1, Point o2) {
@@ -33,7 +31,6 @@ class mycomparator implements Comparator<Point> {
 public class IceHockey implements IPlayersFinder {
 	char[][] photos;
 	boolean[][] visited;
-
 	Point[] temp;
 	int n, m, index = 0, counter = 0, team, area;
 	int minRow = 500, minCol = 500, maxRow = -1, maxCol = -1;
@@ -58,18 +55,18 @@ public class IceHockey implements IPlayersFinder {
 		}
 		int A = counter;
 		if (A * 4 >= area){
-			int x=minCol + maxCol + 1;
-			int y= minRow + maxRow + 1;
-			center = new Point(x,y);
+			int xx = minCol + maxCol + 1;
+			int yy = minRow + maxRow + 1;
+			center = new Point(xx,yy);
 		}
 		return center;
 	}
 
-	public boolean can_move(int x, int y, int v) {
-		v = team;
-		if (x < 0 || y < 0 || x >= m || y >= n)
+	public boolean can_move(int xx, int yy, int vv) {
+		vv = team;
+		if (xx < 0 || yy < 0 || xx >= m || yy >= n)
 			return false;
-		if ((!isVisited(x, y)) && photos[x][y] == v + '0')
+		if ((!isVisited(xx, yy)) && photos[xx][yy] == vv + '0')
 			return true;
 		return false;
 	}
@@ -110,7 +107,7 @@ public class IceHockey implements IPlayersFinder {
 					maxCol = -1;
 				}
 			}
-			mycomparator c = new mycomparator();
+			myComp c = new myComp();
 			if (index > 0) {
 				coor = Arrays.copyOfRange(coor, 0, index);
 				Arrays.sort(coor, 0, index, c);
