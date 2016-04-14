@@ -15,19 +15,19 @@ public class Singly_linkedlists implements ILinkedList {
 	
 	
 	@Override
-	public void add(int index, Object element) throws RuntimeException{
+	public void add(int index, Object element) throws RuntimeException {
 		// TODO Auto-generated method stub
 		SLNode new_node =new SLNode();
 		SLNode pointer=head;
 		new_node.value=element;
 		
-		if (index==0){
+		if (index==0) {
 			new_node.next=head;
 			head=new_node;
 			size++;
 		}
 		
-		else if (index==size){
+		else if (index==size) {
 	    while (pointer.next!=null)
 	    	pointer=pointer.next;
 			 pointer.next = new_node;
@@ -35,7 +35,7 @@ public class Singly_linkedlists implements ILinkedList {
 			size++;
 
 		}
-		else  if (index> 0 && index < size){
+		else  if (index> 0 && index < size) {
 		   for (int i=0;i<index-1;i++){
 			   pointer=pointer.next;
 		   }
@@ -72,7 +72,7 @@ public class Singly_linkedlists implements ILinkedList {
 	
 
 	@Override
-	public Object get(int index) throws RuntimeException{
+	public Object get(int index) throws RuntimeException {
 		// TODO Auto-generated method stub
 		SLNode pointer=head;
 		if (index>=0&&index<size){
@@ -86,7 +86,7 @@ public class Singly_linkedlists implements ILinkedList {
 	}
 	
 	@Override
-	public void set(int index, Object element) throws RuntimeException{
+	public void set(int index, Object element) throws RuntimeException {
 		// TODO Auto-generated method stub
 		SLNode pointer=head;
 		 if (index>=0&&index<size){
@@ -116,7 +116,7 @@ public class Singly_linkedlists implements ILinkedList {
 	}
 
 	@Override
-	public void remove(int index) throws RuntimeException{
+	public void remove(int index) throws RuntimeException {
 		// TODO Auto-generated method stub
 		SLNode pointer=head;
 		SLNode temp;
@@ -130,7 +130,7 @@ public class Singly_linkedlists implements ILinkedList {
 		}
 		
 			
-		else if (index>0&&index<size){
+		else if (index>0&&index<size) {
 		for (int i=0;i<index-1;i++){
 			pointer=pointer.next;
 		}
@@ -155,10 +155,10 @@ public class Singly_linkedlists implements ILinkedList {
 		// TODO Auto-generated method stub
 		ILinkedList new_list = new Singly_linkedlists();
 		SLNode pointer=head;
-		if (fromIndex>=0 && fromIndex<size && toIndex>=0 && toIndex<size){
+		if (fromIndex>=0 && fromIndex<size && toIndex>=0 && toIndex<size) {
 			for (int i=0;i<fromIndex;i++)
 				pointer=pointer.next;
-			for (int i=fromIndex;i<=toIndex;i++){
+			for (int i=fromIndex;i<=toIndex;i++) {
 				new_list.add(pointer.value);
 				pointer=pointer.next;
 			}
@@ -174,7 +174,7 @@ public class Singly_linkedlists implements ILinkedList {
 		SLNode pointer=head;
 		if (isEmpty())
 			return false;
-		while (pointer!=null){
+		while (pointer!=null) {
 			if (pointer.value.equals(o))
 				return true;
 			pointer=pointer.next;
