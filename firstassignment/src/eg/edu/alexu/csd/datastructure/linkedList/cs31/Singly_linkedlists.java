@@ -155,7 +155,7 @@ public class Singly_linkedlists implements ILinkedList{
 		// TODO Auto-generated method stub
 		ILinkedList new_list = new Singly_linkedlists();
 		SLNode pointer=head;
-		if (fromIndex>=0&& fromIndex<size &&toIndex>=0&&toIndex<size ){
+		if (fromIndex>=0 && fromIndex<size && toIndex>=0 && toIndex<size){
 			for (int i=0;i<fromIndex;i++)
 				pointer=pointer.next;
 			for (int i=fromIndex;i<=toIndex;i++){

@@ -32,9 +32,9 @@ public class SL_listTest {
 			SL.add(3, 10);
 			D.add(3, 10);
 			Assert.fail();
-		} catch (Exception RuntimeException) {
+		} catch (Exception RuntimeException) 
 
-		}
+		{}
 	}
 
 	@Test
