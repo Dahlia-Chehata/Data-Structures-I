@@ -10,17 +10,17 @@ class myCOMP implements Comparator<Point> {
 	@Override
 	public int compare(Point o1, Point o2) {
 		// TODO Auto-generated method stub
-		 if (o2.x > o1.x){
+		 if (o2.x > o1.x) {
 			return -1;
 		 }
-		 else if (o1.x > o2.x){
+		 else if (o1.x > o2.x) {
 			return 1;
 		 }
 		 else {
-			if (o2.y > o1.y){
+			if (o2.y > o1.y) {
 				return -1;
 			}
-			else if (o2.y <o1.y){
+			else if (o2.y <o1.y) {
 				return 1;
 			}
 		}
@@ -40,13 +40,13 @@ public class IceHockey implements IPlayersFinder {
 		if (can_move(i, j, team)) {
 			visited[i][j] = true;
 			counter++;
-			if (i > maxRow){
+			if (i > maxRow) {
 				maxRow = i;
 			}
-			if (i < minRow){
+			if (i < minRow) {
 				minRow = i;
 			}
-			if (j > maxCol){
+			if (j > maxCol) {
 				maxCol = j;
 			}
 			if (j < minCol){
@@ -68,10 +68,10 @@ public class IceHockey implements IPlayersFinder {
 
 	public boolean can_move(int xx, int yy, int vv) {
 		vv = team;
-		if (xx < 0 || yy < 0 || xx >= m || yy >= n){
+		if (xx < 0 || yy < 0 || xx >= m || yy >= n) {
 			return false;
 		}
-		if ((!isVisited(xx, yy)) && photos[xx][yy] == vv + '0'){
+		if ((!isVisited(xx, yy)) && photos[xx][yy] == vv + '0') {
 			return true;
 		}
 		return false;
@@ -88,7 +88,7 @@ public class IceHockey implements IPlayersFinder {
 		area = threshold;
 		Point[] coor = new Point[100];
 		
-		if (photo.length == 0){
+		if (photo.length == 0) {
 			return new Point[0];
 		}
 		if (photo != null) {
@@ -104,7 +104,7 @@ public class IceHockey implements IPlayersFinder {
 			for (int i = 0; i < m; i++) {
 				for (int j = 0; j < n; j++) {
 					Point p = dfs(i, j, team);
-					if (p != null){
+					if (p != null) {
 						coor[index++] = p;
 					}
 					center = null;
