@@ -22,16 +22,17 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		if (terms.length == 0)
 			throw new RuntimeException();
 		for (int counter = 0; counter < terms.length - 1; counter++) {
-			if (terms[counter][1] < terms[counter + 1][1])
+			if (terms[counter][1] < terms[counter + 1][1]){
 				throw new RuntimeException();
+			}
 		}
 
 		array = new Point[terms.length];
 
 		for (int i = 0; i < terms.length; i++) {
-			if (terms[i][1] < 0)
+			if (terms[i][1] < 0){
 				throw new RuntimeException();
-
+			}
 			array[i] = new Point(terms[i][0], terms[i][1]);
 
 		}
@@ -59,8 +60,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			break;
 		case 'C':
 			for (int i = 0; i < array.length; i++) {
-				if (array[i] == null)
+				if (array[i] == null){
 					throw new RuntimeException();
+				}
 
 				C.add(array[i]);
 
