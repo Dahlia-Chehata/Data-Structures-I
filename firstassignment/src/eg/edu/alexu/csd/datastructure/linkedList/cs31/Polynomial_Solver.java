@@ -568,13 +568,17 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			System.out.println("Please choose an action");
 			System.out.println("-----------------------");
 			System.out.println("1- Set a polynomial variable");
-			System.out.println("2- Print the value of a polynomial variable");
+			System.out.println
+			("2- Print the value of a polynomial variable");
 			System.out.println("3- Add two polynomials");
 			System.out.println("4- Subtract two polynomials");
 			System.out.println("5- Multiply two polynomials");
-			System.out.println("6- Evaluate a polynomial at some point");
+			System.out.println
+			("6- Evaluate a polynomial at some point");
 			System.out.println("7- Clear a polynomial variable");
-			System.out.println("====================================================================");
+			System.out.println
+			("==============================="
+					+ "=====================================");
 			Scanner scan = new Scanner(System.in);
 			int choice = scan.nextInt();
 			switch (choice) {
@@ -587,7 +591,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					switch (variableName) {
 					case 'A':
 						System.out.println("Insert the polynomial terms in the form :");
-						System.out.println("(coeff1 , exponent1 ), (coeff2 , exponent2 ), ..");
+						System.out.println("(coeff1 , exponent1 ),"
+								+ " (coeff2 , exponent2 ), ..");
 						String poly = (scan.next());
 						for (int h = 0; h < poly.length(); h++) {
 							if (Character.isDigit(poly.charAt(h))) {
@@ -598,7 +603,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 						int row = 0;
 						int column = 0;
 						for (int h = 0; h < poly.length(); h++) {
-							if (h > 0 && h < poly.length() - 1 && Character.isDigit(poly.charAt(h))
+							if (h > 0 && h < poly.length() - 1 
+									&& Character.isDigit(poly.charAt(h))
 									&& poly.charAt(h - 1) == '-') {
 								terms[row][column] = -1 * (poly.charAt(h) - 48);
 								column++;
@@ -607,7 +613,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 									row++;
 								}
 							}
-							if (Character.isDigit(poly.charAt(h)) && poly.charAt(h - 1) != '-') {
+							if (Character.isDigit(poly.charAt(h)) 
+									&& poly.charAt(h - 1) != '-') {
 								terms[row][column] = poly.charAt(h) - 48;
 								column++;
 								if (column > 1) {
@@ -624,7 +631,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					case 'B':
 						count = 0;
 						System.out.println("Insert the polynomial terms in the form :");
-						System.out.println("(coeff1 , exponent1 ), (coeff2 , exponent2 ), ..");
+						System.out.println("(coeff1 , exponent1 ),"
+								+ " (coeff2 , exponent2 ), ..");
 						poly = (scan.next());
 						for (int h = 0; h < poly.length(); h++) {
 							if (Character.isDigit(poly.charAt(h))) {
@@ -635,7 +643,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 						row = 0;
 						column = 0;
 						for (int h = 0; h < poly.length(); h++) {
-							if (h > 0 && h < poly.length() - 1 && Character.isDigit(poly.charAt(h))
+							if (h > 0 && h < poly.length() - 1 
+									&& Character.isDigit(poly.charAt(h))
 									&& poly.charAt(h - 1) == '-') {
 
 								terms[row][column] = -1 * (poly.charAt(h) - 48);
@@ -646,7 +655,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 									row++;
 								}
 							}
-							if (Character.isDigit(poly.charAt(h)) && poly.charAt(h - 1) != '-') {
+							if (Character.isDigit(poly.charAt(h)) 
+									&& poly.charAt(h - 1) != '-') {
 								terms[row][column] = poly.charAt(h) - 48;
 								column++;
 								if (column > 1) {
@@ -663,7 +673,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					case 'C':
 						count = 0;
 						System.out.println("Insert the polynomial terms in the form :");
-						System.out.println("(coeff1 , exponent1 ), (coeff2 , exponent2 ), ..");
+						System.out.println("(coeff1 , exponent1 ),"
+								+ " (coeff2 , exponent2 ), ..");
 						poly = (scan.next());
 						for (int h = 0; h < poly.length(); h++) {
 							if (Character.isDigit(poly.charAt(h))) {
@@ -674,7 +685,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 						row = 0;
 						column = 0;
 						for (int h = 0; h < poly.length(); h++) {
-							if (h > 0 && h < poly.length() - 1 && Character.isDigit(poly.charAt(h))
+							if (h > 0 && h < poly.length() - 1 
+									&& Character.isDigit(poly.charAt(h))
 									&& poly.charAt(h - 1) == '-') {
 
 								terms[row][column] = -1 * (poly.charAt(h) - 48);
@@ -685,7 +697,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 									row++;
 								}
 							}
-							if (Character.isDigit(poly.charAt(h)) && poly.charAt(h - 1) != '-') {
+							if (Character.isDigit(poly.charAt(h)) 
+									&& poly.charAt(h - 1) != '-') {
 								terms[row][column] = poly.charAt(h) - 48;
 								column++;
 								if (column > 1) {
@@ -739,7 +752,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 						i = 1;
 						break;
 					default:
-						System.out.println("Insert the variable name : A, B, C or R");
+						System.out.println
+						("Insert the variable name : A, B, C or R");
 						i = 0;
 						break;
 					}
@@ -749,14 +763,16 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				i = 0;
 				int y = 0;
 				while (i == 0) {
-					System.out.println("Insert first operand variable name : A, B or C");
+					System.out.println
+					("Insert first operand variable name : A, B or C");
 					variableName = scan.next().charAt(0);
 					switch (variableName) {
 					case 'A':
 						if (setA == true) {
 							i = 1;
 							while (y == 0) {
-								System.out.println("Insert second operand variable name : A, B or C");
+								System.out.println
+								("Insert second operand variable name : A, B or C");
 								variableName = scan.next().charAt(0);
 								switch (variableName) {
 								case 'A':
@@ -804,7 +820,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 							i = 1;
 							y = 0;
 							while (y == 0) {
-								System.out.println("Insert second operand variable name : A, B or C");
+								System.out.println
+								("Insert second operand variable name : A, B or C");
 								variableName = scan.next().charAt(0);
 								switch (variableName) {
 								case 'A':
@@ -849,7 +866,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 							i = 1;
 							y = 0;
 							while (y == 0) {
-								System.out.println("Insert second operand variable name : A, B or C");
+								System.out.println
+								("Insert second operand variable name : A, B or C");
 								variableName = scan.next().charAt(0);
 								switch (variableName) {
 								case 'A':
@@ -896,14 +914,16 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				i = 0;
 				int f = 0;
 				while (i == 0) {
-					System.out.println("Insert first operand variable name : A, B or C");
+					System.out.println
+					("Insert first operand variable name : A, B or C");
 					variableName = scan.next().charAt(0);
 					switch (variableName) {
 					case 'A':
 						if (setA == true) {
 							i = 1;
 							while (f == 0) {
-								System.out.println("Insert second operand variable name : A, B or C");
+								System.out.println
+								("Insert second operand variable name : A, B or C");
 								variableName = scan.next().charAt(0);
 								switch (variableName) {
 								case 'A':
@@ -948,7 +968,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 							i = 1;
 							f = 0;
 							while (f == 0) {
-								System.out.println("Insert second operand variable name : A, B or C");
+								System.out.println
+								("Insert second operand variable name : A, B or C");
 								variableName = scan.next().charAt(0);
 								switch (variableName) {
 								case 'A':
@@ -993,7 +1014,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 							i = 1;
 							f = 0;
 							while (f == 0) {
-								System.out.println("Insert second operand variable name : A, B or C");
+								System.out.println
+								("Insert second operand variable name : A, B or C");
 								variableName = scan.next().charAt(0);
 								switch (variableName) {
 								case 'A':
@@ -1047,7 +1069,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 						if (setA == true) {
 							i = 1;
 							while (x == 0) {
-								System.out.println("Insert second operand variable name : A, B or C");
+								System.out.println
+								("Insert second operand variable name : A, B or C");
 								variableName = scan.next().charAt(0);
 								switch (variableName) {
 								case 'A':
@@ -1092,7 +1115,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 							i = 1;
 							x = 0;
 							while (x == 0) {
-								System.out.println("Insert second operand variable name : A, B or C");
+								System.out.println
+								("Insert second operand variable name : A, B or C");
 								variableName = scan.next().charAt(0);
 								switch (variableName) {
 								case 'A':
@@ -1137,7 +1161,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 							i = 1;
 							x = 0;
 							while (x == 0) {
-								System.out.println("Insert second operand variable name : A, B or C");
+								System.out.println
+								("Insert second operand variable name : A, B or C");
 								variableName = scan.next().charAt(0);
 								switch (variableName) {
 								case 'A':
@@ -1181,7 +1206,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				}
 				break;
 			case 6:
-				System.out.println("Insert the the variable name : A, B, C or R");
+				System.out.println
+				("Insert the the variable name : A, B, C or R");
 				variableName = scan.next().charAt(0);
 				int k = 0;
 				int value;
@@ -1189,7 +1215,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					switch (variableName) {
 					case 'A':
 						if (setA == true) {
-							System.out.println("Insert the value to Evaluate the polynomial:");
+							System.out.println
+							("Insert the value to Evaluate the polynomial:");
 							value = scan.nextInt();
 							polyn.evaluatePolynomial('A', value);
 							k = 1;
@@ -1197,7 +1224,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 						break;
 					case 'B':
 						if (setB == true) {
-							System.out.println("Insert the value to Evaluate the polynomial:");
+							System.out.println
+							("Insert the value to Evaluate the polynomial:");
 							value = scan.nextInt();
 							polyn.evaluatePolynomial('B', value);
 							k = 1;
@@ -1205,27 +1233,31 @@ public class Polynomial_Solver implements IPolynomialSolver {
 						break;
 					case 'C':
 						if (setC == true) {
-							System.out.println("Insert the value to Evaluate the polynomial:");
+							System.out.println
+							("Insert the value to Evaluate the polynomial:");
 							value = scan.nextInt();
 							polyn.evaluatePolynomial('C', value);
 							k = 1;
 						}
 						break;
 					case 'R':
-						System.out.println("Insert the value to Evaluate the polynomial:");
+						System.out.println
+						("Insert the value to Evaluate the polynomial:");
 						value = scan.nextInt();
 						polyn.evaluatePolynomial('R', value);
 						k = 1;
 						break;
 					default:
-						System.out.println("Insert the the variable name : A, B, C or R");
+						System.out.println
+						("Insert the the variable name : A, B, C or R");
 						k = 0;
 						break;
 					}
 				}
 				break;
 			case 7:
-				System.out.println("Insert the the variable name : A, B, C ");
+				System.out.println
+				("Insert the the variable name : A, B, C ");
 				variableName = scan.next().charAt(0);
 				int l = 0;
 				while (l == 0) {
@@ -1249,7 +1281,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 						}
 						break;
 					default:
-						System.out.println("Insert the the variable name : A, B, C ");
+						System.out.println
+						("Insert the the variable name : A, B, C ");
 						l = 0;
 						break;
 					}
