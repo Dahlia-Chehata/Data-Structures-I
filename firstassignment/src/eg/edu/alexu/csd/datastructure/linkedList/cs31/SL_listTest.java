@@ -31,7 +31,7 @@ public class SL_listTest {
 		try {
 			SL.add(3, 10);
 			D.add(3, 10);
-			Assert.fail();
+			Assert.fail("index out of bounds");
 		} catch (Exception RuntimeException) {
 		}
 	}
@@ -41,7 +41,7 @@ public class SL_listTest {
 		try {
 			SL.remove(2);
 			D.remove(2);
-			Assert.fail();
+			Assert.fail( "remove from empty list");
 		} catch (Exception RuntimeException) {
 		}
 	}
@@ -80,10 +80,15 @@ public class SL_listTest {
 
 	}
 
-	@Test(expected = RuntimeException.class) // test add(index-ve ,Object)
+	@Test() // test add(index-ve ,Object)
 	public void test6() {
-		SL.add(-3, 5);
-		D.add(-3, 5);
+		
+		try {
+			SL.add(-3, 5);
+		    D.add(-3, 5);
+			Assert.fail( "add in -ve index");
+		} catch (Exception RuntimeException) {
+		}
 
 	}
 
@@ -108,14 +113,14 @@ public class SL_listTest {
 	}
 
 	@Test
-	public void test9() { // test clear
+	public void test9() { // test clear and get 
 		D.add(0, 1);
 		D.add(1, 2);
 		D.add(2, 3);
 		D.clear();
 		try {
 			D.get(0);
-			Assert.fail();
+			Assert.fail(" the list was cleared:cannot get from an empty list");
 		} catch (Exception RuntimeException) {
 
 		}
@@ -145,6 +150,7 @@ public class SL_listTest {
 		D.add(2, 3);
 		try {
 			D.sublist(2, 5);
+			Assert.fail("index out of bounds");
 		} catch (Exception RuntimeException) {
 		}
 	}
@@ -179,7 +185,7 @@ public class SL_listTest {
 	}
 
 	@Test
-	public void test() { // test isEmpty()
+	public void test16() { // test isEmpty()
 
 		boolean result = SL.isEmpty();
 		Assert.assertEquals(true, result);
@@ -187,22 +193,18 @@ public class SL_listTest {
 	}
 
 	@Test // contains && remove test
-	public void test16() {
+	public void test17() {
 		SL.add(0, 3);
 		SL.add(1, 2);
 		SL.add(2, 3);
 		SL.add(0, 5);
 		SL.remove(0);
-		assertEquals(false, SL.contains(5));
-	}
-
-	@Test // contains && remove test
-	public void test17() {
 		D.add(0, 3);
 		D.add(1, 2);
 		D.add(2, 3);
 		D.add(0, 5);
 		D.remove(0);
+		assertEquals(false, SL.contains(5));
 		assertEquals(false, D.contains(5));
 	}
 
@@ -305,6 +307,7 @@ public class SL_listTest {
 		SL.add(2, 3);
 		try {
 			SL.set(4, 5);
+			Assert.fail("index is out of bounds");
 		} catch (Exception RuntimeException) {
 		}
 		D.add(0, 1);
@@ -312,6 +315,7 @@ public class SL_listTest {
 		D.add(2, 3);
 		try {
 			D.set(4, 5);
+			Assert.fail("index is out of bounds");
 		} catch (Exception RuntimeException) {
 		}
 	}
@@ -330,6 +334,7 @@ public class SL_listTest {
 		SL.add(2, 3);
 		try {
 			SL.set(-4, 5);
+			Assert.fail("cannot set at a -ve index");
 		} catch (Exception RuntimeException) {
 		}
 		D.add(0, 1);
@@ -337,6 +342,7 @@ public class SL_listTest {
 		D.add(2, 3);
 		try {
 			D.set(-4, 5);
+			Assert.fail("cannot set at a -ve index");
 		} catch (Exception RuntimeException) {
 		}
 	}
@@ -374,6 +380,7 @@ public class SL_listTest {
 		SL.add(2, 3);
 		try {
 			SL.get(5);
+			Assert.fail("index out of bounds");
 		} catch (Exception RuntimeException) {
 		}
 		D.add(0, 1);
@@ -381,6 +388,7 @@ public class SL_listTest {
 		D.add(2, 3);
 		try {
 			D.get(4);
+			Assert.fail("index out of bounds");
 		} catch (Exception RuntimeException) {
 		}
 	}
@@ -392,6 +400,7 @@ public class SL_listTest {
 		SL.add(2, 3);
 		try {
 			SL.remove(5);
+			Assert.fail("index out of bounds");
 		} catch (Exception RuntimeException) {
 		}
 		D.add(0, 1);
@@ -399,6 +408,7 @@ public class SL_listTest {
 		D.add(2, 3);
 		try {
 			D.remove(4);
+			Assert.fail("index out of bounds");
 		} catch (Exception RuntimeException) {
 		}
 	}
