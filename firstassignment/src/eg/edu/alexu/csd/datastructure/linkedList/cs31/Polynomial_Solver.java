@@ -95,9 +95,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					message += "+";
 				}else if (pt.x == -1) {
 					message += "";
-				}
-				
-				else {
+				}else {
 					message += pt.x;
 				}
 				if (pt.y != 0) {
@@ -122,24 +120,23 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				pt = (Point) B.get(i);
 				if (pt.x == 1) {
 					message += "+";
-				}
-				else if (pt.x == -1) {
+				} else if (pt.x == -1) {
 					message += "";
-				}
-				else {
+				} else {
 					message += pt.x;
 				}
 				if (pt.y != 0) {
 					if (pt.y == 1) {
 						message += "x";
-					}
-					else {
+					} else {
 						message += "x^" + pt.y;
 					}
 				} else {
 					message += pt.x;
 				}
 			}
+					
+				
 			// System.out.println(message);
 			break;
 		case 'C':

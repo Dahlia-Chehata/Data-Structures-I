@@ -55,8 +55,8 @@ public class IceHockey implements IPlayersFinder {
 			dfs(i, j - 1, v); // left
 			dfs(i, j + 1, v); // right
 		}
-		int AA = counter;
-		if (AA * 4 >= area) {
+		int a = counter;
+		if (a * 4 >= area) {
 			int xx = minCol + maxCol + 1;
 			int yy = minRow + maxRow + 1;
 			center = new Point(xx,yy);
