@@ -81,7 +81,7 @@ public class IceHockey implements IPlayersFinder {
 		// TODO Auto-generated method stub
 		this.team = team;
 		area = threshold;
-		Point[] coordinates = new Point[100];
+		Point[] coor = new Point[100];
 		if (photo.length == 0)
 			return new Point[0];
 		if (photo != null) {
@@ -98,7 +98,7 @@ public class IceHockey implements IPlayersFinder {
 				for (int j = 0; j < n; j++) {
 					Point p = DFS(i, j, team);
 					if (p != null)
-						coordinates[index++] = p;
+						coor[index++] = p;
 					center = null;
 					counter = 0;
 					minRow = 500;
@@ -109,10 +109,10 @@ public class IceHockey implements IPlayersFinder {
 			}
 			mycomparator c = new mycomparator();
 			if (index > 0) {
-				coordinates = Arrays.copyOfRange(coordinates, 0, index);
-				Arrays.sort(coordinates, 0, index, c);
+				coor = Arrays.copyOfRange(coor, 0, index);
+				Arrays.sort(coor, 0, index, c);
 				index = 0;
-				return coordinates;
+				return coor;
 			} else {
 				index = 0;
 				return new Point[0];
