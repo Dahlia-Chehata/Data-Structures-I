@@ -714,21 +714,21 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				while (i == 0) {
 					switch (variableName) {
 					case 'A':
-						if (setA == true) {
+						if (setA) {
 							System.out.println("A Value in A:");
 							polyn.print('A');
 							i = 1;
 						}
 						break;
 					case 'B':
-						if (setB == true) {
+						if (setB) {
 							System.out.println("B Value in B:");
 							polyn.print('B');
 							i = 1;
 						}
 						break;
 					case 'C':
-						if (setC == true) {
+						if (setC) {
 							System.out.println("C Value in C:");
 							polyn.print('C');
 							i = 1;
@@ -754,14 +754,14 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					variableName = scan.next().charAt(0);
 					switch (variableName) {
 					case 'A':
-						if (setA == true) {
+						if (setA) {
 							i = 1;
 							while (y == 0) {
 								System.out.println("Insert second operand variable name : A, B or C");
 								variableName = scan.next().charAt(0);
 								switch (variableName) {
 								case 'A':
-									if (setA == true) {
+									if (setA) {
 										y = 1;
 										System.out.println("Result set in R:");
 										polyn.add('A', variableName);
@@ -771,7 +771,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 									}
 									break;
 								case 'B':
-									if (setB == true) {
+									if (setB) {
 										y = 1;
 										System.out.println("Result set in R:");
 										polyn.add('A', variableName);
@@ -781,7 +781,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 									}
 									break;
 								case 'C':
-									if (setC == true) {
+									if (setC) {
 										y = 1;
 										System.out.println("Result set in R:");
 										polyn.add('A', variableName);
@@ -801,7 +801,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 						}
 						break;
 					case 'B':
-						if (setB == true) {
+						if (setB) {
 							i = 1;
 							y = 0;
 							while (y == 0) {
@@ -809,7 +809,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 								variableName = scan.next().charAt(0);
 								switch (variableName) {
 								case 'A':
-									if (setA == true) {
+									if (setA) {
 										y = 1;
 										System.out.println("Result set in R:");
 										polyn.add('B', variableName);
@@ -819,7 +819,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 									}
 									break;
 								case 'B':
-									if (setB == true) {
+									if (setB) {
 										y = 1;
 										System.out.println("Result set in R:");
 										polyn.add('B', variableName);
@@ -829,7 +829,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 									}
 									break;
 								case 'C':
-									if (setC == true) {
+									if (setC) {
 										y = 1;
 										System.out.println("Result set in R:");
 										polyn.add('B', variableName);
@@ -846,7 +846,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 						}
 						break;
 					case 'C':
-						if (setC == true) {
+						if (setC) {
 							i = 1;
 							y = 0;
 							while (y == 0) {
@@ -854,7 +854,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 								variableName = scan.next().charAt(0);
 								switch (variableName) {
 								case 'A':
-									if (setA == true) {
+									if (setA) {
 										y = 1;
 										System.out.println("Result set in R:");
 										polyn.add('C', variableName);
@@ -864,7 +864,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 									}
 									break;
 								case 'B':
-									if (setB == true) {
+									if (setB) {
 										y = 1;
 										System.out.println("Result set in R:");
 										polyn.add('C', variableName);
@@ -874,7 +874,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 									}
 									break;
 								case 'C':
-									if (setC == true) {
+									if (setC) {
 										y = 1;
 										System.out.println("Result set in R:");
 										polyn.add('C', variableName);
@@ -901,14 +901,14 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					variableName = scan.next().charAt(0);
 					switch (variableName) {
 					case 'A':
-						if (setA == true) {
+						if (setA) {
 							i = 1;
 							while (f == 0) {
 								System.out.println("Insert second operand variable name : A, B or C");
 								variableName = scan.next().charAt(0);
 								switch (variableName) {
 								case 'A':
-									if (setA == true) {
+									if (setA) {
 										f = 1;
 										System.out.println("Result set in R:");
 										polyn.subtract('A', variableName);
@@ -918,7 +918,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 									}
 									break;
 								case 'B':
-									if (setB == true) {
+									if (setB) {
 										f = 1;
 										System.out.println("Result set in R:");
 										polyn.subtract('A', variableName);
@@ -928,7 +928,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 									}
 									break;
 								case 'C':
-									if (setC == true) {
+									if (setC) {
 										f = 1;
 										System.out.println("Result set in R:");
 										polyn.subtract('A', variableName);
@@ -945,7 +945,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 						}
 						break;
 					case 'B':
-						if (setB == true) {
+						if (setB) {
 							i = 1;
 							f = 0;
 							while (f == 0) {
@@ -953,7 +953,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 								variableName = scan.next().charAt(0);
 								switch (variableName) {
 								case 'A':
-									if (setA == true) {
+									if (setA) {
 										f = 1;
 										System.out.println("Result set in R:");
 										polyn.subtract('B', variableName);
@@ -963,7 +963,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 									}
 									break;
 								case 'B':
-									if (setB == true) {
+									if (setB) {
 										f = 1;
 										System.out.println("Result set in R:");
 										polyn.subtract('B', variableName);
@@ -973,7 +973,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 									}
 									break;
 								case 'C':
-									if (setC == true) {
+									if (setC) {
 										f = 1;
 										System.out.println("Result set in R:");
 										polyn.subtract('B', variableName);
@@ -990,7 +990,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 						}
 						break;
 					case 'C':
-						if (setC == true) {
+						if (setC) {
 							i = 1;
 							f = 0;
 							while (f == 0) {
@@ -998,7 +998,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 								variableName = scan.next().charAt(0);
 								switch (variableName) {
 								case 'A':
-									if (setA == true) {
+									if (setA) {
 										f = 1;
 										System.out.println("Result set in R:");
 										polyn.subtract('C', variableName);
@@ -1008,7 +1008,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 									}
 									break;
 								case 'B':
-									if (setB == true) {
+									if (setB) {
 										f = 1;
 										System.out.println("Result set in R:");
 										polyn.subtract('C', variableName);
@@ -1018,7 +1018,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 									}
 									break;
 								case 'C':
-									if (setC == true) {
+									if (setC) {
 										f = 1;
 										System.out.println("Result set in R:");
 										polyn.subtract('C', variableName);
@@ -1045,14 +1045,14 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					variableName = scan.next().charAt(0);
 					switch (variableName) {
 					case 'A':
-						if (setA == true) {
+						if (setA) {
 							i = 1;
 							while (x == 0) {
 								System.out.println("Insert second operand variable name : A, B or C");
 								variableName = scan.next().charAt(0);
 								switch (variableName) {
 								case 'A':
-									if (setA == true) {
+									if (setA) {
 										x = 1;
 										System.out.println("Result set in R:");
 										polyn.multiply('A', variableName);
@@ -1062,7 +1062,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 									}
 									break;
 								case 'B':
-									if (setB == true) {
+									if (setB) {
 										x = 1;
 										System.out.println("Result set in R:");
 										polyn.multiply('A', variableName);
@@ -1072,7 +1072,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 									}
 									break;
 								case 'C':
-									if (setC == true) {
+									if (setC) {
 										x = 1;
 										System.out.println("Result set in R:");
 										polyn.multiply('A', variableName);
@@ -1089,7 +1089,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 						}
 						break;
 					case 'B':
-						if (setB == true) {
+						if (setB) {
 							i = 1;
 							x = 0;
 							while (x == 0) {
@@ -1097,7 +1097,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 								variableName = scan.next().charAt(0);
 								switch (variableName) {
 								case 'A':
-									if (setA == true) {
+									if (setA) {
 										x = 1;
 										System.out.println("Result set in R:");
 										polyn.multiply('B', variableName);
@@ -1107,7 +1107,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 									}
 									break;
 								case 'B':
-									if (setB == true) {
+									if (setB) {
 										x = 1;
 										System.out.println("Result set in R:");
 										polyn.multiply('B', variableName);
@@ -1117,7 +1117,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 									}
 									break;
 								case 'C':
-									if (setC == true) {
+									if (setC) {
 										x = 1;
 										System.out.println("Result set in R:");
 										polyn.multiply('B', variableName);
@@ -1134,7 +1134,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 						}
 						break;
 					case 'C':
-						if (setC == true) {
+						if (setC) {
 							i = 1;
 							x = 0;
 							while (x == 0) {
@@ -1142,7 +1142,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 								variableName = scan.next().charAt(0);
 								switch (variableName) {
 								case 'A':
-									if (setA == true) {
+									if (setA) {
 										x = 1;
 										System.out.println("Result set in R:");
 										polyn.multiply('C', variableName);
@@ -1152,7 +1152,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 									}
 									break;
 								case 'B':
-									if (setB == true) {
+									if (setB) {
 										x = 1;
 										System.out.println("Result set in R:");
 										polyn.multiply('C', variableName);
@@ -1162,7 +1162,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 									}
 									break;
 								case 'C':
-									if (setC == true) {
+									if (setC) {
 										x = 1;
 										System.out.println("Result set in R:");
 										polyn.multiply('C', variableName);
@@ -1189,7 +1189,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				while (k == 0) {
 					switch (variableName) {
 					case 'A':
-						if (setA == true) {
+						if (setA) {
 							System.out.println("Insert the value to Evaluate the polynomial:");
 							value = scan.nextInt();
 							polyn.evaluatePolynomial('A', value);
@@ -1197,7 +1197,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 						}
 						break;
 					case 'B':
-						if (setB == true) {
+						if (setB) {
 							System.out.println("Insert the value to Evaluate the polynomial:");
 							value = scan.nextInt();
 							polyn.evaluatePolynomial('B', value);
@@ -1205,7 +1205,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 						}
 						break;
 					case 'C':
-						if (setC == true) {
+						if (setC) {
 							System.out.println("Insert the value to Evaluate the polynomial:");
 							value = scan.nextInt();
 							polyn.evaluatePolynomial('C', value);
@@ -1232,19 +1232,19 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				while (l == 0) {
 					switch (variableName) {
 					case 'A':
-						if (setA == true) {
+						if (setA) {
 							polyn.clearPolynomial('A');
 							l = 1;
 						}
 						break;
 					case 'B':
-						if (setB == true) {
+						if (setB) {
 							polyn.clearPolynomial('B');
 							l = 1;
 						}
 						break;
 					case 'C':
-						if (setC == true) {
+						if (setC) {
 							polyn.clearPolynomial('C');
 							l = 1;
 						}
