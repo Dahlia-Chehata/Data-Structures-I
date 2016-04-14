@@ -15,7 +15,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	Point[] array;
 
 	@Override
-	public void setPolynomial(char poly, int[][] terms) throws RuntimeException {
+	public void setPolynomial(char poly, int[][] terms) 
+	  throws RuntimeException {
 		// TODO Auto-generated method stub
 
 		if (terms.length == 0)
@@ -216,7 +217,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	}
 
 	@Override
-	public float evaluatePolynomial(char poly, float value) throws RuntimeException {
+	public float evaluatePolynomial(char poly, float value) 
+			throws RuntimeException {
 		// TODO Auto-generated method stub
 
 		float result = 0;
@@ -377,7 +379,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	}
 
 	@Override
-	public int[][] subtract(char poly1, char poly2) throws RuntimeException {
+	public int[][] subtract(char poly1, char poly2) 
+			throws RuntimeException {
 		// TODO Auto-generated method stub
 		R.clear();
 		Singly_linkedlists first = new Singly_linkedlists();
