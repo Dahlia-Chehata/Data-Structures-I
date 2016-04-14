@@ -577,8 +577,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			("6- Evaluate a polynomial at some point");
 			System.out.println("7- Clear a polynomial variable");
 			System.out.println
-			("==============================="
-					+ "=====================================");
+			("====================================================================");
 			Scanner scan = new Scanner(System.in);
 			int choice = scan.nextInt();
 			switch (choice) {
