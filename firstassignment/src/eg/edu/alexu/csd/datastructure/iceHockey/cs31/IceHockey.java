@@ -11,8 +11,8 @@ class myCOMP implements Comparator<Point> {
 	public int compare(Point o1, Point o2) {
 		// TODO Auto-generated method stub
 		 if (o2.x > o1.x) {
-			return -1;
-		 }
+			return -1;    }
+		                  
 		 else if (o1.x > o2.x) {
 			return 1;
 		 }
