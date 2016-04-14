@@ -36,34 +36,34 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		}
 
 		switch (poly) {
-		case 'A': {
+		case 'A':
 			for (int i = 0; i < array.length; i++) {
 				if (array[i] == null)
 					throw new RuntimeException();
 
 				A.add(array[i]);
+
 			}
-		}
 			;
 			break;
-		case 'B': {
+		case 'B':
 			for (int i = 0; i < array.length; i++) {
 				if (array[i] == null)
 					throw new RuntimeException();
 
 				B.add(array[i]);
+
 			}
-		}
 			;
 			break;
-		case 'C': {
+		case 'C':
 			for (int i = 0; i < array.length; i++) {
 				if (array[i] == null)
 					throw new RuntimeException();
 
 				C.add(array[i]);
+
 			}
-		}
 			;
 			break;
 		default:
