@@ -379,7 +379,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	}
 
 	@Override
-	public int[][] subtract(char poly1, char poly2) throws RuntimeException {
+	public int[][] subtract(char poly1, char poly2) 
+			throws RuntimeException {
 		// TODO Auto-generated method stub
 		R.clear();
 		Singly_linkedlists first = new Singly_linkedlists();
@@ -467,7 +468,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	}
 
 	@Override
-	public int[][] multiply(char poly1, char poly2) throws RuntimeException {
+	public int[][] multiply(char poly1, char poly2) 
+			throws RuntimeException {
 		// TODO Auto-generated method stub
 		R.clear();
 		Singly_linkedlists first = new Singly_linkedlists();
