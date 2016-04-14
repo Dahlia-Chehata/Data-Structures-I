@@ -211,13 +211,14 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			break;
 
 		default:
-			throw new RuntimeException("invalid input or operation");
+			throw new RuntimeException("invalid input");
 
 		}
 	}
 
 	@Override
-	public float evaluatePolynomial(char poly, float value) throws RuntimeException {
+	public float evaluatePolynomial(char poly, float value) 
+			throws RuntimeException {
 		// TODO Auto-generated method stub
 
 		float result = 0;
