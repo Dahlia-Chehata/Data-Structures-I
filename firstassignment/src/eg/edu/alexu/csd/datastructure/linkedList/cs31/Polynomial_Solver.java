@@ -228,7 +228,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				for (int i = 0; i < A.size; i++) {
 					Point point = new Point();
 					point = (Point) A.get(i);
-					result += point.getX() * Math.pow(value, point.getY());
+					double y=point.getY();
+					double x=point.getX();
+					result += x * Math.pow(value, y);
 				}
 				System.out.println(result);
 			} else
@@ -239,7 +241,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				for (int i = 0; i < B.size(); i++) {
 					Point point = new Point();
 					point = (Point) B.get(i);
-					result += point.getX() * Math.pow(value, point.getY());
+					double y=point.getY();
+					double x=point.getX();
+					result += x * Math.pow(value, y);
 				}
 				System.out.println(result);
 			}
@@ -253,7 +257,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				for (int i = 0; i < C.size(); i++) {
 					Point point = new Point();
 					point = (Point) C.get(i);
-					result += point.getX() * Math.pow(value, point.getY());
+					double y=point.getY();
+					double x=point.getX();
+					result += x * Math.pow(value, y);
 				}
 				System.out.println(result);
 			} else
@@ -264,7 +270,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				for (int i = 0; i < R.size(); i++) {
 					Point point = new Point();
 					point = (Point) R.get(i);
-					result += point.getX() * Math.pow(value, point.getY());
+					double y=point.getY();
+					double x=point.getX();
+					result += x * Math.pow(value, y);
 
 				}
 				System.out.println(result);
@@ -272,7 +280,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				throw new RuntimeException();
 			break;
 		default:
-			throw new RuntimeException("invalid input or operation");
+			throw new RuntimeException("invalid input");
 		}
 
 		return result;
@@ -280,7 +288,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	}
 
 	@Override
-	public int[][] add(char poly1, char poly2) throws RuntimeException {
+	public int[][] add(char poly1, char poly2) 
+			throws RuntimeException {
 		// TODO Auto-generated method stub
 		R.clear();
 		Singly_linkedlists first = new Singly_linkedlists();
@@ -371,7 +380,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	}
 
 	@Override
-	public int[][] subtract(char poly1, char poly2) throws RuntimeException {
+	public int[][] subtract(char poly1, char poly2) 
+			throws RuntimeException {
 		// TODO Auto-generated method stub
 		R.clear();
 		Singly_linkedlists first = new Singly_linkedlists();
@@ -459,7 +469,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	}
 
 	@Override
-	public int[][] multiply(char poly1, char poly2) throws RuntimeException {
+	public int[][] multiply(char poly1, char poly2) 
+			throws RuntimeException {
 		// TODO Auto-generated method stub
 		R.clear();
 		Singly_linkedlists first = new Singly_linkedlists();
