@@ -57,8 +57,11 @@ public class IceHockey implements IPlayersFinder {
 			DFS(i, j + 1, v); // right
 		}
 		int A = counter;
-		if (A * 4 >= area)
-			center = new Point(minCol + maxCol + 1, minRow + maxRow + 1);
+		if (A * 4 >= area){
+			int x=minCol + maxCol + 1;
+			int y= minRow + maxRow + 1;
+			center = new Point(x,y);
+		}
 		return center;
 	}
 
@@ -76,7 +79,7 @@ public class IceHockey implements IPlayersFinder {
 	}
 
 	@Override
-	public Point[] findPlayers(String[] photo, int team, int threshold) {
+	public Point[] findPlayers(String[]photo,int team,int threshold) {
 		// TODO Auto-generated method stub
 		this.team = team;
 		area = threshold;
