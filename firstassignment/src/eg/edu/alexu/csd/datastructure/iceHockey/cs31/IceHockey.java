@@ -10,18 +10,14 @@ class myComp implements Comparator<Point> {
 	@Override
 	public int compare(Point o1, Point o2) {
 		// TODO Auto-generated method stub
-		int x1 = o1.x;
-		int x2 = o2.x;
-		int y1 = o1.y;
-		int y2 = o2.y;
-		if (x2 > x1)
+		 if (o2.x > o1.x)
 			return -1;
-		else if (x1 > x2)
+		 else if (o1.x > o2.x)
 			return 1;
-		else {
-			if (y2 > y1)
+		 else {
+			if (o2.y > o1.y)
 				return -1;
-			else if (y2 < y1)
+			else if (o2.y <o1.y)
 				return 1;
 		}
 		return 0;
@@ -36,7 +32,7 @@ public class IceHockey implements IPlayersFinder {
 	int minRow = 500, minCol = 500, maxRow = -1, maxCol = -1;
 	Point center;
 
-	public Point DFS(int i, int j, int v) {
+	public Point dfs(int i, int j, int v) {
 		if (can_move(i, j, team)) {
 			visited[i][j] = true;
 			counter++;
@@ -48,13 +44,13 @@ public class IceHockey implements IPlayersFinder {
 				maxCol = j;
 			if (j < minCol)
 				minCol = j;
-			DFS(i - 1, j, v); // up
-			DFS(i + 1, j, v); // down
-			DFS(i, j - 1, v); // left
-			DFS(i, j + 1, v); // right
+			dfs(i - 1, j, v); // up
+			dfs(i + 1, j, v); // down
+			dfs(i, j - 1, v); // left
+			dfs(i, j + 1, v); // right
 		}
 		int A = counter;
-		if (A * 4 >= area){
+		if (A * 4 >= area) {
 			int xx = minCol + maxCol + 1;
 			int yy = minRow + maxRow + 1;
 			center = new Point(xx,yy);
@@ -96,7 +92,7 @@ public class IceHockey implements IPlayersFinder {
 
 			for (int i = 0; i < m; i++) {
 				for (int j = 0; j < n; j++) {
-					Point p = DFS(i, j, team);
+					Point p = dfs(i, j, team);
 					if (p != null)
 						coor[index++] = p;
 					center = null;
