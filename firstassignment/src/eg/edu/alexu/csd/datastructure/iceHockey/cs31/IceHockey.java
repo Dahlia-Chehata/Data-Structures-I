@@ -12,12 +12,12 @@ class myCOMP implements Comparator<Point> {
 		// TODO Auto-generated method stub
 		 if (o2.x > o1.x) {
 			return -1;    
-		 }else if (o1.x > o2.x) {
+		 } else if (o1.x > o2.x) {
 			return 1;              
 		 } else {
 			if (o2.y > o1.y) {
 				return -1;
-			}else if (o2.y <o1.y) {
+			} else if (o2.y <o1.y) {
 				return 1;
 			}
 		}
@@ -40,11 +40,14 @@ public class IceHockey implements IPlayersFinder {
 			counter++;
 			if (i > maxRow) {
 				maxRow = i;
-			}if (i < minRow) {
+			}
+			if (i < minRow) {
 				minRow = i;
-			}if (j > maxCol) {
+			}
+			if (j > maxCol) {
 				maxCol = j;
-			}if (j < minCol){
+			}
+			if (j < minCol){
 				minCol = j;
 			}
 			dfs(i - 1, j, v); // up
