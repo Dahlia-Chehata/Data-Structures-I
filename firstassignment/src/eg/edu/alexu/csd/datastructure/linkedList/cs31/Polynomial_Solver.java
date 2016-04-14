@@ -468,7 +468,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	}
 
 	@Override
-	public int[][] multiply(char poly1, char poly2) throws RuntimeException {
+	public int[][] multiply(char poly1, char poly2) 
+			throws RuntimeException {
 		// TODO Auto-generated method stub
 		R.clear();
 		Singly_linkedlists first = new Singly_linkedlists();
@@ -587,7 +588,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					switch (variableName) {
 					case 'A':
 						System.out.println("Insert the polynomial terms in the form :");
-						System.out.println("(coeff1 , exponent1 ), (coeff2 , exponent2 ), ..");
+						System.out.println("(coeff1 , exponent1 ),"
+						+ " (coeff2 , exponent2 ), ..");
 						String poly = (scan.next());
 						for (int h = 0; h < poly.length(); h++) {
 							if (Character.isDigit(poly.charAt(h))) {
@@ -598,8 +600,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 						int row = 0;
 						int column = 0;
 						for (int h = 0; h < poly.length(); h++) {
-							if (h > 0 && h < poly.length() - 1 && Character.isDigit(poly.charAt(h))
-									&& poly.charAt(h - 1) == '-') {
+							if (h > 0 && h < poly.length() - 1 
+							&& Character.isDigit(poly.charAt(h))		
+							&& poly.charAt(h - 1) == '-') {
 								terms[row][column] = -1 * (poly.charAt(h) - 48);
 								column++;
 								if (column > 1) {
