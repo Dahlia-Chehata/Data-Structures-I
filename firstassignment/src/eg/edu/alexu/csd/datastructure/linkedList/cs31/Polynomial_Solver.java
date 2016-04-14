@@ -15,7 +15,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	Point[] array;
 
 	@Override
-	public void setPolynomial(char poly, int[][] terms) throws RuntimeException {
+	public void setPolynomial(char poly, int[][] terms)
+			throws RuntimeException {
 		// TODO Auto-generated method stub
 
 		if (terms.length == 0)
