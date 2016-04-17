@@ -5,7 +5,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 	
 		 IStack stack =new Stack();
 		@Override
-		public String infixToPostfix(String expression) {
+		public String infixToPostfix(String expression) throws RuntimeException {
 			// TODO Auto-generated method stub
 			if (expression==null){
 			   throw new RuntimeException();
