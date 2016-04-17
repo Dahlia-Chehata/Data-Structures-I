@@ -71,7 +71,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 					      throw new RuntimeException("ssss");
 				}
 			}
-			if (!flag)
+			if (flag)
 				 throw new RuntimeException("kkkk");
 
 				for (int i=0;i<expression.length();i++){
