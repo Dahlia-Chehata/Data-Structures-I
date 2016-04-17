@@ -17,7 +17,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 			boolean valid=true;
 			for (int i=0;i<expression.length()-1;i++){
 				
-				if (expression.charAt(i)!='('
+				/*if (expression.charAt(i)!='('
 						&& expression.charAt(i)!='*'
 						&& expression.charAt(i)!= '+'
 						&& expression.charAt(i)!='-'
@@ -27,7 +27,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						&&'9'>=(expression.charAt(i)))){
 			      valid=false;
 			      throw new RuntimeException("aaaa");
-				}
+				}*/
 				if (expression.charAt(i)!='('
 						&& expression.charAt(i)!='*'
 						&& expression.charAt(i)!= '+'
