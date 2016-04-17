@@ -10,46 +10,84 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 			String str = new String();
 			String operand1 = new String();
 			String operand2 = new String();
-			boolean valid;
+			boolean valid=true;
 			for (int i=0;i<expression.length()-1;i++){
-				if (!((Character)expression.charAt(i)).equals("(")
-						&&!((Character)expression.charAt(i)).equals("*")
-						&&!((Character)expression.charAt(i)).equals("+")
-						&&!((Character)expression.charAt(i)).equals("-")
-						&&!((Character)expression.charAt(i)).equals("/")
-						&&!((Character)expression.charAt(i)).equals(")")){
-					if (!((Character)expression.charAt(i+1)).equals("(")
-							&&!((Character)expression.charAt(i+1)).equals("*")
-							&&!((Character)expression.charAt(i+1)).equals("+")
-							&&!((Character)expression.charAt(i+1)).equals("-")
-							&&!((Character)expression.charAt(i+1)).equals("/")
-							&&!((Character)expression.charAt(i+1)).equals(")")){
-						valid =false;
+				
+				if (expression.charAt(i)!='('
+						&& expression.charAt(i)!='*'
+						&& expression.charAt(i)!= '+'
+						&& expression.charAt(i)!='-'
+						&& expression.charAt(i)!='/'
+					    && expression.charAt(i)!=')'		
+						&&!('0'<=(expression.charAt(i))
+						&&'9'>=(expression.charAt(i)))){
+			      valid=false;
+				}
+				/*if (expression.charAt(i)!='('
+						&& expression.charAt(i)!='*'
+						&& expression.charAt(i)!= '+'
+						&& expression.charAt(i)!='-'
+						&& expression.charAt(i)!='/'
+					    && expression.charAt(i)!=')'){
+					
+					if (expression.charAt(i+1)!='('
+							&& expression.charAt(i+1)!='*'
+							&& expression.charAt(i+1)!= '+'
+							&& expression.charAt(i+1)!='-'
+							&& expression.charAt(i+1)!='/'
+						    && expression.charAt(i+1)!=')'){
+						
 						throw new RuntimeException();
 					}
-				}
+				}*/
 				
-				if ((((Character)expression.charAt(i)).equals("(")
-						||((Character)expression.charAt(i)).equals("-")
-						||((Character)expression.charAt(i)).equals("*")
-						||((Character)expression.charAt(i)).equals("/")
-						||((Character)expression.charAt(i)).equals("+"))
-						&&(((Character)expression.charAt(i+1)).equals("*")
-						||((Character)expression.charAt(i+1)).equals("+")
-						||((Character)expression.charAt(i+1)).equals("-")
-						||((Character)expression.charAt(i+1)).equals("/")
-						||((Character)expression.charAt(i+1)).equals(")"))){
-						valid =false;
-						throw new RuntimeException();
+				if((expression.charAt(i)!='('
+						|| expression.charAt(i)=='*'
+						|| expression.charAt(i)== '+'
+						|| expression.charAt(i)=='-'
+						|| expression.charAt(i)=='/')
+						&& (expression.charAt(i+1)=='*'
+						|| expression.charAt(i+1)== '+'
+						|| expression.charAt(i+1)=='-'
+						|| expression.charAt(i+1)=='/'
+					    || expression.charAt(i+1)==')')){
+						
+				      valid=false;
+
 					
 				}
-				if (((Character)expression.charAt(i)).equals(")")
-						&&((Character)expression.charAt(i+1)).equals("(")){
-					valid =false;
-					throw new RuntimeException();
+				   if (expression.charAt(i+1)==')'
+						&& expression.charAt(i+1)=='('){
+					
+					      valid=false;
+				}
+				
+			}if (!valid){
+				throw new RuntimeException();
+				}
+			else{
+				for (int i=0;i<expression.length();i++){
+					if (expression.charAt(i)=='('){
+						stack.push((Object)expression.charAt(i));
+					}else if (expression.charAt(i)==')'){
+						while ((char)stack.peek()!='('){
+							str+=(char)stack.pop();
+						}	
+					}else if(expression.charAt(i)=='*'||expression.charAt(i)=='/'){
+						if ((char)stack.peek()=='+'||(char)stack.peek()!='-'){
+							stack.push(expression.charAt(i));
+						}
+					}else if(expression.charAt(i)=='+'||expression.charAt(i)=='-'){
+						if ((char)stack.peek()=='*'
+								||(char)stack.peek()!='/'
+								||(char)stack.peek()!='+'
+								||(char)stack.peek()!='-'){
+							
+						}
+					}	
 				}
 			}
-			return null;
+			return str;
 		}
 
 		@Override
