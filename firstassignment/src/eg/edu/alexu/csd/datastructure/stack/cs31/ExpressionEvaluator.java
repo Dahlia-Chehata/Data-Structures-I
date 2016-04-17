@@ -50,8 +50,10 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						|| expression.charAt(i)=='*'
 						|| expression.charAt(i)== '+'
 						|| expression.charAt(i)=='-'
-						|| expression.charAt(i)=='/')
-						&& (expression.charAt(i+1)=='*'
+						|| expression.charAt(i)=='/'
+						|| expression.charAt(i)==')')
+						&& (expression.charAt(i)!='('
+						||expression.charAt(i+1)=='*'
 						|| expression.charAt(i+1)== '+'
 						|| expression.charAt(i+1)=='-'
 						|| expression.charAt(i+1)=='/'
