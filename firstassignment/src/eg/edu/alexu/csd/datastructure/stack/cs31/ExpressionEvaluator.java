@@ -135,6 +135,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 			    
 			      throw new RuntimeException("lolololol");
 			}
+			}
 			for (int i=0;i<expression.length();i++){
 				if (expression.charAt(i)!='('
 						&& expression.charAt(i)!='*'
@@ -143,15 +144,15 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						&& expression.charAt(i)!='/'
 					    && expression.charAt(i)!=')'){
 					stack.push((double)expression.charAt(i));
-				}else if
+				}
 			}
 			
 			return 0;
 		}
-public static void main(String[]args){
+/*public static void main(String[]args){
 	IExpressionEvaluator app=new ExpressionEvaluator();
 	String str="4/5*3";
-}
+}*/
 	}
 
 
