@@ -12,7 +12,7 @@ public class Stack implements IStack {
 	public void add(int index, Object element) throws RuntimeException {
 		// TODO Auto-generated method stub
 		mylist.add(mylist.size() - index, element);
-		size++;
+		
 	}
 
 	@Override
@@ -20,7 +20,7 @@ public class Stack implements IStack {
 		// TODO Auto-generated method stub
 		Object pop = mylist.get(0);
 		mylist.remove(0);
-		size--;
+		
 		return pop;
 		
 	}
@@ -35,7 +35,7 @@ public class Stack implements IStack {
 	public void push(Object element) throws RuntimeException {
 		// TODO Auto-generated method stub
 		mylist.add(0, element);
-		size++;
+	
 	}
 
 	@Override
@@ -47,7 +47,7 @@ public class Stack implements IStack {
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
-		return size ;
+		return mylist.size() ;
 	}
 
 }
