@@ -1,4 +1,4 @@
-package eg.edu.alexu.csd.datastructure.stack.cs31;
+/*package eg.edu.alexu.csd.datastructure.stack.cs31;
 import eg.edu.alexu.csd.datastructure.stack.IExpressionEvaluator;
 import eg.edu.alexu.csd.datastructure.stack.IStack;
 public class ExpressionEvaluator implements IExpressionEvaluator {
@@ -38,4 +38,4 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		return 0;
 	}
 
-}
+}*/
