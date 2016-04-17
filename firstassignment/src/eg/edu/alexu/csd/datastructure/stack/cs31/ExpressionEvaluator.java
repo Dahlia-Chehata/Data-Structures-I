@@ -21,8 +21,8 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						&& expression.charAt(i)!='-'
 						&& expression.charAt(i)!='/'
 					    && expression.charAt(i)!=')'		
-						&&!('0'<=(expression.charAt(i))
-						&&'9'>=(expression.charAt(i)))){
+						&&'0'>(expression.charAt(i))
+						&&'9'<(expression.charAt(i))){
 			    
 			      throw new RuntimeException("aaaa");
 			    
@@ -77,7 +77,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 				   if (expression.charAt(i+1)==')'
 						&& expression.charAt(i+1)=='('){
 					
-					      throw new RuntimeException("pppp");
+					      throw new RuntimeException("");
 				}
 			}
 
