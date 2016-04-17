@@ -1,8 +1,8 @@
-/*package eg.edu.alexu.csd.datastructure.stack.cs31;
+package eg.edu.alexu.csd.datastructure.stack.cs31;
 import eg.edu.alexu.csd.datastructure.stack.IExpressionEvaluator;
 import eg.edu.alexu.csd.datastructure.stack.IStack;
 public class ExpressionEvaluator implements IExpressionEvaluator {
-
+/*
 	 IStack stack =new Stack();
 	@Override
 	public String infixToPostfix(String expression) {
@@ -36,6 +36,6 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 	public int evaluate(String expression) {
 		// TODO Auto-generated method stub
 		return 0;
-	}
+	}*/
 
-}*/
+}
