@@ -1,8 +1,9 @@
 package eg.edu.alexu.csd.datastructure.stack.cs31;
 import eg.edu.alexu.csd.datastructure.stack.IExpressionEvaluator;
+import eg.edu.alexu.csd.datastructure.stack.IStack;
 public class ExpressionEvaluator implements IExpressionEvaluator {
 
-	 Stack stack =new Stack();
+	 IStack stack =new Stack();
 	@Override
 	public String infixToPostfix(String expression) {
 		// TODO Auto-generated method stub
@@ -10,7 +11,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		String operand1 = new String();
 		String operand2 = new String();
 		boolean valid;
-		for (int i=0;i<expression.length();i++){
+		for (int i=0;i<expression.length()-1;i++){
 			if (!((Character)expression.charAt(i)).equals("(")
 					&&!((Character)expression.charAt(i)).equals("*")
 					&&!((Character)expression.charAt(i)).equals("+")
