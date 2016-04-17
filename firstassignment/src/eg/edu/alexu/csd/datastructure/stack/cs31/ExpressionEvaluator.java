@@ -64,31 +64,23 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						|| expression.charAt(i)=='*'
 						|| expression.charAt(i)== '+'
 						|| expression.charAt(i)=='-'
-						|| expression.charAt(i)=='/'
-						|| expression.charAt(i)==')')
-						&& (expression.charAt(i+1)=='('
-						|| expression.charAt(i+1)=='*'
+						|| expression.charAt(i)=='/')
+						&& ( expression.charAt(i+1)=='*'
 						|| expression.charAt(i+1)== '+'
 						|| expression.charAt(i+1)=='-'
 						|| expression.charAt(i+1)=='/'
 					    || expression.charAt(i+1)==')')){
-						
-				      //valid=false;
+					
 					throw new RuntimeException("oooo");
 					
 				}
 				   if (expression.charAt(i+1)==')'
 						&& expression.charAt(i+1)=='('){
 					
-					      //valid=false;
 					      throw new RuntimeException("pppp");
 				}
-				
-			}/*if (!valid){
-				throw new RuntimeException("zzzz");
-				//return null;
-				}
-			else{*/
+			}
+
 				for (int i=0;i<expression.length();i++){
 					if (expression.charAt(i)=='('){
 						stack.push(expression.charAt(i));
@@ -123,9 +115,10 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						stack.push(expression.charAt(i));
 					}
 				}
+			
 				while ((char)stack.peek()!='('&& !stack.isEmpty())
 				str+=stack.pop();
-			//}
+		
 			return str;
 		}
 
