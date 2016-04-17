@@ -16,14 +16,14 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
           for (int i=0;i<expression.length();i++){
 				
 				if (!(expression.charAt(i)=='('
-						//|| expression.charAt(i)!=' '
+				
 						|| expression.charAt(i)=='*'
 						|| expression.charAt(i)== '+'
 						|| expression.charAt(i)=='-'
 						|| expression.charAt(i)=='/'
 					    || expression.charAt(i)==')'		
-						/*||('0'<=(expression.charAt(i))
-						&&'9'>=(expression.charAt(i)))*/)){
+						||('0'<=(expression.charAt(i))
+						&&'9'>=(expression.charAt(i))))){
 			    
 			      throw new RuntimeException("aaaa");
 			    
@@ -32,6 +32,28 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
           }
           boolean flag=true;
 			for (int i=0;i<expression.length()-1&&flag;i++){
+				
+				if (!(expression.charAt(i)=='('
+						|| expression.charAt(i)=='*'
+						|| expression.charAt(i)== '+'
+						|| expression.charAt(i)=='-'
+						|| expression.charAt(i)=='/'
+					    || expression.charAt(i)==')')){
+				
+				
+				if (!(expression.charAt(i+1)=='('
+						|| expression.charAt(i+1)=='*'
+						|| expression.charAt(i+1)== '+'
+						|| expression.charAt(i+1)=='-'
+						|| expression.charAt(i+1)=='/'
+					    || expression.charAt(i+1)==')')){
+					throw new RuntimeException("xxxxx");
+				}
+				
+				
+				
+				}
+				
 				flag=false;
 				
 				if (expression.charAt(i)!='('
