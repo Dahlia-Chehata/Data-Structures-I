@@ -123,8 +123,8 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						|| expression.charAt(i)=='-'
 						|| expression.charAt(i)=='/'
 					    || expression.charAt(i)==')'		
-						||('0'<=(expression.charAt(i))
-						&&'9'>=(expression.charAt(i))))){
+						//||('0'<=(expression.charAt(i))
+						/*&&'9'>=(expression.charAt(i)))*/)){
 			    
 			      throw new RuntimeException("lolololol");
 			}
