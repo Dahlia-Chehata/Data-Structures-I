@@ -103,7 +103,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						stack.push(expression.charAt(i));
 					}
 				}
-				while ((char)stack.peek()!='(')
+				while ((char)stack.peek()!='('&& !stack.isEmpty())
 				str+=stack.pop();
 			}
 			return str;
