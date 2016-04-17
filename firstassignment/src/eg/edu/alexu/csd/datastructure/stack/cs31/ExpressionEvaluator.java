@@ -12,8 +12,6 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 				
 			}
 			String str = new String();
-			String operand1 = new String();
-			String operand2 = new String();
 			boolean valid=true;
           for (int i=0;i<expression.length();i++){
 				
@@ -25,7 +23,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 					    && expression.charAt(i)!=')'		
 						&&!('0'<=(expression.charAt(i))
 						&&'9'>=(expression.charAt(i)))){
-			      //valid=false;
+			    
 			      throw new RuntimeException("aaaa");
 			    
 				}
@@ -82,15 +80,15 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 				   if (expression.charAt(i+1)==')'
 						&& expression.charAt(i+1)=='('){
 					
-					      valid=false;
+					      //valid=false;
 					      throw new RuntimeException("pppp");
 				}
 				
-			}if (!valid){
+			}/*if (!valid){
 				throw new RuntimeException("zzzz");
 				//return null;
 				}
-			else{
+			else{*/
 				for (int i=0;i<expression.length();i++){
 					if (expression.charAt(i)=='('){
 						stack.push(expression.charAt(i));
@@ -127,7 +125,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 				}
 				while ((char)stack.peek()!='('&& !stack.isEmpty())
 				str+=stack.pop();
-			}
+			//}
 			return str;
 		}
 
