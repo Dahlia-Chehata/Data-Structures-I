@@ -7,6 +7,9 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		@Override
 		public String infixToPostfix(String expression) {
 			// TODO Auto-generated method stub
+			if (expression==null){
+				throw new RuntimeException();
+			}
 			String str = new String();
 			String operand1 = new String();
 			String operand2 = new String();
@@ -71,8 +74,9 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						stack.push((Object)expression.charAt(i));
 					}else if (expression.charAt(i)==')'){
 						while ((char)stack.peek()!='('){
-							str+=(char)stack.pop();
+							str+=stack.pop();
 						}	
+						stack.pop();
 					}else if(expression.charAt(i)=='*'||expression.charAt(i)=='/'){
 						if ((char)stack.peek()=='+'||(char)stack.peek()!='-'){
 							stack.push(expression.charAt(i));
@@ -82,10 +86,12 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 								||(char)stack.peek()!='/'
 								||(char)stack.peek()!='+'
 								||(char)stack.peek()!='-'){
-							
+							str+=stack.pop();
 						}
 					}	
 				}
+				while ((char)stack.peek()!='(')
+				str+=stack.pop();
 			}
 			return str;
 		}
