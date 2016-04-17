@@ -40,13 +40,6 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						&& expression.charAt(i)!='-'
 						&& expression.charAt(i)!='/'
 					    && expression.charAt(i)!=')'){
-					
-				/*	if (expression.charAt(i+1)!='('
-							&& expression.charAt(i+1)!='*'
-							&& expression.charAt(i+1)!= '+'
-							&& expression.charAt(i+1)!='-'
-							&& expression.charAt(i+1)!='/'
-						    && expression.charAt(i+1)!=')'){*/
 						flag=true;
 						
 					
@@ -110,7 +103,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 					}
 				}
 			
-				while (/*(char)stack.peek()!='('&& */!stack.isEmpty())
+				while ((char)stack.peek()!='('&& !stack.isEmpty())
 				str+=stack.pop();
 		
 			return str;
@@ -123,15 +116,15 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 				 throw new RuntimeException("111111");
 			}
 			for (int i=0;i<expression.length();i++){
-				if (expression.charAt(i)!='('
-						//&& expression.charAt(i)!=' '
-						|| expression.charAt(i)!='*'
-						|| expression.charAt(i)!= '+'
-						|| expression.charAt(i)!='-'
-						|| expression.charAt(i)!='/'
-					    || expression.charAt(i)!=')'		
-						||'0'>(expression.charAt(i))
-						||'9'<(expression.charAt(i))){
+				if (!(expression.charAt(i)=='('
+						//|| expression.charAt(i)!=' '
+						|| expression.charAt(i)=='*'
+						|| expression.charAt(i)== '+'
+						|| expression.charAt(i)=='-'
+						|| expression.charAt(i)=='/'
+					    || expression.charAt(i)==')'		
+						||('0'<=(expression.charAt(i))
+						&&'9'>=(expression.charAt(i))))){
 			    
 			      throw new RuntimeException("lolololol");
 			}
