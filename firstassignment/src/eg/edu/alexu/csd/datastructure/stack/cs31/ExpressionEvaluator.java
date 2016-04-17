@@ -72,9 +72,8 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 				}
 			}
 			if (flag)
-				// throw new RuntimeException("kkkk");
-				return null;
-
+				 throw new RuntimeException("kkkk");
+				
 				for (int i=0;i<expression.length();i++){
 					if (expression.charAt(i)=='('){
 						stack.push(expression.charAt(i));
