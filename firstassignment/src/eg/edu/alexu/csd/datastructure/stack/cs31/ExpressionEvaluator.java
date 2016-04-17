@@ -71,24 +71,37 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 			else{
 				for (int i=0;i<expression.length();i++){
 					if (expression.charAt(i)=='('){
-						stack.push((Object)expression.charAt(i));
+						stack.push(expression.charAt(i));
 					}else if (expression.charAt(i)==')'){
-						while ((char)stack.peek()!='('){
+						while (stack.size()!=0 &&(char)stack.peek()!='('){
 							str+=stack.pop();
+							str+=" ";
 						}	
 						stack.pop();
 					}else if(expression.charAt(i)=='*'||expression.charAt(i)=='/'){
 						if ((char)stack.peek()=='+'||(char)stack.peek()!='-'){
 							stack.push(expression.charAt(i));
 						}
+						else {
+							while(stack.size()!=0
+									&&((char)stack.peek()=='*'
+									||(char)stack.peek()=='/')){
+								str+=stack.pop();
+								str+=" ";
+							}
+							stack.push(expression.charAt(i));
+						}
 					}else if(expression.charAt(i)=='+'||expression.charAt(i)=='-'){
-						if ((char)stack.peek()=='*'
+						while (stack.size()!=0 
+								&&((char)stack.peek()=='*'
 								||(char)stack.peek()!='/'
 								||(char)stack.peek()!='+'
-								||(char)stack.peek()!='-'){
+								||(char)stack.peek()!='-')){
 							str+=stack.pop();
+							str+=" ";
 						}
-					}	
+						stack.push(expression.charAt(i));
+					}
 				}
 				while ((char)stack.peek()!='(')
 				str+=stack.pop();
