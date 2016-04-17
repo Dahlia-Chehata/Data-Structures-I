@@ -7,11 +7,12 @@ import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 public class Stack implements IStack {
 
 	ILinkedList mylist = new Singly_linkedlists();
-
+     int size=0;
 	@Override
 	public void add(int index, Object element) throws RuntimeException {
 		// TODO Auto-generated method stub
 		mylist.add(mylist.size() - index, element);
+		size++;
 	}
 
 	@Override
@@ -32,6 +33,7 @@ public class Stack implements IStack {
 	public void push(Object element) throws RuntimeException {
 		// TODO Auto-generated method stub
 		mylist.add(0, element);
+		size++;
 	}
 
 	@Override
@@ -43,7 +45,7 @@ public class Stack implements IStack {
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
-		return mylist.size();
+		return size;
 	}
 
 }
