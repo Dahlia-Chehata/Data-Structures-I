@@ -3,7 +3,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 	import eg.edu.alexu.csd.datastructure.stack.IStack;
 	public class ExpressionEvaluator implements IExpressionEvaluator {
 	
-		 IStack stack =new Stack();
+		 static IStack stack =new Stack();
 		@Override
 		public String infixToPostfix(String expression) throws RuntimeException {
 			// TODO Auto-generated method stub
@@ -16,6 +16,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
           for (int i=0;i<expression.length();i++){
 				
 				if (expression.charAt(i)!='('
+						&& expression.charAt(i)!=' '
 						&& expression.charAt(i)!='*'
 						&& expression.charAt(i)!= '+'
 						&& expression.charAt(i)!='-'
@@ -121,7 +122,10 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 			
 			return 0;
 		}
-
+public static void main(String[]args){
+	IExpressionEvaluator app=new ExpressionEvaluator();
+	String str="4/5*3";
+}
 	}
 
 
