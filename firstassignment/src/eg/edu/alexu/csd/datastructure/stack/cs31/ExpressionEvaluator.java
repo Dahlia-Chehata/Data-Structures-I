@@ -23,8 +23,8 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 					    && expression.charAt(i)!=')'		
 						&&'0'>(expression.charAt(i))
 						&&'9'<(expression.charAt(i))){
-			    return null;
-			     // throw new RuntimeException("aaaa");
+			    
+			      throw new RuntimeException("aaaa");
 			    
 				}
           }
