@@ -8,8 +8,8 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		public String infixToPostfix(String expression) {
 			// TODO Auto-generated method stub
 			if (expression==null){
-				//throw new RuntimeException("eeee");
-				return null;
+			   throw new RuntimeException();
+				
 			}
 			String str = new String();
 			String operand1 = new String();
