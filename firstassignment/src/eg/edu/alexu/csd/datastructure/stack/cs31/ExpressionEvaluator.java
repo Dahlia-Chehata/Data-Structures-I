@@ -29,9 +29,9 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 				}
 				
           }
-          boolean flag=false;
-			for (int i=0;i<expression.length()-1&&!flag;i++){
-				flag=true;
+          boolean flag=true;
+			for (int i=0;i<expression.length()-1&&flag;i++){
+				flag=false;
 				
 				if (expression.charAt(i)!='('
 						&& expression.charAt(i)!='*'
@@ -46,12 +46,11 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 							&& expression.charAt(i+1)!='-'
 							&& expression.charAt(i+1)!='/'
 						    && expression.charAt(i+1)!=')'){*/
-						flag=false;
+						flag=true;
 						
 					
 				}
-				if (!flag)
-				 throw new RuntimeException("kkkk");
+				
 				if((expression.charAt(i)=='('
 						|| expression.charAt(i)=='*'
 						|| expression.charAt(i)== '+'
@@ -72,6 +71,8 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 					      throw new RuntimeException("ssss");
 				}
 			}
+			if (!flag)
+				 throw new RuntimeException("kkkk");
 
 				for (int i=0;i<expression.length();i++){
 					if (expression.charAt(i)=='('){
