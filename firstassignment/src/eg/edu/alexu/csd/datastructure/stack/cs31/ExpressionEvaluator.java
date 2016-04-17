@@ -44,7 +44,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 			      throw new RuntimeException("aaaa");
 			    
 				}*/
-				if (expression.charAt(i)!='('
+				/*if (expression.charAt(i)!='('
 						&& expression.charAt(i)!='*'
 						&& expression.charAt(i)!= '+'
 						&& expression.charAt(i)!='-'
@@ -60,7 +60,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						valid= false;
 						throw new RuntimeException("kkkk");
 					}
-				}
+				}*/
 				
 				if((expression.charAt(i)=='('
 						|| expression.charAt(i)=='*'
