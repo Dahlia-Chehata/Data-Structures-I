@@ -20,7 +20,9 @@ public class Stack implements IStack {
 		// TODO Auto-generated method stub
 		Object pop = mylist.get(0);
 		mylist.remove(0);
+		size--;
 		return pop;
+		
 	}
 
 	@Override
@@ -45,7 +47,7 @@ public class Stack implements IStack {
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
-		return size-1;
+		return size ;
 	}
 
 }
