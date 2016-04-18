@@ -123,9 +123,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						}
 						stack.push(expression.charAt(i));
 					}
-					else 
-						throw new RuntimeException();
-						
+					
 				}
 			
 				while ((char)stack.peek()!='('&& !stack.isEmpty())
@@ -137,8 +135,10 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		@Override
 		public int evaluate(String expression) {
 			// TODO Auto-generated method stub
+		   double operand1;
+		   double operand2;
 			if (expression==null){
-				 throw new RuntimeException("111111");
+				 throw new RuntimeException();
 			}
 			for (int i=0;i<expression.length();i++){
 				if (!(expression.charAt(i)=='('
@@ -162,10 +162,57 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						&& expression.charAt(i)!='/'
 					    && expression.charAt(i)!=')'){
 					stack.push((double)expression.charAt(i));
+				}else if (expression.charAt(i)!='*'){
+					 if (stack.isEmpty())
+						 throw new RuntimeException();
+					 else 
+					operand2=(double)stack.pop();
+					 if (stack.isEmpty())
+						 throw new RuntimeException();
+					 else 
+					operand1=(double)stack.pop();
+					stack.push(operand1*operand2);
+				}else if (expression.charAt(i)!='+'){
+					if (stack.isEmpty())
+						 throw new RuntimeException();
+					 else 
+					operand2=(double)stack.pop();
+					if (stack.isEmpty())
+						 throw new RuntimeException();
+					 else 
+					operand1=(double)stack.pop();
+					stack.push(operand1+operand2);
+				}else if (expression.charAt(i)!='-'){
+					if (stack.isEmpty())
+						 throw new RuntimeException();
+					 else 
+					operand2=(double)stack.pop();
+					if (stack.isEmpty())
+						 throw new RuntimeException();
+					 else 
+					operand1=(double)stack.pop();
+					stack.push(operand1-operand2);
+				}else if (expression.charAt(i)!='/'){
+					if (stack.isEmpty())
+						 throw new RuntimeException();
+					 else 
+					operand2=(double)stack.pop();
+					if (stack.isEmpty())
+						 throw new RuntimeException();
+					 else 
+					operand1=(double)stack.pop();
+					if (operand2==0)
+						throw new RuntimeException();
+					else if (operand1==0)
+						stack.push(0);
+					else stack.push(operand1/operand2);
 				}
+				
 			}
-			
-			return 0;
+			if (stack.isEmpty())
+				 throw new RuntimeException();
+			 else 
+			return (int)stack.pop();
 		}
 /*public static void main(String[]args){
 	IExpressionEvaluator app=new ExpressionEvaluator();
