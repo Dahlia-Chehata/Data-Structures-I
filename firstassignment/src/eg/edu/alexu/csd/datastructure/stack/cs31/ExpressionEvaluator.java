@@ -140,7 +140,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 			if (expression==null){
 				 throw new RuntimeException();
 			}
-			for (int i=0;i<expression.length();i++){
+			/*for (int i=0;i<expression.length();i++){
 				if (!(expression.charAt(i)=='('
 						//|| expression.charAt(i)!=' '
 						|| expression.charAt(i)=='*'
@@ -149,11 +149,12 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						|| expression.charAt(i)=='/'
 					    || expression.charAt(i)==')'		
 						//||('0'<=(expression.charAt(i))
-						/*&&'9'>=(expression.charAt(i)))*/)){
+						/*&&'9'>=(expression.charAt(i))))){
 			    
-			      throw new RuntimeException("lolololol");
-			}
-			}
+			 //     throw new RuntimeException("lolololol");
+		//	}
+	//	}*/
+		
 			for (int i=0;i<expression.length();i++){
 				if (expression.charAt(i)!='('
 						&& expression.charAt(i)!='*'
