@@ -7,11 +7,13 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		@Override
 		public String infixToPostfix(String expression) throws RuntimeException {
 			// TODO Auto-generated method stub
+			String str = new String();
+			boolean flag=true;
 			if (expression==null){
 			   throw new RuntimeException("bbb");
 				
 			}
-			String str = new String();
+			
 			
          /* for (int i=0;i<expression.length();i++){
 				
@@ -30,8 +32,9 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 				}
 				
           }*/
-          boolean flag=true;
-			for (int i=0;i<expression.length()-1&&flag;i++){
+			
+          
+			for (int i=0;i<expression.length()-1;i++){
 				
 				if (!(expression.charAt(i)=='('
 						|| expression.charAt(i)=='*'
@@ -49,24 +52,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 					    || expression.charAt(i+1)==')')){
 					throw new RuntimeException("xxxxx");
 				}
-				
-				
-				
-				}
-				
-				flag=false;
-				
-				if (expression.charAt(i)!='('
-						&& expression.charAt(i)!='*'
-						&& expression.charAt(i)!= '+'
-						&& expression.charAt(i)!='-'
-						&& expression.charAt(i)!='/'
-					    && expression.charAt(i)!=')'){
-						flag=true;
-						
-					
-				}
-				
+			}
 				if((expression.charAt(i)=='('
 						|| expression.charAt(i)=='*'
 						|| expression.charAt(i)== '+'
@@ -85,10 +71,24 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						&& expression.charAt(i+1)=='('){
 					
 					      throw new RuntimeException("ssss");
-				}
+				}	
+		}		
+			
+
+			for (int i=0;i<expression.length()-1&&flag;i++){	
+				if (expression.charAt(i)!='('
+						&& expression.charAt(i)!='*'
+						&& expression.charAt(i)!= '+'
+						&& expression.charAt(i)!='-'
+						&& expression.charAt(i)!='/'
+					    && expression.charAt(i)!=')'){
+						flag=true;
+				}		
+			
 			}
-			if (flag)
+			if (flag) {
 				 throw new RuntimeException("kkkk");
+			}
 				
 				for (int i=0;i<expression.length();i++){
 					if (expression.charAt(i)=='('){
