@@ -7,7 +7,7 @@ import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 public class Stack implements IStack {
 
 	ILinkedList mylist = new Singly_linkedlists();
-     int size=0;
+     int size=mylist.size();
 	@Override
 	public void add(int index, Object element) throws RuntimeException {
 		// TODO Auto-generated method stub
