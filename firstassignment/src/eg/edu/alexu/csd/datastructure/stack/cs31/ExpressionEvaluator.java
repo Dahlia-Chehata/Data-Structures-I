@@ -22,7 +22,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
           for (int i=0;i<expression.length();i++){
         	  
 				if (expression.charAt(i)!='('
-				
+						&& expression.charAt(i)!=' '
 						&& expression.charAt(i)!='*'
 						&& expression.charAt(i)!= '+'
 						&& expression.charAt(i)!='-'
@@ -217,7 +217,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		}
 public static void main(String[]args){
 	IExpressionEvaluator app=new ExpressionEvaluator();
-	String str="-6+9";
+	String str="( / * * + ";
 	String sol= app.infixToPostfix(str);
 	//int ans=app.evaluate(sol);
 	System.out.println(sol);
