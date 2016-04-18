@@ -13,10 +13,14 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 			   throw new RuntimeException("bbb");
 				
 			}
-			
+			if (expression.charAt(0)=='/'
+        		||expression.charAt(0)=='*'
+        		||expression.charAt(0)=='+'
+        		||expression.charAt(0)=='-')
+				throw new RuntimeException("starting with operator");
 			
           for (int i=0;i<expression.length();i++){
-				
+        	  
 				if (expression.charAt(i)!='('
 				
 						&& expression.charAt(i)!='*'
@@ -48,14 +52,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 			
           
 			for (int i=0;i<expression.length()-1;i++){
-				//test all digits
 				
-				/*if ('0'<=expression.charAt(i)&&expression.charAt(i)<='9'
-					&&'0'<=expression.charAt(i+1)&&expression.charAt(i+1)<='9')
-				
-					throw new RuntimeException("xxxxx");*/
-				
-			
 				//test all symbols
 				if((expression.charAt(i)=='('
 						|| expression.charAt(i)=='*'
@@ -220,7 +217,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		}
 public static void main(String[]args){
 	IExpressionEvaluator app=new ExpressionEvaluator();
-	String str="-12/345";
+	String str="-6+9";
 	String sol= app.infixToPostfix(str);
 	//int ans=app.evaluate(sol);
 	System.out.println(sol);
