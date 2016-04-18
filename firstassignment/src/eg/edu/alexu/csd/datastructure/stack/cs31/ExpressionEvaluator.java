@@ -17,46 +17,46 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 			
           for (int i=0;i<expression.length();i++){
 				
-				if (!(expression.charAt(i)=='('
+				if (expression.charAt(i)!='('
 				
-						|| expression.charAt(i)=='*'
-						|| expression.charAt(i)== '+'
-						|| expression.charAt(i)=='-'
-						|| expression.charAt(i)=='/'
-					    || expression.charAt(i)==')'		
-						||('0'<=(expression.charAt(i))
-						&&'9'>=(expression.charAt(i)))
-						||('a'<=(expression.charAt(i))
-						&&'z'>=(expression.charAt(i)))
-						||('A'<=(expression.charAt(i))
-						&&'Z'>=(expression.charAt(i))))){
+						&& expression.charAt(i)!='*'
+						&& expression.charAt(i)!= '+'
+						&& expression.charAt(i)!='-'
+						&& expression.charAt(i)!='/'
+					    && expression.charAt(i)!=')'		
+						&&('0'>expression.charAt(i)
+						||'9'<(expression.charAt(i)))){
+					
 			    
 			      throw new RuntimeException("aaaa");
 			    
 				}
 				
           }
+          for (int i=0;i<expression.length()-1&&flag;i++){	
+		  flag=false;
+		         if ( expression.charAt(i)!='*'
+					&& expression.charAt(i)!= '+'
+					&& expression.charAt(i)!='-'
+					&& expression.charAt(i)!='/')
+	     flag=true;
+          }
+	if (flag) {
+		 throw new RuntimeException("no operator");
+	}
+		
 			
           
 			for (int i=0;i<expression.length()-1;i++){
+				//test all digits
 				
-				if (!(expression.charAt(i)=='('
-						|| expression.charAt(i)=='*'
-						|| expression.charAt(i)== '+'
-						|| expression.charAt(i)=='-'
-						|| expression.charAt(i)=='/'
-					    || expression.charAt(i)==')')){
+				/*if ('0'<=expression.charAt(i)&&expression.charAt(i)<='9'
+					&&'0'<=expression.charAt(i+1)&&expression.charAt(i+1)<='9')
 				
+					throw new RuntimeException("xxxxx");*/
 				
-				if (!(expression.charAt(i+1)=='('
-						|| expression.charAt(i+1)=='*'
-						|| expression.charAt(i+1)== '+'
-						|| expression.charAt(i+1)=='-'
-						|| expression.charAt(i+1)=='/'
-					    || expression.charAt(i+1)==')')){
-					throw new RuntimeException("xxxxx");
-				}
-			}
+			
+				//test all symbols
 				if((expression.charAt(i)=='('
 						|| expression.charAt(i)=='*'
 						|| expression.charAt(i)== '+'
@@ -79,30 +79,18 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		}		
 			
 
-			for (int i=0;i<expression.length()-1&&flag;i++){	
-				  flag=false;
-				if (expression.charAt(i)!='('
-						&& expression.charAt(i)!='*'
-						&& expression.charAt(i)!= '+'
-						&& expression.charAt(i)!='-'
-						&& expression.charAt(i)!='/'
-					    && expression.charAt(i)!=')'){
-						flag=true;
-				}		
 			
-			}
-			if (flag) {
-				 throw new RuntimeException("kkkk");
-			}
-				
 				for (int i=0;i<expression.length();i++){
 					if (expression.charAt(i)=='('){
 						stack.push(expression.charAt(i));
 					}else if (expression.charAt(i)==')'){
+						
 						while (stack.size()!=0 &&(char)stack.peek()!='('){
 							str+=stack.pop();
 							str+=" ";
 						}	
+						if (stack.isEmpty()||(!stack.isEmpty()&&(char)stack.peek()!='('))
+							throw new RuntimeException("there is no (");
 						stack.pop();
 					}else if(expression.charAt(i)=='*'||expression.charAt(i)=='/'){
 					    if(stack.isEmpty()){
@@ -123,9 +111,9 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 					}else if(expression.charAt(i)=='+'||expression.charAt(i)=='-'){
 						while (stack.size()!=0 
 								&&((char)stack.peek()=='*'
-								||(char)stack.peek()!='/'
-								||(char)stack.peek()!='+'
-								||(char)stack.peek()!='-')){
+								||(char)stack.peek()=='/'
+								||(char)stack.peek()=='+'
+								||(char)stack.peek()=='-')){
 							str+=stack.pop();
 							str+=" ";
 						}
@@ -137,9 +125,13 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 					
 				}
 			
-				while (!stack.isEmpty())
+				while (!stack.isEmpty()){
+					  if ((char)stack.peek()=='(')
+						  throw new RuntimeException("'(' without a ')'");
 				str+=stack.pop();
-		
+				}
+		      
+		        	
 			return str;
 		}
 
@@ -228,7 +220,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		}
 public static void main(String[]args){
 	IExpressionEvaluator app=new ExpressionEvaluator();
-	String str="a/b-c+d*e-a*c";
+	String str="-12/345";
 	String sol= app.infixToPostfix(str);
 	//int ans=app.evaluate(sol);
 	System.out.println(sol);
