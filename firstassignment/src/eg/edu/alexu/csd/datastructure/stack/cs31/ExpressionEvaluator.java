@@ -123,6 +123,9 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						}
 						stack.push(expression.charAt(i));
 					}
+					else 
+						throw new RuntimeException();
+						
 				}
 			
 				while ((char)stack.peek()!='('&& !stack.isEmpty())
