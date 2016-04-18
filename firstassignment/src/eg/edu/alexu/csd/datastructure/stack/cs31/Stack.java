@@ -34,7 +34,7 @@ public class Stack implements IStack {
 	@Override
 	public void push(Object element) throws RuntimeException {
 		// TODO Auto-generated method stub
-		//mylist.add(0, element);
+		mylist.add(0, element);
 	
 	}
 
