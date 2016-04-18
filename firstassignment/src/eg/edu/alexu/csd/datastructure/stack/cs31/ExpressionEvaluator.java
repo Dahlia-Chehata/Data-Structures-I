@@ -53,8 +53,8 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 			for (int i=0;i<split.length-1;i++){
 				
 				//test all symbols
-				if((split[i].equals("(")
-						|| split[i].equals("*")
+				if(
+						( split[i].equals("*")
 						|| split[i].equals("+") 
 						|| split[i].equals("-")
 						|| split[i].equals("/"))
@@ -62,7 +62,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						|| split[i+1].equals("+")
 						|| split[i+1].equals("-")
 						|| split[i+1].equals("/")
-					    || split[i+1].equals(")"))){
+					    )){
 					
 					throw new RuntimeException("oooo");
 					
@@ -117,6 +117,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 								&&((String)stack.peek()).equals("("))){
 					    	stack.push(split[i]);
 					    }
+						else {
 						while (stack.size()!=0 
 								&&(((String)stack.peek()).equals("*")
 										||((String)stack.peek()).equals("/")
@@ -126,6 +127,8 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 							str+=" ";
 						}
 						stack.push(split[i]);
+						}
+						
 					}else{
 						str+=split[i];
 						str+=" ";
@@ -231,7 +234,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		}
 public static void main(String[]args){
 	IExpressionEvaluator app=new ExpressionEvaluator();
-	String str=" 12 / ( k * 4 )";
+	String str="( 300 + 23 ) * ( 43 - 21 ) / ( 84 + 7 )";
 	String sol= app.infixToPostfix(str);
 	//int ans=app.evaluate(sol);
 	System.out.println(sol);
