@@ -76,6 +76,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 			
 
 			for (int i=0;i<expression.length()-1&&flag;i++){	
+				  flag=false;
 				if (expression.charAt(i)!='('
 						&& expression.charAt(i)!='*'
 						&& expression.charAt(i)!= '+'
@@ -100,7 +101,10 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						}	
 						stack.pop();
 					}else if(expression.charAt(i)=='*'||expression.charAt(i)=='/'){
-						if ((char)stack.peek()=='+'||(char)stack.peek()!='-'){
+					    if(stack.isEmpty()){
+					    	stack.push(expression.charAt(i));
+					    }
+						else if ((char)stack.peek()=='+'||(char)stack.peek()=='-'){
 							stack.push(expression.charAt(i));
 						}
 						else {
@@ -122,11 +126,14 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 							str+=" ";
 						}
 						stack.push(expression.charAt(i));
+					}else{
+						str+=expression.charAt(i);
+						str+=" ";
 					}
 					
 				}
 			
-				while ((char)stack.peek()!='('&& !stack.isEmpty())
+				while (!stack.isEmpty())
 				str+=stack.pop();
 		
 			return str;
@@ -215,10 +222,14 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 			 else 
 			return (int)stack.pop();
 		}
-/*public static void main(String[]args){
+public static void main(String[]args){
 	IExpressionEvaluator app=new ExpressionEvaluator();
-	String str="4/5*3";
-}*/
+	String str="9/3-2+5*7-9*2";
+	String sol= app.infixToPostfix(str);
+	//int ans=app.evaluate(sol);
+	System.out.println(sol);
+	//System.out.println(ans);
+}
 	}
 
 
