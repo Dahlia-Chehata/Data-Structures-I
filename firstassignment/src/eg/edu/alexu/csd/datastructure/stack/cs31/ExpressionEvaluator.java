@@ -15,7 +15,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 			}
 			
 			
-         /* for (int i=0;i<expression.length();i++){
+          for (int i=0;i<expression.length();i++){
 				
 				if (!(expression.charAt(i)=='('
 				
@@ -25,13 +25,17 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						|| expression.charAt(i)=='/'
 					    || expression.charAt(i)==')'		
 						||('0'<=(expression.charAt(i))
-						&&'9'>=(expression.charAt(i))))){
+						&&'9'>=(expression.charAt(i)))
+						||('a'<=(expression.charAt(i))
+						&&'z'>=(expression.charAt(i)))
+						||('A'<=(expression.charAt(i))
+						&&'Z'>=(expression.charAt(i))))){
 			    
 			      throw new RuntimeException("aaaa");
 			    
 				}
 				
-          }*/
+          }
 			
           
 			for (int i=0;i<expression.length()-1;i++){
@@ -224,7 +228,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		}
 public static void main(String[]args){
 	IExpressionEvaluator app=new ExpressionEvaluator();
-	String str="9/3-2+5*7-9*2";
+	String str="a/b-c+d*e-a*c";
 	String sol= app.infixToPostfix(str);
 	//int ans=app.evaluate(sol);
 	System.out.println(sol);
