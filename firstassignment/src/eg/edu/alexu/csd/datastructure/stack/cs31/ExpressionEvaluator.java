@@ -168,46 +168,46 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						&& expression.charAt(i)!='-'
 						&& expression.charAt(i)!='/'
 					    && expression.charAt(i)!=')'){
-					stack.push((float)expression.charAt(i));
+					stack.push((double)expression.charAt(i));
 				}else if (expression.charAt(i)!='*'){
 					 if (stack.isEmpty())
 						 throw new RuntimeException();
 					 else 
-					operand2=(float)stack.pop();
+					operand2=(double)stack.pop();
 					 if (stack.isEmpty())
 						 throw new RuntimeException();
 					 else 
-					operand1=(float)stack.pop();
+					operand1=(double)stack.pop();
 					stack.push(operand1*operand2);
 				}else if (expression.charAt(i)!='+'){
 					if (stack.isEmpty())
 						 throw new RuntimeException();
 					 else 
-					operand2=(float)stack.pop();
+					operand2=(double)stack.pop();
 					if (stack.isEmpty())
 						 throw new RuntimeException();
 					 else 
-					operand1=(float)stack.pop();
+					operand1=(double)stack.pop();
 					stack.push(operand1+operand2);
 				}else if (expression.charAt(i)!='-'){
 					if (stack.isEmpty())
 						 throw new RuntimeException();
 					 else 
-					operand2=(float)stack.pop();
+					operand2=(double)stack.pop();
 					if (stack.isEmpty())
 						 throw new RuntimeException();
 					 else 
-					operand1=(float)stack.pop();
+					operand1=(double)stack.pop();
 					stack.push(operand1-operand2);
 				}else if (expression.charAt(i)!='/'){
 					if (stack.isEmpty())
 						 throw new RuntimeException();
 					 else 
-					operand2=(float)stack.pop();
+					operand2=(double)stack.pop();
 					if (stack.isEmpty())
 						 throw new RuntimeException();
 					 else 
-					operand1=(float)stack.pop();
+					operand1=(double)stack.pop();
 					if (operand2==0)
 						throw new RuntimeException();
 					else if (operand1==0)
