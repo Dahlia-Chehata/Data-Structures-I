@@ -168,7 +168,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						&& expression.charAt(i)!='-'
 						&& expression.charAt(i)!='/'
 					    && expression.charAt(i)!=')'){
-					stack.push((double)expression.charAt(i));
+					stack.push(expression.charAt(i));
 				}else if (expression.charAt(i)!='*'){
 					 if (stack.isEmpty())
 						 throw new RuntimeException();
