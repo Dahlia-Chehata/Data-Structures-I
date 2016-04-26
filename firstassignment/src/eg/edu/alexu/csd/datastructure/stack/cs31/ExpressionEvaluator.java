@@ -178,7 +178,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						 throw new RuntimeException();
 					 else 
 					operand1=(double)stack.pop();
-					stack.push(operand1*operand2);
+					stack.push((double)operand1*operand2);
 				}else if (expression.charAt(i)!='+'){
 					if (stack.isEmpty())
 						 throw new RuntimeException();
@@ -188,7 +188,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						 throw new RuntimeException();
 					 else 
 					operand1=(double)stack.pop();
-					stack.push(operand1+operand2);
+					stack.push((double)operand1+operand2);
 				}else if (expression.charAt(i)!='-'){
 					if (stack.isEmpty())
 						 throw new RuntimeException();
@@ -198,7 +198,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						 throw new RuntimeException();
 					 else 
 					operand1=(double)stack.pop();
-					stack.push(operand1-operand2);
+					stack.push((double)operand1-operand2);
 				}else if (expression.charAt(i)!='/'){
 					if (stack.isEmpty())
 						 throw new RuntimeException();
