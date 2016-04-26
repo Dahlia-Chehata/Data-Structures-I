@@ -163,13 +163,14 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		
 			for (int i=0;i<expression.length();i++){
 				if (expression.charAt(i)!='('
+						&& expression.charAt(i)!=' '
 						&& expression.charAt(i)!='*'
 						&& expression.charAt(i)!= '+'
 						&& expression.charAt(i)!='-'
 						&& expression.charAt(i)!='/'
 					    && expression.charAt(i)!=')'){
 					stack.push((double)expression.charAt(i));
-				}else if (expression.charAt(i)!='*'){
+				}else if (expression.charAt(i)=='*'){
 					 if (stack.isEmpty())
 						 throw new RuntimeException();
 					 else 
@@ -179,7 +180,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 					 else 
 					operand1=(double)stack.pop();
 					stack.push((double)operand1*operand2);
-				}else if (expression.charAt(i)!='+'){
+				}else if (expression.charAt(i)=='+'){
 					if (stack.isEmpty())
 						 throw new RuntimeException();
 					 else 
@@ -189,7 +190,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 					 else 
 					operand1=(double)stack.pop();
 					stack.push((double)operand1+operand2);
-				}else if (expression.charAt(i)!='-'){
+				}else if (expression.charAt(i)=='-'){
 					if (stack.isEmpty())
 						 throw new RuntimeException();
 					 else 
@@ -199,7 +200,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 					 else 
 					operand1=(double)stack.pop();
 					stack.push((double)operand1-operand2);
-				}else if (expression.charAt(i)!='/'){
+				}else if (expression.charAt(i)=='/'){
 					if (stack.isEmpty())
 						 throw new RuntimeException();
 					 else 
@@ -223,11 +224,12 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		}
 public static void main(String[]args){
 	IExpressionEvaluator app=new ExpressionEvaluator();
-	String str="(a +b)*d";
+	String str="(2 + 3) * 4";
 	String sol= app.infixToPostfix(str);
-	//int ans=app.evaluate(sol);
+	int ans=app.evaluate(sol);
 	System.out.println(sol);
-	//System.out.println(ans);
+	//
+	System.out.println(ans);
 }
 	}
 
