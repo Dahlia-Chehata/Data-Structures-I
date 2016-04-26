@@ -131,7 +131,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 					  if ((char)stack.peek()=='(')
 						  throw new RuntimeException("'(' without a ')'");
 				str+=stack.pop();
-				//str+=" ";
+				str+=" ";
 				}
 		      
 		        	
@@ -223,7 +223,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		}
 public static void main(String[]args){
 	IExpressionEvaluator app=new ExpressionEvaluator();
-	String str="( / * * + ";
+	String str="(a +b)*d";
 	String sol= app.infixToPostfix(str);
 	//int ans=app.evaluate(sol);
 	System.out.println(sol);
