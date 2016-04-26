@@ -135,7 +135,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 				}
 		      
 		        	
-			return str;
+			return str.trim();
 		}
 
 		@Override
