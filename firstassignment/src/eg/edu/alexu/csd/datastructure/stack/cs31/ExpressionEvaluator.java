@@ -3,7 +3,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 	import eg.edu.alexu.csd.datastructure.stack.IStack;
 	public class ExpressionEvaluator implements IExpressionEvaluator {
 	
-		  IStack stack =new Stack();
+		 static IStack stack =new Stack();
 		@Override
 		public String infixToPostfix(String expression) throws RuntimeException {
 			// TODO Auto-generated method stub
@@ -12,36 +12,37 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 			if (expression==null){
 			   throw new RuntimeException("bbb");
 				
-			}if (expression.charAt(0)=='/'
+			}
+			if (expression.charAt(0)=='/'
         		||expression.charAt(0)=='*'
         		||expression.charAt(0)=='+'
         		||expression.charAt(0)=='-')
 				throw new RuntimeException("starting with operator");
-			String[] split = expression.split("\\s+");
 			
-			
-       /*   for (int i=0;i<split.length;i++){
+          for (int i=0;i<expression.length();i++){
         	  
-				if (split[i]!="("
-						&& split[i]!="*"
-						&& split[i]!= "+"
-						&& split[i]!="-"
-						&& split[i]!="/"
-					    && split[i]!=")"		
-						){
+				if (expression.charAt(i)!='('
+						&& expression.charAt(i)!=' '
+						&& expression.charAt(i)!='*'
+						&& expression.charAt(i)!= '+'
+						&& expression.charAt(i)!='-'
+						&& expression.charAt(i)!='/'
+					    && expression.charAt(i)!=')'		
+						&&('0'>expression.charAt(i)
+						||'9'<(expression.charAt(i)))){
 					
 			    
 			      throw new RuntimeException("aaaa");
 			    
 				}
 				
-          }*/
-         for (int i=0;i<split.length&&flag;i++){	
+          }
+          for (int i=0;i<expression.length()-1&&flag;i++){	
 		  flag=false;
-		         if ( !split[i].equals("*")
-					&& !split[i].equals("+")
-					&&!split[i].equals("-")
-					&&!split[i].equals("/"))
+		         if ( expression.charAt(i)!='*'
+					&& expression.charAt(i)!= '+'
+					&& expression.charAt(i)!='-'
+					&& expression.charAt(i)!='/')
 	     flag=true;
           }
 	if (flag) {
@@ -50,25 +51,25 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		
 			
           
-			for (int i=0;i<split.length-1;i++){
+			for (int i=0;i<expression.length()-1;i++){
 				
 				//test all symbols
-				if(
-						( split[i].equals("*")
-						|| split[i].equals("+") 
-						|| split[i].equals("-")
-						|| split[i].equals("/"))
-						&& ( split[i+1].equals("*")
-						|| split[i+1].equals("+")
-						|| split[i+1].equals("-")
-						|| split[i+1].equals("/")
-					    )){
+				if((expression.charAt(i)=='('
+						|| expression.charAt(i)=='*'
+						|| expression.charAt(i)== '+'
+						|| expression.charAt(i)=='-'
+						|| expression.charAt(i)=='/')
+						&& ( expression.charAt(i+1)=='*'
+						|| expression.charAt(i+1)== '+'
+						|| expression.charAt(i+1)=='-'
+						|| expression.charAt(i+1)=='/'
+					    || expression.charAt(i+1)==')')){
 					
 					throw new RuntimeException("oooo");
 					
 				}
-				   if (split[i].equals(")")
-						&& split[i+1].equals("(")){
+				   if (expression.charAt(i+1)==')'
+						&& expression.charAt(i+1)=='('){
 					
 					      throw new RuntimeException("ssss");
 				}	
@@ -76,69 +77,58 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 			
 
 			
-				for (int i=0;i<split.length;i++){
-					if (split[i].equals("(")){
-						stack.push(split[i]);
-					}else if (split[i].equals(")")){
+				for (int i=0;i<expression.length();i++){
+					if (expression.charAt(i)=='('){
+						stack.push(expression.charAt(i));
+					}else if (expression.charAt(i)==')'){
 						
-						while (!stack.isEmpty() && !((String)stack.peek()).equals("(")){
-							
+						while (stack.size()!=0 &&(char)stack.peek()!='('){
 							str+=stack.pop();
 							str+=" ";
-							
-							
 						}	
-						if (stack.isEmpty()||(!stack.isEmpty()
-								&&!((String)stack.peek()).equals("(")))
+						if (stack.isEmpty()||(!stack.isEmpty()&&(char)stack.peek()!='('))
 							throw new RuntimeException("there is no (");
 						stack.pop();
-					}else if(split[i].equals("*")||split[i].equals("/")){
-					    if(stack.isEmpty()
-					    		||(!stack.isEmpty()
-								&&((String)stack.peek()).equals("("))){
-					    	stack.push(split[i]);
+					}else if(expression.charAt(i)=='*'||expression.charAt(i)=='/'){
+					    if(stack.isEmpty()){
+					    	stack.push(expression.charAt(i));
 					    }
-						else if (((String)stack.peek()).equals("+")
-								||((String)stack.peek()).equals("-")){
-							stack.push(split[i]);
+						else if ((char)stack.peek()=='+'||(char)stack.peek()=='-'){
+							stack.push(expression.charAt(i));
 						}
 						else {
 							while(stack.size()!=0
-									&&(((String)stack.peek()).equals("*")
-									||((String)stack.peek()).equals("/"))){
+									&&((char)stack.peek()=='*'
+									||(char)stack.peek()=='/')){
 								str+=stack.pop();
 								str+=" ";
 							}
-							stack.push(split[i]);
+							stack.push(expression.charAt(i));
 						}
-					}else if(split[i].equals("+")||split[i].equals("-")){
-						if(stack.isEmpty()
-					    		||(!stack.isEmpty()
-								&&((String)stack.peek()).equals("("))){
-					    	stack.push(split[i]);
-					    }
-						else {
+					}else if(expression.charAt(i)=='+'||expression.charAt(i)=='-'){
 						while (stack.size()!=0 
-								&&(((String)stack.peek()).equals("*")
-										||((String)stack.peek()).equals("/")
-										||((String)stack.peek()).equals("+")
-										||((String)stack.peek()).equals("-"))){
+								&&((char)stack.peek()=='*'
+								||(char)stack.peek()=='/'
+								||(char)stack.peek()=='+'
+								||(char)stack.peek()=='-')){
 							str+=stack.pop();
 							str+=" ";
 						}
-						stack.push(split[i]);
-						}
-						
+						stack.push(expression.charAt(i));
 					}else{
-						str+=split[i];
+						if(expression.charAt(i)!=' '){
+						str+=expression.charAt(i);
 						str+=" ";
-						
+						}
+						else {
+							continue;
+						}
 					}
 					
 				}
 			
 				while (!stack.isEmpty()){
-					  if (((String)stack.peek()).equals("("))
+					  if ((char)stack.peek()=='(')
 						  throw new RuntimeException("'(' without a ')'");
 				str+=stack.pop();
 				}
@@ -150,37 +140,35 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		@Override
 		public int evaluate(String expression) {
 			// TODO Auto-generated method stub
+		   double operand1;
+		   double operand2;
 			if (expression==null){
 				 throw new RuntimeException();
 			}
-			String[] split = expression.split("\\s+");
-		  double operand1;
-		   double operand2;
-			
-			/*for (int i=0;i<split.length();i++){
-				if (!(split[i]=='('
-						//|| split[i]!=' '
-						|| split[i]=='*'
-						|| split[i].equals()'+'
-						|| split[i]=='-'
-						|| split[i]=='/'
-					    || split[i]==')'		
-						//||('0'<=(split[i])
-						/*&&'9'>=(split[i])))){
+			/*for (int i=0;i<expression.length();i++){
+				if (!(expression.charAt(i)=='('
+						//|| expression.charAt(i)!=' '
+						|| expression.charAt(i)=='*'
+						|| expression.charAt(i)== '+'
+						|| expression.charAt(i)=='-'
+						|| expression.charAt(i)=='/'
+					    || expression.charAt(i)==')'		
+						//||('0'<=(expression.charAt(i))
+						/*&&'9'>=(expression.charAt(i))))){
 			    
 			 //     throw new RuntimeException("lolololol");
 		//	}
 	//	}*/
 		
-			for (int i=0;i<split.length;i++){
-				if (split[i]!="("
-						&& split[i]!="*"
-						&& split[i]!= "+"
-						&& split[i]!="-"
-						&& split[i]!="/"
-					    && split[i]!=")"){
-					stack.push(split[i]);
-				}else if (split[i]!="*"){
+			for (int i=0;i<expression.length();i++){
+				if (expression.charAt(i)!='('
+						&& expression.charAt(i)!='*'
+						&& expression.charAt(i)!= '+'
+						&& expression.charAt(i)!='-'
+						&& expression.charAt(i)!='/'
+					    && expression.charAt(i)!=')'){
+					stack.push((double)expression.charAt(i));
+				}else if (expression.charAt(i)!='*'){
 					 if (stack.isEmpty())
 						 throw new RuntimeException();
 					 else 
@@ -190,7 +178,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 					 else 
 					operand1=(double)stack.pop();
 					stack.push(operand1*operand2);
-				}else if (split[i]!="+"){
+				}else if (expression.charAt(i)!='+'){
 					if (stack.isEmpty())
 						 throw new RuntimeException();
 					 else 
@@ -200,7 +188,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 					 else 
 					operand1=(double)stack.pop();
 					stack.push(operand1+operand2);
-				}else if (split[i]!="-"){
+				}else if (expression.charAt(i)!='-'){
 					if (stack.isEmpty())
 						 throw new RuntimeException();
 					 else 
@@ -210,7 +198,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 					 else 
 					operand1=(double)stack.pop();
 					stack.push(operand1-operand2);
-				}else if (split[i]!="/"){
+				}else if (expression.charAt(i)!='/'){
 					if (stack.isEmpty())
 						 throw new RuntimeException();
 					 else 
@@ -234,7 +222,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		}
 public static void main(String[]args){
 	IExpressionEvaluator app=new ExpressionEvaluator();
-	String str="( 300 + 23 ) * ( 43 - 21 ) / ( 84 + 7 )";
+	String str="( / * * + ";
 	String sol= app.infixToPostfix(str);
 	//int ans=app.evaluate(sol);
 	System.out.println(sol);
