@@ -212,7 +212,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						throw new RuntimeException();
 					else if (operand1==0)
 						stack.push(0);
-					else stack.push(operand1/operand2);
+					else stack.push((double)operand1/operand2);
 				}
 				
 			}
