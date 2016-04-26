@@ -219,12 +219,15 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 			}
 			if (stack.isEmpty())
 				 throw new RuntimeException();
-			 else 
-			return (int)stack.pop();
+			 else {
+				 Long L = Math.round((double)stack.pop());
+				 int i = Integer.valueOf(L.intValue());
+			return i;
+			 }
 		}
 public static void main(String[]args){
 	IExpressionEvaluator app=new ExpressionEvaluator();
-	String str="(2 + 3) * 4";
+	String str="4*4";
 	String sol= app.infixToPostfix(str);
 	int ans=app.evaluate(sol);
 	System.out.println(sol);
