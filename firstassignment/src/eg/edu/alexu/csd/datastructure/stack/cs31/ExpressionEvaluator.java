@@ -19,7 +19,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
         		||expression.charAt(0)=='-')
 				throw new RuntimeException("starting with operator");
 			
-          for (int i=0;i<expression.length();i++){
+        /*  for (int i=0;i<expression.length();i++){
         	  
 				if (expression.charAt(i)!='('
 						&& expression.charAt(i)!=' '
@@ -36,7 +36,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 			    
 				}
 				
-          }
+          }*/
           for (int i=0;i<expression.length()-1&&flag;i++){	
 		  flag=false;
 		         if ( expression.charAt(i)!='*'
