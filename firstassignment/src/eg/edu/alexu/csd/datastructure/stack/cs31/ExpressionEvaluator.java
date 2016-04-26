@@ -131,6 +131,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 					  if ((char)stack.peek()=='(')
 						  throw new RuntimeException("'(' without a ')'");
 				str+=stack.pop();
+				str+=" ";
 				}
 		      
 		        	
