@@ -84,7 +84,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						
 						while (stack.size()!=0 &&(char)stack.peek()!='('){
 							str+=stack.pop();
-							//str+=" ";
+							str+=" ";
 						}	
 						if (stack.isEmpty()||(!stack.isEmpty()&&(char)stack.peek()!='('))
 							throw new RuntimeException("there is no (");
@@ -101,7 +101,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 									&&((char)stack.peek()=='*'
 									||(char)stack.peek()=='/')){
 								str+=stack.pop();
-							//	str+=" ";
+							str+=" ";
 							}
 							stack.push(expression.charAt(i));
 						}
@@ -112,7 +112,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 								||(char)stack.peek()=='+'
 								||(char)stack.peek()=='-')){
 							str+=stack.pop();
-						//	str+=" ";
+							str+=" ";
 						}
 						stack.push(expression.charAt(i));
 					}else{
