@@ -8,7 +8,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		public String infixToPostfix(String expression) throws RuntimeException {
 			
 			// TODO Auto-generated method stub
-			String str = new String();
+			 StringBuffer str = new StringBuffer();
 			boolean flag=true;
 			if (expression==null){
 			   throw new RuntimeException("bbb");
@@ -100,8 +100,8 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 					}else if (expression.charAt(i)==')'){
 						
 						while (stack.size()!=0 &&(char)stack.peek()!='('){
-							str+=stack.pop();
-							str+=" ";
+							str.append(stack.pop());
+							str.append(" ");
 						}	
 						if (stack.isEmpty()||(!stack.isEmpty()&&(char)stack.peek()!='('))
 							throw new RuntimeException("there is no (");
@@ -117,8 +117,8 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 							while(stack.size()!=0
 									&&((char)stack.peek()=='*'
 									||(char)stack.peek()=='/')){
-								str+=stack.pop();
-							str+=" ";
+								str.append(stack.pop());
+								str.append(" ");
 							}
 							stack.push(expression.charAt(i));
 						}
@@ -128,14 +128,14 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 								||(char)stack.peek()=='/'
 								||(char)stack.peek()=='+'
 								||(char)stack.peek()=='-')){
-							str+=stack.pop();
-							str+=" ";
+							str.append(stack.pop());
+							str.append(" ");
 						}
 						stack.push(expression.charAt(i));
 					}else{
 						if(expression.charAt(i)!=' '){
-						str+=expression.charAt(i);
-						str+=" ";
+							str.append(stack.pop());
+							str.append(" ");
 						}
 						else {
 							continue;
@@ -147,12 +147,12 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 				while (!stack.isEmpty()){
 					  if ((char)stack.peek()=='(')
 						  throw new RuntimeException("'(' without a ')'");
-				str+=stack.pop();
-				str+=" ";
+					  str.append(stack.pop());
+						str.append(" ");
 				}
 		      
 		        	
-			return str.trim();//to remove space from end and start of a string
+			return str.toString().trim();//to remove space from end and start of a string
 		}
 
 		
