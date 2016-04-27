@@ -6,6 +6,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		 static IStack stack =new Stack();
 		@Override
 		public String infixToPostfix(String expression) throws RuntimeException {
+			
 			// TODO Auto-generated method stub
 			String str = new String();
 			boolean flag=true;
@@ -138,29 +139,30 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 			return str.trim();//to remove space from end and start of a string
 		}
 
+		
 		@Override
 		public int evaluate(String expression) {
 			// TODO Auto-generated method stub
-		   double operand1;
-		   double operand2;
+			
+		   double operand1=0;
+		   double operand2=0;
+		   
 			if (expression==null){
 				 throw new RuntimeException();
 			}
-			/*for (int i=0;i<expression.length();i++){
-				if (!(expression.charAt(i)=='('
-						//|| expression.charAt(i)!=' '
-						|| expression.charAt(i)=='*'
-						|| expression.charAt(i)== '+'
-						|| expression.charAt(i)=='-'
-						|| expression.charAt(i)=='/'
-					    || expression.charAt(i)==')'		
-						//||('0'<=(expression.charAt(i))
-						/*&&'9'>=(expression.charAt(i))))){
+			expression =infixToPostfix(expression);
+			
+			for (int i=0;i<expression.length();i++){
+				if (('a'<=(expression.charAt(i))
+						&&'z'>=(expression.charAt(i)))||('A'<=(expression.charAt(i))
+						&&'Z'>=(expression.charAt(i)))){
+								
+					
 			    
-			 //     throw new RuntimeException("lolololol");
-		//	}
-	//	}*/
-		
+			     throw new RuntimeException("lolololol");
+			}
+	
+		}
 			for (int i=0;i<expression.length();i++){
 				if (expression.charAt(i)!='('
 						&& expression.charAt(i)!=' '
@@ -169,7 +171,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						&& expression.charAt(i)!='-'
 						&& expression.charAt(i)!='/'
 					    && expression.charAt(i)!=')'){
-					stack.push((double)expression.charAt(i));
+					stack.push((double) Character.getNumericValue(expression.charAt(i)));
 				}else if (expression.charAt(i)=='*'){
 					 if (stack.isEmpty())
 						 throw new RuntimeException();
@@ -219,17 +221,18 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 			}
 			if (stack.isEmpty())
 				 throw new RuntimeException();
-			 else {
-				 Long L = Math.round((double)stack.pop());
-				 int i = Integer.valueOf(L.intValue());
-			return i;
-			 }
+			 
+				 
+			return (int)(double)stack.pop();
+			 
+		
+			
 		}
 public static void main(String[]args){
 	IExpressionEvaluator app=new ExpressionEvaluator();
-	String str="4*4";
+	String str="4*4+7-8/3";
 	String sol= app.infixToPostfix(str);
-	int ans=app.evaluate(sol);
+	int ans=app.evaluate(str);
 	System.out.println(sol);
 	//
 	System.out.println(ans);
