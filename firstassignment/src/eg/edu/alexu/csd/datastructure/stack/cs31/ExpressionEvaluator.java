@@ -187,7 +187,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						&& expression.charAt(i)!='-'
 						&& expression.charAt(i)!='/'
 					    && expression.charAt(i)!=')'){
-					stack.push((double) Character.getNumericValue(expression.charAt(i)));
+					stack.push((double)(char) Character.getNumericValue(expression.charAt(i)));
 				}else if (expression.charAt(i)=='*'){
 					 if (stack.isEmpty())
 						 throw new RuntimeException();
@@ -246,7 +246,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		}
 public static void main(String[]args){
 	IExpressionEvaluator app=new ExpressionEvaluator();
-	String str="4*a+7-8/c";
+	String str="4*2.4+7-8/8";
 	String sol= app.infixToPostfix(str);
 	//int ans=app.evaluate(sol);
 	System.out.println(sol);
