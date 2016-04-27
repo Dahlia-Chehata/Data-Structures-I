@@ -133,13 +133,12 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						}
 						stack.push(expression.charAt(i));
 					}else{
-						if(expression.charAt(i)!=' '){
-						str+=expression.charAt(i);
+						if(expression.charAt(i)!=' ')
+						str+= expression.charAt(i);
+						else if (expression.charAt(i)==' ')
 						str+=" ";
-						}
-						else {
-							continue;
-						}
+						
+						
 					}
 					
 				}
@@ -147,8 +146,8 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 				while (!stack.isEmpty()){
 					  if ((char)stack.peek()=='(')
 						  throw new RuntimeException("'(' without a ')'");
-				str+=stack.pop();
 				str+=" ";
+				str+=stack.pop();
 				}
 		      
 		        	
@@ -247,7 +246,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		}
 public static void main(String[]args){
 	IExpressionEvaluator app=new ExpressionEvaluator();
-	String str="12 + 1";
+	String str="12 + 31";
 	String sol= app.infixToPostfix(str);
 	int ans=app.evaluate(sol);
 	System.out.println(sol);
