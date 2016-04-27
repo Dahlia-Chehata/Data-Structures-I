@@ -133,10 +133,13 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						}
 						stack.push(expression.charAt(i));
 					}else{
-						
+						if(expression.charAt(i)!=' '){
 						str+=expression.charAt(i);
 						str+=" ";
-						
+						}
+						else {
+							continue;
+						}
 					}
 					
 				}
@@ -176,62 +179,59 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 			}
 	
 		}
+			 String[] arr = expression.split(" ");
 			for (int i=0;i<expression.length();i++){
-				if (expression.charAt(i)!='('
-						&& expression.charAt(i)!=' '
-						&& expression.charAt(i)!='*'
-						&& expression.charAt(i)!= '+'
-						&& expression.charAt(i)!='-'
-						&& expression.charAt(i)!='/'
-					    && expression.charAt(i)!=')'){
-		stack.push((double)(char) Character.getNumericValue(expression.charAt(i)));
-				}
-					//else if(expression.charAt(i)==' '){
-					//	stack.push(expression.charAt(i));
-			//}
-				else if (expression.charAt(i)=='*'){
-					 if (stack.isEmpty())
-						 throw new RuntimeException();
-					 else 
-					operand2=(double)stack.pop();
-					 if (stack.isEmpty())
-						 throw new RuntimeException();
-					 else 
-					operand1=(double)stack.pop();
-					stack.push((double)operand1*operand2);
-				}else if (expression.charAt(i)=='+'){
-					if (stack.isEmpty())
-						 throw new RuntimeException();
-					 else 
-					operand2=(double)stack.pop();
-					if (stack.isEmpty())
-						 throw new RuntimeException();
-					 else 
-					operand1=(double)stack.pop();
-					stack.push((double)operand1+operand2);
-				}else if (expression.charAt(i)=='-'){
-					if (stack.isEmpty())
-						 throw new RuntimeException();
-					 else 
-					operand2=(double)stack.pop();
-					if (stack.isEmpty())
-						 throw new RuntimeException();
-					 else 
-					operand1=(double)stack.pop();
-					stack.push((double)operand1-operand2);
-				}else if (expression.charAt(i)=='/'){
-					if (stack.isEmpty())
-						 throw new RuntimeException();
-					 else 
-					operand2=(double)stack.pop();
-					if (stack.isEmpty())
-						 throw new RuntimeException();
-					 else 
-					operand1=(double)stack.pop();
-					if (operand2==0)
-						throw new RuntimeException();
-					else if (operand1==0)
-						stack.push(0);
+			if (expression.charAt(i) != '(' 
+					&& expression.charAt(i) != ' ' 
+					&& expression.charAt(i) != '*'
+					&& expression.charAt(i) != '+' 
+					&& expression.charAt(i) != '-' 
+					&& expression.charAt(i) != '/'
+					&& expression.charAt(i) != ')') {
+				stack.push((double) (char) Character.getNumericValue(expression.charAt(i)));
+			} else if (expression.charAt(i) == '*') {
+				if (stack.isEmpty())
+					throw new RuntimeException();
+				else
+					operand2 = (double) stack.pop();
+				if (stack.isEmpty())
+					throw new RuntimeException();
+				else
+					operand1 = (double) stack.pop();
+				stack.push((double) operand1 * operand2);
+			} else if (expression.charAt(i) == '+') {
+				if (stack.isEmpty())
+					throw new RuntimeException();
+				else
+					operand2 = (double) stack.pop();
+				if (stack.isEmpty())
+					throw new RuntimeException();
+				else
+					operand1 = (double) stack.pop();
+				stack.push((double) operand1 + operand2);
+			} else if (expression.charAt(i) == '-') {
+				if (stack.isEmpty())
+					throw new RuntimeException();
+				else
+					operand2 = (double) stack.pop();
+				if (stack.isEmpty())
+					throw new RuntimeException();
+				else
+					operand1 = (double) stack.pop();
+				stack.push((double) operand1 - operand2);
+			} else if (expression.charAt(i) == '/') {
+				if (stack.isEmpty())
+					throw new RuntimeException();
+				else
+					operand2 = (double) stack.pop();
+				if (stack.isEmpty())
+					throw new RuntimeException();
+				else
+					operand1 = (double) stack.pop();
+				if (operand2 == 0)
+					throw new RuntimeException();
+				else if (operand1 == 0)
+					stack.push(0);
 					else stack.push((double)operand1/operand2);
 				}
 				
@@ -247,7 +247,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		}
 public static void main(String[]args){
 	IExpressionEvaluator app=new ExpressionEvaluator();
-	String str="20- 23";
+	String str="12 + 1";
 	String sol= app.infixToPostfix(str);
 	int ans=app.evaluate(sol);
 	System.out.println(sol);
@@ -255,5 +255,3 @@ public static void main(String[]args){
 	System.out.println(ans);
 }
 	}
-
-
