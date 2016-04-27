@@ -150,7 +150,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 			if (expression==null){
 				 throw new RuntimeException();
 			}
-			expression =infixToPostfix(expression);
+			//expression =infixToPostfix(expression);
 			
 			for (int i=0;i<expression.length();i++){
 				if (('a'<=(expression.charAt(i))
