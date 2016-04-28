@@ -139,7 +139,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						if (('A'<=expression.charAt(i)&&expression.charAt(i)<='Z')
 						||('a'<=expression.charAt(i)&&expression.charAt(i)<='z')
 						||('0'<=expression.charAt(i)&&expression.charAt(i)<='9')){
-							while(i<expression.length()
+							while(i<expression.length()-1
 									
 						&&('A'<=expression.charAt(i)&&expression.charAt(i)<='Z')
 						||('a'<=expression.charAt(i)&&expression.charAt(i)<='z')
