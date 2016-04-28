@@ -131,7 +131,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 							i++;
 
 						}
-						// if(i!=0)
+						
 						i--;
 					str.append(" ");
 
@@ -161,6 +161,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 
 		double operand1 = 0;
 		double operand2 = 0;
+		String str=new String();
 
 		if (expression == null) {
 			throw new RuntimeException();
@@ -179,11 +180,18 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		for (int i = 0; i < expression.length(); i++) {
 			if (expression.charAt(i) == ' ')
 				continue;
-			if (expression.charAt(i) != '('
-					// && expression.charAt(i) != ' '
-					&& expression.charAt(i) != '*' && expression.charAt(i) != '+' && expression.charAt(i) != '-'
-					&& expression.charAt(i) != '/' && expression.charAt(i) != ')') {
-				stack.push((double) (char) Character.getNumericValue(expression.charAt(i)));
+			if ( '0' <= expression.charAt(i) && expression.charAt(i) <= '9')  {
+				
+				
+				while(i<expression.length()
+						&&'0' <= expression.charAt(i) && expression.charAt(i) <= '9'){
+					str+=expression.charAt(i);
+					i++;
+				}
+				
+				i--;
+				stack.push(Double.parseDouble (str));
+				str="";
 			} else if (expression.charAt(i) == '*') {
 				if (stack.isEmpty())
 					throw new RuntimeException();
@@ -241,11 +249,11 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 
 	public static void main(String[] args) {
 		IExpressionEvaluator app = new ExpressionEvaluator();
-		String str = " 9 +10 /5+32+6/8";
+		String str = " 9 +10 /5+32";
 		String sol = app.infixToPostfix(str);
-		// int ans=app.evaluate(sol);
+		 int ans=app.evaluate(sol);
 		System.out.println(sol);
 
-		// System.out.println(ans);
+		 System.out.println(ans);
 	}
 }
