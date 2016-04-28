@@ -59,7 +59,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 					test=false;
 			
 		}
-		/*
+		/*kkkk
 		 * for (int i=0;i<expression.length();i++){
 		 * 
 		 * if (expression.charAt(i)!='(' && expression.charAt(i)!=' ' &&
