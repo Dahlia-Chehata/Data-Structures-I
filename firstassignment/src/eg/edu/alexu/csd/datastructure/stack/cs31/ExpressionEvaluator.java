@@ -148,6 +148,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 								
 							}
 						}
+						if(i!=0)
 						i--;
 						str.append(" ");
 						
@@ -261,11 +262,11 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		}
 public static void main(String[]args){
 	IExpressionEvaluator app=new ExpressionEvaluator();
-	String str="123 +18*( 5+9)";
+	String str="(1+9/8*17+15)";
 	String sol= app.infixToPostfix(str);
-	int ans=app.evaluate(sol);
+	//int ans=app.evaluate(sol);
 	System.out.println(sol);
 	
-	System.out.println(ans);
+	//System.out.println(ans);
 }
 	}
