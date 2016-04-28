@@ -8,7 +8,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		public String infixToPostfix(String expression) throws RuntimeException {
 			
 			// TODO Auto-generated method stub
-			StringBuffer str = new StringBuffer();
+		String str = new String();
 			boolean flag=true;
 			if (expression==null){
 			   throw new RuntimeException("bbb");
@@ -102,8 +102,8 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 					}else if (expression.charAt(i)==')'){
 						
 						while (stack.size()!=0 &&(char)stack.peek()!='('){
-							str.append(stack.pop());
-							str.append(" ");
+							str+=stack.pop();
+							str+=" ";
 						}	
 						if (stack.isEmpty()||(!stack.isEmpty()&&(char)stack.peek()!='('))
 							throw new RuntimeException("there is no (");
@@ -119,8 +119,8 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 							while(stack.size()!=0
 									&&((char)stack.peek()=='*'
 									||(char)stack.peek()=='/')){
-								str.append(stack.pop());
-								str.append(" ");
+								str+=stack.pop();
+								str+=" ";
 							}
 							stack.push(expression.charAt(i));
 						}
@@ -130,8 +130,8 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 								||(char)stack.peek()=='/'
 								||(char)stack.peek()=='+'
 								||(char)stack.peek()=='-')){
-							str.append(stack.pop());
-							str.append(" ");
+							str+=stack.pop();
+							str+=" ";
 						}
 						stack.push(expression.charAt(i));
 					}
@@ -145,14 +145,14 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						||('a'<=expression.charAt(i)&&expression.charAt(i)<='z')
 						||('0'<=expression.charAt(i)&&expression.charAt(i)<='9')){
 								
-								str.append(expression.charAt(i));
+								str+=expression.charAt(i);
 								i++;
 								
 							}
 						}
 						if(i!=0)
 						i--;
-						str.append(" ");
+						str+=" ";
 						
 					}
 					
@@ -164,8 +164,8 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						  throw new RuntimeException("'(' without a ')'");
 			
 				
-					  str.append(stack.pop());
-						str.append(" ");
+					  str+=stack.pop();
+						str+=" ";
 				}
 		      
 		        	
@@ -198,8 +198,10 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		}
 			
 			for (int i=0;i<expression.length();i++){
+				if (expression.charAt(i) ==' ')
+					continue;
 			if (expression.charAt(i) != '(' 
-					&& expression.charAt(i) != ' ' 
+					//&& expression.charAt(i) != ' ' 
 					&& expression.charAt(i) != '*'
 					&& expression.charAt(i) != '+' 
 					&& expression.charAt(i) != '-' 
@@ -264,11 +266,11 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		}
 public static void main(String[]args){
 	IExpressionEvaluator app=new ExpressionEvaluator();
-	String str="(1+9/8*17+15)";
+	String str="( 9+10)";
 	String sol= app.infixToPostfix(str);
-	//int ans=app.evaluate(sol);
+	int ans=app.evaluate(sol);
 	System.out.println(sol);
 	
-	//System.out.println(ans);
+	System.out.println(ans);
 }
 	}
