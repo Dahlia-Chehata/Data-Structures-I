@@ -165,14 +165,22 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 	@Override
 	public int evaluate(String expression) {
 		// TODO Auto-generated method stub
-
+		if (expression == null) {
+			throw new RuntimeException();
+		}
+		if (expression.charAt(0) == '/' || expression.charAt(0) == '*' || expression.charAt(0) == '+'
+				|| expression.charAt(0) == '-')
+			throw new RuntimeException("starting with operator");
+		if (expression.charAt(expression.length() - 1) == '/' 
+				|| expression.charAt(expression.length() - 1) == '*' 
+				|| expression.charAt(expression.length() - 1) == '+'
+				|| expression.charAt(expression.length() - 1) == '-')
+			throw new RuntimeException("starting with operator");
 		double operand1 = 0;
 		double operand2 = 0;
 		String str=new String();
 
-		if (expression == null) {
-			throw new RuntimeException();
-		}
+		
 		// expression =infixToPostfix(expression);
 
 		for (int i = 0; i < expression.length(); i++) {
