@@ -8,7 +8,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		public String infixToPostfix(String expression) throws RuntimeException {
 			
 			// TODO Auto-generated method stub
-			StringBuilder str = new StringBuilder();
+			StringBuffer str = new StringBuffer();
 			boolean flag=true;
 			if (expression==null){
 			   throw new RuntimeException("bbb");
@@ -139,9 +139,9 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 						if (('A'<=expression.charAt(i)&&expression.charAt(i)<='Z')
 						||('a'<=expression.charAt(i)&&expression.charAt(i)<='z')
 						||('0'<=expression.charAt(i)&&expression.charAt(i)<='9')){
-							while(i<expression.length()-1
+							while(
 									
-						&&('A'<=expression.charAt(i)&&expression.charAt(i)<='Z')
+						('A'<=expression.charAt(i)&&expression.charAt(i)<='Z')
 						||('a'<=expression.charAt(i)&&expression.charAt(i)<='z')
 						||('0'<=expression.charAt(i)&&expression.charAt(i)<='9')){
 								
