@@ -56,7 +56,7 @@ public class Stack implements IStack {
 	}
 
 	/**
-	 * @param args
+	 * @stack
 	 */
 	public static void main(String[] args) {
 		IStack stack = new Stack();
