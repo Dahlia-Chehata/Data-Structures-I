@@ -26,7 +26,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				|| expression.charAt(expression.length() - 1) == '*' 
 				|| expression.charAt(expression.length() - 1) == '+'
 				|| expression.charAt(expression.length() - 1) == '-')
-			throw new RuntimeException("ending with op with operator");
+			throw new RuntimeException("ending  with operator");
 		boolean check=true;
 		for (int i=0;i<expression.length()&&check;i++){
 			if (expression.charAt(i)==' ')
@@ -41,7 +41,24 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 			}
 		}
 		if (check)
-			throw new RuntimeException("ending with op with operator");
+			throw new RuntimeException("having unary operator");
+		boolean test=true;
+		for (int i=0;i<expression.length();i++){
+			if (expression.charAt(i)==' ')
+				continue;
+			else if(expression.charAt(i) == '/' 
+					|| expression.charAt(i) == '*' 
+					|| expression.charAt(i) == '+'
+					|| expression.charAt(i) == '-'){
+				if (test)
+					throw new RuntimeException("having unary operator");
+				else
+				test=true;
+			}
+				else 
+					test=false;
+			
+		}
 		/*
 		 * for (int i=0;i<expression.length();i++){
 		 * 
