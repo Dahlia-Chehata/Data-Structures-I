@@ -27,21 +27,8 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				|| expression.charAt(expression.length() - 1) == '+'
 				|| expression.charAt(expression.length() - 1) == '-')
 			throw new RuntimeException("ending  with operator");
-		boolean check=true;
-		for (int i=0;i<expression.length()&&check;i++){
-			if (expression.charAt(i)==' ')
-				continue;
-			else {
-				check=false;
-				if(expression.charAt(i) == '/' 
-						|| expression.charAt(i) == '*' 
-						|| expression.charAt(i) == '+'
-						|| expression.charAt(i) == '-')
-					check=true;
-			}
-		}
-		if (check)
-			throw new RuntimeException("having unary operator");
+		
+		//check unary
 		boolean test=true;
 		for (int i=0;i<expression.length();i++){
 			if (expression.charAt(i)==' ')
