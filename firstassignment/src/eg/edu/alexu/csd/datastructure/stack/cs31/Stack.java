@@ -1,4 +1,5 @@
 package eg.edu.alexu.csd.datastructure.stack.cs31;
+
 import eg.edu.alexu.csd.datastructure.stack.IStack;
 //import eg.edu.alexu.csd.datastructure.linkedList.cs31.SLNode;
 import eg.edu.alexu.csd.datastructure.linkedList.cs31.Singly_linkedlists;
@@ -10,12 +11,13 @@ import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 public class Stack implements IStack {
 
 	ILinkedList mylist = new Singly_linkedlists();
-     int size=mylist.size();
+	int size = mylist.size();
+
 	@Override
 	public void add(int index, Object element) throws RuntimeException {
 		// TODO Auto-generated method stub
 		mylist.add(mylist.size() - index, element);
-		
+
 	}
 
 	@Override
@@ -23,9 +25,9 @@ public class Stack implements IStack {
 		// TODO Auto-generated method stub
 		Object pop = mylist.get(0);
 		mylist.remove(0);
-		
+
 		return pop;
-		
+
 	}
 
 	@Override
@@ -38,7 +40,7 @@ public class Stack implements IStack {
 	public void push(Object element) throws RuntimeException {
 		// TODO Auto-generated method stub
 		mylist.add(0, element);
-	
+
 	}
 
 	@Override
@@ -50,63 +52,65 @@ public class Stack implements IStack {
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
-		return mylist.size() ;
+		return mylist.size();
 	}
+
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
-		IStack stack= new Stack();
+		IStack stack = new Stack();
 		char ch;
 		Scanner scan = new Scanner(System.in);
-		do{
-		System.out.println("choose an option");
-		System.out.println("--------------------");
-		System.out.println("1-Push");
-		System.out.println("2-Pop");
-		System.out.println("3-Peek");
-		System.out.println("4-Get size");
-		System.out.println("5-check if empty");
-		
-		
-		System.out.println("--------------------");
-		int choice = scan.nextInt();
-		switch(choice){
-		case 1:
-			System.out.println("insert an input");
-			Object element=scan.next();
-			stack.push(element);
-			break;
-		
-		case 2:
-			if (stack.isEmpty())
-				System.out.println("stack is empty");
-			else
-				System.out.println(stack.pop());
-			break;
-		case 3:
-			if (stack.isEmpty())
-				System.out.println("stack is empty");
-			else
-				System.out.println(stack.peek());
-			break;
-		case 4:
-			System.out.println(stack.size());
-			break;
-		case 5:
-			if (stack.isEmpty())
-			System.out.println("stack is empty");
-			else 
-				System.out.println("stack is not empty");
-			break;
-		default:
-			System.out.println("Wrong Entry ");
-		}
-			
+		do {
+			System.out.println("choose an option");
+			System.out.println("--------------------");
+			System.out.println("1-Push");
+			System.out.println("2-Pop");
+			System.out.println("3-Peek");
+			System.out.println("4-Get size");
+			System.out.println("5-check if empty");
+
+			System.out.println("--------------------");
+			int choice = scan.nextInt();
+			switch (choice) {
+			case 1:
+				System.out.println("insert an input");
+				Object element = scan.next();
+				stack.push(element);
+				break;
+
+			case 2:
+				if (stack.isEmpty())
+					System.out.println("stack is empty");
+				else
+					System.out.println(stack.pop());
+				break;
+			case 3:
+				if (stack.isEmpty())
+					System.out.println("stack is empty");
+				else
+					System.out.println(stack.peek());
+				break;
+			case 4:
+				System.out.println(stack.size());
+				break;
+			case 5:
+				if (stack.isEmpty())
+					System.out.println("stack is empty");
+				else
+					System.out.println("stack is not empty");
+				break;
+			default:
+				System.out.println("Wrong Entry ");
+			}
+
 			System.out.println("========================================");
 			System.out.println("\nDo you want to continue (Type y or anykey to terminate) \n");
 			ch = scan.next().charAt(0);
 			System.out.println("=======================================");
-		}while(ch == 'Y' || ch == 'y');
-	
-		
+		} while (ch == 'Y' || ch == 'y');
+
 	}
-	
+
 }
