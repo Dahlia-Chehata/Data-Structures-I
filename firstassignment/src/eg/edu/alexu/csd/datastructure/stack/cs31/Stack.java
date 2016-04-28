@@ -13,12 +13,19 @@ public class Stack implements IStack {
 	ILinkedList mylist = new Singly_linkedlists();
 	int size = mylist.size();
 
+	/**
+	 * add in stack
+	 */
 	@Override
 	public void add(int index, Object element) throws RuntimeException {
 		// TODO Auto-generated method stub
 		mylist.add(mylist.size() - index, element);
 
 	}
+
+	/**
+	 * popping
+	 */
 
 	@Override
 	public Object pop() throws RuntimeException {
@@ -30,11 +37,19 @@ public class Stack implements IStack {
 
 	}
 
+	/**
+	 * peeking
+	 */
+
 	@Override
 	public Object peek() throws RuntimeException {
 		// TODO Auto-generated method stub
 		return mylist.get(0);
 	}
+
+	/**
+	 * pushing
+	 */
 
 	@Override
 	public void push(Object element) throws RuntimeException {
@@ -43,11 +58,19 @@ public class Stack implements IStack {
 
 	}
 
+	/**
+	 * checking if empty
+	 */
+
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
 		return (mylist.isEmpty());
 	}
+
+	/**
+	 * size of stack
+	 */
 
 	@Override
 	public int size() {
@@ -56,7 +79,7 @@ public class Stack implements IStack {
 	}
 
 	/**
-	 * @stack
+	 * @param args
 	 */
 	public static void main(String[] args) {
 		IStack stack = new Stack();
@@ -73,6 +96,9 @@ public class Stack implements IStack {
 
 			System.out.println("--------------------");
 			int choice = scan.nextInt();
+			/**
+			 * choice:for the 5 options
+			 */
 			switch (choice) {
 			case 1:
 				System.out.println("insert an input");
