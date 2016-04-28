@@ -8,7 +8,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		public String infixToPostfix(String expression) throws RuntimeException {
 			
 			// TODO Auto-generated method stub
-			String str = new String();
+			StringBuilder str = new StringBuilder();
 			boolean flag=true;
 			if (expression==null){
 			   throw new RuntimeException("bbb");
@@ -53,13 +53,13 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 	for (int i=0;i<expression.length()-1;i++){
 		
 		//test all symbols
-		if(( ('A'<expression.charAt(i)&&expression.charAt(i)>'Z')
+		if(( ('A'<expression.charAt(i)&&expression.charAt(i)<'Z')
 				
-				&&'0'<expression.charAt(i+1)&&expression.charAt(i+1)>'9' )
+				&&'0'<expression.charAt(i+1)&&expression.charAt(i+1)<'9' )
 				
-				||(('a'<expression.charAt(i)&&expression.charAt(i)>'z')
+				||(('a'<expression.charAt(i)&&expression.charAt(i)<'z')
 				
-				&&  '0'<expression.charAt(i+1)&&expression.charAt(i+1)>'9')){
+				&&  '0'<expression.charAt(i+1)&&expression.charAt(i+1)<'9')){
 				
 			
 			throw new RuntimeException("oooo");
@@ -95,13 +95,15 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 
 			
 				for (int i=0;i<expression.length();i++){
+					if(expression.charAt(i)==' ')
+						continue;
 					if (expression.charAt(i)=='('){
 						stack.push(expression.charAt(i));
 					}else if (expression.charAt(i)==')'){
 						
 						while (stack.size()!=0 &&(char)stack.peek()!='('){
-							str+=stack.pop();
-							str+=" ";
+							str.append(stack.pop());
+							str.append(" ");
 						}	
 						if (stack.isEmpty()||(!stack.isEmpty()&&(char)stack.peek()!='('))
 							throw new RuntimeException("there is no (");
@@ -117,8 +119,8 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 							while(stack.size()!=0
 									&&((char)stack.peek()=='*'
 									||(char)stack.peek()=='/')){
-								str+=stack.pop();
-							str+=" ";
+								str.append(stack.pop());
+								str.append(" ");
 							}
 							stack.push(expression.charAt(i));
 						}
@@ -128,30 +130,43 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 								||(char)stack.peek()=='/'
 								||(char)stack.peek()=='+'
 								||(char)stack.peek()=='-')){
-							str+=stack.pop();
-							str+=" ";
+							str.append(stack.pop());
+							str.append(" ");
 						}
 						stack.push(expression.charAt(i));
-					}else{
-						if(expression.charAt(i)!=' ')
-						str+= expression.charAt(i);
-						else if (expression.charAt(i)==' ')
-						str+=" ";
-						
+					}
+					else {
+						if (('A'<=expression.charAt(i)&&expression.charAt(i)<='Z')
+						||('a'<=expression.charAt(i)&&expression.charAt(i)<='z')
+						||('0'<=expression.charAt(i)&&expression.charAt(i)<='9')){
+							while(('A'<=expression.charAt(i)&&expression.charAt(i)<='Z')
+						||('a'<=expression.charAt(i)&&expression.charAt(i)<='z')
+						||('0'<=expression.charAt(i)&&expression.charAt(i)<='9')){
+								
+								str.append(expression.charAt(i));
+								i++;
+								
+							}
+						}
+						i--;
+						str.append(" ");
 						
 					}
 					
+				
 				}
-			
+				
 				while (!stack.isEmpty()){
 					  if ((char)stack.peek()=='(')
 						  throw new RuntimeException("'(' without a ')'");
-				str+=" ";
-				str+=stack.pop();
+			
+				
+					  str.append(stack.pop());
+						str.append(" ");
 				}
 		      
 		        	
-			return str.trim();//to remove space from end and start of a string
+			return str.toString().trim();//to remove space from end and start of a string
 		}
 
 		
@@ -178,7 +193,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 			}
 	
 		}
-			 String[] arr = expression.split(" ");
+			
 			for (int i=0;i<expression.length();i++){
 			if (expression.charAt(i) != '(' 
 					&& expression.charAt(i) != ' ' 
@@ -246,7 +261,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 		}
 public static void main(String[]args){
 	IExpressionEvaluator app=new ExpressionEvaluator();
-	String str="12 + 31";
+	String str="123 +18*( 5+9)";
 	String sol= app.infixToPostfix(str);
 	int ans=app.evaluate(sol);
 	System.out.println(sol);
