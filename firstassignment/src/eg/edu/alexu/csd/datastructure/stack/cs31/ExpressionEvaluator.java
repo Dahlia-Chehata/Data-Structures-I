@@ -276,8 +276,8 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		IExpressionEvaluator app = new ExpressionEvaluator();
 		
 		Scanner scan = new Scanner(System.in);
-		String input=new String();
-		String conv=new String();
+		String input="";
+		String conv="";
 		int choice;
 		char ch;
 	/*	String str = " 9 +10 /(5+32)";
@@ -298,36 +298,44 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		case 1:
 			input=scan.next(); break;
 		case 2:
-			while(input==""){
+			if(input==""){
 				System.out.println("you should insert an expression");
-				input=scan.next();
+			
 			}
-				if (input.charAt(0) == '/' || input.charAt(0) == '*' || input.charAt(0) == '+'
+			else if (input.charAt(0) == '/' || input.charAt(0) == '*' || input.charAt(0) == '+'
 						|| input.charAt(0) == '-')
 					System.out.println("starting with operator");
+			else{
 			conv=app.infixToPostfix(input);
 			System.out.println(conv);
-			break;
-		case 3:
-			while(input==""){
-				System.out.println("you should insert an expression");
-				input=scan.next();
 			}
-			while(conv==""){
+			break;
+		case 3:{
+			if (input==""){
+				System.out.println("you should insert an expression");
+				break;
+			}
+				
+			
+				else if(conv==""){
 				System.out.println("you should convert infix expression to postfix:"
 						+ " choose option 2");
+				break;
 				
 			}	
-
+  boolean f1=false;
 			for (int i = 0; i < conv.length(); i++) {
 				if (('a' <= (conv.charAt(i)) && 'z' >= (conv.charAt(i)))
 						|| ('A' <= (conv.charAt(i)) && 'Z' >= (conv.charAt(i)))) {
 
 					System.out.println("can't evaluate symbols");
-					break;
+					f1=true;
+					
 				}
 
 			}
+			if(f1)
+				break;
 			boolean flag=true;
 			for (int i = 0; i < conv.length() &&flag; i++) {
 				flag=false;
@@ -341,9 +349,10 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				}
 
 			}
-          if (flag)
+          if (flag&&!f1)
 			System.out.println(app.evaluate(conv));
 			break;
+		}
 			default:
 			System.out.println("Wrong Entry ");
 			
