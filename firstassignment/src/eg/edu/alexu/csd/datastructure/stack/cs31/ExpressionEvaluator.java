@@ -1,5 +1,7 @@
 package eg.edu.alexu.csd.datastructure.stack.cs31;
 
+import java.util.Scanner;
+
 import eg.edu.alexu.csd.datastructure.stack.IExpressionEvaluator;
 import eg.edu.alexu.csd.datastructure.stack.IStack;
 
@@ -19,6 +21,11 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		}
 		if (expression.charAt(0) == '/' || expression.charAt(0) == '*' || expression.charAt(0) == '+'
 				|| expression.charAt(0) == '-')
+			throw new RuntimeException("starting with operator");
+		if (expression.charAt(expression.length() - 1) == '/' 
+				|| expression.charAt(expression.length() - 1) == '*' 
+				|| expression.charAt(expression.length() - 1) == '+'
+				|| expression.charAt(expression.length() - 1) == '-')
 			throw new RuntimeException("starting with operator");
 
 		/*
@@ -249,11 +256,87 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 
 	public static void main(String[] args) {
 		IExpressionEvaluator app = new ExpressionEvaluator();
-		String str = " 9 +10 /5+32";
+		
+		Scanner scan = new Scanner(System.in);
+		String input=new String();
+		String conv=new String();
+		int choice;
+		char ch;
+	/*	String str = " 9 +10 /(5+32)";
 		String sol = app.infixToPostfix(str);
 		 int ans=app.evaluate(sol);
 		System.out.println(sol);
 
-		 System.out.println(ans);
+		 System.out.println(ans);*/
+		do{
+			System.out.println("      options");
+			System.out.println("-----------------------------");
+			System.out.println("1- insert an expression");
+			System.out.println("2-infix to postfix conversion");
+			System.out.println("3-evaluate expression");
+			System.out.println("------------------------------");
+			choice=scan.nextInt();
+			switch(choice){
+		case 1:
+			input=scan.next(); break;
+		case 2:
+			while(input==""){
+				System.out.println("you should insert an expression");
+				input=scan.next();
+			}
+				if (input.charAt(0) == '/' || input.charAt(0) == '*' || input.charAt(0) == '+'
+						|| input.charAt(0) == '-')
+					System.out.println("starting with operator");
+			conv=app.infixToPostfix(input);
+			System.out.println(conv);
+			break;
+		case 3:
+			while(input==""){
+				System.out.println("you should insert an expression");
+				input=scan.next();
+			}
+			while(conv==""){
+				System.out.println("you should convert infix expression to postfix:"
+						+ " choose option 2");
+				
+			}	
+
+			for (int i = 0; i < conv.length(); i++) {
+				if (('a' <= (conv.charAt(i)) && 'z' >= (conv.charAt(i)))
+						|| ('A' <= (conv.charAt(i)) && 'Z' >= (conv.charAt(i)))) {
+
+					System.out.println("can't evaluate symbols");
+					break;
+				}
+
+			}
+			boolean flag=true;
+			for (int i = 0; i < conv.length() &&flag; i++) {
+				flag=false;
+				if ('0' <= (conv.charAt(i)) && '9' >= (conv.charAt(i))
+						||conv.charAt(i)== ' '||conv.charAt(i)=='*'
+						||conv.charAt(i)=='/'||conv.charAt(i)=='+'
+						||conv.charAt(i)=='-'){
+						 
+                 flag=true;
+					
+				}
+
+			}
+          if (flag)
+			System.out.println(app.evaluate(conv));
+			break;
+			default:
+			System.out.println("Wrong Entry ");
+			
+}
+			System.out.println("========================================");
+			System.out.println("\nDo you want to continue (Type y or anykey to terminate) \n");
+			ch = scan.next().charAt(0);
+			System.out.println("=======================================");
+		}while(ch == 'Y' || ch == 'y');
+		
 	}
+	
+	
 }
