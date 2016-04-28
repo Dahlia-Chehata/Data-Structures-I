@@ -26,8 +26,22 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				|| expression.charAt(expression.length() - 1) == '*' 
 				|| expression.charAt(expression.length() - 1) == '+'
 				|| expression.charAt(expression.length() - 1) == '-')
-			throw new RuntimeException("starting with operator");
-
+			throw new RuntimeException("ending with op with operator");
+		boolean check=true;
+		for (int i=0;i<expression.length()&&check;i++){
+			if (expression.charAt(i)==' ')
+				continue;
+			else {
+				check=false;
+				if(expression.charAt(i) == '/' 
+						|| expression.charAt(i) == '*' 
+						|| expression.charAt(i) == '+'
+						|| expression.charAt(i) == '-')
+					check=true;
+			}
+		}
+		if (check)
+			throw new RuntimeException("ending with op with operator");
 		/*
 		 * for (int i=0;i<expression.length();i++){
 		 * 
