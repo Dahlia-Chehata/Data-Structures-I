@@ -1,8 +1,10 @@
 package eg.edu.alexu.csd.datastructure.queue.cs31;
 import eg.edu.alexu.csd.datastructure.queue.IQueue;
 import eg.edu.alexu.csd.datastructure.queue.IArrayBased;
+import eg.edu.alexu.csd.datastructure.queue.ILinkedBased;
 
-public class QueueArraybased implements IArrayBased, IQueue {
+
+public class QueueArraybased implements IArrayBased,IQueue,ILinkedBased {
 	Object[] arr;
 	int size;
 	int n, r, f;
