@@ -3,7 +3,7 @@ import eg.edu.alexu.csd.datastructure.queue.IQueue;
 import eg.edu.alexu.csd.datastructure.queue.IArrayBased;
 
 
-public class QueueArraybased implements IArrayBased,IQueue{
+public class QueueArraybased implements IQueue,IArrayBased {
 	Object[] arr;
 	int size;
 	int n, r, f;
