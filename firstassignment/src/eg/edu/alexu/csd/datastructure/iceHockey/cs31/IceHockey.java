@@ -3,20 +3,21 @@ import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.awt.Point;
+ 
 
 
 class myCOMP implements Comparator<Point> {
-
+int flagg= -1;
 	@Override
 	public int compare(Point o1, Point o2) {
 		// TODO Auto-generated method stub
 		 if (o2.x > o1.x) {
-			return -1;    
+			return flagg;    
 		 } else if (o1.x > o2.x) {
 			return 1;              
 		 } else {
 			if (o2.y > o1.y) {
-				return -1;
+				return flagg;
 			} else if (o2.y <o1.y) {
 				return 1;
 			}
@@ -27,11 +28,14 @@ class myCOMP implements Comparator<Point> {
 		
 
 public class IceHockey implements IPlayersFinder {
+			
+		int num=500	;
+		int flagg= -1;
 	char[][] photos;
 	boolean[][] visited;
 	Point[] temp;
 	int n, m, index = 0, counter = 0, team, area;
-	int minRow = 500, minCol = 500, maxRow = -1, maxCol = -1;
+	int minRow = num, minCol = num, maxRow = flagg, maxCol = flagg;
 	Point center;
 
 	public Point dfs(int i, int j, int v) {
@@ -107,10 +111,10 @@ public class IceHockey implements IPlayersFinder {
 					}
 					center = null;
 					counter = 0;
-					minRow = 500;
-					minCol = 500;
-					maxRow = -1;
-					maxCol = -1;
+					minRow = num;
+					minCol = num;
+					maxRow = flagg;
+					maxCol = flagg;
 				}
 			}
 			myCOMP c = new myCOMP();
