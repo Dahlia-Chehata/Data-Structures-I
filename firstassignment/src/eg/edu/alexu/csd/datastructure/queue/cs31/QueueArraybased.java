@@ -8,13 +8,16 @@ public class QueueArraybased implements IQueue,IArrayBased {
 	int size;
 	int n, r, f;
 
-	public QueueArraybased( int n) {
-		
-		this.n = n;
-		arr = new Object[n];
+	public QueueArraybased(){
 		size = 0;
 		r = 0;
 		f = 0;
+	}
+	
+	public QueueArraybased(int n) {
+		this.n = n;
+		arr = new Object[n];
+		
 	}
 
 	@Override
