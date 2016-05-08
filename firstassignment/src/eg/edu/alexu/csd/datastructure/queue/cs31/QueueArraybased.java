@@ -8,8 +8,8 @@ public class QueueArraybased implements IQueue,IArrayBased {
 	int size;
 	int n, r, f;
 
-	public QueueArraybased(Object[] arr, int n) {
-		this.arr = arr;
+	public QueueArraybased( int n) {
+		
 		this.n = n;
 		arr = new Object[n];
 		size = 0;
