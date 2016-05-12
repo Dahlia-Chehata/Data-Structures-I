@@ -8,17 +8,22 @@ import org.junit.Test;
 public class QueueArraytest {
 
 	QueueArraybased list2;
+	int num5=5;
+	int num3=3;
+	int num8=8;
+	int num12=12;
+	int num10=10;
 
 	// enqueue item at index > size
 	@Test
 	public void test1() {
-		list2 = new QueueArraybased(3);
-		list2.enqueue(5);
-		list2.enqueue(3);
-		list2.enqueue(5);
+		list2 = new QueueArraybased(num3);
+		list2.enqueue(num5);
+		list2.enqueue(num3);
+		list2.enqueue(num5);
 
 		try {
-			list2.enqueue(8);
+			list2.enqueue(num8);
 
 		} catch (Exception RuntimeException) {
 		}
@@ -28,10 +33,10 @@ public class QueueArraytest {
 	// enqueue ,dequeue
 	@Test
 	public void test2() {
-		list2 = new QueueArraybased(3);
-		list2.enqueue(5);
-		list2.enqueue(3);
-		list2.enqueue(5);
+		list2 = new QueueArraybased(num3);
+		list2.enqueue(num5);
+		list2.enqueue(num3);
+		list2.enqueue(num5);
 		list2.dequeue();
 		list2.dequeue();
 		list2.dequeue();
@@ -47,15 +52,15 @@ public class QueueArraytest {
 	// test dequeue
 	@Test
 	public void test3() {
-		list2 = new QueueArraybased(3);
-		list2.enqueue(5);
-		Assert.assertEquals(5, list2.dequeue());
+		list2 = new QueueArraybased(num3);
+		list2.enqueue(num5);
+		Assert.assertEquals(num5, list2.dequeue());
 	}
 
 	@Test
 	// dequeue from empty
 	public void test4() {
-		list2 = new QueueArraybased(3);
+		list2 = new QueueArraybased(num3);
 		try {
 			list2.dequeue();
 
@@ -66,17 +71,17 @@ public class QueueArraytest {
 	// test size1
 	@Test
 	public void test5() {
-		list2 = new QueueArraybased(3);
+		list2 = new QueueArraybased(num3);
 		Assert.assertEquals(0, list2.size());
 	}
 
 	// test size2
 	@Test
 	public void test6() {
-		list2 = new QueueArraybased(3);
-		list2.enqueue(5);
-		list2.enqueue(3);
-		list2.enqueue(5);
+		list2 = new QueueArraybased(num3);
+		list2.enqueue(num5);
+		list2.enqueue(num3);
+		list2.enqueue(num5);
 		list2.dequeue();
 		list2.dequeue();
 		Assert.assertEquals(1, list2.size());
@@ -90,10 +95,10 @@ public class QueueArraytest {
 
 	@Test
 	public void test8() {
-		list2 = new QueueArraybased(3);
-		list2.enqueue(5);
-		list2.enqueue(3);
-		list2.enqueue(5);
+		list2 = new QueueArraybased(num3);
+		list2.enqueue(num5);
+		list2.enqueue(num3);
+		list2.enqueue(num5);
 		list2.dequeue();
 		Assert.assertEquals(false, list2.isEmpty());
 	}
@@ -101,18 +106,18 @@ public class QueueArraytest {
 	@Test
 	public void test9() {
 		list2 = new QueueArraybased(5);
-		list2.enqueue(5);
-		list2.enqueue(3);
-		list2.enqueue(12);
-		list2.enqueue(5);
-		Assert.assertEquals(5, list2.dequeue());
-		Assert.assertEquals(3, list2.dequeue());
-		Assert.assertEquals(12, list2.dequeue());
-		list2.enqueue(10);
-		Assert.assertEquals(5, list2.dequeue());
-		Assert.assertEquals(10, list2.dequeue());
+		list2.enqueue(num5);
+		list2.enqueue(num3);
+		list2.enqueue(num12);
+		list2.enqueue(num5);
+		Assert.assertEquals(num5, list2.dequeue());
+		Assert.assertEquals(num3, list2.dequeue());
+		Assert.assertEquals(num12, list2.dequeue());
+		list2.enqueue(num10);
+		Assert.assertEquals(num5, list2.dequeue());
+		Assert.assertEquals(num10, list2.dequeue());
 		try {
-			list2.enqueue(8);
+			list2.enqueue(num8);
 
 		} catch (Exception RuntimeException) {
 		}

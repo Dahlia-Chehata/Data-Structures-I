@@ -8,6 +8,11 @@ import org.junit.Test;
 public class QueueTesting {
 
 	Queue list1 = new Queue();
+	int num5=5;
+	int num3=3;
+	int num8=8;
+	int num12=12;
+	int num10=10;
 	
 	@Test
 	/**
@@ -15,16 +20,16 @@ public class QueueTesting {
 	 */
 	public void test1() {
 		
-		list1.enqueue(12);
-		assertEquals(12, list1.dequeue());
+		list1.enqueue(num12);
+		assertEquals(num12, list1.dequeue());
 		
 	}
 	@Test
 	public void test2() {
 
-	list1.enqueue(5);
-	list1.enqueue(3);
-	list1.enqueue(5);
+	list1.enqueue(num5);
+	list1.enqueue(num3);
+	list1.enqueue(num5);
 	list1.dequeue();
 	list1.dequeue();
 	list1.dequeue();
@@ -39,8 +44,8 @@ public class QueueTesting {
 	@Test
 	public void test3() {
 		
-		list1.enqueue(5);
-		Assert.assertEquals(5, list1.dequeue());
+		list1.enqueue(num5);
+		Assert.assertEquals(num5, list1.dequeue());
 	}
 	@Test
 	// dequeue from empty
@@ -59,9 +64,9 @@ public class QueueTesting {
 		// test size2
 		@Test
 		public void test7() {
-			list1.enqueue(5);
-			list1.enqueue(3);
-			list1.enqueue(5);
+			list1.enqueue(num5);
+			list1.enqueue(num3);
+			list1.enqueue(num5);
 			list1.dequeue();
 			list1.dequeue();
 			Assert.assertEquals(1, list1.size());
@@ -73,25 +78,25 @@ public class QueueTesting {
 
 		@Test
 		public void test9() {
-			list1.enqueue(5);
-			list1.enqueue(3);
-			list1.enqueue(5);
+			list1.enqueue(num5);
+			list1.enqueue(num3);
+			list1.enqueue(num5);
 			list1.dequeue();
 			Assert.assertEquals(false, list1.isEmpty());
 		}
 
 		@Test
 		public void test10() {
-			list1.enqueue(5);
-			list1.enqueue(3);
-			list1.enqueue(12);
-			list1.enqueue(5);
-			Assert.assertEquals(5, list1.dequeue());
-			Assert.assertEquals(3, list1.dequeue());
-			Assert.assertEquals(12, list1.dequeue());
-			list1.enqueue(10);
-			Assert.assertEquals(5, list1.dequeue());
-			Assert.assertEquals(10, list1.dequeue());
+			list1.enqueue(num5);
+			list1.enqueue(num3);
+			list1.enqueue(num12);
+			list1.enqueue(num5);
+			Assert.assertEquals(num5, list1.dequeue());
+			Assert.assertEquals(num3, list1.dequeue());
+			Assert.assertEquals(num12, list1.dequeue());
+			list1.enqueue(num10);
+			Assert.assertEquals(num5, list1.dequeue());
+			Assert.assertEquals(num10, list1.dequeue());
 			try {
 				list1.dequeue();
 
