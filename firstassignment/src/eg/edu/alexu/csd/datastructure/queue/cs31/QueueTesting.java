@@ -8,11 +8,11 @@ import org.junit.Test;
 public class QueueTesting {
 
 	Queue list1 = new Queue();
-	int num5=5;
-	int num3=3;
-	int num8=8;
-	int num12=12;
-	int num10=10;
+	private final int num5=5;
+	private final int num3=3;
+	private final int num8=8;
+	private final int num12=12;
+	private final int num10=10;
 	
 	@Test
 	/**
