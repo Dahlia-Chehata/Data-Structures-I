@@ -29,8 +29,11 @@ int flagg= -1;
 
 public class IceHockey implements IPlayersFinder {
 			
-		int num=500	;
-		int flagg= -1;
+		 final int num=500	;
+		 final int flagg= -1;
+		 final int num100=100	;
+		 final int num4=4	;
+		 
 	char[][] photos;
 	boolean[][] visited;
 	Point[] temp;
@@ -60,7 +63,7 @@ public class IceHockey implements IPlayersFinder {
 			dfs(i, j + 1, v); // right
 		}
 		int a = counter;
-		if (a * 4 >= area) {
+		if (a * num4 >= area) {
 			int xx = minCol + maxCol + 1;
 			int yy = minRow + maxRow + 1;
 			center = new Point(xx,yy);
@@ -88,7 +91,7 @@ public class IceHockey implements IPlayersFinder {
 		// TODO Auto-generated method stub
 		this.team = team;
 		area = threshold;
-		Point[] coor = new Point[100];
+		Point[] coor = new Point[num100];
 		
 		if (photo.length == 0) {
 			return new Point[0];
