@@ -89,7 +89,7 @@ public class QueueArraytest {
 
 	@Test
 	public void test7() {
-		list2 = new QueueArraybased(3);
+		list2 = new QueueArraybased(num3);
 		Assert.assertEquals(true, list2.isEmpty());
 	}
 
@@ -105,7 +105,7 @@ public class QueueArraytest {
 
 	@Test
 	public void test9() {
-		list2 = new QueueArraybased(5);
+		list2 = new QueueArraybased(num5);
 		list2.enqueue(num5);
 		list2.enqueue(num3);
 		list2.enqueue(num12);
