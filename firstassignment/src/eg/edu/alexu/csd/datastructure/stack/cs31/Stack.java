@@ -9,7 +9,7 @@ import java.util.Scanner;
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 
 public class Stack implements IStack {
-
+	
 	ILinkedList mylist = new Singly_linkedlists();
 	int size = mylist.size();
 
@@ -82,6 +82,10 @@ public class Stack implements IStack {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		 final int num3=3;
+		 final int num4=4;
+	      final int num5=5;
+
 		IStack stack = new Stack();
 		char ch;
 		Scanner scan = new Scanner(System.in);
@@ -112,16 +116,16 @@ public class Stack implements IStack {
 				else
 					System.out.println(stack.pop());
 				break;
-			case 3:
+			case num3:
 				if (stack.isEmpty())
 					System.out.println("stack is empty");
 				else
 					System.out.println(stack.peek());
 				break;
-			case 4:
+			case num4:
 				System.out.println(stack.size());
 				break;
-			case 5:
+			case num5:
 				if (stack.isEmpty())
 					System.out.println("stack is empty");
 				else

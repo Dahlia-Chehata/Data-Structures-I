@@ -267,7 +267,8 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 	 */
 	public static void main(String[] args) {
 		IExpressionEvaluator app = new ExpressionEvaluator();
-
+		 final int num3=3;
+		 
 		Scanner scan = new Scanner(System.in);
 		String input = "";
 		String conv = "";
@@ -308,7 +309,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 			/**
 			 * evaluating
 			 */
-			case 3: {
+			case num3: {
 				if (input == "") {
 					System.out.println("you should insert an expression");
 					break;
