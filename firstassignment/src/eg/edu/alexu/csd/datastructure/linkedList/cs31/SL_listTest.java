@@ -269,7 +269,7 @@ public class SL_listTest {
 		SL.add(num6);
 		SL.add(num4);
 
-		Assert.assertEquals(6, SL.size());
+		Assert.assertEquals(num6, SL.size());
 		D.add(0, num7);
 		D.add(1, 2);
 		D.add(2, num5);
@@ -412,7 +412,7 @@ public class SL_listTest {
 		SL.add(1, 2);
 		SL.add(2, num3);
 		try {
-			SL.remove(5);
+			SL.remove(num5);
 			Assert.fail("index out of bounds");
 		} catch (Exception RuntimeException) {
 		}
