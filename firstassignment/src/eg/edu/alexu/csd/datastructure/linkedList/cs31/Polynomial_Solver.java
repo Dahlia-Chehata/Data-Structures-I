@@ -13,6 +13,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	Singly_linkedlists C = new Singly_linkedlists();
 	Singly_linkedlists R = new Singly_linkedlists();
 	Point[] array;
+	 final int bignum2=1000;
 
 	@Override
 	public void setPolynomial(char poly, int[][] terms) 
@@ -339,7 +340,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		default:
 			throw new RuntimeException();
 		}
-		int[] array = new int[10000];
+		final int numbb=10000;
+		int[] array = new int[numbb];
 		for (int i = 0; i < first.size; i++) {
 			int exp = ((Point) (first.get(i))).y;
 			int coef = ((Point) (first.get(i))).x;
@@ -352,7 +354,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		}
 		int counter = 0;
 		int k = 0;
-		int[][] array1 = new int[1000][2];
+		int[][] array1 = new int[bignum2][2];
 		for (int i = 0; i < array.length; i++) {
 			if (array[i] != 0) {
 				counter++;
@@ -432,7 +434,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			throw new RuntimeException();
 
 		}
-		int[] array = new int[1000];
+		int[] array = new int[bignum2];
 		for (int i = 0; i < first.size; i++) {
 			int exp = ((Point) (first.get(i))).y;
 			int coef = ((Point) (first.get(i))).x;
@@ -443,7 +445,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			int coef = ((Point) (second.get(i))).x;
 			array[exp] -= coef;
 		}
-		int[][] array1 = new int[1000][2];
+		int[][] array1 = new int[bignum2][2];
 		int counter = 0;
 		int k = 0;
 		for (int i = 0; i < array.length; i++) {
@@ -535,7 +537,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				array[pta.y + ptb.y] += pta.getX() * ptb.getX();
 			}
 		}
-		int[][] array1 = new int[1000][2];
+		int[][] array1 = new int[bignum2][2];
 		int counter = 0;
 		int k = 0;
 		for (int i = 0; i < array.length; i++) {
