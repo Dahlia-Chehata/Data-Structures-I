@@ -523,9 +523,10 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		default:
 			throw new RuntimeException();
 		}
+		final int bignum=10000000;
 		Point pta = new Point();
 		Point ptb = new Point();
-		double[] array = new double[10000000];
+		double[] array = new double[bignum];
 
 		for (int a = 0; a < first.size(); a++) {
 			for (int b = 0; b < second.size(); b++) {
