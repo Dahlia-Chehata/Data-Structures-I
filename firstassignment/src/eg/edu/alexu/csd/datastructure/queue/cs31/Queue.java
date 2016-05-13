@@ -7,7 +7,7 @@ import eg.edu.alexu.csd.datastructure.linkedList.cs31.*;
 public class Queue implements IQueue,ILinkedBased {
  ILinkedList mylist =new doubly_linkedlists();
 	@Override
-	public void enqueue(Object item) {
+	public void enqueue(final Object item) {
 		// TODO Auto-generated method stub
 		mylist.add(item);
 	}
