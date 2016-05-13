@@ -567,6 +567,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 
 		return arrr;
 	}
+	/*
 	public static void main(String[] args) {
 		IPolynomialSolver polyn = new Polynomial_Solver();
 		final int num3=3;
@@ -1281,5 +1282,5 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			ch = scan.next().charAt(0);
 			System.out.println("====================================================================");
 		} while (ch == 'Y' || ch == 'y');
-	}
+	}*/
 }
