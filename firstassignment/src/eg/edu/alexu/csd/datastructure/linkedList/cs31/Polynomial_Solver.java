@@ -566,6 +566,12 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	}
 	public static void main(String[] args) {
 		IPolynomialSolver polyn = new Polynomial_Solver();
+		final int num3=3;
+		final int num4=4;
+		final int num5=5;
+		final int num6=6;
+		final int num7=7;
+
 		char ch;
 		int count = 0;
 		boolean setA = false;
@@ -754,7 +760,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					}
 				}
 				break;
-			case 3:
+			case num3:
 				i = 0;
 				int y = 0;
 				while (i == 0) {
@@ -901,7 +907,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					}
 				}
 				break;
-			case 4:
+			case num4:
 				i = 0;
 				int f = 0;
 				while (i == 0) {
@@ -1045,7 +1051,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					}
 				}
 				break;
-			case 5:
+			case num5:
 				i = 0;
 				int x = 0;
 				while (i == 0) {
@@ -1189,7 +1195,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					}
 				}
 				break;
-			case 6:
+			case num6:
 				System.out.println("Insert the the variable name : A, B, C or R");
 				variableName = scan.next().charAt(0);
 				int k = 0;
@@ -1233,7 +1239,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					}
 				}
 				break;
-			case 7:
+			case num7:
 				System.out.println("Insert the the variable name : A, B, C ");
 				variableName = scan.next().charAt(0);
 				int l = 0;
