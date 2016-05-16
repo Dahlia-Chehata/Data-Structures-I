@@ -168,7 +168,8 @@ public class doubly_linkedlists implements ILinkedList {
 		// TODO Auto-generated method stub
 		ILinkedList new_list = new doubly_linkedlists();
 		DNode pointer = header.next;
-		if (fromIndex >= 0 && fromIndex < size && toIndex >= 0 && toIndex < size) {
+		if (fromIndex >= 0 && fromIndex < size 
+				&& toIndex >= 0 && toIndex < size) {
 			for (int i = 0; i < fromIndex; i++) {
 				pointer = pointer.next;
 			}

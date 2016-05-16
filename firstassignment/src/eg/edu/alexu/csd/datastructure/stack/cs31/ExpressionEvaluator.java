@@ -28,13 +28,16 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		/**
 		 * check starting with operator
 		 */
-		if (expression.charAt(0) == '/' || expression.charAt(0) == '*' || expression.charAt(0) == '+'
+		if (expression.charAt(0) == '/'
+				|| expression.charAt(0) == '*' 
+				|| expression.charAt(0) == '+'
 				|| expression.charAt(0) == '-')
 			throw new RuntimeException("starting with operator");
 		/**
 		 * check ending with operator
 		 */
-		if (expression.charAt(expression.length() - 1) == '/' || expression.charAt(expression.length() - 1) == '*'
+		if (expression.charAt(expression.length() - 1) == '/' 
+				|| expression.charAt(expression.length() - 1) == '*'
 				|| expression.charAt(expression.length() - 1) == '+'
 				|| expression.charAt(expression.length() - 1) == '-')
 			throw new RuntimeException("ending  with operator");
@@ -45,7 +48,9 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		for (int i = 0; i < expression.length(); i++) {
 			if (expression.charAt(i) == ' ')
 				continue;
-			else if (expression.charAt(i) == '/' || expression.charAt(i) == '*' || expression.charAt(i) == '+'
+			else if (expression.charAt(i) == '/'
+					|| expression.charAt(i) == '*' 
+					|| expression.charAt(i) == '+'
 					|| expression.charAt(i) == '-') {
 				if (test)
 					throw new RuntimeException("having unary operator");
@@ -61,7 +66,9 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		 */
 		for (int i = 0; i < expression.length() - 1 && flag; i++) {
 			flag = false;
-			if (expression.charAt(i) != '*' && expression.charAt(i) != '+' && expression.charAt(i) != '-'
+			if (expression.charAt(i) != '*' 
+					&& expression.charAt(i) != '+' 
+					&& expression.charAt(i) != '-'
 					&& expression.charAt(i) != '/')
 				flag = true;
 		}
@@ -74,13 +81,17 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		for (int i = 0; i < expression.length() - 1; i++) {
 
 			// test all symbols
-			if ((('A' < expression.charAt(i) && expression.charAt(i) < 'Z')
+			if ((('A' < expression.charAt(i)
+					&& expression.charAt(i) < 'Z')
 
-					&& '0' < expression.charAt(i + 1) && expression.charAt(i + 1) < '9')
+					&& '0' < expression.charAt(i + 1) 
+					&& expression.charAt(i + 1) < '9')
 
-					|| (('a' < expression.charAt(i) && expression.charAt(i) < 'z')
+					|| (('a' < expression.charAt(i)
+							&& expression.charAt(i) < 'z')
 
-							&& '0' < expression.charAt(i + 1) && expression.charAt(i + 1) < '9')) {
+							&& '0' < expression.charAt(i + 1)
+							&& expression.charAt(i + 1) < '9')) {
 
 				throw new RuntimeException("oooo");
 
@@ -98,36 +109,52 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 					str.append(stack.pop());
 					str.append(" ");
 				}
-				if (stack.isEmpty() || (!stack.isEmpty() && (char) stack.peek() != '('))
+				if (stack.isEmpty() || (!stack.isEmpty() 
+						&& (char) stack.peek() != '('))
 					throw new RuntimeException("there is no (");
 				stack.pop();
-			} else if (expression.charAt(i) == '*' || expression.charAt(i) == '/') {
+			} else if (expression.charAt(i) == '*'
+					|| expression.charAt(i) == '/') {
 				if (stack.isEmpty()) {
 					stack.push(expression.charAt(i));
-				} else if ((char) stack.peek() == '+' || (char) stack.peek() == '-') {
+				} else if ((char) stack.peek() == '+'
+						|| (char) stack.peek() == '-') {
 					stack.push(expression.charAt(i));
 				} else {
-					while (stack.size() != 0 && ((char) stack.peek() == '*' || (char) stack.peek() == '/')) {
+					while (stack.size() != 0
+							&& ((char) stack.peek() == '*' 
+							|| (char) stack.peek() == '/')) {
 						str.append(stack.pop());
 						str.append(" ");
 					}
 					stack.push(expression.charAt(i));
 				}
-			} else if (expression.charAt(i) == '+' || expression.charAt(i) == '-') {
-				while (stack.size() != 0 && ((char) stack.peek() == '*' || (char) stack.peek() == '/'
-						|| (char) stack.peek() == '+' || (char) stack.peek() == '-')) {
+			} else if (expression.charAt(i) == '+'
+					|| expression.charAt(i) == '-') {
+				while (stack.size() != 0 
+						&& ((char) stack.peek() == '*' 
+						|| (char) stack.peek() == '/'
+						|| (char) stack.peek() == '+'
+						|| (char) stack.peek() == '-')) {
 					str.append(stack.pop());
 					str.append(" ");
 				}
 				stack.push(expression.charAt(i));
-			} else if (('A' <= expression.charAt(i) && expression.charAt(i) <= 'Z')
-					|| ('a' <= expression.charAt(i) && expression.charAt(i) <= 'z')
-					|| ('0' <= expression.charAt(i) && expression.charAt(i) <= '9')) {
+			} else if (('A' <= expression.charAt(i)
+					&& expression.charAt(i) <= 'Z')
+					|| ('a' <= expression.charAt(i) 
+					&& expression.charAt(i) <= 'z')
+					|| ('0' <= expression.charAt(i) 
+					&& expression.charAt(i) <= '9')) {
 				{
 
-					while (i < expression.length() && (('A' <= expression.charAt(i) && expression.charAt(i) <= 'Z')
-							|| ('a' <= expression.charAt(i) && expression.charAt(i) <= 'z')
-							|| ('0' <= expression.charAt(i) && expression.charAt(i) <= '9'))) {
+					while (i < expression.length() 
+							&& (('A' <= expression.charAt(i) 
+							&& expression.charAt(i) <= 'Z')
+							|| ('a' <= expression.charAt(i) 
+							&& expression.charAt(i) <= 'z')
+							|| ('0' <= expression.charAt(i) 
+							&& expression.charAt(i) <= '9'))) {
 
 						str.append(expression.charAt(i));
 
@@ -177,8 +204,10 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		 */
 
 		for (int i = 0; i < expression.length(); i++) {
-			if (('a' <= (expression.charAt(i)) && 'z' >= (expression.charAt(i)))
-					|| ('A' <= (expression.charAt(i)) && 'Z' >= (expression.charAt(i)))) {
+			if (('a' <= (expression.charAt(i)) && 'z'
+					>= (expression.charAt(i)))
+					|| ('A' <= (expression.charAt(i)) 
+					&& 'Z' >= (expression.charAt(i)))) {
 
 				throw new RuntimeException("lolololol");
 			}
@@ -194,9 +223,12 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 			/**
 			 * digits
 			 */
-			if ('0' <= expression.charAt(i) && expression.charAt(i) <= '9') {
+			if ('0' <= expression.charAt(i) 
+					&& expression.charAt(i) <= '9') {
 
-				while (i < expression.length() && '0' <= expression.charAt(i) && expression.charAt(i) <= '9') {
+				while (i < expression.length() 
+						&& '0' <= expression.charAt(i) 
+						&& expression.charAt(i) <= '9') {
 					str += expression.charAt(i);
 					i++;
 				}
@@ -298,7 +330,9 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				if (input == "") {
 					System.out.println("you should insert an expression");
 
-				} else if (input.charAt(0) == '/' || input.charAt(0) == '*' || input.charAt(0) == '+'
+				} else if (input.charAt(0) == '/' 
+						|| input.charAt(0) == '*' 
+						|| input.charAt(0) == '+'
 						|| input.charAt(0) == '-')
 					System.out.println("starting with operator");
 				else {
@@ -316,14 +350,18 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				}
 
 				else if (conv == "") {
-					System.out.println("you should convert infix expression to postfix:" + " choose option 2");
+					System.out.println("you should convert"
+							+ " infix expression to postfix:" + ""
+									+ " choose option 2");
 					break;
 
 				}
 				boolean f1 = false;
 				for (int i = 0; i < conv.length(); i++) {
-					if (('a' <= (conv.charAt(i)) && 'z' >= (conv.charAt(i)))
-							|| ('A' <= (conv.charAt(i)) && 'Z' >= (conv.charAt(i)))) {
+					if (('a' <= (conv.charAt(i)) 
+							&& 'z' >= (conv.charAt(i)))
+							|| ('A' <= (conv.charAt(i))
+							&& 'Z' >= (conv.charAt(i)))) {
 
 						System.out.println("can't evaluate symbols");
 						f1 = true;
@@ -336,8 +374,12 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				boolean flag = true;
 				for (int i = 0; i < conv.length() && flag; i++) {
 					flag = false;
-					if ('0' <= (conv.charAt(i)) && '9' >= (conv.charAt(i)) || conv.charAt(i) == ' '
-							|| conv.charAt(i) == '*' || conv.charAt(i) == '/' || conv.charAt(i) == '+'
+					if ('0' <= (conv.charAt(i))
+							&& '9' >= (conv.charAt(i))
+							|| conv.charAt(i) == ' '
+							|| conv.charAt(i) == '*' 
+							|| conv.charAt(i) == '/' 
+							|| conv.charAt(i) == '+'
 							|| conv.charAt(i) == '-') {
 
 						flag = true;
@@ -356,10 +398,13 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				System.out.println("Wrong Entry ");
 
 			}
-			System.out.println("========================================");
-			System.out.println("\nDo you want to continue (Type y or anykey to terminate) \n");
+			System.out.println("========================"
+					+ "================");
+			System.out.println("\nDo you want to continue"
+					+ " (Type y or anykey to terminate) \n");
 			ch = scan.next().charAt(0);
-			System.out.println("=======================================");
+			System.out.println("===================="
+					+ "===================");
 		} while (ch == 'Y' || ch == 'y');
 
 	}

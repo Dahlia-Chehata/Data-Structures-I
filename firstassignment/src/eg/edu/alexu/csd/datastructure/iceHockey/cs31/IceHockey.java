@@ -38,7 +38,8 @@ public class IceHockey implements IPlayersFinder {
 	boolean[][] visited;
 	Point[] temp;
 	int n, m, index = 0, counter = 0, team, area;
-	int minRow = num, minCol = num, maxRow = flagg, maxCol = flagg;
+	int minRow = num, minCol = num,
+	maxRow = flagg, maxCol = flagg;
 	Point center;
 
 	public Point dfs(int i, int j, int v) {

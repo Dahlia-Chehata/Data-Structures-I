@@ -135,10 +135,13 @@ public class Stack implements IStack {
 				System.out.println("Wrong Entry ");
 			}
 
-			System.out.println("========================================");
-			System.out.println("\nDo you want to continue (Type y or anykey to terminate) \n");
+			System.out.println("====================="
+					+ "===================");
+			System.out.println("\nDo you want to continue"
+					+ "(Type y or anykey to terminate) \n");
 			ch = scan.next().charAt(0);
-			System.out.println("=======================================");
+			System.out.println("===================="
+					+ "===================");
 		} while (ch == 'Y' || ch == 'y');
 
 	}

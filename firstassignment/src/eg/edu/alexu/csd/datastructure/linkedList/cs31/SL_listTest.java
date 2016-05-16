@@ -133,7 +133,8 @@ public class SL_listTest {
 		D.clear();
 		try {
 			D.get(0);
-			Assert.fail(" the list was cleared:cannot get from an empty list");
+			Assert.fail(" the list was cleared:"
+					+ "cannot get from an empty list");
 		} catch (Exception RuntimeException) {
 
 		}
