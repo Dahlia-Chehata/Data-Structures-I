@@ -15,7 +15,8 @@ public class doubly_linkedlists implements ILinkedList {
 	}
 
 	@Override
-	public void add(int index, Object element) throws RuntimeException {
+	public void add(int index, Object element)
+			throws RuntimeException {
 		// TODO Auto-generated method stub
 		DNode new_node = new DNode();
 		new_node.value = element;
@@ -88,7 +89,8 @@ public class doubly_linkedlists implements ILinkedList {
 	}
 
 	@Override
-	public void set(int index, Object element) throws RuntimeException {
+	public void set(int index, Object element)
+			throws RuntimeException {
 		// TODO Auto-generated method stub
 		DNode pointer = header.next;
 		if (index >= 0 && index < size) {
@@ -164,7 +166,8 @@ public class doubly_linkedlists implements ILinkedList {
 	}
 
 	@Override
-	public ILinkedList sublist(int fromIndex, int toIndex) throws RuntimeException {
+public ILinkedList sublist(int fromIndex, int toIndex)
+		throws RuntimeException {
 		// TODO Auto-generated method stub
 		ILinkedList new_list = new doubly_linkedlists();
 		DNode pointer = header.next;
