@@ -291,7 +291,7 @@ throw new RuntimeException("'(' without a ')'");
 				else if (operand1 == 0)
 					stack.push(0);
 				else
-					stack.push((double) operand1 / operand2);
+	stack.push((double) operand1 / operand2);
 			}
 
 		}
@@ -306,7 +306,7 @@ throw new RuntimeException("'(' without a ')'");
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		IExpressionEvaluator app = new ExpressionEvaluator();
+IExpressionEvaluator app = new ExpressionEvaluator();
 		 final int num3=3;
 		 
 		Scanner scan = new Scanner(System.in);
@@ -316,13 +316,13 @@ throw new RuntimeException("'(' without a ')'");
 		char ch;
 
 		do {
-	System.out.println("      options");
-	System.out.println("-----------------------------");
-	System.out.println("1- insert an expression");
-	System.out.println("2-infix to postfix conversion");
-	System.out.println("3-evaluate expression");
-	System.out.println("------------------------------");
-			choice = scan.nextInt();
+System.out.println("      options");
+System.out.println("-----------------------------");
+System.out.println("1- insert an expression");
+System.out.println("2-infix to postfix conversion");
+System.out.println("3-evaluate expression");
+System.out.println("------------------------------");
+		choice = scan.nextInt();
 
 			switch (choice) {
 			/**
@@ -337,16 +337,16 @@ throw new RuntimeException("'(' without a ')'");
 			case 2:
 				if (input == "") {
 					System.out.println(""
-	+ "you should insert an expression");
++ "you should insert an expression");
 
-				} else if (input.charAt(0) == '/' 
-						|| input.charAt(0) == '*' 
-						|| input.charAt(0) == '+'
-						|| input.charAt(0) == '-')
-	System.out.println("starting with operator");
+		} else if (input.charAt(0) == '/' 
+				|| input.charAt(0) == '*' 
+				|| input.charAt(0) == '+'
+				|| input.charAt(0) == '-')
+System.out.println("starting with operator");
 				else {
-					conv = app.infixToPostfix(input);
-					System.out.println(conv);
+			conv = app.infixToPostfix(input);
+			System.out.println(conv);
 				}
 				break;
 			/**
@@ -360,9 +360,9 @@ throw new RuntimeException("'(' without a ')'");
 				}
 
 				else if (conv == "") {
-					System.out.println("you should convert"
-					+ " infix expression to postfix:" + ""
-				+ " choose option 2");
+	System.out.println("you should convert"
+	+ " infix expression to postfix:" + ""
+	+ " choose option 2");
 					break;
 
 				}
