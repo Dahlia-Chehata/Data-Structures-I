@@ -308,7 +308,6 @@ throw new RuntimeException("'(' without a ')'");
 	public static void main(String[] args) {
 IExpressionEvaluator app = new ExpressionEvaluator();
 		 final int num3=3;
-		 
 		Scanner scan = new Scanner(System.in);
 		String input = "";
 		String conv = "";
