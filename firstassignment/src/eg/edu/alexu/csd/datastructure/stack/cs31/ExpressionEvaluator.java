@@ -5,7 +5,8 @@ import java.util.Scanner;
 import eg.edu.alexu.csd.datastructure.stack.IExpressionEvaluator;
 import eg.edu.alexu.csd.datastructure.stack.IStack;
 
-public class ExpressionEvaluator implements IExpressionEvaluator {
+public class ExpressionEvaluator implements
+IExpressionEvaluator {
 
 	static IStack stack = new Stack();
 
@@ -13,7 +14,8 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 	/**
 	 * to convert from infix to postfix
 	 */
-	public String infixToPostfix(String expression) throws RuntimeException {
+	public String infixToPostfix(String expression) 
+			throws RuntimeException {
 
 		// TODO Auto-generated method stub
 		StringBuffer str = new StringBuffer();
@@ -32,7 +34,8 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				|| expression.charAt(0) == '*' 
 				|| expression.charAt(0) == '+'
 				|| expression.charAt(0) == '-')
-			throw new RuntimeException("starting with operator");
+			throw new RuntimeException(""
+					+ "starting with operator");
 		/**
 		 * check ending with operator
 		 */
@@ -40,7 +43,8 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				|| expression.charAt(expression.length() - 1) == '*'
 				|| expression.charAt(expression.length() - 1) == '+'
 				|| expression.charAt(expression.length() - 1) == '-')
-			throw new RuntimeException("ending  with operator");
+			throw new RuntimeException(""
+					+ "ending  with operator");
 		/**
 		 * check unary
 		 */
@@ -53,7 +57,8 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 					|| expression.charAt(i) == '+'
 					|| expression.charAt(i) == '-') {
 				if (test)
-					throw new RuntimeException("having unary operator");
+					throw new RuntimeException(""
+							+ "having unary operator");
 				else
 					test = true;
 			} else
@@ -64,7 +69,8 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		/**
 		 * no operator case
 		 */
-		for (int i = 0; i < expression.length() - 1 && flag; i++) {
+		for (int i = 0; i < expression.length() - 1 
+				&& flag; i++) {
 			flag = false;
 			if (expression.charAt(i) != '*' 
 					&& expression.charAt(i) != '+' 
@@ -105,7 +111,8 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				stack.push(expression.charAt(i));
 			} else if (expression.charAt(i) == ')') {
 
-				while (stack.size() != 0 && (char) stack.peek() != '(') {
+				while (stack.size() != 0 
+						&& (char) stack.peek() != '(') {
 					str.append(stack.pop());
 					str.append(" ");
 				}
@@ -328,7 +335,8 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 			 */
 			case 2:
 				if (input == "") {
-					System.out.println("you should insert an expression");
+					System.out.println(""
+							+ "you should insert an expression");
 
 				} else if (input.charAt(0) == '/' 
 						|| input.charAt(0) == '*' 
@@ -345,7 +353,8 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 			 */
 			case num3: {
 				if (input == "") {
-					System.out.println("you should insert an expression");
+					System.out.println(""
+							+ "you should insert an expression");
 					break;
 				}
 
