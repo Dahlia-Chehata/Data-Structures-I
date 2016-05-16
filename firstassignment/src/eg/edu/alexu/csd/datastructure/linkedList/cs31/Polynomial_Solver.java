@@ -566,5 +566,5 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		}
 
 		return arrr;
-	}
+	}}
 	
