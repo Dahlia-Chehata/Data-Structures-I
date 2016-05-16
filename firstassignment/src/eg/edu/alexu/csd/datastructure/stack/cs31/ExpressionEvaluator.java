@@ -356,14 +356,11 @@ System.out.println("starting with operator");
 					System.out.println(""
 	+ "you should insert an expression");
 					break;
-				}
-
-				else if (conv == "") {
+				}else if (conv == "") {
 	System.out.println("you should convert"
 	+ " infix expression to postfix:" + ""
 	+ " choose option 2");
 					break;
-
 				}
 				boolean f1 = false;
 				for (int i = 0; i < conv.length(); i++) {
@@ -374,9 +371,7 @@ System.out.println("starting with operator");
 
 	System.out.println("can't evaluate symbols");
 						f1 = true;
-
 					}
-
 				}
 				if (f1)
 					break;
@@ -393,7 +388,6 @@ System.out.println("starting with operator");
 		|| conv.charAt(i) == '-') {
 
 		flag = true;
-
 					}
 
 			}
