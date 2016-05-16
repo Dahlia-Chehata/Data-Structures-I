@@ -98,27 +98,31 @@ public class Stack implements IStack {
 			System.out.println("4-Get size");
 			System.out.println("5-check if empty");
 
-			System.out.println("--------------------");
+			System.out.println("-------"
+					+ "-------------");
 			int choice = scan.nextInt();
 			/**
 			 * choice:for the 5 options
 			 */
 			switch (choice) {
 			case 1:
-				System.out.println("insert an input");
+				System.out.println(""
+						+ "insert an input");
 				Object element = scan.next();
 				stack.push(element);
 				break;
 
 			case 2:
 				if (stack.isEmpty())
-					System.out.println("stack is empty");
+					System.out.println(""
+							+ "stack is empty");
 				else
 					System.out.println(stack.pop());
 				break;
 			case num3:
 				if (stack.isEmpty())
-					System.out.println("stack is empty");
+					System.out.println(""
+							+ "stack is empty");
 				else
 					System.out.println(stack.peek());
 				break;
@@ -127,18 +131,24 @@ public class Stack implements IStack {
 				break;
 			case num5:
 				if (stack.isEmpty())
-					System.out.println("stack is empty");
+					System.out.println(""
+							+ "stack is empty");
 				else
-					System.out.println("stack is not empty");
+					System.out.println("stack"
+							+ " is not empty");
 				break;
 			default:
-				System.out.println("Wrong Entry ");
+				System.out.println(""
+						+ "Wrong Entry ");
 			}
 
-			System.out.println("====================="
+			System.out.println("======="
+					+ "=============="
 					+ "===================");
-			System.out.println("\nDo you want to continue"
-					+ "(Type y or anykey to terminate) \n");
+			System.out.println("\nDo you "
+					+ "want to continue"
+					+ "(Type y or anykey"
+					+ " to terminate) \n");
 			ch = scan.next().charAt(0);
 			System.out.println("===================="
 					+ "===================");
