@@ -39,10 +39,10 @@ IExpressionEvaluator {
 		/**
 		 * check ending with operator
 		 */
-		if (expression.charAt(expression.length() - 1) == '/' 
-				|| expression.charAt(expression.length() - 1) == '*'
-				|| expression.charAt(expression.length() - 1) == '+'
-				|| expression.charAt(expression.length() - 1) == '-')
+	if (expression.charAt(expression.length() - 1) == '/' 
+	|| expression.charAt(expression.length() - 1) == '*'
+	|| expression.charAt(expression.length() - 1) == '+'
+	|| expression.charAt(expression.length() - 1) == '-')
 			throw new RuntimeException(""
 					+ "ending  with operator");
 		/**
