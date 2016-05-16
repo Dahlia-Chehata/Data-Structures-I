@@ -151,7 +151,8 @@ public class Singly_linkedlists implements ILinkedList {
 	}
 
 	@Override
-	public ILinkedList sublist(int fromIndex, int toIndex) throws RuntimeException {
+	public ILinkedList sublist(int fromIndex, int toIndex)
+			throws RuntimeException {
 		// TODO Auto-generated method stub
 		ILinkedList new_list = new Singly_linkedlists();
 		SLNode pointer = head;
