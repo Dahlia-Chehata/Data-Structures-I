@@ -412,12 +412,12 @@ System.out.println("Wrong Entry ");
 System.out.println("========================"
 					+ "================");
 System.out.println("\nDo you want to continue"
-					+ " (Type y or anykey to terminate) \n");
-			ch = scan.next().charAt(0);
-	System.out.println("===================="
++ " (Type y or anykey to terminate) \n");
+		ch = scan.next().charAt(0);
+System.out.println("===================="
 					+ "===================");
-		} while (ch == 'Y' || ch == 'y');
+	} while (ch == 'Y' || ch == 'y');
 
-	}
+}
 
 }
