@@ -6,7 +6,9 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class QueueTesting {
-
+/**
+ * .
+ */
 	Queue list1 = new Queue();
 	private final int num5=5;
 	private final int num3=3;
