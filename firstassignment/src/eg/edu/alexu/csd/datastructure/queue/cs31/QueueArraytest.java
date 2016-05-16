@@ -28,6 +28,7 @@ public class QueueArraytest {
 			list2.enqueue(num8);
 
 		} catch (Exception RuntimeException) {
+			
 		}
 
 	}
@@ -47,6 +48,7 @@ public class QueueArraytest {
 			list2.dequeue();
 
 		} catch (Exception RuntimeException) {
+			
 		}
 
 	}
@@ -67,6 +69,7 @@ public class QueueArraytest {
 			list2.dequeue();
 
 		} catch (Exception RuntimeException) {
+			
 		}
 	}
 
@@ -122,11 +125,13 @@ public class QueueArraytest {
 			list2.enqueue(num8);
 
 		} catch (Exception RuntimeException) {
+			
 		}
 		try {
 			list2.dequeue();
 
 		} catch (Exception RuntimeException) {
+			
 		}
 	}
 }
