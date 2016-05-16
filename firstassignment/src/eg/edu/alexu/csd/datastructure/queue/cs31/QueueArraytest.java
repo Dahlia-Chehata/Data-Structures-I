@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class QueueArraytest {
 /**
- * .
+ * 
  */
 	QueueArraybased list2;
 	private final int num5=5;
@@ -27,9 +27,9 @@ public class QueueArraytest {
 		try {
 			list2.enqueue(num8);
 
-		} catch (Exception RuntimeException) {}
-			
-		
+		} catch (Exception RuntimeException) {
+			//
+		}
 
 	}
 
@@ -47,8 +47,9 @@ public class QueueArraytest {
 		try {
 			list2.dequeue();
 
-		} catch (Exception RuntimeException) {}
-		
+		} catch (Exception RuntimeException) {
+		}
+
 	}
 
 	// test dequeue
@@ -67,7 +68,6 @@ public class QueueArraytest {
 			list2.dequeue();
 
 		} catch (Exception RuntimeException) {
-			
 		}
 	}
 
@@ -122,14 +122,12 @@ public class QueueArraytest {
 		try {
 			list2.enqueue(num8);
 
-		} catch (Exception RuntimeException) {}
-			
-		
+		} catch (Exception RuntimeException) {
+		}
 		try {
 			list2.dequeue();
 
-		} catch (Exception RuntimeException) {}
-			
-		
+		} catch (Exception RuntimeException) {
+		}
 	}
 }
