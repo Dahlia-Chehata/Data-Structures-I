@@ -43,9 +43,9 @@ public class QueueTesting {
 	try {
 		list1.dequeue();
 
-	} catch (Exception RuntimeException) {
+	} catch (Exception RuntimeException) {}
 		
-	}
+	
 }
 	//test dequeue
 	@Test
@@ -60,9 +60,9 @@ public class QueueTesting {
 		try {
 			list1.dequeue();
 
-		} catch (Exception RuntimeException) {
+		} catch (Exception RuntimeException) {}
 			
-		}
+		
 	}
 	// test size1
 		@Test
@@ -108,8 +108,8 @@ public class QueueTesting {
 			try {
 				list1.dequeue();
 
-			} catch (Exception RuntimeException) {
+			} catch (Exception RuntimeException) {}
 				
-			}
+			
 }
 }
