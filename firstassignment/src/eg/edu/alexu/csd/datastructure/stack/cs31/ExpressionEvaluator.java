@@ -385,33 +385,33 @@ System.out.println("starting with operator");
 				for (int i = 0; i < conv.length()
 						&& flag; i++) {
 					flag = false;
-					if ('0' <= (conv.charAt(i))
-							&& '9' >= (conv.charAt(i))
-							|| conv.charAt(i) == ' '
-							|| conv.charAt(i) == '*' 
-							|| conv.charAt(i) == '/' 
-							|| conv.charAt(i) == '+'
-							|| conv.charAt(i) == '-') {
+		if ('0' <= (conv.charAt(i))
+		& '9' >= (conv.charAt(i))
+		|| conv.charAt(i) == ' '
+		|| conv.charAt(i) == '*' 
+		|| conv.charAt(i) == '/' 
+		|| conv.charAt(i) == '+'
+		|| conv.charAt(i) == '-') {
 
-						flag = true;
+		flag = true;
 
 					}
 
-				}
-				if (flag && !f1)
-					System.out.println(app.evaluate(conv));
+			}
+		if (flag && !f1)
+System.out.println(app.evaluate(conv));
 				break;
 			}
 			/**
 			 * other input
 			 */
 			default:
-	System.out.println("Wrong Entry ");
+System.out.println("Wrong Entry ");
 
 			}
-	System.out.println("========================"
+System.out.println("========================"
 					+ "================");
-	System.out.println("\nDo you want to continue"
+System.out.println("\nDo you want to continue"
 					+ " (Type y or anykey to terminate) \n");
 			ch = scan.next().charAt(0);
 	System.out.println("===================="
