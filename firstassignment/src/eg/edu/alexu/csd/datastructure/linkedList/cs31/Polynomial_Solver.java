@@ -88,14 +88,14 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				if (pt.y != 0) {
 					if (pt.y == 1) {
 						message += "x";
-					}
-					else {
+					}else {
 						message += "x^" + pt.y;
-					}
-				} else {
+					}} else {
 					message += pt.x;
 				}
 			}
+					
+				
 			// System.out.println(message);
 			break;
 		case 'B':
