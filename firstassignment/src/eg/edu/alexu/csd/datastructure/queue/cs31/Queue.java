@@ -8,7 +8,7 @@ public class Queue implements IQueue,ILinkedBased {
  /**
   * .
   */
-	ILinkedList mylist =new doubly_linkedlists();
+	ILinkedList mylist=new doubly_linkedlists();
 	
 	/**
 	 * .
@@ -24,7 +24,7 @@ public class Queue implements IQueue,ILinkedBased {
 	@Override
 	public Object dequeue() {
 		// TODO Auto-generated method stub
-		Object item = mylist.get(0);
+		Object item=mylist.get(0);
 		mylist.remove(0);
 		return item;
 	}

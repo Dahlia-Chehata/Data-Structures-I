@@ -9,25 +9,25 @@ public class QueueArraybased implements IQueue,IArrayBased {
 	int n, r, f;
 
 	public QueueArraybased(){
-		size = 0;
-		r = 0;
-		f = 0;
+		size=0;
+		r=0;
+		f=0;
 	}
 	
 	public QueueArraybased(int n) {
-		this.n = n;
-		arr = new Object[n];
+		this.n=n;
+		arr=new Object[n];
 		
 	}
 
 	@Override
 	public void enqueue(Object item) throws RuntimeException {
 		// TODO Auto-generated method stub
-		if (size >= n)
+		if (size>=n)
 			throw new RuntimeException();
 		arr[r] = item;
-		if (r == n - 1)
-			r = 0;
+		if (r==n - 1)
+			r=0;
 		else
 			r++;
 		size++;
@@ -36,12 +36,12 @@ public class QueueArraybased implements IQueue,IArrayBased {
 	@Override
 	public Object dequeue() throws RuntimeException {
 		// TODO Auto-generated method stub
-		if (size == 0)
+		if (size==0)
 			throw new RuntimeException();
 		Object temp = arr[f];
-		arr[f] = null;
-		if (f == n - 1)
-			f = 0;
+		arr[f]=null;
+		if (f==n - 1)
+			f=0;
 		else
 			f++;
 		size--;
@@ -51,7 +51,7 @@ public class QueueArraybased implements IQueue,IArrayBased {
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
-		return (size == 0);
+		return (size==0);
 	}
 
 	@Override
