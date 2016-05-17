@@ -2,7 +2,7 @@ package eg.edu.alexu.csd.datastructure.queue.cs31;
 import eg.edu.alexu.csd.datastructure.queue.IQueue;
 import eg.edu.alexu.csd.datastructure.queue.ILinkedBased;
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
-import eg.edu.alexu.csd.datastructure.linkedList.cs31.*;
+import eg.edu.alexu.csd.datastructure.linkedList.cs31.doubly_linkedlists;;
 /**.
  * @author Dell
  */
