@@ -26,20 +26,17 @@ public class Maze implements IMazeSolver  {
 
 	@Override
 	public int[][] solveDFS(File maze) {
-		
-		
 		// TODO Auto-generated method stub
 		readfile appl= new readfile();
 		char[][]input= appl.readFile(maze);
-		throw new RuntimeException( "input");
-	/*	DfsSolver app=new DfsSolver();
+		DfsSolver app=new DfsSolver();
 		int[][] arr=app.dfs(input,readfile.n,readfile.m);
 		if (arr.length==0)
 				throw new RuntimeException();
-		return arr;*/
+		return arr;
 		
 	}
-	/*public static void main(String[] args){
+	public static void main(String[] args){
 	Maze app=new Maze();
 	File s = (new File("C:\\Users\\Dell\\Desktop\\mm.txt"));
 	int[][]arr;
@@ -52,6 +49,6 @@ public class Maze implements IMazeSolver  {
 	System.out.println();
 	}
 
-}*/
+}
 
 }
