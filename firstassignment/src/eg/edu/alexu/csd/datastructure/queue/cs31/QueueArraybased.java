@@ -30,7 +30,7 @@ public class QueueArraybased implements IQueue,IArrayBased {
 	}
 
 	@Override
-	public void enqueue(Object item) throws RuntimeException {
+	public void enqueue(Object item) {
 		// TODO Auto-generated method stub
 		if (size>=n)
 			throw new RuntimeException();
