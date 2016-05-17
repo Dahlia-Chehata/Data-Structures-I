@@ -3,9 +3,7 @@ import java.util.Scanner;
 import eg.edu.alexu.csd.datastructure.stack.IExpressionEvaluator;
 import eg.edu.alexu.csd.datastructure.stack.IStack;
 /**.
- * 
  * @author Dell
- *
  */
 public class ExpressionEvaluator implements
 /**.

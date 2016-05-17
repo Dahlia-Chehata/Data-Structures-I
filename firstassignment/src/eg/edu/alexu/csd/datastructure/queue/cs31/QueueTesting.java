@@ -3,9 +3,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Assert;
 import org.junit.Test;
 /**.
- * 
  * @author Dell
- *
  */
 public class QueueTesting {
 /**.
@@ -40,27 +38,23 @@ public class QueueTesting {
 		
 		list1.enqueue(num12);
 		assertEquals(num12, list1.dequeue());
-		
 	}
 	/**.
 	 * ;
 	 */
 	@Test
 	public void test2() {
-
 	list1.enqueue(num5);
 	list1.enqueue(num3);
 	list1.enqueue(num5);
 	list1.dequeue();
 	list1.dequeue();
 	list1.dequeue();
-
 	try {
 		list1.dequeue();
-
-	} catch (Exception RuntimeException) {}
-		
-	
+	} catch (Exception RuntimeException) {
+		System.out.println(" ");
+	}
 }
 	//test dequeue
 	/**.
@@ -80,10 +74,8 @@ public class QueueTesting {
 	public void test4() {
 		try {
 			list1.dequeue();
-
 		} catch (Exception RuntimeException) {}
-			
-		
+		System.out.println(" ");
 	}
 	// test size1
 	/**.
@@ -141,9 +133,8 @@ public class QueueTesting {
 			Assert.assertEquals(num10, list1.dequeue());
 			try {
 				list1.dequeue();
-
-			} catch (Exception RuntimeException) {}
-				
-			
+			} catch (Exception RuntimeException) {
+				System.out.println(" ");
+			}
 }
 }

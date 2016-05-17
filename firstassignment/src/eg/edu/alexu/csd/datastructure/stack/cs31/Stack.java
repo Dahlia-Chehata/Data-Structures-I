@@ -63,17 +63,14 @@ public class Stack implements IStack {
 		// TODO Auto-generated method stub
 		return (mylist.isEmpty());
 	}
-
 	/**..
 	 * size of stack
 	 */
-
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
 		return mylist.size();
 	}
-
 	/**..
 	 * @param args main
 	 */
