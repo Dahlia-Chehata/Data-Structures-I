@@ -32,9 +32,9 @@ public class DfsSolver {
 	//char[][] filearray;
 	/**.
 	 * .
-	 * @param arr
-	 * @param e
-	 * @return
+	 * @param arr array
+	 * @param e target
+	 * @return ans
 	 */
 	public int[][] finalPath(Point[][] arr, Point e) {
 		/**.
@@ -86,10 +86,10 @@ public class DfsSolver {
 	}
 	/**.
 	 *,
-	 * @param input
-	 * @param n
-	 * @param m
-	 * @return
+	 * @param input maze array
+	 * @param n row
+	 * @param m column
+	 * @return sol
 	 * @throws RuntimeException
 	 */
 public int[][]dfs(char[][]input,int n,int m)

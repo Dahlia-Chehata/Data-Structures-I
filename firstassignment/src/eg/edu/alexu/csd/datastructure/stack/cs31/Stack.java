@@ -75,7 +75,7 @@ public class Stack implements IStack {
 	}
 
 	/**..
-	 * @param args
+	 * @param args main
 	 */
 	public static void main(String[] args) {
 		 /**..

@@ -32,8 +32,8 @@ public class readfile {
 	char[] dim;
 	/**.
 	 * ;
-	 * @param maze
-	 * @return
+	 * @param maze filename
+	 * @return arr2
 	 */
 public char[][] readFile(File maze){
 		

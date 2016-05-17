@@ -67,7 +67,7 @@ public class Maze implements IMazeSolver  {
 	}
 	/**.
 	 * ,
-	 * @param args
+	 * @param args main
 	 */
 	public static void main(String[] args){
 		/**.

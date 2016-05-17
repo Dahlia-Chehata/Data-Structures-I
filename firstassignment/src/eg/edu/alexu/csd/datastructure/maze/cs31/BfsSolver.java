@@ -34,9 +34,9 @@ public class BfsSolver {
 	//char[][] filearray;
 	/**.
 	 * ;
-	 * @param arr
-	 * @param e
-	 * @return
+	 * @param arr final
+	 * @param e indices of target
+	 * @return ans
 	 */
 	public int[][] finalPath(Point[][] arr, Point e) {
 		/**.
@@ -88,10 +88,10 @@ for (i = 1; !arr[result[i - 1].x]
 	}
 	/**.
 	 * .
-	 * @param input
-	 * @param n
-	 * @param m
-	 * @return
+	 * @param input maze arr
+	 * @param n row
+	 * @param m column
+	 * @return sol
 	 * @throws RuntimeException
 	 */
 	public int[][]bfs(char[][]input,int n,int m)
