@@ -121,7 +121,8 @@ public class BfsSolver {
 				}
 			}
 		}
-		throw new RuntimeException();
+		//throw new RuntimeException("ll");
+		return null;
 	}
 	
 }

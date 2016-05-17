@@ -40,7 +40,7 @@ public class Maze implements IMazeSolver  {
 	Maze app=new Maze();
 	File s = (new File("C:\\Users\\Dell\\Desktop\\mm.txt"));
 	int[][]arr;
-	arr=app.solveDFS(s);
+	arr=app.solveBFS(s);
 			
 	for(int i=0;i<arr.length;i++){
 		for(int j=0;j<arr[0].length;j++){
