@@ -89,8 +89,6 @@ public class BfsSolver {
 		while(!q.isEmpty()){
 			Point top = (Point)q.dequeue();
 			if (input[top.x][top.y] == 'E'){
-				if (parent==null)
-					return null;
 				sol = finalPath(parent, top);
 				return sol;
 			}
