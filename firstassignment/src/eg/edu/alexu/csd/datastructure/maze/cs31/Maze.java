@@ -16,7 +16,7 @@ public class Maze implements IMazeSolver  {
 		char[][]input= appl.readFile(maze);
 		BfsSolver app=new BfsSolver();
 		int[][] arr=app.bfs(input,readfile.n,readfile.m);
-		if (arr.length==0||arr==null)
+		if (arr.length==0)
 				return null;
 		return arr;
 		
