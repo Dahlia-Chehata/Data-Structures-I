@@ -4,9 +4,7 @@ import eg.edu.alexu.csd.datastructure.queue.ILinkedBased;
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 import eg.edu.alexu.csd.datastructure.linkedList.cs31.*;
 /**.
- * 
  * @author Dell
- *
  */
 public class Queue implements IQueue,ILinkedBased {
  /**..
