@@ -2,6 +2,11 @@ package eg.edu.alexu.csd.datastructure.stack.cs31;
 import java.util.Scanner;
 import eg.edu.alexu.csd.datastructure.stack.IExpressionEvaluator;
 import eg.edu.alexu.csd.datastructure.stack.IStack;
+/**.
+ * 
+ * @author Dell
+ *
+ */
 public class ExpressionEvaluator implements
 /**.
  * 
@@ -315,7 +320,7 @@ throw new RuntimeException("'(' without a ')'");
 		return (int) (double) stack.pop();
 	}
 	/**.
-	 * @param args
+	 * @param args main
 	 */
 	public static void main(String[] args) {
 		/**.
