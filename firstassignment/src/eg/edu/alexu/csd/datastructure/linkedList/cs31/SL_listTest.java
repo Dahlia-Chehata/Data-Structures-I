@@ -8,19 +8,61 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class SL_listTest {
+	/**.
+	 * 
+	 */
 	ILinkedList SL = new Singly_linkedlists();
+	/**
+	 * .
+	 */
 	ILinkedList D = new doubly_linkedlists();
+	/**
+	 * .
+	 */
  final int num7=7;
+ /**
+  * .
+  */
  final int num3=3;
+ /**
+  * .
+  */
  final int num10=10;
+ /**
+  * .
+  */
  final int num69=69;
+ /**
+  * .
+  */
  final int num96=96;
+ /**
+  * .
+  */
  final int num15=15;
+ /**
+  * .
+  */
  final int num555=555;
+ /**
+  * .
+  */
  final int num888=888;
+ /**
+  * .
+  */
  final int num5=5;
+ /**
+  * .
+  */
  final int num=-1;
+ /**
+  * .
+  */
  final int num4=4;
+ /**
+  * .
+  */
  final int num6=6;
 
 
