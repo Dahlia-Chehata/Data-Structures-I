@@ -83,9 +83,9 @@ public class IceHockey implements IPlayersFinder {
 	Point center;
 /**.
  * ;
- * @param i
- * @param j
- * @param v
+ * @param i index
+ * @param j index
+ * @param v team
  * @return
  */
 	public Point dfs(int i, int j, int v) {
@@ -125,10 +125,10 @@ public class IceHockey implements IPlayersFinder {
 	}
 	/**.
 	 * ;
-	 * @param xx
-	 * @param yy
-	 * @param vv
-	 * @return
+	 * @param xx index
+	 * @param yy index
+	 * @param vv team
+	 * @return boolean
 	 */
 
 	public boolean canmove(int xx, int yy, int vv) {
@@ -146,9 +146,9 @@ public class IceHockey implements IPlayersFinder {
 	}
 /**.
  * ;
- * @param i
- * @param j
- * @return
+ * @param i index
+ * @param j index
+ * @return visited[i][j]
  */
 	private boolean isVisited(int i, int j) {
 		return visited[i][j];

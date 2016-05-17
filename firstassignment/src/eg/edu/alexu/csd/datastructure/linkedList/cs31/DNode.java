@@ -27,9 +27,9 @@ public class DNode {
 	}
 /**..
  * ;
- * @param p
- * @param o
- * @param n
+ * @param p node
+ * @param o object
+ * @param n node
  */
 	public DNode(DNode p, Object o, DNode n) {
 		prev = p;
