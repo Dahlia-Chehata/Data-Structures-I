@@ -7,7 +7,9 @@ import eg.edu.alexu.csd.datastructure.stack.IStack;
 
 public class ExpressionEvaluator implements
 IExpressionEvaluator {
-
+/**
+ * .
+ */
 	static IStack stack = new Stack();
 
 	@Override
@@ -18,7 +20,13 @@ IExpressionEvaluator {
 			throws RuntimeException {
 
 		// TODO Auto-generated method stub
+		/**
+		 * .
+		 */
 		StringBuffer str = new StringBuffer();
+		/**
+		 * .
+		 */
 		boolean flag = true;
 		/**
 		 * check null
@@ -198,9 +206,17 @@ throw new RuntimeException("'(' without a ')'");
 	 */
 	public int evaluate(String expression) {
 		// TODO Auto-generated method stub
-
+/**
+ * .
+ */
 		double operand1 = 0;
+		/**
+		 * .
+		 */
 		double operand2 = 0;
+		/**
+		 * .
+		 */
 		String str = new String();
 		/**
 		 * test null case
@@ -306,12 +322,33 @@ throw new RuntimeException("'(' without a ')'");
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		/**
+		 * .
+		 */
 IExpressionEvaluator app = new ExpressionEvaluator();
+/**
+ * ;
+ */
 		 final int num3=3;
+		 /**
+		  * ;
+		  */
 		Scanner scan = new Scanner(System.in);
+		/**
+		 * ;
+		 */
 		String input = "";
+		/**
+		 * ;
+		 */
 		String conv = "";
+		/**
+		 * ;
+		 */
 		int choice;
+		/**
+		 * ;
+		 */
 		char ch;
 
 		do {
@@ -321,6 +358,9 @@ System.out.println("1- insert an expression");
 System.out.println("2-infix to postfix conversion");
 System.out.println("3-evaluate expression");
 System.out.println("------------------------------");
+/**
+ * ;
+ */
 		choice = scan.nextInt();
 
 			switch (choice) {
@@ -362,6 +402,9 @@ System.out.println("starting with operator");
 	+ " choose option 2");
 					break;
 				}
+				/**
+				 * .
+				 */
 				boolean f1 = false;
 				for (int i = 0; i < conv.length(); i++) {
 					if (('a' <= (conv.charAt(i)) 
@@ -375,6 +418,9 @@ System.out.println("starting with operator");
 				}
 				if (f1)
 					break;
+				/**
+				 * '
+				 */
 				boolean flag = true;
 				for (int i = 0; i < conv.length()
 						&& flag; i++) {

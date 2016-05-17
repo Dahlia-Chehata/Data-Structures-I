@@ -5,26 +5,56 @@ import java.awt.Point;
 
 import eg.edu.alexu.csd.datastructure.queue.ILinkedBased;
 public class BfsSolver {
+	/**
+	 * .
+	 */
 	Point source ;
+	/**
+	 * .
+	 */
 	 boolean[][] visit;
+	 /**
+	  * ;
+	  */
 	  Point[] result;
+	  /**
+	   * ;
+	   */
 	  int[][]sol;
+	  /**
+	   * .
+	   */
 	private Point[][] parent;
+	
 	//char[][] filearray;
 	
 	public int[][] finalPath(Point[][] arr, Point e) {
+		/**
+		 * ;
+		 */
 		int i = 0;
+		/**
+		 * ,
+		 */
 		int j = 0;
 		//point e is the indices of the target
 		result[i] = new Point(e);
-		for (i = 1; !arr[result[i - 1].x][result[i - 1].y].equals(source); i++) {
-			result[i] = new Point(arr[result[i - 1].x][result[i - 1].y]);
+for (i = 1; !arr[result[i - 1].x]
+		[result[i - 1].y].equals(source); i++) {
+			result[i] = 
+	new Point(arr[result[i - 1].x][result[i - 1].y]);
 		//	filearray[result[i].x][result[i].y] = '*'; 
 
 		}
 		result[i] = new Point(source);
 		i++;
+		/**
+		 * ;
+		 */
 		Point[] finalResult = new Point[i];
+		/**
+		 * ;
+		 */
 		int[][]ans=new int[i][2];
 		
 		for (i = i - 1; i >= 0; i--) {
@@ -48,8 +78,15 @@ public class BfsSolver {
 	}
 	public int[][]bfs(char[][]input,int n,int m)
 			throws RuntimeException{
+		/**
+		 * ;
+		 */
 		Queue q =new Queue();
+		/**
+		 * .
+		 */
 		boolean flag=false;
+		
 		visit=new boolean[n][m];
 		parent = new Point[n][m];
 		result = new Point[n * m];
@@ -68,13 +105,15 @@ public class BfsSolver {
 		}
 		if (!flag)
 			throw new RuntimeException();
-		
-		boolean stop=false;
-		for (int i = 0; i < n; i++) {
-		    for (int j = 0; j < m; j++) {
-		    	if (stop==true && input[i][j]=='E')
-		    		throw new RuntimeException();
-		        if (input[i][j]=='E'){
+		/**
+		 * ;
+		 */
+boolean stop=false;
+	for (int i = 0; i < n; i++) {
+		 for (int j = 0; j < m; j++) {
+		  if (stop==true && input[i][j]=='E')
+		  throw new RuntimeException();
+		    if (input[i][j]=='E'){
 		        stop=true;
 		           
 		    }
@@ -92,30 +131,33 @@ public class BfsSolver {
 				sol = finalPath(parent, top);
 				return sol;
 			}
-			else if ((input[top.x][top.y] == '#') || (visit[top.x][top.y])){
+			else if ((input[top.x][top.y] == '#')
+			|| (visit[top.x][top.y])){
 				continue;
 			}
 			else {
 				visit[top.x][top.y] = true;
-				if ((top.y + 1 < input[0].length) && (!visit[top.x][top.y + 1])){
-					Point h = new Point(top.x, top.y + 1);
-					q.enqueue(h);
-					parent[top.x][top.y + 1] = new Point(top.x, top.y);
+			if ((top.y + 1 < input[0].length)
+			&& (!visit[top.x][top.y + 1])){
+			Point h = new Point(top.x, top.y + 1);
+				q.enqueue(h);
+parent[top.x][top.y + 1] = new Point(top.x, top.y);
 				}
-				if ((top.x + 1 < input.length) && (!visit[top.x + 1][top.y])){
-					Point h = new Point(top.x + 1, top.y);
-					q.enqueue(h);
-					parent[top.x + 1][top.y] = new Point(top.x, top.y);
+	if ((top.x + 1 < input.length) 
+		&& (!visit[top.x + 1][top.y])){
+	Point h = new Point(top.x + 1, top.y);
+	q.enqueue(h);
+parent[top.x + 1][top.y] = new Point(top.x, top.y);
 				}
-				if ((top.y - 1 >= 0) && (!visit[top.x][top.y - 1])){
-					Point h = new Point(top.x, top.y - 1);
-					q.enqueue(h);
-					parent[top.x][top.y - 1] = new Point(top.x, top.y);
+	if ((top.y - 1 >= 0) && (!visit[top.x][top.y - 1])){
+		Point h = new Point(top.x, top.y - 1);
+		q.enqueue(h);
+parent[top.x][top.y - 1] = new Point(top.x, top.y);
 				}
-				if ((top.x - 1 >= 0) && (!visit[top.x - 1][top.y])){
-					Point h = new Point(top.x - 1, top.y);
+	if ((top.x - 1 >= 0) && (!visit[top.x - 1][top.y])){
+	Point h = new Point(top.x - 1, top.y);
 					q.enqueue(h);
-					parent[top.x - 1][top.y] = new Point(top.x, top.y);
+parent[top.x - 1][top.y] = new Point(top.x, top.y);
 				}
 			}
 		}

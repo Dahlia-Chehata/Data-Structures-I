@@ -6,10 +6,25 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class readfile {
+	/**
+	 * .
+	 */
 	String[] arr1;
+	/**
+	 * ;
+	 */
 	char[][] arr2;
+	/**
+	 * ;
+	 */
 	String str;
+	/**
+	 * ;
+	 */
 	public static int n,m;
+	/**
+	 * ;
+	 */
 	char[] dim;
 public char[][] readFile(File maze){
 		
@@ -18,12 +33,33 @@ public char[][] readFile(File maze){
 		    throw new RuntimeException();
 		} 
 		try{
+			/**
+			 * ;
+			 */
 		FileReader fr=new FileReader(maze);
+		/**
+		 * ;
+		 */
 		BufferedReader textReader=new BufferedReader(fr);
+		/**
+		 * ;
+		 */
 		StringBuilder sb = new StringBuilder();
+		/**
+		 * ;
+		 */
 	    String line = textReader.readLine();
+	    /**
+	     * .
+	     */
 	    String dimensions=line;
+	    /**
+	     * .
+	     */
 	    dim=dimensions.toCharArray();
+	    /**
+	     * ;
+	     */
 	    String[] splited = dimensions.split("\\s+");
 	    //n=Character.getNumericValue(dim[0]);
 	    // m=Character.getNumericValue(dim[1]);
@@ -38,14 +74,12 @@ public char[][] readFile(File maze){
 	    	line = textReader.readLine();
 	    	sb.append(line);
 	    	//sb.append(" ");
-
 	    	sb.append("\n");
-	        
 	    }
 	    str = sb.toString();
 	    textReader.close( );
 		}catch(IOException e){
-			System.out.println("not found");
+	System.out.println("not found");
 		};
 		arr1=str.split("\n");
 		 for (int i=0; i<n; i++) {

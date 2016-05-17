@@ -3,8 +3,13 @@ package eg.edu.alexu.csd.datastructure.linkedList.cs31;
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 
 public class Singly_linkedlists implements ILinkedList {
-
+/**
+ * '
+ */
 	public SLNode head;
+	/**
+	 * ';
+	 */
 	public int size;
 
 	public Singly_linkedlists() {
@@ -15,7 +20,13 @@ public class Singly_linkedlists implements ILinkedList {
 	@Override
 	public void add(int index, Object element) throws RuntimeException {
 		// TODO Auto-generated method stub
+		/**
+		 * '
+		 */
 		SLNode new_node = new SLNode();
+		/**
+		 * ;
+		 */
 		SLNode pointer = head;
 		new_node.value = element;
 
@@ -52,7 +63,13 @@ public class Singly_linkedlists implements ILinkedList {
 	@Override
 	public void add(Object element) {
 		// TODO Auto-generated method stub
+		/**
+		 * ;
+		 */
 		SLNode pointer = head;
+		/**
+		 * ;
+		 */
 		SLNode new_node = new SLNode();
 		new_node.value = element;
 		if (head == null) {
@@ -72,6 +89,9 @@ public class Singly_linkedlists implements ILinkedList {
 	@Override
 	public Object get(int index) throws RuntimeException {
 		// TODO Auto-generated method stub
+		/**
+		 * ;
+		 */
 		SLNode pointer = head;
 		
 		if (index >= 0 && index < size) {
@@ -87,6 +107,9 @@ public class Singly_linkedlists implements ILinkedList {
 	@Override
 	public void set(int index, Object element) throws RuntimeException {
 		// TODO Auto-generated method stub
+		/**
+		 * ;
+		 */
 		SLNode pointer = head;
 		if (index >= 0 && index < size) {
 			for (int i = 0; i < index; i++){
@@ -118,7 +141,13 @@ public class Singly_linkedlists implements ILinkedList {
 	@Override
 	public void remove(int index) throws RuntimeException {
 		// TODO Auto-generated method stub
+		/**
+		 * ;
+		 */
 		SLNode pointer = head;
+		/**
+		 * '
+		 */
 		SLNode temp;
 		if (isEmpty()) {
 			throw new RuntimeException();
@@ -154,7 +183,13 @@ public class Singly_linkedlists implements ILinkedList {
 	public ILinkedList sublist(int fromIndex, int toIndex)
 			throws RuntimeException {
 		// TODO Auto-generated method stub
+		/**
+		 * ;
+		 */
 		ILinkedList new_list = new Singly_linkedlists();
+		/**
+		 * ;
+		 */
 		SLNode pointer = head;
 		if (fromIndex >= 0 && fromIndex < size 
 				&& toIndex >= 0 && toIndex < size) {
@@ -174,6 +209,9 @@ public class Singly_linkedlists implements ILinkedList {
 	@Override
 	public boolean contains(Object o) {
 		// TODO Auto-generated method stub
+		/**
+		 * ;
+		 */
 		SLNode pointer = head;
 		if (isEmpty()) {
 			return false;

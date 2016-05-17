@@ -12,10 +12,22 @@ public class Maze implements IMazeSolver  {
 	@Override
 	public int[][] solveBFS(File maze) {
 		// TODO Auto-generated method stub
+		/**
+		 * ;
+		 */
 		readfile appl= new readfile();
+		/**
+		 * ;
+		 */
 		char[][]input= appl.readFile(maze);
+		/**
+		 * ;
+		 */
 		BfsSolver app=new BfsSolver();
-		int[][] arr=app.bfs(input,readfile.n,readfile.m);
+		/**
+		*;
+		 */
+	int[][] arr=app.bfs(input,readfile.n,readfile.m);
 		if (arr==null||arr.length==0)
 				return null;
 			//throw new RuntimeException();
@@ -28,9 +40,22 @@ public class Maze implements IMazeSolver  {
 	@Override
 	public int[][] solveDFS(File maze) {
 		// TODO Auto-generated method stub
+		/**
+		 * .
+		 */
 		readfile appl= new readfile();
+		/**
+		 * .
+		 */
 		char[][]input= appl.readFile(maze);
+		/**
+		 * .
+		 */
 		DfsSolver app=new DfsSolver();
+		/**
+		 * 
+		 * .
+		 */
 		int[][] arr=app.dfs(input,readfile.n,readfile.m);
 		if (arr==null||arr.length==0)
 				return null;
@@ -38,10 +63,24 @@ public class Maze implements IMazeSolver  {
 		
 	}
 	public static void main(String[] args){
+		/**
+		 * .
+		 */
 	Maze app=new Maze();
-	File s = (new File("C:\\Users\\Dell\\Desktop\\mm.txt"));
+	/**
+	 * ;
+	 */
+	File s = 
+	(new File("C:\\Users\\Dell"
+			+ "\\Desktop\\mm.txt"));
+	/**
+	 * .
+	 */
 	int[][]arr;
 	arr=app.solveDFS(s);
+	/**
+	 * .
+	 */
 	int[][]arr2;
 	arr2=app.solveBFS(s);
 	System.out.println("DFS:");	

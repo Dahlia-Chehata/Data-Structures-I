@@ -4,8 +4,17 @@ import eg.edu.alexu.csd.datastructure.queue.IArrayBased;
 
 
 public class QueueArraybased implements IQueue,IArrayBased {
+	/**
+	 * .
+	 */
 	Object[] arr;
+	/**
+	 * .
+	 */
 	int size;
+	/**
+	 * .
+	 */
 	int n, r, f;
 
 	public QueueArraybased(){
