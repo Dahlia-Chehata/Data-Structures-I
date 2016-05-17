@@ -75,7 +75,7 @@ public class BfsSolver {
 		    	if (stop==true && input[i][j]=='E')
 		    		throw new RuntimeException();
 		        if (input[i][j]=='E'){
-		        flag=true;
+		        stop=true;
 		           
 		    }
 		   }
