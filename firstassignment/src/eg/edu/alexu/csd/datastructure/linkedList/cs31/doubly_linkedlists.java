@@ -15,7 +15,9 @@ public class doubly_linkedlists implements ILinkedList {
 	 * \
 	 */
 	public DNode header, tailer;
-
+/**.
+ * 
+ */
 	public doubly_linkedlists() {
 		size = 0;
 		header = new DNode(null, null, null);
