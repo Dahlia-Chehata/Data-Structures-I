@@ -13,13 +13,20 @@ public class DNode {
 	 * ;
 	 */
 	public DNode prev;
-
+/**
+ * .
+ */
 	public DNode() {
 		value = null;
 		next = null;
 		prev = null;
 	}
-
+/**
+ * ;
+ * @param p
+ * @param o
+ * @param n
+ */
 	public DNode(DNode p, Object o, DNode n) {
 		prev = p;
 		value = o;

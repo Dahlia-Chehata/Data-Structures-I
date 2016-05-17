@@ -24,7 +24,9 @@ public class Hangman_game implements IHangman {
 	 * '
 	 */
 	boolean[] check;
-
+/**
+ * ;
+ */
 	@Override
 	public void setDictionary(String[] words) {
 
@@ -34,7 +36,9 @@ public class Hangman_game implements IHangman {
 			temp[j] = words[j];
 		}
 	}
-
+/**
+ * ;
+ */
 	@Override
 	public String selectRandomSecretWord() {
 		if (temp == null) {
@@ -57,7 +61,9 @@ public class Hangman_game implements IHangman {
 
 		return str;
 	}
-
+/**
+ * ;
+ */
 	@Override
 	public String guess(Character c) {
 
@@ -117,7 +123,9 @@ public class Hangman_game implements IHangman {
 
 		return new String(show);
 	}
-
+/**
+ * ;
+ */
 	@Override
 	public void setMaxWrongGuesses(Integer max) {
 		// TODO Auto-generated method stub

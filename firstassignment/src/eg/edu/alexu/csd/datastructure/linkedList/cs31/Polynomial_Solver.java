@@ -2,7 +2,6 @@ package eg.edu.alexu.csd.datastructure.linkedList.cs31;
 
 import java.awt.Point;
 import java.util.Arrays;
-import java.util.Scanner;
 
 import eg.edu.alexu.csd.datastructure.linkedList.IPolynomialSolver;
 
@@ -31,7 +30,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	 * 
 	 */
 	 final int bignum2=1000;
-
+/**
+ * ;
+ */
 	@Override
 	public void setPolynomial(char poly, int[][] terms) 
 	  throws RuntimeException {
@@ -83,6 +84,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			throw new RuntimeException();
 		}
 	}
+	/**
+	 * ;
+	 */
 	@Override
 	public String print(char poly) {
 		// TODO Auto-generated method stub
@@ -217,6 +221,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		System.out.println(message);
 		return message;
 	}
+	/**
+	 * .
+	 */
 	@Override
 	public void clearPolynomial(char poly) throws RuntimeException {
 		// TODO Auto-generated method stub
@@ -249,6 +256,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			throw new RuntimeException("invalid input");
 		}
 	}
+	/**
+	 * '
+	 */
 	@Override
 	public float evaluatePolynomial(char poly, float value) 
 			throws RuntimeException {
@@ -358,6 +368,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		}
 		return result;
 	}
+	/**
+	 * '
+	 */
 	@Override
 	public int[][] add(char poly1, char poly2) throws RuntimeException {
 		// TODO Auto-generated method stub
@@ -494,6 +507,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		}
 		return arrr;
 	}
+	/**
+	 * ;
+	 */
 	@Override
 	public int[][] subtract(char poly1, char poly2) 
 			throws RuntimeException {
@@ -628,6 +644,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		}
 		return arrr;
 	}
+	/**
+	 * ;
+	 */
 	@Override
 	public int[][] multiply(char poly1, char poly2) 
 			throws RuntimeException {

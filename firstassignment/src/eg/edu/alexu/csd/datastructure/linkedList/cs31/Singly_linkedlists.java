@@ -11,12 +11,16 @@ public class Singly_linkedlists implements ILinkedList {
 	 * ';
 	 */
 	public int size;
-
+/**
+ * ;
+ */
 	public Singly_linkedlists() {
 		head = null;
 		size = 0;
 	}
-
+/**
+ * '
+ */
 	@Override
 	public void add(int index, Object element) throws RuntimeException {
 		// TODO Auto-generated method stub
@@ -59,7 +63,9 @@ public class Singly_linkedlists implements ILinkedList {
 			throw new RuntimeException();
 		}
 	}
-
+/**
+ * ;
+ */
 	@Override
 	public void add(Object element) {
 		// TODO Auto-generated method stub
@@ -85,7 +91,9 @@ public class Singly_linkedlists implements ILinkedList {
 		}
 		size++;
 	}
-
+/**
+ * ;
+ */
 	@Override
 	public Object get(int index) throws RuntimeException {
 		// TODO Auto-generated method stub
@@ -103,7 +111,9 @@ public class Singly_linkedlists implements ILinkedList {
 			throw new RuntimeException();
 		}
 	}
-
+/**
+ * ;
+ */
 	@Override
 	public void set(int index, Object element) throws RuntimeException {
 		// TODO Auto-generated method stub
@@ -121,14 +131,18 @@ public class Singly_linkedlists implements ILinkedList {
 		}
 
 	}
-
+/**
+ * ;
+ */
 	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
 		head = null;
 		size = 0;
 	}
-
+/**
+ * '
+ */
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
@@ -137,7 +151,9 @@ public class Singly_linkedlists implements ILinkedList {
 		}
 		return false;
 	}
-
+/**
+ * '
+ */
 	@Override
 	public void remove(int index) throws RuntimeException {
 		// TODO Auto-generated method stub
@@ -171,14 +187,18 @@ public class Singly_linkedlists implements ILinkedList {
 			throw new RuntimeException();
 		}
 	}
-
+/**
+ * ;
+ */
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
 
 		return size;
 	}
-
+/**
+ * ;
+ */
 	@Override
 	public ILinkedList sublist(int fromIndex, int toIndex)
 			throws RuntimeException {
@@ -205,7 +225,9 @@ public class Singly_linkedlists implements ILinkedList {
 			throw new RuntimeException();
 		}
 	}
-
+/**
+ * ;
+ */
 	@Override
 	public boolean contains(Object o) {
 		// TODO Auto-generated method stub
