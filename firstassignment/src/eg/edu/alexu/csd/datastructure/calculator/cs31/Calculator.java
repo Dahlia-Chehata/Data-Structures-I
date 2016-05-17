@@ -3,7 +3,7 @@ package eg.edu.alexu.csd.datastructure.calculator.cs31;
 import eg.edu.alexu.csd.datastructure.calculator.ICalculator;
 
 public class Calculator implements ICalculator {
-/**
+/**.
  * ;
  */
 	@Override
@@ -11,7 +11,7 @@ public class Calculator implements ICalculator {
 		// TODO Auto-generated method stub
 		return x + y;
 	}
-/**
+/**.
  * '
  */
 	@Override

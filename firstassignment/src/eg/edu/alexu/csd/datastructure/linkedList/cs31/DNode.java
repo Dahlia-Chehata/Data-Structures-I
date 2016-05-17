@@ -1,19 +1,19 @@
 package eg.edu.alexu.csd.datastructure.linkedList.cs31;
 
 public class DNode {
-	/**
+	/**..
 	 * ;
 	 */
 	public Object value;
-	/**
+	/**..
 	 * ;
 	 */
 	public DNode next;
-	/**
+	/**..
 	 * ;
 	 */
 	public DNode prev;
-/**
+/**..
  * .
  */
 	public DNode() {
@@ -21,7 +21,7 @@ public class DNode {
 		next = null;
 		prev = null;
 	}
-/**
+/**..
  * ;
  * @param p
  * @param o

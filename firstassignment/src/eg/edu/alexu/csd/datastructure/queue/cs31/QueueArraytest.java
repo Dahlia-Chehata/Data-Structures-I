@@ -6,33 +6,33 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class QueueArraytest {
-/**
+/**..
  *. 
  */
 	QueueArraybased list2;
-	/**
+	/**..
 	 * .
 	 */
 	private final int num5=5;
-	/**
+	/**..
 	 * .
 	 */
 	private final int num3=3;
-	/**
+	/**.
 	 * .
 	 */
 	private final int num8=8;
-	/**
+	/**.
 	 * .
 	 */
 	private final int num12=12;
-	/**
+	/**.
 	 * .
 	 */
 	private final int num10=10;
 
 	// enqueue item at index > size
-	/**
+	/**.
 	 * ;
 	 */
 	@Test
@@ -52,7 +52,7 @@ public class QueueArraytest {
 	}
 
 	// enqueue ,dequeue
-	/**
+	/**.
 	 * ;
 	 */
 	@Test
@@ -74,7 +74,7 @@ public class QueueArraytest {
 	}
 
 	// test dequeue
-	/**
+	/**.
 	 * ;
 	 */
 	@Test
@@ -83,7 +83,7 @@ public class QueueArraytest {
 		list2.enqueue(num5);
 		Assert.assertEquals(num5, list2.dequeue());
 	}
-/**
+/**.
  * ;
  */
 	@Test
@@ -98,7 +98,7 @@ public class QueueArraytest {
 	}
 
 	// test size1
-	/**
+	/**.
 	 * ;
 	 */
 	@Test
@@ -108,7 +108,7 @@ public class QueueArraytest {
 	}
 
 	// test size2
-	/**
+	/**.
 	 * ;
 	 */
 	@Test
@@ -121,7 +121,7 @@ public class QueueArraytest {
 		list2.dequeue();
 		Assert.assertEquals(1, list2.size());
 	}
-/**
+/**.
  * '
  */
 	@Test
@@ -129,7 +129,7 @@ public class QueueArraytest {
 		list2 = new QueueArraybased(num3);
 		Assert.assertEquals(true, list2.isEmpty());
 	}
-/**
+/**.
  * ;
  */
 	@Test
@@ -141,7 +141,7 @@ public class QueueArraytest {
 		list2.dequeue();
 		Assert.assertEquals(false, list2.isEmpty());
 	}
-/**
+/**.
  * ;
  */
 	@Test

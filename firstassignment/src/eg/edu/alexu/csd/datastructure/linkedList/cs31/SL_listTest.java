@@ -8,64 +8,64 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class SL_listTest {
-	/**.
+	/**..
 	 * 
 	 */
 	ILinkedList SL = new Singly_linkedlists();
-	/**
+	/**.
 	 * .
 	 */
 	ILinkedList D = new doubly_linkedlists();
-	/**
+	/**.
 	 * .
 	 */
  final int num7=7;
- /**
+ /**.
   * .
   */
  final int num3=3;
- /**
+ /**.
   * .
   */
  final int num10=10;
- /**
+ /**.
   * .
   */
  final int num69=69;
- /**
+ /**.
   * .
   */
  final int num96=96;
- /**
+ /**.
   * .
   */
  final int num15=15;
- /**
+ /**.
   * .
   */
  final int num555=555;
- /**
+ /**.
   * .
   */
  final int num888=888;
- /**
+ /**.
   * .
   */
  final int num5=5;
- /**
+ /**.
   * .
   */
  final int num=-1;
- /**
+ /**.
   * .
   */
  final int num4=4;
- /**
+ /**.
   * .
   */
  final int num6=6;
 
-/**
+/**.
  * ;
  */
 	@Test
@@ -79,7 +79,7 @@ public class SL_listTest {
 		assertEquals(num7, result2);
 
 	}
-/**
+/**.
  * ;
  */
 	@Test
@@ -94,7 +94,7 @@ public class SL_listTest {
 		} catch (Exception RuntimeException) {
 		}
 	}
-/**
+/**.
  * '
  */
 	@Test
@@ -106,7 +106,7 @@ public class SL_listTest {
 		} catch (Exception RuntimeException) {
 		}
 	}
-/**
+/**.
  * ;
  */
 	@Test
@@ -125,7 +125,7 @@ public class SL_listTest {
 		assertEquals(num888, result2);
 
 	}
-/**
+/**.
  * ;
  */
 	@Test
@@ -144,7 +144,7 @@ public class SL_listTest {
 		assertEquals(num888, result2);
 
 	}
-/**
+/**.
  * ;
  */
 	@Test() // test add(index-ve ,Object)
@@ -158,7 +158,7 @@ public class SL_listTest {
 		}
 
 	}
-/**
+/**.
  * ;
  */
 	@Test(expected = RuntimeException.class) // get -ve index
@@ -166,7 +166,7 @@ public class SL_listTest {
 		SL.get(num);
 		D.get(num);
 	}
-/**
+/**.
  * ;
  */
 	@Test
@@ -182,7 +182,7 @@ public class SL_listTest {
 
 		}
 	}
-/**
+/**.
  * ;
  */
 	@Test
@@ -205,7 +205,7 @@ public class SL_listTest {
 		SL.sublist(num, num5);
 		D.sublist(num, num5);
 	}
-/**
+/**.
  * ;
  */
 	@Test
@@ -218,7 +218,7 @@ public class SL_listTest {
 		} catch (Exception RuntimeException) {
 		}
 	}
-/**
+/**.
  * '
  */
 	@Test
@@ -232,7 +232,7 @@ public class SL_listTest {
 		} catch (Exception RuntimeException) {
 		}
 	}
-/**
+/**.
  * ;
  */
 	@Test
@@ -248,7 +248,7 @@ public class SL_listTest {
 		Assert.assertEquals(false, result);
 
 	}
-/**
+/**.
  * ;
  */
 	@Test // contains test on an empty list
@@ -256,7 +256,7 @@ public class SL_listTest {
 		assertEquals(false, SL.contains(num5));
 		assertEquals(false, D.contains(num5));
 	}
-/**
+/**.
  * ;
  */
 	@Test(expected = RuntimeException.class) // remove -ve index
@@ -267,7 +267,7 @@ public class SL_listTest {
 		D.remove(num);
 
 	}
-/**
+/**.
  * ;
  */
 	@Test
@@ -277,7 +277,7 @@ public class SL_listTest {
 		Assert.assertEquals(true, result);
 
 	}
-/**
+/**.
  * ;
  */
 	@Test // contains && remove test
@@ -295,7 +295,7 @@ public class SL_listTest {
 		assertEquals(false, SL.contains(num5));
 		assertEquals(false, D.contains(num5));
 	}
-/**
+/**.
  * ;
  */
 	@Test // contains test
@@ -311,7 +311,7 @@ public class SL_listTest {
 		D.add(0, num3);
 		assertEquals(true, D.contains(num3));
 	}
-/**
+/**.
  * ;
  */
 	@Test
@@ -338,7 +338,7 @@ public class SL_listTest {
 
 		Assert.assertEquals(num3, result2);
 	}
-/**
+/**.
  * '
  */
 	@Test
@@ -360,7 +360,7 @@ public class SL_listTest {
 
 		Assert.assertEquals(num6, D.size());
 	}
-/**
+/**.
  * '
  */
 	@Test
@@ -368,7 +368,7 @@ public class SL_listTest {
 		Assert.assertEquals(0, SL.size());
 		Assert.assertEquals(0, D.size());
 	}
-/**
+/**.
  * '
  */
 	@Test
@@ -383,7 +383,7 @@ public class SL_listTest {
 		Assert.assertEquals(1, D.size());
 
 	}
-/**
+/**.
  * '
  */
 	@Test
@@ -399,7 +399,7 @@ public class SL_listTest {
 		D.add(1, "l");
 		Assert.assertEquals("l", D.get(1));
 	}
-/**
+/**.
  * '
  */
 	@Test
@@ -421,7 +421,7 @@ public class SL_listTest {
 		} catch (Exception RuntimeException) {
 		}
 	}
-/**
+/**.
  * ;
  */
 	@Test(expected = RuntimeException.class) // set empty list
@@ -430,7 +430,7 @@ public class SL_listTest {
 		D.set(1, num5);
 
 	}
-/**
+/**.
  * ;
  */
 	@Test
@@ -452,7 +452,7 @@ public class SL_listTest {
 		} catch (Exception RuntimeException) {
 		}
 	}
-/**
+/**.
  * ;
  */
 	@Test(expected = RuntimeException.class) // get empty list
@@ -461,7 +461,7 @@ public class SL_listTest {
 		D.get(1);
 
 	}
-/**
+/**.
  * ;
  */
 	@Test
@@ -482,7 +482,7 @@ public class SL_listTest {
 		}
 
 	}
-/**
+/**.
  * ;
  */
 	@Test
@@ -504,7 +504,7 @@ public class SL_listTest {
 		} catch (Exception RuntimeException) {
 		}
 	}
-/**
+/**.
  * ;
  */
 	@Test

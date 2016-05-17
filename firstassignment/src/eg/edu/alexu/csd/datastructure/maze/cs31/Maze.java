@@ -4,25 +4,25 @@ import eg.edu.alexu.csd.datastructure.maze.IMazeSolver;
 import eg.edu.alexu.csd.datastructure.maze.cs31.BfsSolver;
 import eg.edu.alexu.csd.datastructure.maze.cs31.DfsSolver;
 public class Maze implements IMazeSolver  {
-	/**
+	/**.
 	 * ;
 	 */
 	@Override
 	public int[][] solveBFS(File maze) {
 		// TODO Auto-generated method stub
-		/**
+		/**.
 		 * ;
 		 */
 		readfile appl= new readfile();
-		/**
+		/**.
 		 * ;
 		 */
 		char[][]input= appl.readFile(maze);
-		/**
+		/**.
 		 * ;
 		 */
 		BfsSolver app=new BfsSolver();
-		/**
+		/**.
 		*;
 		 */
 	int[][] arr=app.bfs(input,readfile.n,readfile.m);
@@ -32,25 +32,25 @@ public class Maze implements IMazeSolver  {
 		return arr;
 		
 	}
-/**
+/**.
  * ;
  */
 	@Override
 	public int[][] solveDFS(File maze) {
 		// TODO Auto-generated method stub
-		/**
+		/**.
 		 * .
 		 */
 		readfile appl= new readfile();
-		/**
+		/**.
 		 * .
 		 */
 		char[][]input= appl.readFile(maze);
-		/**
+		/**.
 		 * .
 		 */
 		DfsSolver app=new DfsSolver();
-		/**
+		/**.
 		 * 
 		 * .
 		 */
@@ -60,27 +60,27 @@ public class Maze implements IMazeSolver  {
 		return arr;
 		
 	}
-	/**
+	/**.
 	 * ,
 	 * @param args
 	 */
 	public static void main(String[] args){
-		/**
+		/**.
 		 * .
 		 */
 	Maze app=new Maze();
-	/**
+	/**.
 	 * ;
 	 */
 	File s = 
 	(new File("C:\\Users\\Dell"
 			+ "\\Desktop\\mm.txt"));
-	/**
+	/**.
 	 * .
 	 */
 	int[][]arr;
 	arr=app.solveDFS(s);
-	/**
+	/**.
 	 * .
 	 */
 	int[][]arr2;

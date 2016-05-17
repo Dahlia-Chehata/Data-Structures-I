@@ -5,40 +5,40 @@ import java.awt.Point;
 
 import eg.edu.alexu.csd.datastructure.queue.ILinkedBased;
 public class BfsSolver {
-	/**
+	/**.
 	 * .
 	 */
 	Point source ;
-	/**
+	/**.
 	 * .
 	 */
 	 boolean[][] visit;
-	 /**
+	 /**.
 	  * ;
 	  */
 	  Point[] result;
-	  /**
+	  /**.
 	   * ;
 	   */
 	  int[][]sol;
-	  /**
+	  /**.
 	   * .
 	   */
 	private Point[][] parent;
 	
 	//char[][] filearray;
-	/**
+	/**.
 	 * ;
 	 * @param arr
 	 * @param e
 	 * @return
 	 */
 	public int[][] finalPath(Point[][] arr, Point e) {
-		/**
+		/**.
 		 * ;
 		 */
 		int i = 0;
-		/**
+		/**.
 		 * ,
 		 */
 		int j = 0;
@@ -53,11 +53,11 @@ for (i = 1; !arr[result[i - 1].x]
 		}
 		result[i] = new Point(source);
 		i++;
-		/**
+		/**.
 		 * ;
 		 */
 		Point[] finalResult = new Point[i];
-		/**
+		/**.
 		 * ;
 		 */
 		int[][]ans=new int[i][2];
@@ -81,7 +81,7 @@ for (i = 1; !arr[result[i - 1].x]
 		}*/
 		return ans;
 	}
-	/**
+	/**.
 	 * .
 	 * @param input
 	 * @param n
@@ -91,11 +91,11 @@ for (i = 1; !arr[result[i - 1].x]
 	 */
 	public int[][]bfs(char[][]input,int n,int m)
 			throws RuntimeException{
-		/**
+		/**.
 		 * ;
 		 */
 		Queue q =new Queue();
-		/**
+		/**.
 		 * .
 		 */
 		boolean flag=false;
@@ -118,7 +118,7 @@ for (i = 1; !arr[result[i - 1].x]
 		}
 		if (!flag)
 			throw new RuntimeException();
-		/**
+		/**.
 		 * ;
 		 */
 boolean stop=false;

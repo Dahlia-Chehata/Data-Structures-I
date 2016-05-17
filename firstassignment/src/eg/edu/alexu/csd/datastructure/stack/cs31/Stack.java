@@ -5,15 +5,15 @@ import eg.edu.alexu.csd.datastructure.linkedList.cs31.Singly_linkedlists;
 import java.util.Scanner;
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 public class Stack implements IStack {
-	/**
+	/**..
 	 * .
 	 */
 	ILinkedList mylist = new Singly_linkedlists();
-	/**
+	/**..
 	 * .
 	 */
 	int size = mylist.size();
-	/**
+	/**..
 	 * add in stack
 	 */
 	@Override
@@ -21,20 +21,20 @@ public class Stack implements IStack {
 		// TODO Auto-generated method stub
 		mylist.add(mylist.size() - index, element);
 	}
-	/**
+	/**..
 	 * popping
 	 */
 	@Override
 	public Object pop() throws RuntimeException {
 		// TODO Auto-generated method stub
-		/**
+		/**..
 		 * .
 		 */
 		Object pop = mylist.get(0);
 		mylist.remove(0);
 		return pop;
 	}
-	/**
+	/**..
 	 * peeking
 	 */
 	@Override
@@ -42,7 +42,7 @@ public class Stack implements IStack {
 		// TODO Auto-generated method stub
 		return mylist.get(0);
 	}
-	/**
+	/**..
 	 * pushing
 	 */
 	@Override
@@ -50,7 +50,7 @@ public class Stack implements IStack {
 		// TODO Auto-generated method stub
 		mylist.add(0, element);
 	}
-	/**
+	/**..
 	 * checking if empty
 	 */
 	@Override
@@ -59,7 +59,7 @@ public class Stack implements IStack {
 		return (mylist.isEmpty());
 	}
 
-	/**
+	/**..
 	 * size of stack
 	 */
 
@@ -69,31 +69,31 @@ public class Stack implements IStack {
 		return mylist.size();
 	}
 
-	/**
+	/**..
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		 /**
+		 /**..
 		  * .
 		  */
 		final int num3=3;
-		/**
+		/**..
 		 * .
 		 */
 		 final int num4=4;
-		 /**
+		 /**..
 		  * ;
 		  */
 	      final int num5=5;
-/**
+/**..
  * .
  */
 		IStack stack = new Stack();
-		/**
+		/**..
 		 * ;
 		 */
 		char ch;
-		/**
+		/**..
 		 * .
 		 */
 		Scanner scan = new Scanner(System.in);
@@ -107,18 +107,18 @@ public class Stack implements IStack {
 			System.out.println("5-check if empty");
 			System.out.println("-------"
 					+ "-------------");
-			/**
+			/**..
 			 * .
 			 */
 			int choice = scan.nextInt();
-			/**
+			/**..
 			 * choice:for the 5 options
 			 */
 			switch (choice) {
 			case 1:
 				System.out.println(""
 						+ "insert an input");
-				/**
+				/**.
 				 * .
 				 */
 				Object element = scan.next();

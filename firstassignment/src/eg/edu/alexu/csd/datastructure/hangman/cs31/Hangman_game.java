@@ -4,27 +4,27 @@ import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 import java.util.Random;
 
 public class Hangman_game implements IHangman {
-	/**
+	/**.
 	 * ;
 	 */
 	String[] temp = null;
-	/**
+	/**.
 	 * '
 	 */
 	static String str;
-	/**
+	/**.
 	 * '
 	 */
 	static int counter;
-	/**
+	/**.
 	 * ;
 	 */
 	static char[] show;
-	/**
+	/**.
 	 * '
 	 */
 	boolean[] check;
-/**
+/**.
  * ;
  */
 	@Override
@@ -36,7 +36,7 @@ public class Hangman_game implements IHangman {
 			temp[j] = words[j];
 		}
 	}
-/**
+/**.
  * ;
  */
 	@Override
@@ -48,7 +48,7 @@ public class Hangman_game implements IHangman {
 			return null;
 		}
 		Random rand = new Random();
-		/**
+		/**.
 		 * '
 		 */
 		int num = rand.nextInt(temp.length);
@@ -61,7 +61,7 @@ public class Hangman_game implements IHangman {
 
 		return str;
 	}
-/**
+/**.
  * ;
  */
 	@Override
@@ -70,21 +70,21 @@ public class Hangman_game implements IHangman {
 		if (c == null) {
 			return new String(show);
 		}
-/**
+/**.
  * '
  */
 		int flag = 0;
-		/**
+		/**.
 		 * '
 		 */
 		int found = 0;
 
 		for (int i = 0; i < str.length(); i++) {
-			/**
+			/**.
 			 * ;
 			 */
            char k=str.toUpperCase().charAt(i);
-           /**
+           /**.
             * ;
             */
            char l=Character.toUpperCase(c);
@@ -98,11 +98,11 @@ public class Hangman_game implements IHangman {
 			return new String(show);
 		}
 		for (int i = 0; i < str.length(); i++) {
-			/**
+			/**.
 			 * ;
 			 */
 			char k=str.toUpperCase().charAt(i);
-			/**
+			/**.
 			 * ;
 			 */
 	           char l=Character.toUpperCase(c);
@@ -123,7 +123,7 @@ public class Hangman_game implements IHangman {
 
 		return new String(show);
 	}
-/**
+/**.
  * ;
  */
 	@Override

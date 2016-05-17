@@ -6,27 +6,27 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class readfile {
-	/**
+	/**.
 	 * .
 	 */
 	String[] arr1;
-	/**
+	/**.
 	 * ;
 	 */
 	char[][] arr2;
-	/**
+	/**.
 	 * ;
 	 */
 	String str;
-	/**
+	/**.
 	 * ;
 	 */
 	public static int n,m;
-	/**
+	/**.
 	 * ;
 	 */
 	char[] dim;
-	/**
+	/**.
 	 * ;
 	 * @param maze
 	 * @return
@@ -38,31 +38,31 @@ public char[][] readFile(File maze){
 		    throw new RuntimeException();
 		} 
 		try{
-			/**
+			/**.
 			 * ;
 			 */
 		FileReader fr=new FileReader(maze);
-		/**
+		/**.
 		 * ;
 		 */
 		BufferedReader textReader=new BufferedReader(fr);
-		/**
+		/**.
 		 * ;
 		 */
 		StringBuilder sb = new StringBuilder();
-		/**
+		/**.
 		 * ;
 		 */
 	    String line = textReader.readLine();
-	    /**
+	    /**.
 	     * .
 	     */
 	    String dimensions=line;
-	    /**
+	    /**.
 	     * .
 	     */
 	    dim=dimensions.toCharArray();
-	    /**
+	    /**.
 	     * ;
 	     */
 	    String[] splited = dimensions.split("\\s+");

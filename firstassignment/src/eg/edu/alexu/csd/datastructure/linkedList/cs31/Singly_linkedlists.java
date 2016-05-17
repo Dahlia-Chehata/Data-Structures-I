@@ -3,32 +3,32 @@ package eg.edu.alexu.csd.datastructure.linkedList.cs31;
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 
 public class Singly_linkedlists implements ILinkedList {
-/**
+/**.
  * '
  */
 	public SLNode head;
-	/**
+	/**.
 	 * ';
 	 */
 	public int size;
-/**
+/**.
  * ;
  */
 	public Singly_linkedlists() {
 		head = null;
 		size = 0;
 	}
-/**
+/**.
  * '
  */
 	@Override
 	public void add(int index, Object element) throws RuntimeException {
 		// TODO Auto-generated method stub
-		/**
+		/**.
 		 * '
 		 */
 		SLNode new_node = new SLNode();
-		/**
+		/**.
 		 * ;
 		 */
 		SLNode pointer = head;
@@ -63,17 +63,17 @@ public class Singly_linkedlists implements ILinkedList {
 			throw new RuntimeException();
 		}
 	}
-/**
+/**.
  * ;
  */
 	@Override
 	public void add(Object element) {
 		// TODO Auto-generated method stub
-		/**
+		/**.
 		 * ;
 		 */
 		SLNode pointer = head;
-		/**
+		/**.
 		 * ;
 		 */
 		SLNode new_node = new SLNode();
@@ -91,13 +91,13 @@ public class Singly_linkedlists implements ILinkedList {
 		}
 		size++;
 	}
-/**
+/**.
  * ;
  */
 	@Override
 	public Object get(int index) throws RuntimeException {
 		// TODO Auto-generated method stub
-		/**
+		/**.
 		 * ;
 		 */
 		SLNode pointer = head;
@@ -111,13 +111,13 @@ public class Singly_linkedlists implements ILinkedList {
 			throw new RuntimeException();
 		}
 	}
-/**
+/**.
  * ;
  */
 	@Override
 	public void set(int index, Object element) throws RuntimeException {
 		// TODO Auto-generated method stub
-		/**
+		/**.
 		 * ;
 		 */
 		SLNode pointer = head;
@@ -131,7 +131,7 @@ public class Singly_linkedlists implements ILinkedList {
 		}
 
 	}
-/**
+/**.
  * ;
  */
 	@Override
@@ -140,7 +140,7 @@ public class Singly_linkedlists implements ILinkedList {
 		head = null;
 		size = 0;
 	}
-/**
+/**.
  * '
  */
 	@Override
@@ -151,17 +151,17 @@ public class Singly_linkedlists implements ILinkedList {
 		}
 		return false;
 	}
-/**
+/**.
  * '
  */
 	@Override
 	public void remove(int index) throws RuntimeException {
 		// TODO Auto-generated method stub
-		/**
+		/**.
 		 * ;
 		 */
 		SLNode pointer = head;
-		/**
+		/**.
 		 * '
 		 */
 		SLNode temp;
@@ -187,7 +187,7 @@ public class Singly_linkedlists implements ILinkedList {
 			throw new RuntimeException();
 		}
 	}
-/**
+/**.
  * ;
  */
 	@Override
@@ -196,18 +196,18 @@ public class Singly_linkedlists implements ILinkedList {
 
 		return size;
 	}
-/**
+/**.
  * ;
  */
 	@Override
 	public ILinkedList sublist(int fromIndex, int toIndex)
 			throws RuntimeException {
 		// TODO Auto-generated method stub
-		/**
+		/**.
 		 * ;
 		 */
 		ILinkedList new_list = new Singly_linkedlists();
-		/**
+		/**.
 		 * ;
 		 */
 		SLNode pointer = head;
@@ -225,13 +225,13 @@ public class Singly_linkedlists implements ILinkedList {
 			throw new RuntimeException();
 		}
 	}
-/**
+/**.
  * ;
  */
 	@Override
 	public boolean contains(Object o) {
 		// TODO Auto-generated method stub
-		/**
+		/**.
 		 * ;
 		 */
 		SLNode pointer = head;

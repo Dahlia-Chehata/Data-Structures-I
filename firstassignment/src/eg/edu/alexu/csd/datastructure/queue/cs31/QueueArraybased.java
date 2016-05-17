@@ -4,19 +4,19 @@ import eg.edu.alexu.csd.datastructure.queue.IArrayBased;
 
 
 public class QueueArraybased implements IQueue,IArrayBased {
-	/**
+	/**.
 	 * .
 	 */
 	Object[] arr;
-	/**
+	/**.
 	 * .
 	 */
 	int size;
-	/**
+	/**.
 	 * .
 	 */
 	int n, r, f;
-/**
+/**.
  * ;
  */
 	public QueueArraybased(){
@@ -30,7 +30,7 @@ public class QueueArraybased implements IQueue,IArrayBased {
 		arr=new Object[n];
 		
 	}
-/**
+/**.
  * ;
  */
 	@Override
@@ -45,7 +45,7 @@ public class QueueArraybased implements IQueue,IArrayBased {
 			r++;
 		size++;
 	}
-/**
+/**.
  * .
  */
 	@Override
@@ -62,7 +62,7 @@ public class QueueArraybased implements IQueue,IArrayBased {
 		size--;
 		return temp;
 	}
-	/**
+	/**.
 	 * ;
 	 */
 	@Override
@@ -70,7 +70,7 @@ public class QueueArraybased implements IQueue,IArrayBased {
 		// TODO Auto-generated method stub
 		return (size==0);
 	}
-	/**
+	/**.
 	 * l
 	 */
 	@Override

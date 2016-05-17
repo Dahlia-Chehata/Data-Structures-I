@@ -6,31 +6,31 @@ import java.util.Arrays;
 import eg.edu.alexu.csd.datastructure.linkedList.IPolynomialSolver;
 
 public class Polynomial_Solver implements IPolynomialSolver {
-/**
+/**.
  * ;
  */
 	Singly_linkedlists A = new Singly_linkedlists();
-	/**
+	/**.
 	 * ;
 	 */
 	Singly_linkedlists B = new Singly_linkedlists();
-	/**
+	/**.
 	 * ;
 	 */
 	Singly_linkedlists C = new Singly_linkedlists();
-	/**
+	/**.
 	 * ;
 	 */
 	Singly_linkedlists R = new Singly_linkedlists();
-	/**
+	/**.
 	 * ;;
 	 */
 	Point[] array;
-	/**\
+	/**.\
 	 * 
 	 */
 	 final int bignum2=1000;
-/**
+/**.
  * ;
  */
 	@Override
@@ -84,13 +84,13 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			throw new RuntimeException();
 		}
 	}
-	/**
+	/**.
 	 * ;
 	 */
 	@Override
 	public String print(char poly) {
 		// TODO Auto-generated method stub
-		/**
+		/**.
 		 * ;
 		 */
 		String message = new String();
@@ -100,7 +100,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				return null; 
 			}// throw exception
 			for (int i = 0; i < A.size(); i++) {
-				/**
+				/**.
 				 * \
 				 */
 				Point pt = new Point();
@@ -130,7 +130,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				return null;
 			}
 			for (int i = 0; i < B.size(); i++) {
-				/**
+				/**.
 				 * .
 				 */
 				Point pt = new Point();
@@ -188,7 +188,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				return null;
 			}
 			for (int i = 0; i < R.size(); i++) {
-				/**
+				/**.
 				 * ;
 				 */
 				Point pt = new Point();
@@ -221,7 +221,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		System.out.println(message);
 		return message;
 	}
-	/**
+	/**.
 	 * .
 	 */
 	@Override
@@ -256,14 +256,14 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			throw new RuntimeException("invalid input");
 		}
 	}
-	/**
+	/**.
 	 * '
 	 */
 	@Override
 	public float evaluatePolynomial(char poly, float value) 
 			throws RuntimeException {
 		// TODO Auto-generated method stub
-		/**
+		/**.
 		 * ;
 		 */
 		float result = 0;
@@ -271,16 +271,16 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		case 'A':
 			if (!A.isEmpty()) {
 				for (int i = 0; i < A.size; i++) {
-					/**
+					/**.
 					 * ;
 					 */
 					Point point = new Point();
 					point = (Point) A.get(i);
-					/**
+					/**.
 					 * ;
 					 */
 					double y = point.getY();
-					/**
+					/**.
 					 * ;
 					 */
 					double x = point.getX();
@@ -294,16 +294,16 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		case 'B':
 			if (!B.isEmpty()) {
 				for (int i = 0; i < B.size(); i++) {
-					/**
+					/**.
 					 * ;
 					 */
 					Point point = new Point();
 					point = (Point) B.get(i);
-					/**
+					/**.
 					 * ;
 					 */
 					double y = point.getY();
-					/**
+					/**.
 					 * ;
 					 */
 					double x = point.getX();
@@ -320,16 +320,16 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		case 'C':
 			if (!C.isEmpty()) {
 				for (int i = 0; i < C.size(); i++) {
-					/**
+					/**.
 					 * ;
 					 */
 					Point point = new Point();
 					point = (Point) C.get(i);
-					/**
+					/**.
 					 * '
 					 */
 					double y = point.getY();
-					/**
+					/**.
 					 * '
 					 */
 					double x = point.getX();
@@ -343,16 +343,16 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		case 'R':
 			if (!R.isEmpty()) {
 				for (int i = 0; i < R.size(); i++) {
-					/**
+					/**.
 					 * .
 					 */
 					Point point = new Point();
 					point = (Point) R.get(i);
-					/**
+					/**.
 					 * ;
 					 */
 					double y = point.getY();
-					/**
+					/**.
 					 * ;
 					 */
 					double x = point.getX();
@@ -368,18 +368,18 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		}
 		return result;
 	}
-	/**
+	/**.
 	 * '
 	 */
 	@Override
 	public int[][] add(char poly1, char poly2) throws RuntimeException {
 		// TODO Auto-generated method stub
 		R.clear();
-		/**
+		/**.
 		 * '
 		 */
 		Singly_linkedlists first = new Singly_linkedlists();
-		/**
+		/**.
 		 * '
 		 */
 		Singly_linkedlists second = new Singly_linkedlists();
@@ -427,52 +427,52 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		default:
 			throw new RuntimeException();
 		}
-		/**
+		/**.
 		 * ;
 		 */
 		final int numbb=10000;
-		/**
+		/**.
 		 * '
 		 */
 		int[] array = new int[numbb];
 		for (int i = 0; i < first.size; i++) {
-			/**
+			/**.
 			 * '
 			 */
 			int exp = ((Point) (first.get(i))).y;
-			/**
+			/**.
 			 * ;
 			 */
 			int coef = ((Point) (first.get(i))).x;
 			array[exp] += coef;
 		}
 		for (int i = 0; i < second.size; i++) {
-			/**
+			/**.
 			 * ;
 			 */
 			int exp = ((Point) (second.get(i))).y;
-			/**
+			/**.
 			 * ;
 			 */
 			int coef = ((Point) (second.get(i))).x;
 			array[exp] += coef;
 		}
-		/**
+		/**.
 		 * ;
 		 */
 		int counter = 0;
-		/**
+		/**.
 		 * .
 		 */
 		int k = 0;
-		/**
+		/**.
 		 * ;
 		 */
 		int[][] array1 = new int[bignum2][2];
 		for (int i = 0; i < array.length; i++) {
 			if (array[i] != 0) {
 				counter++;
-				/**
+				/**.
 				 * ;
 				 */
 				Point result = new Point();
@@ -486,15 +486,15 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		if (counter == 0) {
 			return new int[][] { { 0, 0 } };
 		}
-		/**
+		/**.
 		 * ;
 		 */
 		int[][] arr = Arrays.copyOfRange(array1, 0, counter);
-/**
+/**.
  * '
  */
 		int[][] arrr = new int[counter][2];
-		/**
+		/**.
 		 * .
 		 */
 		int count = counter - 1;
@@ -507,7 +507,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		}
 		return arrr;
 	}
-	/**
+	/**.
 	 * ;
 	 */
 	@Override
@@ -515,11 +515,11 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			throws RuntimeException {
 		// TODO Auto-generated method stub
 		R.clear();
-		/**
+		/**.
 		 * ;
 		 */
 		Singly_linkedlists first = new Singly_linkedlists();
-		/**
+		/**.
 		 * '
 		 */
 		Singly_linkedlists second = new Singly_linkedlists();
@@ -568,48 +568,48 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			throw new RuntimeException();
 
 		}
-		/**
+		/**.
 		 * .
 		 */
 		int[] array = new int[bignum2];
 		for (int i = 0; i < first.size; i++) {
-			/**
+			/**.
 			 * '
 			 */
 			int exp = ((Point) (first.get(i))).y;
-			/**'
+			/**.'
 			 * .
 			 */
 			int coef = ((Point) (first.get(i))).x;
 			array[exp] += coef;
 		}
 		for (int i = 0; i < second.size; i++) {
-			/**
+			/**.
 			 * '
 			 */
 			int exp = ((Point) (second.get(i))).y;
-			/**
+			/**.
 			 * ;
 			 */
 			int coef = ((Point) (second.get(i))).x;
 			array[exp] -= coef;
 		}
-		/**
+		/**.
 		 * ;
 		 */
 		int[][] array1 = new int[bignum2][2];
-		/**
+		/**.
 		 * ';
 		 */
 		int counter = 0;
-		/**
+		/**.
 		 * ;
 		 */
 		int k = 0;
 		for (int i = 0; i < array.length; i++) {
 			if (array[i] != 0) {
 				counter++;
-				/**
+				/**.
 				 * ;
 				 */
 				Point result = new Point();
@@ -623,15 +623,15 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		if (counter == 0) {
 			return new int[][] { { 0, 0 } };
 		}
-		/**
+		/**.
 		 * ;
 		 */
 		int[][] arr = Arrays.copyOfRange(array1, 0, counter);
-		/**
+		/**.
 		 * '
 		 */
 		int[][] arrr = new int[counter][2];
-		/**
+		/**.
 		 * '
 		 */
 		int count = counter - 1;
@@ -644,7 +644,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		}
 		return arrr;
 	}
-	/**
+	/**.
 	 * ;
 	 */
 	@Override
@@ -652,11 +652,11 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			throws RuntimeException {
 		// TODO Auto-generated method stub
 		R.clear();
-		/**
+		/**.
 		 * '
 		 */
 		Singly_linkedlists first = new Singly_linkedlists();
-		/**
+		/**.
 		 * ;
 		 */
 		Singly_linkedlists second = new Singly_linkedlists();
@@ -704,19 +704,19 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		default:
 			throw new RuntimeException();
 		}
-		/**
+		/**.
 		 * '
 		 */
 		final int bignum=10000000;
-		/**
+		/**.
 		 * ;
 		 */
 		Point pta = new Point();
-		/**
+		/**.
 		 * ;
 		 */
 		Point ptb = new Point();
-		/**
+		/**.
 		 * .
 		 */
 		double[] array = new double[bignum];
@@ -728,22 +728,22 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				array[pta.y + ptb.y] += pta.getX() * ptb.getX();
 			}
 		}
-		/**
+		/**.
 		 * ;
 		 */
 		int[][] array1 = new int[bignum2][2];
-		/**
+		/**.
 		 * ;
 		 */
 		int counter = 0;
-		/**4
+		/**.4
 		 * 
 		 */
 		int k = 0;
 		for (int i = 0; i < array.length; i++) {
 			if (array[i] != 0) {
 				counter++;
-				/**
+				/**.
 				 * ;
 				 */
 				Point result = new Point();
@@ -757,15 +757,15 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		if (counter == 0) {
 			return new int[][] { { 0, 0 } };
 		}
-		/**
+		/**.
 		 * '
 		 */
 		int[][] arr = Arrays.copyOfRange(array1, 0, counter);
-		/**
+		/**.
 		 * ;
 		 */
 		int[][] arrr = new int[counter][2];
-		/**
+		/**.
 		 *;
 		 */
 		int count = counter - 1;

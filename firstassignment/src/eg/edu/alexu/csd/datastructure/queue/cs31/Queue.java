@@ -5,12 +5,12 @@ import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 import eg.edu.alexu.csd.datastructure.linkedList.cs31.*;
 
 public class Queue implements IQueue,ILinkedBased {
- /**
+ /**..
   * .
   */
 	ILinkedList mylist=new doubly_linkedlists();
 	
-	/**
+	/**..
 	 * .
 	 */
 	@Override
@@ -18,7 +18,7 @@ public class Queue implements IQueue,ILinkedBased {
 		// TODO Auto-generated method stub
 		mylist.add(item);
 	}
-/**
+/**..
  * .
  */
 	@Override
@@ -28,7 +28,7 @@ public class Queue implements IQueue,ILinkedBased {
 		mylist.remove(0);
 		return item;
 	}
-	/**
+	/**..
 	 * .
 	 */
 	@Override
@@ -36,7 +36,7 @@ public class Queue implements IQueue,ILinkedBased {
 		// TODO Auto-generated method stub
 		return mylist.isEmpty();
 	}
-/**
+/**..
  * .
  */
 	@Override

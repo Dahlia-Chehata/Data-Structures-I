@@ -4,32 +4,32 @@ import eg.edu.alexu.csd.datastructure.stack.IExpressionEvaluator;
 import eg.edu.alexu.csd.datastructure.stack.IStack;
 public class ExpressionEvaluator implements
 IExpressionEvaluator {
-/**
+/**.
  * .
  */
 	static IStack stack = new Stack();
 	@Override
-	/**
+	/**.
 	 * to convert from infix to postfix
 	 */
 	public String infixToPostfix(String expression) 
 			throws RuntimeException {
 		// TODO Auto-generated method stub
-		/**
+		/**.
 		 * .
 		 */
 		StringBuffer str = new StringBuffer();
-		/**
+		/**.
 		 * .
 		 */
 		boolean flag = true;
-		/**
+		/**.
 		 * check null
 		 */
 		if (expression == null) {
 			throw new RuntimeException("bbb");
 		}
-		/**
+		/**.
 		 * check starting with operator
 		 */
 		if (expression.charAt(0) == '/'
@@ -39,7 +39,7 @@ IExpressionEvaluator {
 			throw new RuntimeException(""
 					+ "starting with operator");
 		}
-		/**
+		/**.
 		 * check ending with operator
 		 */
 	if (expression.charAt(expression.length() - 1) == '/' 
@@ -49,7 +49,7 @@ IExpressionEvaluator {
 			throw new RuntimeException(""
 					+ "ending  with operator");
 	}
-		/**
+		/**.
 		 * check unary
 		 */
 		boolean test = true;
@@ -71,7 +71,7 @@ else if (expression.charAt(i) == '/'
 			} else
 				test = false;
 		}
-		/**
+		/**.
 		 * no operator case
 		 */
 for (int i = 0; i < expression.length() - 1 
@@ -87,7 +87,7 @@ for (int i = 0; i < expression.length() - 1
 	if (flag) {
 		throw new RuntimeException("no operator");
 		}
-		/**
+		/**.
 		 * test symbols and digits like :6k
 		 */
 	for (int i = 0; i < expression.length() - 1; i++) {
@@ -182,30 +182,30 @@ throw new RuntimeException("'(' without a ')'");
 		// string
 	}
 	@Override
-	/**
+	/**.
 	 * evaluate postfix expression
 	 */
 	public int evaluate(String expression) {
 		// TODO Auto-generated method stub
-/**
+/**.
  * .
  */
 		double operand1 = 0;
-		/**
+		/**.
 		 * .
 		 */
 		double operand2 = 0;
-		/**
+		/**.
 		 * .
 		 */
 		String str = new String();
-		/**
+		/**.
 		 * test null case
 		 */
 		if (expression == null) {
 			throw new RuntimeException();
 		}
-		/**
+		/**.
 		 * test symbolic expression
 		 */
 		for (int i = 0; i < expression.length(); i++) {
@@ -217,13 +217,13 @@ throw new RuntimeException("'(' without a ')'");
 			}
 		}
 		for (int i = 0; i < expression.length(); i++) {
-			/**
+			/**.
 			 * space
 			 */
 			if (expression.charAt(i) == ' '){
 				continue;
 			}
-			/**
+			/**.
 			 * digits
 			 */
 			if ('0' <= expression.charAt(i) 
@@ -237,7 +237,7 @@ throw new RuntimeException("'(' without a ')'");
 				i--;
 				stack.push(Double.parseDouble(str));
 				str = "";
-				/**
+				/**.
 				 * signs
 				 */
 			} else if (expression.charAt(i) == '*') {
@@ -311,35 +311,35 @@ throw new RuntimeException("'(' without a ')'");
 		}
 		return (int) (double) stack.pop();
 	}
-	/**
+	/**.
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		/**
+		/**.
 		 * .
 		 */
 IExpressionEvaluator app = new ExpressionEvaluator();
-/**
+/**.
  * ;
  */
 		 final int num3=3;
-		 /**
+		 /**.
 		  * ;
 		  */
 		Scanner scan = new Scanner(System.in);
-		/**
+		/**.
 		 * ;
 		 */
 		String input = "";
-		/**
+		/**.
 		 * ;
 		 */
 		String conv = "";
-		/**
+		/**.
 		 * ;
 		 */
 		int choice;
-		/**
+		/**.
 		 * ;
 		 */
 		char ch;
@@ -350,18 +350,18 @@ System.out.println("1- insert an expression");
 System.out.println("2-infix to postfix conversion");
 System.out.println("3-evaluate expression");
 System.out.println("------------------------------");
-/**
+/**.
  * ;
  */
 		choice = scan.nextInt();
 			switch (choice) {
-			/**
+			/**.
 			 * taking input
 			 */
 			case 1:
 				input = scan.next();
 				break;
-			/**
+			/**.
 			 * converting
 			 */
 			case 2:
@@ -378,7 +378,7 @@ System.out.println("starting with operator");
 			System.out.println(conv);
 				}
 				break;
-			/**
+			/**.
 			 * evaluating
 			 */
 			case num3: {
@@ -392,7 +392,7 @@ System.out.println("starting with operator");
 	+ " choose option 2");
 					break;
 				}
-				/**
+				/**.
 				 * .
 				 */
 				boolean f1 = false;
@@ -409,7 +409,7 @@ System.out.println("starting with operator");
 				if (f1){
 					break;
 				}
-				/**
+				/**.
 				 * '
 				 */
 				boolean flag = true;
@@ -431,7 +431,7 @@ System.out.println(app.evaluate(conv));
 		}
 				break;
 			}
-			/**
+			/**.
 			 * other input
 			 */
 			default:

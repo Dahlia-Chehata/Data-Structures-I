@@ -7,7 +7,7 @@ import java.awt.Point;
 
 
 class myCOMP implements Comparator<Point> {
-	/**
+	/**.
 	 * .
 	 */
 int flagg= -1;
@@ -29,48 +29,48 @@ int flagg= -1;
 	}
 }
 public class IceHockey implements IPlayersFinder {
-			/**
+			/**.
 			 * .
 			 */
 		 final int num=500	;
-		 /**
+		 /**.
 		  * ;
 		  */
 		 final int flagg= -1;
-		 /**
+		 /**.
 		  * .
 		  */
 		 final int num100=100;
-		 /**
+		 /**.
 		  * ;
 		  */
 		 final int num4=4	;
-		 /**
+		 /**.
 		  * ;
 		  */
 	char[][] photos;
-	/**
+	/**.
 	 * ;
 	 */
 	boolean[][] visited;
-	/**
+	/**.
 	 * ;
 	 */
 	Point[] temp;
-	/**
+	/**.
 	 * ;
 	 */
 	int n, m, index = 0, counter = 0, team, area;
-	/**
+	/**.
 	 * ;
 	 */
 	int minRow = num, minCol = num,
 	maxRow = flagg, maxCol = flagg;
-	/**
+	/**.
 	 * '
 	 */
 	Point center;
-/**
+/**.
  * ;
  * @param i
  * @param j
@@ -100,11 +100,11 @@ public class IceHockey implements IPlayersFinder {
 		}
 		int a = counter;
 		if (a * num4 >= area) {
-			/**
+			/**.
 			 * '
 			 */
 			int xx = minCol + maxCol + 1;
-			/**
+			/**.
 			 * '
 			 */
 			int yy = minRow + maxRow + 1;
@@ -112,7 +112,7 @@ public class IceHockey implements IPlayersFinder {
 		}
 		return center;
 	}
-	/**
+	/**.
 	 * ;
 	 * @param xx
 	 * @param yy
@@ -121,7 +121,7 @@ public class IceHockey implements IPlayersFinder {
 	 */
 
 	public boolean canmove(int xx, int yy, int vv) {
-		/**
+		/**.
 		 * ;
 		 */
 		vv = team;
@@ -133,7 +133,7 @@ public class IceHockey implements IPlayersFinder {
 		}
 		return false;
 	}
-/**
+/**.
  * ;
  * @param i
  * @param j
@@ -142,7 +142,7 @@ public class IceHockey implements IPlayersFinder {
 	private boolean isVisited(int i, int j) {
 		return visited[i][j];
 	}
-/**
+/**.
  * ;
  */
 	@Override
@@ -150,7 +150,7 @@ public class IceHockey implements IPlayersFinder {
 		// TODO Auto-generated method stub
 		this.team = team;
 		area = threshold;
-		/**
+		/**.
 		 * ;
 		 */
 		Point[] coor = new Point[num100];

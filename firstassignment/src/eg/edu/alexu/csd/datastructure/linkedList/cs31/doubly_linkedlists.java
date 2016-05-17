@@ -3,11 +3,11 @@ package eg.edu.alexu.csd.datastructure.linkedList.cs31;
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 
 public class doubly_linkedlists implements ILinkedList {
-	/**
+	/**.
 	 * .
 	 */
 	public int size;
-	/**
+	/**.
 	 * \
 	 */
 	public DNode header, tailer;
@@ -19,19 +19,19 @@ public class doubly_linkedlists implements ILinkedList {
 		header.next = tailer;
 
 	}
-/**
+/**.
  * .
  */
 	@Override
 	public void add(int index, Object element)
 			throws RuntimeException {
 		// TODO Auto-generated method stub
-		/**
+		/**.
 		 * ;
 		 */
 		DNode new_node = new DNode();
 		new_node.value = element;
-		/**
+		/**.
 		 * .
 		 */
 		DNode pointer = header.next;
@@ -43,7 +43,7 @@ public class doubly_linkedlists implements ILinkedList {
 			size++;
 
 		} else if (index == size) {
-			/**
+			/**.
 			 * .
 			 */
 			DNode temp = tailer.prev;
@@ -57,7 +57,7 @@ public class doubly_linkedlists implements ILinkedList {
 			for (int i = 0; i < index - 1; i++) {
 				pointer = pointer.next;
 			}
-			/**
+			/**.
 			 * .
 			 */
 			DNode temp = pointer.next;
@@ -70,13 +70,13 @@ public class doubly_linkedlists implements ILinkedList {
 			throw new RuntimeException();
 		}
 	}
-/**
+/**.
  * ;
  */
 	@Override
 	public void add(Object element) {
 		// TODO Auto-generated method stub
-		/**
+		/**.
 		 * .
 		 */
 		DNode new_node = new DNode();
@@ -97,13 +97,13 @@ public class doubly_linkedlists implements ILinkedList {
 		}
 		size++;
 	}
-/**
+/**.
  * ;
  */
 	@Override
 	public Object get(int index) throws RuntimeException {
 		// TODO Auto-generated method stub
-		/**
+		/**.
 		 * ;
 		 */
 		DNode pointer = header.next;
@@ -117,14 +117,14 @@ public class doubly_linkedlists implements ILinkedList {
 			throw new RuntimeException();
 		}
 	}
-/**
+/**.
  * ;
  */
 	@Override
 	public void set(int index, Object element)
 			throws RuntimeException {
 		// TODO Auto-generated method stub
-		/**
+		/**.
 		 * ;
 		 */
 		DNode pointer = header.next;
@@ -138,7 +138,7 @@ public class doubly_linkedlists implements ILinkedList {
 			throw new RuntimeException();
 		}
 	}
-	/**
+	/**.
 	 * ;
 	 */
 	@Override
@@ -148,7 +148,7 @@ public class doubly_linkedlists implements ILinkedList {
 		header.next = tailer;
 		tailer.prev = header;
 	}
-	/**
+	/**.
 	 * ;
 	 */
 
@@ -160,7 +160,7 @@ public class doubly_linkedlists implements ILinkedList {
 		}
 		return false;
 	}
-/**
+/**.
  * ;
  */
 	@Override
@@ -169,11 +169,11 @@ public class doubly_linkedlists implements ILinkedList {
 		if (isEmpty()) {
 			throw new RuntimeException();
 		}else if (index == 0) {
-			/**
+			/**.
 			 * .
 			 */
 			DNode removed = header.next;
-			/**
+			/**.
 			 * .
 			 */
 			DNode temp = removed.next;
@@ -183,18 +183,18 @@ public class doubly_linkedlists implements ILinkedList {
 			header.next = temp;
 			size--;
 		} else if (index > 0 && index < size - 1) {
-			/**
+			/**.
 			 * ;
 			 */
 			DNode pointer = header.next;
 			for (int i = 0; i < index - 1; i++) {
 				pointer = pointer.next;
 			}
-			/**
+			/**.
 			 * .
 			 */
 			DNode removed = pointer.next;
-			/**
+			/**.
 			 * .
 			 */
 			DNode temp = removed.next;
@@ -204,11 +204,11 @@ public class doubly_linkedlists implements ILinkedList {
 			pointer.next = temp;
 			size--;
 		} else if (index == size - 1) {
-			/**
+			/**.
 			 * .
 			 */
 			DNode removed = tailer.prev;
-			/**
+			/**.
 			 * .
 			 */
 			DNode temp = removed.prev;
@@ -222,7 +222,7 @@ public class doubly_linkedlists implements ILinkedList {
 		}
 	}
 
-		/**
+		/**.
 		 * ;
 		 */
 	@Override
@@ -230,18 +230,18 @@ public class doubly_linkedlists implements ILinkedList {
 		// TODO Auto-generated method stub
 		return size;
 	}
-/**
+/**.
  * ;
  */
 	@Override
 public ILinkedList sublist(int fromIndex, int toIndex)
 		throws RuntimeException {
 		// TODO Auto-generated method stub
-		/**
+		/**.
 		 * ;
 		 */
 		ILinkedList new_list = new doubly_linkedlists();
-		/**
+		/**.
 		 * ;
 		 */
 		DNode pointer = header.next;
@@ -259,13 +259,13 @@ public ILinkedList sublist(int fromIndex, int toIndex)
 			throw new RuntimeException();
 		}
 	}
-/**
+/**.
  * ;
  */
 	@Override
 	public boolean contains(Object o) {
 		// TODO Auto-generated method stub
-		/**
+		/**.
 		 * ;
 		 */
 		DNode pointer = header.next;

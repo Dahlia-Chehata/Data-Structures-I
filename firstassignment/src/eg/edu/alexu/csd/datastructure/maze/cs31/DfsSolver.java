@@ -5,39 +5,39 @@ import eg.edu.alexu.csd.datastructure.stack.IStack;
 import java.awt.Point;
 
 public class DfsSolver {
-	/**
+	/**.
 	 * .
 	 */
 	Point source ;
-	/**
+	/**.
 	 * ;
 	 */
 	 boolean[][] visit;
-	 /**
+	 /**.
 	  * ;
 	  */
 	  Point[] result;
-	  /**
+	  /**.
 	   * ;
 	   */
 	  int[][]sol;
-	  /**
+	  /**.
 	   * ;
 	   */
 	private Point[][] parent;
 	//char[][] filearray;
-	/**
+	/**.
 	 * .
 	 * @param arr
 	 * @param e
 	 * @return
 	 */
 	public int[][] finalPath(Point[][] arr, Point e) {
-		/**
+		/**.
 		 * ;
 		 */
 		int i = 0;
-		/**
+		/**.
 		 * \
 		 */
 		int j = 0;
@@ -52,11 +52,11 @@ public class DfsSolver {
 		}
 		result[i] = new Point(source);
 		i++;
-		/**
+		/**.
 		 * ;
 		 */
 		Point[] finalResult = new Point[i];
-		/**
+		/**.
 		 * .
 		 */
 		int[][]ans=new int[i][2];
@@ -80,7 +80,7 @@ public class DfsSolver {
 		}*/
 		return ans;
 	}
-	/**
+	/**.
 	 *,
 	 * @param input
 	 * @param n
@@ -90,11 +90,11 @@ public class DfsSolver {
 	 */
 public int[][]dfs(char[][]input,int n,int m)
 throws RuntimeException{
-	/**
+	/**.
 	 * ;
 	 */
 	IStack stack=new Stack();
-	/**
+	/**.
 	 * ,
 	 */
 	boolean flag=false;
@@ -116,7 +116,7 @@ throws RuntimeException{
 	}
 	if (!flag)
 		throw new RuntimeException();
-	/**
+	/**.
 	 * .
 	 */
 	boolean stop=false;
