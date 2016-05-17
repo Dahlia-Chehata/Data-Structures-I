@@ -90,7 +90,7 @@ public class BfsSolver {
 			Point top = (Point)q.dequeue();
 			if (input[top.x][top.y] == 'E'){
 				if (parent==null)
-					throw new RuntimeException();
+					return null;
 				sol = finalPath(parent, top);
 				return sol;
 			}
@@ -121,8 +121,8 @@ public class BfsSolver {
 				}
 			}
 		}
-		//throw new RuntimeException("ll");
 		return null;
+		
 	}
 	
 }
