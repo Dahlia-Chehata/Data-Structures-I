@@ -41,14 +41,26 @@ public class Maze implements IMazeSolver  {
 	Maze app=new Maze();
 	File s = (new File("C:\\Users\\Dell\\Desktop\\mm.txt"));
 	int[][]arr;
-	arr=app.solveBFS(s);
-			
+	arr=app.solveDFS(s);
+	int[][]arr2;
+	arr2=app.solveBFS(s);
+	System.out.println("DFS:");	
 	for(int i=0;i<arr.length;i++){
 		for(int j=0;j<arr[0].length;j++){
 			System.out.print(arr[i][j]);
+			System.out.print(",");
 		}
-	System.out.println();
+	System.out.print("/// ");
 	}
+	System.out.println();
+	System.out.println("BFS:");	
+for(int i=0;i<arr2.length;i++){
+	for(int j=0;j<arr2[0].length;j++){
+		System.out.print(arr2[i][j]);
+		System.out.print(",");
+	}
+System.out.print("/// ");
+}
 
 }
 

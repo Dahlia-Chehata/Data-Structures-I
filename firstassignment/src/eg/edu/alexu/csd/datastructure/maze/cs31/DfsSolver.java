@@ -101,23 +101,26 @@ throws RuntimeException{
 		} else if ((input[top.x][top.y] == '#') || (visit[top.x][top.y])) {
 			continue;
 		} else {
+			//west
 			visit[top.x][top.y] = true;
 			if ((top.y - 1 >= 0) && (!visit[top.x][top.y - 1])) {
 				Point h = new Point(top.x, top.y - 1);
 				stack.push(h);
 				parent[top.x][top.y - 1] = new Point(top.x, top.y);
 			}
+			//south
 			if ((top.x + 1 < input.length) && (!visit[top.x + 1][top.y])) {
 				Point h = new Point(top.x + 1, top.y);
 				stack.push(h);
 				parent[top.x + 1][top.y] = new Point(top.x, top.y);
 			}
+			//east
 			if ((top.y + 1 < input[0].length) && (!visit[top.x][top.y + 1])) {
 				Point h = new Point(top.x, top.y + 1);
 				stack.push(h);
 				parent[top.x][top.y + 1] = new Point(top.x, top.y);
 			}
-			
+			//north
 			if ((top.x - 1 >= 0) && (!visit[top.x - 1][top.y])) {
 				Point h = new Point(top.x - 1, top.y);
 				stack.push(h);
