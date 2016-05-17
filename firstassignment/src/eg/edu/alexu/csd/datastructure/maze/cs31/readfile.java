@@ -26,6 +26,11 @@ public class readfile {
 	 * ;
 	 */
 	char[] dim;
+	/**
+	 * ;
+	 * @param maze
+	 * @return
+	 */
 public char[][] readFile(File maze){
 		
 		

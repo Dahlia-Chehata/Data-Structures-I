@@ -32,6 +32,9 @@ public class QueueArraytest {
 	private final int num10=10;
 
 	// enqueue item at index > size
+	/**
+	 * ;
+	 */
 	@Test
 	public void test1() {
 		list2 = new QueueArraybased(num3);
@@ -49,6 +52,9 @@ public class QueueArraytest {
 	}
 
 	// enqueue ,dequeue
+	/**
+	 * ;
+	 */
 	@Test
 	public void test2() {
 		list2 = new QueueArraybased(num3);
@@ -68,13 +74,18 @@ public class QueueArraytest {
 	}
 
 	// test dequeue
+	/**
+	 * ;
+	 */
 	@Test
 	public void test3() {
 		list2 = new QueueArraybased(num3);
 		list2.enqueue(num5);
 		Assert.assertEquals(num5, list2.dequeue());
 	}
-
+/**
+ * ;
+ */
 	@Test
 	// dequeue from empty
 	public void test4() {
@@ -87,6 +98,9 @@ public class QueueArraytest {
 	}
 
 	// test size1
+	/**
+	 * ;
+	 */
 	@Test
 	public void test5() {
 		list2 = new QueueArraybased(num3);
@@ -94,6 +108,9 @@ public class QueueArraytest {
 	}
 
 	// test size2
+	/**
+	 * ;
+	 */
 	@Test
 	public void test6() {
 		list2 = new QueueArraybased(num3);
@@ -104,13 +121,17 @@ public class QueueArraytest {
 		list2.dequeue();
 		Assert.assertEquals(1, list2.size());
 	}
-
+/**
+ * '
+ */
 	@Test
 	public void test7() {
 		list2 = new QueueArraybased(num3);
 		Assert.assertEquals(true, list2.isEmpty());
 	}
-
+/**
+ * ;
+ */
 	@Test
 	public void test8() {
 		list2 = new QueueArraybased(num3);
@@ -120,7 +141,9 @@ public class QueueArraytest {
 		list2.dequeue();
 		Assert.assertEquals(false, list2.isEmpty());
 	}
-
+/**
+ * ;
+ */
 	@Test
 	public void test9() {
 		list2 = new QueueArraybased(num5);

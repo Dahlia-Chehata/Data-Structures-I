@@ -26,8 +26,12 @@ public class DfsSolver {
 	   */
 	private Point[][] parent;
 	//char[][] filearray;
-	
-	
+	/**
+	 * .
+	 * @param arr
+	 * @param e
+	 * @return
+	 */
 	public int[][] finalPath(Point[][] arr, Point e) {
 		/**
 		 * ;
@@ -76,6 +80,14 @@ public class DfsSolver {
 		}*/
 		return ans;
 	}
+	/**
+	 *,
+	 * @param input
+	 * @param n
+	 * @param m
+	 * @return
+	 * @throws RuntimeException
+	 */
 public int[][]dfs(char[][]input,int n,int m)
 throws RuntimeException{
 	/**
@@ -118,11 +130,9 @@ throws RuntimeException{
 	    }
 	   }
 	}
-	if (!stop)
+	if (!stop){
 		throw new RuntimeException();
-	
-	
-	
+	}
 	stack.push(source);
 	while (!stack.isEmpty()) {
 		Point top = (Point) stack.pop();

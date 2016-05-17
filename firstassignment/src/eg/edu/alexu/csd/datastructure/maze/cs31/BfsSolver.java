@@ -27,7 +27,12 @@ public class BfsSolver {
 	private Point[][] parent;
 	
 	//char[][] filearray;
-	
+	/**
+	 * ;
+	 * @param arr
+	 * @param e
+	 * @return
+	 */
 	public int[][] finalPath(Point[][] arr, Point e) {
 		/**
 		 * ;
@@ -76,6 +81,14 @@ for (i = 1; !arr[result[i - 1].x]
 		}*/
 		return ans;
 	}
+	/**
+	 * .
+	 * @param input
+	 * @param n
+	 * @param m
+	 * @return
+	 * @throws RuntimeException
+	 */
 	public int[][]bfs(char[][]input,int n,int m)
 			throws RuntimeException{
 		/**

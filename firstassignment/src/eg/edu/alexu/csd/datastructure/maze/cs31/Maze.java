@@ -1,14 +1,12 @@
 package eg.edu.alexu.csd.datastructure.maze.cs31;
 import java.io.File;
-import  eg.edu.alexu.csd.datastructure.maze.IMazeSolver;
+import eg.edu.alexu.csd.datastructure.maze.IMazeSolver;
 import eg.edu.alexu.csd.datastructure.maze.cs31.BfsSolver;
 import eg.edu.alexu.csd.datastructure.maze.cs31.DfsSolver;
-import eg.edu.alexu.csd.datastructure.maze.cs31.readfile;
-
-
-
 public class Maze implements IMazeSolver  {
-	
+	/**
+	 * ;
+	 */
 	@Override
 	public int[][] solveBFS(File maze) {
 		// TODO Auto-generated method stub
@@ -34,9 +32,9 @@ public class Maze implements IMazeSolver  {
 		return arr;
 		
 	}
-
-
-
+/**
+ * ;
+ */
 	@Override
 	public int[][] solveDFS(File maze) {
 		// TODO Auto-generated method stub
@@ -62,6 +60,10 @@ public class Maze implements IMazeSolver  {
 		return arr;
 		
 	}
+	/**
+	 * ,
+	 * @param args
+	 */
 	public static void main(String[] args){
 		/**
 		 * .

@@ -41,6 +41,9 @@ public class QueueTesting {
 		assertEquals(num12, list1.dequeue());
 		
 	}
+	/**
+	 * ;
+	 */
 	@Test
 	public void test2() {
 
@@ -59,12 +62,18 @@ public class QueueTesting {
 	
 }
 	//test dequeue
+	/**
+	 * ;
+	 */
 	@Test
 	public void test3() {
 		
 		list1.enqueue(num5);
 		Assert.assertEquals(num5, list1.dequeue());
 	}
+	/**
+	 * ;
+	 */
 	@Test
 	// dequeue from empty
 	public void test4() {
@@ -76,11 +85,17 @@ public class QueueTesting {
 		
 	}
 	// test size1
+	/**
+	 * ;
+	 */
 		@Test
 		public void test6() {
 			Assert.assertEquals(0, list1.size());
 		}
 		// test size2
+		/**
+		 * ;
+		 */
 		@Test
 		public void test7() {
 			list1.enqueue(num5);
@@ -90,11 +105,16 @@ public class QueueTesting {
 			list1.dequeue();
 			Assert.assertEquals(1, list1.size());
 		}
+		/**
+		 * ;
+		 */
 		@Test
 		public void test8() {
 			Assert.assertEquals(true, list1.isEmpty());
 		}
-
+/**
+ * ;
+ */
 		@Test
 		public void test9() {
 			list1.enqueue(num5);
@@ -103,7 +123,9 @@ public class QueueTesting {
 			list1.dequeue();
 			Assert.assertEquals(false, list1.isEmpty());
 		}
-
+/**
+ * ;
+ */
 		@Test
 		public void test10() {
 			list1.enqueue(num5);

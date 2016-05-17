@@ -16,7 +16,9 @@ public class QueueArraybased implements IQueue,IArrayBased {
 	 * .
 	 */
 	int n, r, f;
-
+/**
+ * ;
+ */
 	public QueueArraybased(){
 		size=0;
 		r=0;
@@ -28,7 +30,9 @@ public class QueueArraybased implements IQueue,IArrayBased {
 		arr=new Object[n];
 		
 	}
-
+/**
+ * ;
+ */
 	@Override
 	public void enqueue(Object item) {
 		// TODO Auto-generated method stub
@@ -41,7 +45,9 @@ public class QueueArraybased implements IQueue,IArrayBased {
 			r++;
 		size++;
 	}
-
+/**
+ * .
+ */
 	@Override
 	public Object dequeue() throws RuntimeException {
 		// TODO Auto-generated method stub
@@ -56,13 +62,17 @@ public class QueueArraybased implements IQueue,IArrayBased {
 		size--;
 		return temp;
 	}
-
+	/**
+	 * ;
+	 */
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
 		return (size==0);
 	}
-
+	/**
+	 * l
+	 */
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub

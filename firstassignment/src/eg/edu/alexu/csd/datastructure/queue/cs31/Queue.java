@@ -31,7 +31,6 @@ public class Queue implements IQueue,ILinkedBased {
 	/**
 	 * .
 	 */
-
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
