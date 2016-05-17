@@ -90,7 +90,7 @@ public class DfsSolver {
 	 * @param n row
 	 * @param m column
 	 * @return sol
-	 * @throws RuntimeException
+	 * @throws RuntimeException.....
 	 */
 public int[][]dfs(char[][]input,int n,int m)
 throws RuntimeException{

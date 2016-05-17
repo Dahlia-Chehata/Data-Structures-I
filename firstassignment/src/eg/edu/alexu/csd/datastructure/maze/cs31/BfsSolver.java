@@ -92,7 +92,7 @@ for (i = 1; !arr[result[i - 1].x]
 	 * @param n row
 	 * @param m column
 	 * @return sol
-	 * @throws RuntimeException
+	 * @throws RuntimeException ,,,,
 	 */
 	public int[][]bfs(char[][]input,int n,int m)
 			throws RuntimeException{
