@@ -2,7 +2,11 @@ package eg.edu.alexu.csd.datastructure.queue.cs31;
 import eg.edu.alexu.csd.datastructure.queue.IQueue;
 import eg.edu.alexu.csd.datastructure.queue.IArrayBased;
 
-
+/**.
+ * 
+ * @author Dell
+ *
+ */
 public class QueueArraybased implements IQueue,IArrayBased {
 	/**.
 	 * .
@@ -24,7 +28,10 @@ public class QueueArraybased implements IQueue,IArrayBased {
 		r=0;
 		f=0;
 	}
-	
+	/**.
+	 * 
+	 * @param n
+	 */
 	public QueueArraybased(int n) {
 		this.n=n;
 		arr=new Object[n];
@@ -49,7 +56,7 @@ public class QueueArraybased implements IQueue,IArrayBased {
  * .
  */
 	@Override
-	public Object dequeue() throws RuntimeException {
+	public Object dequeue() {
 		// TODO Auto-generated method stub
 		if (size==0)
 			throw new RuntimeException();

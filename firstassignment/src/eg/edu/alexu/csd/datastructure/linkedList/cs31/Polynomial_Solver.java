@@ -26,7 +26,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	 * ;;
 	 */
 	Point[] array;
-	/**.\
+	/**.
 	 * 
 	 */
 	 final int bignum2=1000;
