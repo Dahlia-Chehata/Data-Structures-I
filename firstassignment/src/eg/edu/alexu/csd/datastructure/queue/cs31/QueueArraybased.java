@@ -30,7 +30,7 @@ public class QueueArraybased implements IQueue,IArrayBased {
 	}
 	/**.
 	 * n size
-	 * 
+	 * @param n size of array
 	 */
 	public QueueArraybased(int n) {
 		this.n=n;
