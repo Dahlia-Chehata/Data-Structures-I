@@ -90,7 +90,7 @@ throws RuntimeException{
 	while (!stack.isEmpty()) {
 		Point top = (Point) stack.pop();
 		if (input[top.x][top.y] == 'E') {
-			if (parent==null)
+			if (parent.length==0)
 				throw new RuntimeException();
 			sol = finalPath(parent, top);
 			return sol;
@@ -124,7 +124,7 @@ throws RuntimeException{
 			}
 		}
 	}
-	throw new RuntimeException();
+	throw new RuntimeException("ll");
 	
 }
 }
