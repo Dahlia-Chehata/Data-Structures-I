@@ -86,7 +86,7 @@ public class IceHockey implements IPlayersFinder {
  * @param i index
  * @param j index
  * @param v team
- * @return
+ * @return center
  */
 	public Point dfs(int i, int j, int v) {
 		if (canmove(i, j, team)) {
