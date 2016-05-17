@@ -17,8 +17,8 @@ public class Maze implements IMazeSolver  {
 		BfsSolver app=new BfsSolver();
 		int[][] arr=app.bfs(input,readfile.n,readfile.m);
 		if (arr==null||arr.length==0)
-				//return null;
-			throw new RuntimeException();
+				return null;
+			//throw new RuntimeException();
 		return arr;
 		
 	}
@@ -32,7 +32,7 @@ public class Maze implements IMazeSolver  {
 		char[][]input= appl.readFile(maze);
 		DfsSolver app=new DfsSolver();
 		int[][] arr=app.dfs(input,readfile.n,readfile.m);
-		if (arr.length==0)
+		if (arr==null||arr.length==0)
 				return null;
 		return arr;
 		
