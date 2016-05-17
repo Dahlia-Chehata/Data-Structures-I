@@ -58,15 +58,33 @@ throws RuntimeException{
 
 	for (int i = 0; i < n; i++) {
 	    for (int j = 0; j < m; j++) {
-	        if (input[i][j]=='S')
+	    	if (flag==true && input[i][j]=='S')
+	    		throw new RuntimeException();
+	        if (input[i][j]=='S'){
 	        	source=new Point(i,j);
 	        flag=true;
-	        break;
 	           
 	    }
-	    if(flag)
-	    	break;
+	   }
 	}
+	if (!flag)
+		throw new RuntimeException();
+	
+	boolean stop=false;
+	for (int i = 0; i < n; i++) {
+	    for (int j = 0; j < m; j++) {
+	    	if (stop==true && input[i][j]=='E')
+	    		throw new RuntimeException();
+	        if (input[i][j]=='E'){
+	        flag=true;
+	           
+	    }
+	   }
+	}
+	if (!stop)
+		throw new RuntimeException();
+	
+	
 	
 	stack.push(source);
 	while (!stack.isEmpty()) {

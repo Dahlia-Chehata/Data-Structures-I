@@ -9,7 +9,7 @@ public class readfile {
 	String[] arr1;
 	char[][] arr2;
 	String str;
-	public static int n,m;
+	public int n,m;
 	char[] dim;
 public char[][] readFile(File maze){
 		
