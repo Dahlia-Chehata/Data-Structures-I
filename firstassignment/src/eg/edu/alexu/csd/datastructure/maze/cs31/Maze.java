@@ -23,7 +23,7 @@ public class Maze implements IMazeSolver  {
 	  Point[] result;
 	  int[][]sol;
 	private Point[][] parent;
-	char[][] filearray;
+	//char[][] filearray;
 	//..........//
 	
 	/**
@@ -59,7 +59,9 @@ public class Maze implements IMazeSolver  {
 	    }
 	    str = sb.toString();
 	    textReader.close( );
-		}catch(Exception e){};
+		}catch(IOException e){
+			System.out.println("not found");
+		};
 		arr1=str.split("\n");
 		 for (int i=0; i<n; i++) {
 		    arr2[i] = arr1[i].toCharArray();
@@ -84,6 +86,7 @@ public class Maze implements IMazeSolver  {
 	public int[][] finalPath(Point[][] arr, Point e) {
 		int i = 0;
 		int j = 0;
+		//point e is the indices of the target
 		result[i] = new Point(e);
 		for (i = 1; !arr[result[i - 1].x][result[i - 1].y].equals(source); i++) {
 			result[i] = new Point(arr[result[i - 1].x][result[i - 1].y]);
@@ -123,7 +126,7 @@ public class Maze implements IMazeSolver  {
 		visit=new boolean[n][m];
 		parent = new Point[n][m];
 		result = new Point[n * m];
-		filearray=input;
+		//filearray=input;
 
 		for (int i = 0; i < n; i++) {
 		    for (int j = 0; j < m; j++) {
