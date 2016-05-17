@@ -31,11 +31,10 @@ public class QueueTesting {
 	 * .
 	 */
 	private final int num10=10;
-	
-	@Test
 	/**
-	 * test enqueue
+	 * .
 	 */
+	@Test
 	public void test1() {
 		
 		list1.enqueue(num12);
