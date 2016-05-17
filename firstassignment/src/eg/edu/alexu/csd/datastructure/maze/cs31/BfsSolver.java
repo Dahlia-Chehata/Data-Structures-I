@@ -46,7 +46,8 @@ public class BfsSolver {
 		}*/
 		return ans;
 	}
-	public int[][]bfs(char[][]input,int n,int m){
+	public int[][]bfs(char[][]input,int n,int m)
+			throws RuntimeException{
 		Queue q =new Queue();
 		boolean flag=false;
 		visit=new boolean[n][m];
@@ -69,6 +70,8 @@ public class BfsSolver {
 		while(!q.isEmpty()){
 			Point top = (Point)q.dequeue();
 			if (input[top.x][top.y] == 'E'){
+				if (parent==null)
+					throw new RuntimeException();
 				sol = finalPath(parent, top);
 				return sol;
 			}
@@ -99,7 +102,7 @@ public class BfsSolver {
 				}
 			}
 		}
-		return null;
+		throw new RuntimeException();
 	}
 	
 }

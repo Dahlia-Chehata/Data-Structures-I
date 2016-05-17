@@ -15,7 +15,10 @@ public class Maze implements IMazeSolver  {
 		readfile appl= new readfile();
 		char[][]input= appl.readFile(maze);
 		BfsSolver app=new BfsSolver();
-		return app.bfs(input,readfile.n,readfile.m);
+		int[][] arr=app.bfs(input,readfile.n,readfile.m);
+		if (arr.length==0||arr==null)
+				throw new RuntimeException();
+		return arr;
 		
 	}
 
@@ -27,20 +30,25 @@ public class Maze implements IMazeSolver  {
 		readfile appl= new readfile();
 		char[][]input= appl.readFile(maze);
 		DfsSolver app=new DfsSolver();
-		return app.dfs(input,readfile.n,readfile.m);
+		int[][] arr=app.dfs(input,readfile.n,readfile.m);
+		if (arr.length==0)
+				throw new RuntimeException();
+		return arr;
 		
 	}
-	/*public static void main(String[] args){
+	public static void main(String[] args){
 	Maze app=new Maze();
 	File s = (new File("C:\\Users\\Dell\\Desktop\\mm.txt"));
 	int[][]arr;
-	arr=app.solveBFS(s);
+	arr=app.solveDFS(s);
 			
-	for(int i=0;i<arr.length;i++)
-		for(int j=0;j<arr[0].length;j++)
+	for(int i=0;i<arr.length;i++){
+		for(int j=0;j<arr[0].length;j++){
 			System.out.print(arr[i][j]);
+		}
+	System.out.println();
+	}
 
-}*/
-
+}
 
 }

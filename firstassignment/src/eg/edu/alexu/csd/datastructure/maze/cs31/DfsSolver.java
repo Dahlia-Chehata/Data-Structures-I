@@ -47,7 +47,8 @@ public class DfsSolver {
 		}*/
 		return ans;
 	}
-public int[][]dfs(char[][]input,int n,int m){
+public int[][]dfs(char[][]input,int n,int m)
+throws RuntimeException{
 	IStack stack=new Stack();
 	boolean flag=false;
 	visit=new boolean[n][m];
@@ -71,6 +72,8 @@ public int[][]dfs(char[][]input,int n,int m){
 	while (!stack.isEmpty()) {
 		Point top = (Point) stack.pop();
 		if (input[top.x][top.y] == 'E') {
+			if (parent==null)
+				throw new RuntimeException();
 			sol = finalPath(parent, top);
 			return sol;
 			/*for(int i=0;i<parent.length;i++)
@@ -103,6 +106,7 @@ public int[][]dfs(char[][]input,int n,int m){
 			}
 		}
 	}
-	return null;
+	throw new RuntimeException();
+	
 }
 }
