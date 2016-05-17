@@ -1,5 +1,9 @@
 package eg.edu.alexu.csd.datastructure.linkedList.cs31;
-
+/**.
+ * 
+ * @author Dell
+ *
+ */
 public class SLNode {
 	/**.
 	 * .

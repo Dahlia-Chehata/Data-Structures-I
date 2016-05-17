@@ -4,13 +4,19 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.awt.Point;
  
-
-
+/**.
+ * 
+ * @author Dell
+ *
+ */
 class myCOMP implements Comparator<Point> {
 	/**.
 	 * .
 	 */
 int flagg= -1;
+/**.
+ * 
+ */
 	@Override
 	public int compare(Point o1, Point o2) {
 		// TODO Auto-generated method stub
@@ -28,6 +34,11 @@ int flagg= -1;
 		return 0;
 	}
 }
+/**.
+ * 
+ * @author Dell
+ *
+ */
 public class IceHockey implements IPlayersFinder {
 			/**.
 			 * .

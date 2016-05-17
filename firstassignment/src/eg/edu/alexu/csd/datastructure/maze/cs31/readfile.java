@@ -1,9 +1,13 @@
 package eg.edu.alexu.csd.datastructure.maze.cs31;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+/**.
+ * .
+ * @author Dell
+ *
+ */
 
 public class readfile {
 	/**.

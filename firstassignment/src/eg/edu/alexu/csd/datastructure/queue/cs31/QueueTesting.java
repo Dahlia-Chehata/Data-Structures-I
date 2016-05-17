@@ -1,11 +1,12 @@
 package eg.edu.alexu.csd.datastructure.queue.cs31;
-
 import static org.junit.Assert.assertEquals;
-
-
 import org.junit.Assert;
 import org.junit.Test;
-
+/**.
+ * 
+ * @author Dell
+ *
+ */
 public class QueueTesting {
 /**.
  * .

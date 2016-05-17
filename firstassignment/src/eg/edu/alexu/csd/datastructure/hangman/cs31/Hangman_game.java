@@ -2,7 +2,11 @@ package eg.edu.alexu.csd.datastructure.hangman.cs31;
 
 import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 import java.util.Random;
-
+/**.
+ * 
+ * @author Dell
+ *
+ */
 public class Hangman_game implements IHangman {
 	/**.
 	 * ;

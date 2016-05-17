@@ -1,12 +1,15 @@
 package eg.edu.alexu.csd.datastructure.linkedList.cs31;
 
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
-
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Assert;
 import org.junit.Test;
-
+/**.
+ * 
+ * @author Dell
+ *
+ */
 public class SL_listTest {
 	/**..
 	 * 
