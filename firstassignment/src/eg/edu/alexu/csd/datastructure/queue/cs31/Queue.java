@@ -11,7 +11,6 @@ public class Queue implements IQueue,ILinkedBased {
   * .
   */
 	ILinkedList mylist=new doubly_linkedlists();
-	
 	/**..
 	 * .
 	 */
@@ -46,5 +45,4 @@ public class Queue implements IQueue,ILinkedBased {
 		// TODO Auto-generated method stub
 		return mylist.size();
 	}
-
 }
