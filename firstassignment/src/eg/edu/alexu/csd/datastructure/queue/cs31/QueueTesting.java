@@ -7,7 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class QueueTesting {
-/**
+/**.
  * .
  */
 	Queue list1 = new Queue();
@@ -15,11 +15,11 @@ public class QueueTesting {
 	 * .
 	 */
 	private final int num5=5;
-	/**
+	/**.
 	 * .
 	 */
 	private final int num3=3;
-	/**
+	/**.
 	 * .
 	 */
 	private final int num8=8;
@@ -27,11 +27,11 @@ public class QueueTesting {
 	 * 
 	 */
 	private final int num12=12;
-	/**
+	/**.
 	 * .
 	 */
 	private final int num10=10;
-	/**
+	/**.
 	 * .
 	 */
 	@Test
@@ -41,7 +41,7 @@ public class QueueTesting {
 		assertEquals(num12, list1.dequeue());
 		
 	}
-	/**
+	/**.
 	 * ;
 	 */
 	@Test
@@ -62,7 +62,7 @@ public class QueueTesting {
 	
 }
 	//test dequeue
-	/**
+	/**.
 	 * ;
 	 */
 	@Test
@@ -71,7 +71,7 @@ public class QueueTesting {
 		list1.enqueue(num5);
 		Assert.assertEquals(num5, list1.dequeue());
 	}
-	/**
+	/**.
 	 * ;
 	 */
 	@Test
@@ -85,7 +85,7 @@ public class QueueTesting {
 		
 	}
 	// test size1
-	/**
+	/**.
 	 * ;
 	 */
 		@Test
@@ -93,7 +93,7 @@ public class QueueTesting {
 			Assert.assertEquals(0, list1.size());
 		}
 		// test size2
-		/**
+		/**.
 		 * ;
 		 */
 		@Test
@@ -105,14 +105,14 @@ public class QueueTesting {
 			list1.dequeue();
 			Assert.assertEquals(1, list1.size());
 		}
-		/**
+		/**.
 		 * ;
 		 */
 		@Test
 		public void test8() {
 			Assert.assertEquals(true, list1.isEmpty());
 		}
-/**
+/**.
  * ;
  */
 		@Test
@@ -123,7 +123,7 @@ public class QueueTesting {
 			list1.dequeue();
 			Assert.assertEquals(false, list1.isEmpty());
 		}
-/**
+/**.
  * ;
  */
 		@Test
