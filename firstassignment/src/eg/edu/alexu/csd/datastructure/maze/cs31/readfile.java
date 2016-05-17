@@ -24,11 +24,14 @@ public char[][] readFile(File maze){
 	    String line = textReader.readLine();
 	    String dimensions=line;
 	    dim=dimensions.toCharArray();
-	   // String[] splited = dimensions.split("\\s+");
-	    n=Character.getNumericValue(dim[0]);
-	     m=Character.getNumericValue(dim[1]);
-	     if (0>= n||n>9||0>= m||m>9)
-	    	 throw new RuntimeException();
+	    String[] splited = dimensions.split("\\s+");
+	    //n=Character.getNumericValue(dim[0]);
+	    // m=Character.getNumericValue(dim[1]);
+	    n=Integer.parseInt(splited[0]);
+	    m=Integer.parseInt(splited[1]);
+	   //  if (0>= n||n>9||0>= m||m>9)
+	    	// throw new RuntimeException();
+	    	 
 	   // arr1=new String[m];
 	    arr2=new char[n][m];
 	    while (line!= null) {
