@@ -1,13 +1,9 @@
 package eg.edu.alexu.csd.datastructure.stack.cs31;
-
 import eg.edu.alexu.csd.datastructure.stack.IStack;
 //import eg.edu.alexu.csd.datastructure.linkedList.cs31.SLNode;
 import eg.edu.alexu.csd.datastructure.linkedList.cs31.Singly_linkedlists;
-
 import java.util.Scanner;
-
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
-
 public class Stack implements IStack {
 	/**
 	 * .
@@ -17,7 +13,6 @@ public class Stack implements IStack {
 	 * .
 	 */
 	int size = mylist.size();
-
 	/**
 	 * add in stack
 	 */
@@ -25,13 +20,10 @@ public class Stack implements IStack {
 	public void add(int index, Object element) throws RuntimeException {
 		// TODO Auto-generated method stub
 		mylist.add(mylist.size() - index, element);
-
 	}
-
 	/**
 	 * popping
 	 */
-
 	@Override
 	public Object pop() throws RuntimeException {
 		// TODO Auto-generated method stub
@@ -40,36 +32,27 @@ public class Stack implements IStack {
 		 */
 		Object pop = mylist.get(0);
 		mylist.remove(0);
-
 		return pop;
-
 	}
-
 	/**
 	 * peeking
 	 */
-
 	@Override
 	public Object peek() throws RuntimeException {
 		// TODO Auto-generated method stub
 		return mylist.get(0);
 	}
-
 	/**
 	 * pushing
 	 */
-
 	@Override
 	public void push(Object element) throws RuntimeException {
 		// TODO Auto-generated method stub
 		mylist.add(0, element);
-
 	}
-
 	/**
 	 * checking if empty
 	 */
-
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
@@ -122,7 +105,6 @@ public class Stack implements IStack {
 			System.out.println("3-Peek");
 			System.out.println("4-Get size");
 			System.out.println("5-check if empty");
-
 			System.out.println("-------"
 					+ "-------------");
 			/**
@@ -142,7 +124,6 @@ public class Stack implements IStack {
 				Object element = scan.next();
 				stack.push(element);
 				break;
-
 			case 2:
 				if (stack.isEmpty())
 					System.out.println(""
@@ -172,7 +153,6 @@ public class Stack implements IStack {
 				System.out.println(""
 						+ "Wrong Entry ");
 			}
-
 			System.out.println("======="
 					+ "=============="
 					+ "===================");
@@ -184,7 +164,5 @@ public class Stack implements IStack {
 			System.out.println("===================="
 					+ "===================");
 		} while (ch == 'Y' || ch == 'y');
-
 	}
-
 }
