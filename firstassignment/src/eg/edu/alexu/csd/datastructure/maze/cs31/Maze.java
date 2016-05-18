@@ -1,8 +1,6 @@
 package eg.edu.alexu.csd.datastructure.maze.cs31;
 import java.io.File;
 import eg.edu.alexu.csd.datastructure.maze.IMazeSolver;
-import eg.edu.alexu.csd.datastructure.maze.cs31.BfsSolver;
-import eg.edu.alexu.csd.datastructure.maze.cs31.DfsSolver;
 /**.
  * @author Dell
  */
