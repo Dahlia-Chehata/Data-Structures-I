@@ -25,7 +25,7 @@ ILinkedList mylist = new doubly_linkedlists();
 	@Override
 	public Object dequeue() {
 		// TODO Auto-generated method stub
-		Object item=mylist.get(0);
+		Object item = mylist.get(0);
 		mylist.remove(0);
 		return item;
 	}

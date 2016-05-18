@@ -327,7 +327,7 @@ IExpressionEvaluator app = new ExpressionEvaluator();
 /**.
  * ;
  */
-		 final int num3=3;
+		 final int num3 = 3;
 		 /**.
 		  * ;
 		  */

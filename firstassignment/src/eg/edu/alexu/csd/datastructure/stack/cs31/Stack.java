@@ -75,15 +75,15 @@ public class Stack implements IStack {
 		 /**..
 		  * .
 		  */
-		final int num3=3;
+		final int num3 = 3;
 		/**..
 		 * .
 		 */
-		 final int num4=4;
+		 final int num4 = 4;
 		 /**..
 		  * ;
 		  */
-	      final int num5=5;
+	      final int num5 = 5;
 /**..
  * .
  */
