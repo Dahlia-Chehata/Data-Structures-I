@@ -27,8 +27,7 @@ public class doubly_linkedlists implements ILinkedList {
  * .
  */
 	@Override
-	public void add(int index, Object element)
-			throws RuntimeException {
+	public void add(int index, Object element) {
 		// TODO Auto-generated method stub
 		/**.
 		 * ;
@@ -121,8 +120,7 @@ public class doubly_linkedlists implements ILinkedList {
  * ;
  */
 	@Override
-	public void set(int index, Object element)
-			throws RuntimeException {
+	public void set(int index, Object element) {
 		// TODO Auto-generated method stub
 		/**.
 		 * ;

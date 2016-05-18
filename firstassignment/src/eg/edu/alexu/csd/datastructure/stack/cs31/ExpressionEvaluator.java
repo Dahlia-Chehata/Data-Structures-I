@@ -249,13 +249,13 @@ throw new RuntimeException("'(' without a ')'");
 				if (stack.isEmpty()) {
 					throw new RuntimeException();
 				}
-				else{
+				else {
 					operand2 = (double) stack.pop();
 				}
 				if (stack.isEmpty()) {
 					throw new RuntimeException();
 				}
-				else{
+				else {
 					operand1 = (double) stack.pop();
 				}
 				stack.push((double) operand1 * operand2);
@@ -263,13 +263,13 @@ throw new RuntimeException("'(' without a ')'");
 				if (stack.isEmpty()) {
 					throw new RuntimeException();
 				}
-				else{
+				else {
 					operand2 = (double) stack.pop();
 				}
 				if (stack.isEmpty()) {
 					throw new RuntimeException();
 				}
-				else{
+				else {
 					operand1 = (double) stack.pop();
 				}
 				stack.push((double) operand1 + operand2);
@@ -277,13 +277,13 @@ throw new RuntimeException("'(' without a ')'");
 				if (stack.isEmpty()) {
 					throw new RuntimeException();
 				}
-				else{
+				else {
 					operand2 = (double) stack.pop();
 				}
 				if (stack.isEmpty()) {
 					throw new RuntimeException();
 				}
-				else{
+				else {
 					operand1 = (double) stack.pop();
 				}
 				stack.push((double) operand1 - operand2);
@@ -291,13 +291,13 @@ throw new RuntimeException("'(' without a ')'");
 				if (stack.isEmpty()) {
 					throw new RuntimeException();
 				}
-				else{
+				else {
 					operand2 = (double) stack.pop();
 				}
 				if (stack.isEmpty()) {
 					throw new RuntimeException();
 				}
-				else{
+				else {
 					operand1 = (double) stack.pop();
 				}
 				if (operand2 == 0) {
@@ -306,7 +306,7 @@ throw new RuntimeException("'(' without a ')'");
 				else if (operand1 == 0) {
 					stack.push(0);
 				}
-				else{
+				else {
 	stack.push((double) operand1 / operand2);
 				}
 			}

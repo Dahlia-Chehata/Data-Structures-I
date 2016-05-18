@@ -483,7 +483,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			}
 		}
 		if (counter == 0) {
-			return new int[][] { { 0, 0 } };
+			return new int[][] {{ 0, 0 }};
 		}
 		/**.
 		 * ;

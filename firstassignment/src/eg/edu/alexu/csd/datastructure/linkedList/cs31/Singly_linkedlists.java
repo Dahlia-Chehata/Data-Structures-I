@@ -197,7 +197,7 @@ public class Singly_linkedlists implements ILinkedList {
 		/**.
 		 * ;
 		 */
-		ILinkedList new_list = new Singly_linkedlists();
+		ILinkedList newList = new Singly_linkedlists();
 		/**.
 		 * ;
 		 */
@@ -208,10 +208,10 @@ public class Singly_linkedlists implements ILinkedList {
 				pointer = pointer.next;
 			}
 			for (int i = fromIndex; i <= toIndex; i++) {
-				new_list.add(pointer.value);
+				newList.add(pointer.value);
 				pointer = pointer.next;
 			}
-			return new_list;
+			return newList;
 		} else {
 			throw new RuntimeException();
 		}
