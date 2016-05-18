@@ -315,11 +315,9 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				}
 				System.out.println(result);
 			}
-
 			else {
 				throw new RuntimeException();
 			}
-
 			break;
 		case 'C':
 			if (!C.isEmpty()) {
@@ -724,7 +722,6 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		 * .
 		 */
 		double[] array = new double[bignum];
-
 		for (int a = 0; a < first.size(); a++) {
 			for (int b = 0; b < second.size(); b++) {
 				pta = (Point) first.get(a);
@@ -780,7 +777,6 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			System.out.print(arrr[count][1] + "),");
 			count--;
 		}
-
 		return arrr;
 	}
 }

@@ -1,5 +1,4 @@
 package eg.edu.alexu.csd.datastructure.linkedList.cs31;
-
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 /**.
  * 
@@ -37,13 +36,11 @@ public class Singly_linkedlists implements ILinkedList {
 		 */
 		SLNode pointer = head;
 		new_node.value = element;
-
 		if (index == 0) {
 			new_node.next = head;
 			head = new_node;
 			size++;
 		}
-
 		else if (index == size) {
 			while (pointer.next != null) {
 				pointer = pointer.next;
@@ -51,18 +48,14 @@ public class Singly_linkedlists implements ILinkedList {
 			pointer.next = new_node;
 			new_node.next = null;
 			size++;
-
 		} else if (index > 0 && index < size) {
 			for (int i = 0; i < index - 1; i++) {
 				pointer = pointer.next;
 			}
-
 			new_node.next = pointer.next;
 			pointer.next = new_node;
-
 			size++;
 		}
-
 		else {
 			throw new RuntimeException();
 		}
@@ -89,7 +82,6 @@ public class Singly_linkedlists implements ILinkedList {
 			while (pointer.next != null) {
 				pointer = pointer.next;
 			}
-
 			pointer.next = new_node;
 			new_node.next = null;
 		}
@@ -105,7 +97,6 @@ public class Singly_linkedlists implements ILinkedList {
 		 * ;
 		 */
 		SLNode pointer = head;
-		
 		if (index >= 0 && index < size) {
 			for (int i = 0; i < index; i++) {
 				pointer = pointer.next;
@@ -133,7 +124,6 @@ public class Singly_linkedlists implements ILinkedList {
 		} else {
 			throw new RuntimeException();
 		}
-
 	}
 /**.
  * ;
@@ -178,7 +168,6 @@ public class Singly_linkedlists implements ILinkedList {
 			temp.next = null;
 			size--;
 		}
-
 		else if (index > 0 && index < size) {
 			for (int i = 0; i < index - 1; i++) {
 				pointer = pointer.next;
@@ -197,7 +186,6 @@ public class Singly_linkedlists implements ILinkedList {
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
-
 		return size;
 	}
 /**.
@@ -250,5 +238,4 @@ public class Singly_linkedlists implements ILinkedList {
 		}
 		return false;
 	}
-
 }

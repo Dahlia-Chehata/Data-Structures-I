@@ -34,7 +34,6 @@ public class QueueTesting {
 	 */
 	@Test
 	public void test1() {
-		
 		list1.enqueue(num12);
 		assertEquals(num12, list1.dequeue());
 	}

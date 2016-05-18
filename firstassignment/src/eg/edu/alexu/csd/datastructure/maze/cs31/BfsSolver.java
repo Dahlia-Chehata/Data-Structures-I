@@ -28,7 +28,6 @@ public class BfsSolver {
 	   * .
 	   */
 	private Point[][] parent;
-	
 	//char[][] filearray;
 	/**.
 	 * ;
@@ -64,7 +63,6 @@ for (i = 1; !arr[result[i - 1].x]
 		 * ;
 		 */
 		int[][]ans=new int[i][2];
-		
 		for (i = i - 1; i >= 0; i--) {
 			finalResult[j] = new Point(result[i]);
 			j++;
@@ -102,12 +100,10 @@ for (i = 1; !arr[result[i - 1].x]
 		 * .
 		 */
 		boolean flag=false;
-		
 		visit=new boolean[n][m];
 		parent = new Point[n][m];
 		result = new Point[n * m];
 		//filearray=input;
-
 		for (int i = 0; i < n; i++) {
 		    for (int j = 0; j < m; j++) {
 		    	if (flag && input[i][j]=='S')
@@ -115,7 +111,6 @@ for (i = 1; !arr[result[i - 1].x]
 		        if (input[i][j]=='S'){
 		        	source=new Point(i,j);
 		        flag=true;
-		           
 		    }
 		   }
 		}
@@ -131,15 +126,11 @@ boolean stop=false;
 		  throw new RuntimeException();
 		    if (input[i][j]=='E'){
 		        stop=true;
-		           
 		    }
 		   }
 		}
 		if (!stop)
 			throw new RuntimeException();
-		
-		
-		
 		q.enqueue(source);
 		while(!q.isEmpty()){
 			Point top = (Point)q.dequeue();
@@ -178,7 +169,5 @@ parent[top.x - 1][top.y] = new Point(top.x, top.y);
 			}
 		}
 		return null;
-		
 	}
-	
 }

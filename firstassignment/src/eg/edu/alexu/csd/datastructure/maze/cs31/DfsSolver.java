@@ -104,15 +104,13 @@ throws RuntimeException{
 	parent = new Point[n][m];
 	result = new Point[n * m];
 	//filearray=input;
-
 	for (int i = 0; i < n; i++) {
 	    for (int j = 0; j < m; j++) {
 	    	if (flag && input[i][j]=='S')
 	    		throw new RuntimeException();
 	        if (input[i][j]=='S'){
 	        	source=new Point(i,j);
-	        flag=true;
-	           
+	        flag=true; 
 	    }
 	   }
 	}
@@ -128,7 +126,6 @@ throws RuntimeException{
 	    		throw new RuntimeException();
 	        if (input[i][j]=='E'){
 	        stop=true;
-	           
 	    }
 	   }
 	}
@@ -146,7 +143,6 @@ throws RuntimeException{
 			/*for(int i=0;i<parent.length;i++)
 				for(int j=0;j<parent[0].length;j++)
 					System.out.println(parent[i][j]);*/
-
 		} else if ((input[top.x][top.y] == '#')
 		|| (visit[top.x][top.y])) {
 			continue;
@@ -177,10 +173,8 @@ throws RuntimeException{
 	stack.push(h);
 	parent[top.x - 1][top.y] = new Point(top.x, top.y);
 			}
-			
 		}
 	}
 	return null;
-	
 }
 }

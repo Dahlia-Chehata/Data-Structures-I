@@ -23,7 +23,6 @@ public class doubly_linkedlists implements ILinkedList {
 		header = new DNode(null, null, null);
 		tailer = new DNode(header, null, null);
 		header.next = tailer;
-
 	}
 /**.
  * .
@@ -47,7 +46,6 @@ public class doubly_linkedlists implements ILinkedList {
 			header.next = new_node;
 			pointer.prev = new_node;
 			size++;
-
 		} else if (index == size) {
 			/**.
 			 * .
@@ -59,7 +57,6 @@ public class doubly_linkedlists implements ILinkedList {
 			new_node.prev = temp;
 			size++;
 		} else if (index > 0 && index < size) {
-
 			for (int i = 0; i < index - 1; i++) {
 				pointer = pointer.next;
 			}
@@ -99,7 +96,6 @@ public class doubly_linkedlists implements ILinkedList {
 			new_node.next = tailer;
 			tailer.prev = new_node;
 			new_node.prev = temp;
-
 		}
 		size++;
 	}
@@ -114,7 +110,6 @@ public class doubly_linkedlists implements ILinkedList {
 		 */
 		DNode pointer = header.next;
 		if (index >= 0 && index < size) {
-
 			for (int i = 0; i < index; i++) {
 				pointer = pointer.next;
 			}
@@ -135,7 +130,6 @@ public class doubly_linkedlists implements ILinkedList {
 		 */
 		DNode pointer = header.next;
 		if (index >= 0 && index < size) {
-
 			for (int i = 0; i < index; i++) {
 				pointer = pointer.next;
 			}

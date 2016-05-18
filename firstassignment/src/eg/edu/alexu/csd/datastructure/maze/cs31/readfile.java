@@ -35,8 +35,6 @@ public class readfile {
 	 * @return arr2
 	 */
 public char[][] readFile(File maze){
-		
-		
 		if (maze.length() == 0) {
 		    throw new RuntimeException();
 		} 
@@ -75,7 +73,6 @@ public char[][] readFile(File maze){
 	    m=Integer.parseInt(splited[1]);
 	   //  if (0>= n||n>9||0>= m||m>9)
 	    	// throw new RuntimeException();
-	    	 
 	   // arr1=new String[m];
 	    arr2=new char[n][m];
 	    while (line!= null) {
