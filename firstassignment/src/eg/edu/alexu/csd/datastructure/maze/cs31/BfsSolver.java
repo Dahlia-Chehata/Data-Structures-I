@@ -5,9 +5,7 @@ import java.awt.Point;
 
 import eg.edu.alexu.csd.datastructure.queue.ILinkedBased;
 /**.
- * 
  * @author Dell
- *
  */
 public class BfsSolver {
 	/**.

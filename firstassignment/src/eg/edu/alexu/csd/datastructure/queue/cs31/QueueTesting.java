@@ -10,7 +10,7 @@ public class QueueTesting {
  * .
  */
 	Queue list1 = new Queue();
-	/**
+	/**.
 	 * .
 	 */
 	private final int num5=5;
@@ -23,7 +23,6 @@ public class QueueTesting {
 	 */
 	private final int num8=8;
 	/**.
-	 * 
 	 */
 	private final int num12=12;
 	/**.

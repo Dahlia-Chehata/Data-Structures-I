@@ -3,13 +3,11 @@ package eg.edu.alexu.csd.datastructure.linkedList.cs31;
 import java.awt.Point;
 import java.util.Arrays;
 /**.
- * 
+ * ..
  */
 import eg.edu.alexu.csd.datastructure.linkedList.IPolynomialSolver;
 /**.
- * 
  * @author Dell
- *
  */
 public class Polynomial_Solver implements IPolynomialSolver {
 /**.

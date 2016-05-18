@@ -7,7 +7,7 @@ import eg.edu.alexu.csd.datastructure.stack.IStack;
  */
 public class ExpressionEvaluator implements
 /**.
- * 
+ * ..
  */
 IExpressionEvaluator {
 /**.

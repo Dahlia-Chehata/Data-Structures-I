@@ -4,9 +4,7 @@ import eg.edu.alexu.csd.datastructure.maze.IMazeSolver;
 import eg.edu.alexu.csd.datastructure.maze.cs31.BfsSolver;
 import eg.edu.alexu.csd.datastructure.maze.cs31.DfsSolver;
 /**.
- * 
  * @author Dell
- *
  */
 public class Maze implements IMazeSolver  {
 	/**.
@@ -55,15 +53,13 @@ public class Maze implements IMazeSolver  {
 		 * .
 		 */
 		DfsSolver app=new DfsSolver();
-		/**.
-		 * 
+		/**. 
 		 * .
 		 */
 		int[][] arr=app.dfs(input,readfile.n,readfile.m);
 		if (arr==null||arr.length==0)
 				return null;
 		return arr;
-		
 	}
 	/**.
 	 * ,

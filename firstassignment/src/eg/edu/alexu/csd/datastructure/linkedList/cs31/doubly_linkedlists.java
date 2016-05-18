@@ -2,9 +2,9 @@ package eg.edu.alexu.csd.datastructure.linkedList.cs31;
 
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 /**.
- * 
+ * ..
  * @author Dell
- *
+ *...
  */
 public class doubly_linkedlists implements ILinkedList {
 	/**.
@@ -16,7 +16,7 @@ public class doubly_linkedlists implements ILinkedList {
 	 */
 	public DNode header, tailer;
 /**.
- * 
+ * ;;
  */
 	public doubly_linkedlists() {
 		size = 0;

@@ -5,9 +5,7 @@ import eg.edu.alexu.csd.datastructure.linkedList.cs31.Singly_linkedlists;
 import java.util.Scanner;
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 /**.
- * 
  * @author Dell
- *
  */
 public class Stack implements IStack {
 	/**..

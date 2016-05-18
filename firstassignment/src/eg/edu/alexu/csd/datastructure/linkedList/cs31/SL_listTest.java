@@ -6,9 +6,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Assert;
 import org.junit.Test;
 /**.
- * 
  * @author Dell
- *
  */
 public class SL_listTest {
 	/**..
@@ -203,7 +201,7 @@ public class SL_listTest {
 		}
 	}
 /**.
- * 
+ * l
  */
 	@Test(expected = RuntimeException.class) // sublist -ve index
 	public void test10() {

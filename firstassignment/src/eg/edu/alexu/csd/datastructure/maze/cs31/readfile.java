@@ -6,7 +6,6 @@ import java.io.IOException;
 /**.
  * .
  * @author Dell
- *
  */
 
 public class readfile {
