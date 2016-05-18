@@ -30,30 +30,30 @@ public class Singly_linkedlists implements ILinkedList {
 		/**.
 		 * '
 		 */
-		SLNode new_node = new SLNode();
+		SLNode newNode = new SLNode();
 		/**.
 		 * ;
 		 */
 		SLNode pointer = head;
-		new_node.value = element;
+		newNode.value = element;
 		if (index == 0) {
-			new_node.next = head;
-			head = new_node;
+			newNode.next = head;
+			head = newNode;
 			size++;
 		}
 		else if (index == size) {
 			while (pointer.next != null) {
 				pointer = pointer.next;
 			}
-			pointer.next = new_node;
-			new_node.next = null;
+			pointer.next = newNode;
+			newNode.next = null;
 			size++;
 		} else if (index > 0 && index < size) {
 			for (int i = 0; i < index - 1; i++) {
 				pointer = pointer.next;
 			}
-			new_node.next = pointer.next;
-			pointer.next = new_node;
+			newNode.next = pointer.next;
+			pointer.next = newNode;
 			size++;
 		}
 		else {
@@ -73,17 +73,17 @@ public class Singly_linkedlists implements ILinkedList {
 		/**.
 		 * ;
 		 */
-		SLNode new_node = new SLNode();
-		new_node.value = element;
+		SLNode newNode = new SLNode();
+		newNode.value = element;
 		if (head == null) {
-			// new_node.next=null;
-			head = new_node;
+			// newNode.next=null;
+			head = newNode;
 		} else {
 			while (pointer.next != null) {
 				pointer = pointer.next;
 			}
-			pointer.next = new_node;
-			new_node.next = null;
+			pointer.next = newNode;
+			newNode.next = null;
 		}
 		size++;
 	}

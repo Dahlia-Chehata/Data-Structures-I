@@ -33,27 +33,27 @@ public class doubly_linkedlists implements ILinkedList {
 		/**.
 		 * ;
 		 */
-		DNode new_node = new DNode();
-		new_node.value = element;
+		DNode newNode = new DNode();
+		newNode.value = element;
 		/**.
 		 * .
 		 */
 		DNode pointer = header.next;
 		if (index == 0) {
-			new_node.next = pointer;
-			new_node.prev = header;
-			header.next = new_node;
-			pointer.prev = new_node;
+			newNode.next = pointer;
+			newNode.prev = header;
+			header.next = newNode;
+			pointer.prev = newNode;
 			size++;
 		} else if (index == size) {
 			/**.
 			 * .
 			 */
 			DNode temp = tailer.prev;
-			temp.next = new_node;
-			new_node.next = tailer;
-			tailer.prev = new_node;
-			new_node.prev = temp;
+			temp.next = newNode;
+			newNode.next = tailer;
+			tailer.prev = newNode;
+			newNode.prev = temp;
 			size++;
 		} else if (index > 0 && index < size) {
 			for (int i = 0; i < index - 1; i++) {
@@ -63,10 +63,10 @@ public class doubly_linkedlists implements ILinkedList {
 			 * .
 			 */
 			DNode temp = pointer.next;
-			pointer.next = new_node;
-			new_node.next = temp;
-			new_node.prev = pointer;
-			temp.prev = new_node;
+			pointer.next = newNode;
+			newNode.next = temp;
+			newNode.prev = pointer;
+			temp.prev = newNode;
 			size++;
 		} else {
 			throw new RuntimeException();
@@ -81,20 +81,20 @@ public class doubly_linkedlists implements ILinkedList {
 		/**.
 		 * .
 		 */
-		DNode new_node = new DNode();
-		new_node.value = element;
+		DNode newNode = new DNode();
+		newNode.value = element;
 		if (size == 0) {
 			DNode temp = header.next;
-			header.next = new_node;
-			new_node.next = temp;
-			new_node.prev = header;
-			temp.prev = new_node;
+			header.next = newNode;
+			newNode.next = temp;
+			newNode.prev = header;
+			temp.prev = newNode;
 		} else {
 			DNode temp = tailer.prev;
-			temp.next = new_node;
-			new_node.next = tailer;
-			tailer.prev = new_node;
-			new_node.prev = temp;
+			temp.next = newNode;
+			newNode.next = tailer;
+			tailer.prev = newNode;
+			newNode.prev = temp;
 		}
 		size++;
 	}
