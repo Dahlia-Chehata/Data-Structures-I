@@ -129,15 +129,15 @@ public class IceHockey implements IPlayersFinder {
 	 */
 
 	public boolean canmove(final int xx,
-			final int yy, int vv) {
+			final int yy, final int team) {
 		/**.
 		 * ;
 		 */
-		vv = team;
+		this.team = team;
 		if (xx < 0 || yy < 0 || xx >= m || yy >= n) {
 			return false;
 		}
-		if ((!isVisited(xx, yy)) && photos[xx][yy] == vv + '0') {
+		if ((!isVisited(xx, yy)) && photos[xx][yy] == team + '0') {
 			return true;
 		}
 		return false;
