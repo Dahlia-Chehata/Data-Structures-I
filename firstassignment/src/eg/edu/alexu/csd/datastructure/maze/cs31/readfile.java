@@ -85,7 +85,7 @@ public char[][] readFile(File maze){
 	    textReader.close( );
 		}catch(IOException e){
 	System.out.println("not found");
-		};
+};
 		arr1=str.split("\n");
 		 for (int i=0; i<n; i++) {
 		    arr2[i] = arr1[i].toCharArray();

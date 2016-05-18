@@ -58,15 +58,13 @@ public void test1() {
 		list2.dequeue();
 		list2.dequeue();
 		list2.dequeue();
-
 		try {
 			list2.dequeue();
 
 		} catch (Exception RuntimeException) {
+			System.out.println(" ");
 		}
-
 	}
-
 	// test dequeue
 	/**.
 	 * ;

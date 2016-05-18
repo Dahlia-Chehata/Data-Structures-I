@@ -1,9 +1,6 @@
 package eg.edu.alexu.csd.datastructure.maze.cs31;
 import eg.edu.alexu.csd.datastructure.queue.cs31.Queue;
-
 import java.awt.Point;
-
-import eg.edu.alexu.csd.datastructure.queue.ILinkedBased;
 /**.
  * @author Dell
  */

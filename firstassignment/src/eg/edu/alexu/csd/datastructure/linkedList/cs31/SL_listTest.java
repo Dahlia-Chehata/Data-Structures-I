@@ -102,6 +102,7 @@ public class SL_listTest {
 			D.remove(2);
 			Assert.fail( "remove from empty list");
 		} catch (Exception RuntimeException) {
+			System.out.println(" ");
 		}
 	}
 /**.
@@ -213,6 +214,7 @@ public class SL_listTest {
 		try {
 			SL.sublist(2, num5);
 		} catch (Exception RuntimeException) {
+			System.out.println(" ");
 		}
 	}
 /**.
@@ -227,6 +229,7 @@ public class SL_listTest {
 			D.sublist(2, num5);
 			Assert.fail("index out of bounds");
 		} catch (Exception RuntimeException) {
+			System.out.println(" ");
 		}
 	}
 /**.
@@ -465,6 +468,7 @@ public class SL_listTest {
 		try {
 			D.set(0, num10);
 		} catch (Exception RuntimeException) {
+			System.out.println(" ");
 		}
 	}
 /**.
