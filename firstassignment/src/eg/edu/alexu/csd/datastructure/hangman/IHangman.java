@@ -1,7 +1,5 @@
 package eg.edu.alexu.csd.datastructure.hangman;
-
 public interface IHangman {
-	
 	/**
 	* Set dictinary words to pick secret words from
 	* @param words an array of words
@@ -28,7 +26,4 @@ public interface IHangman {
 	* maximum number of wrong guesses, If is NULL, then assume it 0
 	*/
 	void setMaxWrongGuesses(Integer max);
-
-
-
 }

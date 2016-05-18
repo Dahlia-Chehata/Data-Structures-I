@@ -1,5 +1,4 @@
 package eg.edu.alexu.csd.datastructure.linkedList;
-
 public interface ILinkedList {
 	/**
 	* Inserts a specified element at the specified sposition in the list.

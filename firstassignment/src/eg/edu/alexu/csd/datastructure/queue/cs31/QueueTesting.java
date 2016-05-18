@@ -59,8 +59,7 @@ public class QueueTesting {
 	 * ;
 	 */
 	@Test
-	public void test3() {
-		
+	public void test3() {	
 		list1.enqueue(num5);
 		Assert.assertEquals(num5, list1.dequeue());
 	}

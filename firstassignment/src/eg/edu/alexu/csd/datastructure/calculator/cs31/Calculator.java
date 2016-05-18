@@ -1,10 +1,7 @@
 package eg.edu.alexu.csd.datastructure.calculator.cs31;
-
 import eg.edu.alexu.csd.datastructure.calculator.ICalculator;
 /**.
- * 
  * @author Dell
- *
  */
 public class Calculator implements ICalculator {
 /**.
@@ -36,7 +33,4 @@ public class Calculator implements ICalculator {
 			return (float) x / y;
 		}
 	}
-
 }
-		
-		

@@ -1,5 +1,4 @@
 package eg.edu.alexu.csd.datastructure.queue;
-
 public interface IQueue {
 	/**
 	* Inserts an item at the queue front.

@@ -1,11 +1,8 @@
 package eg.edu.alexu.csd.datastructure.hangman.cs31;
-
 import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 import java.util.Random;
 /**.
- * 
  * @author Dell
- *
  */
 public class Hangman_game implements IHangman {
 	/**.
@@ -33,9 +30,7 @@ public class Hangman_game implements IHangman {
  */
 	@Override
 	public void setDictionary(String[] words) {
-
 		temp = new String[words.length];
-
 		for (int j = 0; j < words.length; j++) {
 			temp[j] = words[j];
 		}
@@ -62,7 +57,6 @@ public class Hangman_game implements IHangman {
 		for (int i = 0; i < str.length(); i++) {
 			show[i] = '-';
 		}
-
 		return str;
 	}
 /**.
@@ -70,7 +64,6 @@ public class Hangman_game implements IHangman {
  */
 	@Override
 	public String guess(Character c) {
-
 		if (c == null) {
 			return new String(show);
 		}
@@ -82,7 +75,6 @@ public class Hangman_game implements IHangman {
 		 * '
 		 */
 		int found = 0;
-
 		for (int i = 0; i < str.length(); i++) {
 			/**.
 			 * ;
@@ -111,20 +103,16 @@ public class Hangman_game implements IHangman {
 			 */
 	           char l=Character.toUpperCase(c);
 			if (k == l && check[i]) {
-
 				found = 1;
 			}
 		}
 		if (found == 1) {
 			return new String(show);
 		}
-
 		counter--;
-
 		if (counter <= 0) {
 			return null;
 		}
-
 		return new String(show);
 	}
 /**.
@@ -139,7 +127,5 @@ public class Hangman_game implements IHangman {
 		if (max == null || max < 0) {
 			counter = 0;
 		}
-
 	}
-
 }

@@ -1,5 +1,4 @@
 package eg.edu.alexu.csd.datastructure.linkedList;
-
 public interface IPolynomialSolver {
 	/**
 	* Set polynomial terms (coefficients & exponents)
@@ -46,5 +45,4 @@ public interface IPolynomialSolver {
 	* @return the result polynomial
 	*/
 	int[][] multiply(char poly1, char poly2);
-	
 }

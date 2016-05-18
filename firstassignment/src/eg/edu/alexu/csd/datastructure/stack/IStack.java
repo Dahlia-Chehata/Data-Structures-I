@@ -1,5 +1,4 @@
 package eg.edu.alexu.csd.datastructure.stack;
-
 public interface IStack {
 	/**
 	* Inserts a specified element at the specified position in the list.

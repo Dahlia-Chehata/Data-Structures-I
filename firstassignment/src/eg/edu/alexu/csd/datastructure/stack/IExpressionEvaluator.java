@@ -1,5 +1,4 @@
 package eg.edu.alexu.csd.datastructure.stack;
-
 public interface IExpressionEvaluator {
 	/**
 	* Takes a symbolic/numeric infix expression as input and converts it to

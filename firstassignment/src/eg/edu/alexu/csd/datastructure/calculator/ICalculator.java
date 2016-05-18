@@ -1,5 +1,4 @@
 package eg.edu.alexu.csd.datastructure.calculator;
-
 public interface ICalculator {
 	/**
 	* Adds given two numbers

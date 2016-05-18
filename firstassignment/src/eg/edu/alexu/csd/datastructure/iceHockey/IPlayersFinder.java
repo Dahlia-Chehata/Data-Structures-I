@@ -1,5 +1,4 @@
 package eg.edu.alexu.csd.datastructure.iceHockey;
-
 public interface IPlayersFinder {
 	/**
 	* Search for players locations at the given photo
@@ -15,5 +14,4 @@ public interface IPlayersFinder {
 	* Array of players locations of the given team
 	*/
 	java.awt.Point[] findPlayers(String[] photo, int team, int threshold);
-
 }

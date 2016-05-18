@@ -3,11 +3,8 @@ import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.awt.Point;
- 
 /**.
- * 
  * @author Dell
- *
  */
 class myCOMP implements Comparator<Point> {
 	/**.
@@ -15,7 +12,7 @@ class myCOMP implements Comparator<Point> {
 	 */
 int flagg= -1;
 /**.
- * 
+ * .
  */
 	@Override
 	public int compare(Point o1, Point o2) {
@@ -174,11 +171,9 @@ public class IceHockey implements IPlayersFinder {
 			m = photo.length;
 			photos = new char[m][n];
 			visited = new boolean[m][n];
-
 			for (int i = 0; i < photo.length; i++) {
 				photos[i] = photo[i].toCharArray();
 			}
-
 			for (int i = 0; i < m; i++) {
 				for (int j = 0; j < n; j++) {
 					Point p = dfs(i, j, team);
@@ -206,7 +201,4 @@ public class IceHockey implements IPlayersFinder {
 		}
 		return new Point[0];
 	}
-
-	
-
 }
