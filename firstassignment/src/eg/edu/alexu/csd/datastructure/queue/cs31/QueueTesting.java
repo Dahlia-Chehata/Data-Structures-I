@@ -71,8 +71,9 @@ public void test3() {
 	public void test4() {
 		try {
 			list1.dequeue();
-		} catch (Exception RuntimeException) {}
+		} catch (Exception RuntimeException) {
 		System.out.println(" ");
+	}
 	}
 	// test size1
 	/**.
