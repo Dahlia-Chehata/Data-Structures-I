@@ -18,7 +18,7 @@ IExpressionEvaluator {
 	/**.
 	 * to convert from infix to postfix
 	 */
-public String infixToPostfix(String expression){ 
+public String infixToPostfix(String expression) { 
 		// TODO Auto-generated method stub
 		/**.
 		 * .
@@ -431,7 +431,7 @@ System.out.println("starting with operator");
 		flag = true;
 					}
 			}
-		if (flag && !f1){
+		if (flag && !f1) {
 System.out.println(app.evaluate(conv));
 		}
 				break;
