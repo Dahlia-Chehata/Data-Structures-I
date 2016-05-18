@@ -50,7 +50,7 @@ public class QueueTesting {
 	list1.dequeue();
 	try {
 		list1.dequeue();
-	} catch (Exception RuntimeException) {
+	} catch (Exception e) {
 		System.out.println(" ");
 	}
 }
@@ -71,7 +71,7 @@ public void test3() {
 	public void test4() {
 		try {
 			list1.dequeue();
-		} catch (Exception RuntimeException) {
+		} catch (Exception e) {
 		System.out.println(" ");
 	}
 	}
@@ -131,7 +131,7 @@ public void test3() {
 			Assert.assertEquals(num10, list1.dequeue());
 			try {
 				list1.dequeue();
-			} catch (Exception RuntimeException) {
+			} catch (Exception e) {
 				System.out.println(" ");
 			}
 }

@@ -27,7 +27,7 @@ public class Stack implements IStack {
 	 * popping
 	 */
 	@Override
-	public Object pop() throws RuntimeException {
+	public Object pop() {
 		// TODO Auto-generated method stub
 		/**..
 		 * .
