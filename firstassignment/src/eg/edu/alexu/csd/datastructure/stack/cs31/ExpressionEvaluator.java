@@ -18,8 +18,7 @@ IExpressionEvaluator {
 	/**.
 	 * to convert from infix to postfix
 	 */
-	public String infixToPostfix(String expression) 
-			throws RuntimeException {
+public String infixToPostfix(String expression){ 
 		// TODO Auto-generated method stub
 		/**.
 		 * .

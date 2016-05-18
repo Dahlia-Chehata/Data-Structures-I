@@ -10,7 +10,7 @@ public class Queue implements IQueue,ILinkedBased {
  /**..
   * .
   */
-	ILinkedList mylist=new doubly_linkedlists();
+ILinkedList mylist =new doubly_linkedlists();
 	/**..
 	 * .
 	 */
