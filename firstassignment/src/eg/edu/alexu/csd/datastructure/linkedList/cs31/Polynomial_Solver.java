@@ -708,7 +708,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		/**.
 		 * '
 		 */
-		final int bignum=10000000;
+		final int bignum = 10000000;
 		/**.
 		 * ;
 		 */

@@ -10,7 +10,7 @@ class myCOMP implements Comparator<Point> {
 	/**.
 	 * .
 	 */
-int flagg= -1;
+int flagg = -1;
 /**.
  * .
  */
@@ -40,19 +40,19 @@ public class IceHockey implements IPlayersFinder {
 			/**.
 			 * .
 			 */
-		 final int num=500	;
+		 final int num = 500	;
 		 /**.
 		  * ;
 		  */
-		 final int flagg= -1;
+		 final int flagg = -1;
 		 /**.
 		  * .
 		  */
-		 final int num100=100;
+		 final int num100 = 100;
 		 /**.
 		  * ;
 		  */
-		 final int num4=4	;
+		 final int num4 = 4	;
 		 /**.
 		  * ;
 		  */

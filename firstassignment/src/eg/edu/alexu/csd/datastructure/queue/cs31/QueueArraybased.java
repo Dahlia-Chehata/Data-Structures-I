@@ -46,7 +46,7 @@ public class QueueArraybased implements IQueue,IArrayBased {
 			throw new RuntimeException();
 		arr[r] = item;
 		if (r == n - 1)
-			r=0;
+			r = 0;
 		else
 			r++;
 		size++;
