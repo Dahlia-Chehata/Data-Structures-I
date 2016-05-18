@@ -124,7 +124,7 @@ public class IceHockey implements IPlayersFinder {
 	 * ;
 	 * @param xx index
 	 * @param yy index
-	 * @param vv team
+	 * @param team team
 	 * @return boolean
 	 */
 

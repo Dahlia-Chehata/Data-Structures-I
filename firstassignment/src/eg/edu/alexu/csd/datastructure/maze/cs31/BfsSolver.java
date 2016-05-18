@@ -88,7 +88,7 @@ for (i = 1; !arr[result[i - 1].x]
 	 * @throws RuntimeException in case no sol
 	 */
 public int[][]bfs(final char[][]input, 
-		final int n,int m) {
+		final int n, final int m) {
 		/**.
 		 * ;
 		 */
