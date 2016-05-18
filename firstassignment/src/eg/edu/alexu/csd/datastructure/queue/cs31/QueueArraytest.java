@@ -8,48 +8,43 @@ public class QueueArraytest {
 /**..
  *. 
  */
-	QueueArraybased list2;
+QueueArraybased list2;
 	/**..
 	 * .
 	 */
-	private final int num5=5;
+private final int num5=5;
 	/**..
 	 * .
 	 */
-	private final int num3=3;
+private final int num3=3;
 	/**.
 	 * .
 	 */
-	private final int num8=8;
+private final int num8=8;
 	/**.
 	 * .
 	 */
-	private final int num12=12;
+private final int num12=12;
 	/**.
 	 * .
 	 */
-	private final int num10=10;
-
+private final int num10=10;
 	// enqueue item at index > size
 	/**.
 	 * ;
 	 */
 	@Test
-	public void test1() {
+public void test1() {
 		list2 = new QueueArraybased(num3);
 		list2.enqueue(num5);
 		list2.enqueue(num3);
 		list2.enqueue(num5);
-
 		try {
 			list2.enqueue(num8);
-
 		} catch (Exception RuntimeException) {
-			//
+			System.out.println(" ");
 		}
-
 	}
-
 	// enqueue ,dequeue
 	/**.
 	 * ;
@@ -87,25 +82,23 @@ public class QueueArraytest {
  */
 	@Test
 	// dequeue from empty
-	public void test4() {
+public void test4() {
 		list2 = new QueueArraybased(num3);
 		try {
 			list2.dequeue();
-
 		} catch (Exception RuntimeException) {
+			System.out.println(" ");
 		}
 	}
-
 	// test size1
 	/**.
 	 * ;
 	 */
 	@Test
-	public void test5() {
+public void test5() {
 		list2 = new QueueArraybased(num3);
 		Assert.assertEquals(0, list2.size());
 	}
-
 	// test size2
 	/**.
 	 * ;
@@ -158,13 +151,13 @@ public class QueueArraytest {
 		Assert.assertEquals(num10, list2.dequeue());
 		try {
 			list2.enqueue(num8);
-
 		} catch (Exception RuntimeException) {
+			System.out.println(" ");
 		}
 		try {
 			list2.dequeue();
-
 		} catch (Exception RuntimeException) {
+			System.out.println(" ");
 		}
 	}
 }
