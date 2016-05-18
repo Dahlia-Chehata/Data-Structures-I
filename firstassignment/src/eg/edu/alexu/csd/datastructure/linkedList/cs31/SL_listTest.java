@@ -401,6 +401,7 @@ public class SL_listTest {
 			SL.set(num4, num5);
 			Assert.fail("index is out of bounds");
 		} catch (Exception RuntimeException) {
+			System.out.println(" ");
 		}
 		D.add(0, 1);
 		D.add(1, 2);
@@ -432,6 +433,7 @@ public class SL_listTest {
 			SL.set(num, num5);
 			Assert.fail("cannot set at a -ve index");
 		} catch (Exception RuntimeException) {
+			System.out.println(" ");
 		}
 		D.add(0, 1);
 		D.add(1, 2);
