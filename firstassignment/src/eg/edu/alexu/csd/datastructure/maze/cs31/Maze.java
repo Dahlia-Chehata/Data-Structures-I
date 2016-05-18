@@ -9,7 +9,7 @@ public class Maze implements IMazeSolver  {
 	 * ;
 	 */
 	@Override
-	public int[][] solveBFS(File maze) {
+	public int[][] solveBFS(final File maze) {
 		// TODO Auto-generated method stub
 		/**.
 		 * ;
@@ -38,7 +38,7 @@ public class Maze implements IMazeSolver  {
  * ;
  */
 	@Override
-	public int[][] solveDFS(File maze) {
+	public int[][] solveDFS(final File maze) {
 		// TODO Auto-generated method stub
 		/**.
 		 * .

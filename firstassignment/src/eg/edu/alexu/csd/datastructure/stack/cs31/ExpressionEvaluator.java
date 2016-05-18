@@ -18,7 +18,7 @@ IExpressionEvaluator {
 	/**.
 	 * to convert from infix to postfix
 	 */
-public String infixToPostfix(String expression) { 
+public String infixToPostfix(final String expression) { 
 		// TODO Auto-generated method stub
 		/**.
 		 * .
@@ -190,7 +190,7 @@ throw new RuntimeException("'(' without a ')'");
 	/**.
 	 * evaluate postfix expression
 	 */
-	public int evaluate(String expression) {
+	public int evaluate(final String expression) {
 		// TODO Auto-generated method stub
 /**.
  * .

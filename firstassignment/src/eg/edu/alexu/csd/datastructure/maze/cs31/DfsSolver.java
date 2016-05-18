@@ -34,7 +34,7 @@ public class DfsSolver {
 	 * @param e target
 	 * @return ans
 	 */
-	public int[][] finalPath(Point[][] arr, Point e) {
+	public int[][] finalPath(final Point[][] arr,final Point e) {
 		/**.
 		 * ;
 		 */
@@ -90,7 +90,8 @@ public class DfsSolver {
 	 * @return sol
 	 * @throws RuntimeException iin case no sol
 	 */
-public int[][]dfs(char[][]input,int n,int m) {
+public int[][]dfs(final char[][]input,
+		final int n,final int m) {
 	/**.
 	 * ;
 	 */

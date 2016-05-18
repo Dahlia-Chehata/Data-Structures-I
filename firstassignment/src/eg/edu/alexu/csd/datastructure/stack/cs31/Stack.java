@@ -19,7 +19,7 @@ public class Stack implements IStack {
 	 * add in stack
 	 */
 	@Override
-	public void add(int index, Object element) {
+	public void add(final int index,final Object element) {
 		// TODO Auto-generated method stub
 		mylist.add(mylist.size() - index, element);
 	}
@@ -48,7 +48,7 @@ public class Stack implements IStack {
 	 * pushing
 	 */
 	@Override
-	public void push(Object element) {
+	public void push(final Object element) {
 		// TODO Auto-generated method stub
 		mylist.add(0, element);
 	}

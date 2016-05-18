@@ -34,7 +34,7 @@ public class readfile {
 	 * @param maze filename
 	 * @return arr2
 	 */
-public char[][] readFile(File maze) {
+public char[][] readFile(final File maze) {
 		if (maze.length() == 0) {
 		    throw new RuntimeException();
 		} 

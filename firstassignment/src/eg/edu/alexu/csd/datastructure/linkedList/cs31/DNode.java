@@ -31,7 +31,7 @@ public class DNode {
  * @param o object
  * @param n node
  */
-	public DNode(DNode p, Object o, DNode n) {
+	public DNode(final DNode p, final Object o, final DNode n) {
 		prev = p;
 		value = o;
 		next = n;

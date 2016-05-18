@@ -32,7 +32,7 @@ public class BfsSolver {
 	 * @param e indices of target
 	 * @return ans
 	 */
-	public int[][] finalPath(Point[][] arr, Point e) {
+	public int[][] finalPath(final Point[][] arr,final Point e) {
 		/**.
 		 * ;
 		 */
@@ -87,7 +87,8 @@ for (i = 1; !arr[result[i - 1].x]
 	 * @return sol
 	 * @throws RuntimeException in case no sol
 	 */
-	public int[][]bfs(char[][]input,int n,int m) {
+public int[][]bfs(final char[][]input, 
+		final int n,int m) {
 		/**.
 		 * ;
 		 */

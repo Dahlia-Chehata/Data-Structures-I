@@ -27,7 +27,7 @@ public class doubly_linkedlists implements ILinkedList {
  * .
  */
 	@Override
-	public void add(int index, Object element) {
+	public void add(final int index, final Object element) {
 		// TODO Auto-generated method stub
 		/**.
 		 * ;
@@ -75,7 +75,7 @@ public class doubly_linkedlists implements ILinkedList {
  * ;
  */
 	@Override
-	public void add(Object element) {
+	public void add(final Object element) {
 		// TODO Auto-generated method stub
 		/**.
 		 * .
@@ -101,7 +101,7 @@ public class doubly_linkedlists implements ILinkedList {
  * ;
  */
 	@Override
-	public Object get(int index) {
+	public Object get(final int index) {
 		// TODO Auto-generated method stub
 		/**.
 		 * ;
@@ -120,7 +120,7 @@ public class doubly_linkedlists implements ILinkedList {
  * ;
  */
 	@Override
-	public void set(int index, Object element) {
+	public void set(final int index, final Object element) {
 		// TODO Auto-generated method stub
 		/**.
 		 * ;
@@ -161,7 +161,7 @@ public class doubly_linkedlists implements ILinkedList {
  * ;
  */
 	@Override
-	public void remove(int index) {
+	public void remove(final int index) {
 		// TODO Auto-generated method stub
 		if (isEmpty()) {
 			throw new RuntimeException();
@@ -231,7 +231,8 @@ public class doubly_linkedlists implements ILinkedList {
  * ;
  */
 	@Override
-public ILinkedList sublist(int fromIndex, int toIndex) {
+public ILinkedList sublist(final int fromIndex,
+		final int toIndex) {
 		// TODO Auto-generated method stub
 		/**.
 		 * ;
@@ -259,7 +260,7 @@ public ILinkedList sublist(int fromIndex, int toIndex) {
  * ;
  */
 	@Override
-	public boolean contains(Object o) {
+	public boolean contains(final Object o) {
 		// TODO Auto-generated method stub
 		/**.
 		 * ;

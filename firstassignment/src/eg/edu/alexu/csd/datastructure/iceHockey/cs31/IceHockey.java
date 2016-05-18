@@ -85,7 +85,7 @@ public class IceHockey implements IPlayersFinder {
  * @param v team
  * @return center
  */
-	public Point dfs(int i, int j, int v) {
+	public Point dfs(final int i, final int j, final int v) {
 		if (canmove(i, j, team)) {
 			visited[i][j] = true;
 			counter++;
@@ -128,7 +128,8 @@ public class IceHockey implements IPlayersFinder {
 	 * @return boolean
 	 */
 
-	public boolean canmove(int xx, int yy, int vv) {
+	public boolean canmove(final int xx,
+			final int yy, int vv) {
 		/**.
 		 * ;
 		 */
@@ -147,14 +148,15 @@ public class IceHockey implements IPlayersFinder {
  * @param j index
  * @return visited[i][j]
  */
-	private boolean isVisited(int i, int j) {
+	private boolean isVisited(final int i, final int j) {
 		return visited[i][j];
 	}
 /**.
  * ;
  */
 	@Override
-	public Point[] findPlayers(String[]photo,int team,int threshold) {
+	public Point[] findPlayers(final String[]photo,
+			final int team,final int threshold) {
 		// TODO Auto-generated method stub
 		this.team = team;
 		area = threshold;

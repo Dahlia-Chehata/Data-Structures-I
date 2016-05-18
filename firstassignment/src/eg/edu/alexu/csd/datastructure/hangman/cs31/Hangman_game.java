@@ -29,7 +29,7 @@ public class Hangman_game implements IHangman {
  * ;
  */
 	@Override
-	public void setDictionary(String[] words) {
+	public void setDictionary(final String[] words) {
 		temp = new String[words.length];
 		for (int j = 0; j < words.length; j++) {
 			temp[j] = words[j];
@@ -63,7 +63,7 @@ public class Hangman_game implements IHangman {
  * ;
  */
 	@Override
-	public String guess(Character c) {
+	public String guess(final Character c) {
 		if (c == null) {
 			return new String(show);
 		}
@@ -119,7 +119,7 @@ public class Hangman_game implements IHangman {
  * ;
  */
 	@Override
-	public void setMaxWrongGuesses(Integer max) {
+	public void setMaxWrongGuesses(final Integer max) {
 		// TODO Auto-generated method stub
 		if (max > 0) {
 			counter = max;

@@ -31,7 +31,7 @@ public class QueueArraybased implements IQueue,IArrayBased {
 	 * n size
 	 * @param n size of array
 	 */
-	public QueueArraybased(int n) {
+	public QueueArraybased(final int n) {
 		this.n = n;
 		arr = new Object[n];
 		
@@ -40,7 +40,7 @@ public class QueueArraybased implements IQueue,IArrayBased {
  * ;
  */
 	@Override
-	public void enqueue(Object item) {
+	public void enqueue(final Object item) {
 		// TODO Auto-generated method stub
 		if (size >= n)
 			throw new RuntimeException();
