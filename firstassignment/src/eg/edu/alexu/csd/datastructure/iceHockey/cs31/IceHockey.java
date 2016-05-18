@@ -15,7 +15,7 @@ int flagg = -1;
  * .
  */
 	@Override
-	public int compare(Point o1, Point o2) {
+	public int compare(final Point o1,final Point o2) {
 		// TODO Auto-generated method stub
 		 if (o2.x > o1.x) {
 			return flagg;    
