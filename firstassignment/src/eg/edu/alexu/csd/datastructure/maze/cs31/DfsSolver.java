@@ -71,7 +71,7 @@ public class DfsSolver {
 			System.out.print(finalResult[i]);	
 		}*/
 		//ans=new int[finalResult.length][2];
-		for(int k=0;k<finalResult.length;k++){
+		for(int k=0;k<finalResult.length;k++) {
 			ans[k][0]=finalResult[k].x;
 			ans[k][1]=finalResult[k].y;
 		}
@@ -90,8 +90,7 @@ public class DfsSolver {
 	 * @return sol
 	 * @throws RuntimeException iin case no sol
 	 */
-public int[][]dfs(char[][]input,int n,int m)
-throws RuntimeException{
+public int[][]dfs(char[][]input,int n,int m) {
 	/**.
 	 * ;
 	 */
@@ -108,7 +107,7 @@ throws RuntimeException{
 	    for (int j = 0; j < m; j++) {
 	    	if (flag && input[i][j]=='S')
 	    		throw new RuntimeException();
-	        if (input[i][j]=='S'){
+	        if (input[i][j]=='S') {
 	        	source=new Point(i,j);
 	        flag=true; 
 	    }
@@ -124,7 +123,7 @@ throws RuntimeException{
 	    for (int j = 0; j < m; j++) {
 	    	if (stop && input[i][j]=='E')
 	    		throw new RuntimeException();
-	        if (input[i][j]=='E'){
+	        if (input[i][j]=='E') {
 	        stop=true;
 	    }
 	   }

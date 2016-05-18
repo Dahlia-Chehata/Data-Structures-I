@@ -40,7 +40,7 @@ public String infixToPostfix(String expression) {
 		if (expression.charAt(0) == '/'
 				|| expression.charAt(0) == '*' 
 				|| expression.charAt(0) == '+'
-				|| expression.charAt(0) == '-'){
+				|| expression.charAt(0) == '-') {
 			throw new RuntimeException(""
 					+ "starting with operator");
 		}
@@ -50,7 +50,7 @@ public String infixToPostfix(String expression) {
 	if (expression.charAt(expression.length() - 1) == '/' 
 	|| expression.charAt(expression.length() - 1) == '*'
 	|| expression.charAt(expression.length() - 1) == '+'
-	|| expression.charAt(expression.length() - 1) == '-'){
+	|| expression.charAt(expression.length() - 1) == '-') {
 			throw new RuntimeException(""
 					+ "ending  with operator");
 	}
@@ -59,7 +59,7 @@ public String infixToPostfix(String expression) {
 		 */
 		boolean test = true;
 for (int i = 0; i < expression.length(); i++) {
-			if (expression.charAt(i) == ' '){
+			if (expression.charAt(i) == ' ') {
 				continue;
 			}
 else if (expression.charAt(i) == '/'
@@ -85,7 +85,7 @@ for (int i = 0; i < expression.length() - 1
 			if (expression.charAt(i) != '*' 
 					&& expression.charAt(i) != '+' 
 					&& expression.charAt(i) != '-'
-					&& expression.charAt(i) != '/'){
+					&& expression.charAt(i) != '/') {
 				flag = true;
 			}
 		}
@@ -175,7 +175,7 @@ for (int i = 0; i < expression.length() - 1
 			}
 		}
 		while (!stack.isEmpty()) {
-			if ((char) stack.peek() == '('){
+			if ((char) stack.peek() == '(') {
 throw new RuntimeException("'(' without a ')'");
 			}
 			str.append(stack.pop());
@@ -225,7 +225,7 @@ throw new RuntimeException("'(' without a ')'");
 			/**.
 			 * space
 			 */
-			if (expression.charAt(i) == ' '){
+			if (expression.charAt(i) == ' ') {
 				continue;
 			}
 			/**.
@@ -411,7 +411,7 @@ System.out.println("starting with operator");
 						f1 = true;
 					}
 				}
-				if (f1){
+				if (f1) {
 					break;
 				}
 				/**.

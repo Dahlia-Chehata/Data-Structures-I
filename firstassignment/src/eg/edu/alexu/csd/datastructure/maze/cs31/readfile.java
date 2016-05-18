@@ -42,11 +42,11 @@ public char[][] readFile(File maze){
 			/**.
 			 * ;
 			 */
-		FileReader fr=new FileReader(maze);
+		FileReader fr = new FileReader(maze);
 		/**.
 		 * ;
 		 */
-		BufferedReader textReader=new BufferedReader(fr);
+		BufferedReader textReader = new BufferedReader(fr);
 		/**.
 		 * ;
 		 */
@@ -58,24 +58,24 @@ public char[][] readFile(File maze){
 	    /**.
 	     * .
 	     */
-	    String dimensions=line;
+	    String dimensions = line;
 	    /**.
 	     * .
 	     */
-	    dim=dimensions.toCharArray();
+	    dim = dimensions.toCharArray();
 	    /**.
 	     * ;
 	     */
 	    String[] splited = dimensions.split("\\s+");
 	    //n=Character.getNumericValue(dim[0]);
 	    // m=Character.getNumericValue(dim[1]);
-	    n=Integer.parseInt(splited[0]);
-	    m=Integer.parseInt(splited[1]);
+	    n = Integer.parseInt(splited[0]);
+	    m = Integer.parseInt(splited[1]);
 	   //  if (0>= n||n>9||0>= m||m>9)
 	    	// throw new RuntimeException();
 	   // arr1=new String[m];
-	    arr2=new char[n][m];
-	    while (line!= null) {
+	    arr2 = new char[n][m];
+	    while (line != null) {
 	    	line = textReader.readLine();
 	    	sb.append(line);
 	    	//sb.append(" ");
@@ -86,8 +86,8 @@ public char[][] readFile(File maze){
 		}catch(IOException e){
 	System.out.println("not found");
 };
-		arr1=str.split("\n");
-		 for (int i=0; i<n; i++) {
+		arr1 = str.split("\n");
+		 for (int i = 0; i < n; i++) {
 		    arr2[i] = arr1[i].toCharArray();
 		    }
 		/* for (int i=0;i<n;i++){

@@ -14,20 +14,20 @@ public class Maze implements IMazeSolver  {
 		/**.
 		 * ;
 		 */
-		readfile appl= new readfile();
+		readfile appl = new readfile();
 		/**.
 		 * ;
 		 */
-		char[][]input= appl.readFile(maze);
+		char[][]input = appl.readFile(maze);
 		/**.
 		 * ;
 		 */
-		BfsSolver app=new BfsSolver();
+		BfsSolver app = new BfsSolver();
 		/**.
 		*;
 		 */
-	int[][] arr=app.bfs(input,readfile.n,readfile.m);
-		if (arr==null||arr.length==0)
+	int[][] arr = app.bfs(input,readfile.n,readfile.m);
+		if (arr == null || arr.length == 0)
 				return null;
 			//throw new RuntimeException();
 		return arr;
@@ -42,20 +42,20 @@ public class Maze implements IMazeSolver  {
 		/**.
 		 * .
 		 */
-		readfile appl= new readfile();
+		readfile appl = new readfile();
 		/**.
 		 * .
 		 */
-		char[][]input= appl.readFile(maze);
+		char[][]input = appl.readFile(maze);
 		/**.
 		 * .
 		 */
-		DfsSolver app=new DfsSolver();
+		DfsSolver app = new DfsSolver();
 		/**. 
 		 * .
 		 */
-		int[][] arr=app.dfs(input,readfile.n,readfile.m);
-		if (arr==null||arr.length==0)
+		int[][] arr = app.dfs(input,readfile.n,readfile.m);
+		if (arr == null || arr.length == 0)
 				return null;
 		return arr;
 	}
@@ -78,15 +78,15 @@ public class Maze implements IMazeSolver  {
 	 * .
 	 */
 	int[][]arr;
-	arr=app.solveDFS(s);
+	arr = app.solveDFS(s);
 	/**.
 	 * .
 	 */
 	int[][]arr2;
-	arr2=app.solveBFS(s);
+	arr2 = app.solveBFS(s);
 	System.out.println("DFS:");	
-	for(int i=0;i<arr.length;i++){
-		for(int j=0;j<arr[0].length;j++){
+	for(int i = 0 ; i<arr.length ; i++){
+		for(int j = 0; j <arr[0].length;j++){
 			System.out.print(arr[i][j]);
 			System.out.print(",");
 		}
@@ -94,8 +94,8 @@ public class Maze implements IMazeSolver  {
 	}
 	System.out.println();
 	System.out.println("BFS:");	
-for(int i=0;i<arr2.length;i++){
-	for(int j=0;j<arr2[0].length;j++){
+for(int i = 0; i < arr2.length ; i++){
+	for(int j = 0; j < arr2[0].length ; j++){
 		System.out.print(arr2[i][j]);
 		System.out.print(",");
 	}

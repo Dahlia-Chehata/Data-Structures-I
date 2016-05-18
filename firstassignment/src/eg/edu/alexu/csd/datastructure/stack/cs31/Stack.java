@@ -48,7 +48,7 @@ public class Stack implements IStack {
 	 * pushing
 	 */
 	@Override
-	public void push(Object element){
+	public void push(Object element) {
 		// TODO Auto-generated method stub
 		mylist.add(0, element);
 	}

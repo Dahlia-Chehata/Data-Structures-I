@@ -68,7 +68,7 @@ for (i = 1; !arr[result[i - 1].x]
 			System.out.print(finalResult[i]);	
 		}*/
 		//ans=new int[finalResult.length][2];
-		for(int k=0;k<finalResult.length;k++){
+		for(int k=0;k<finalResult.length;k++) {
 			ans[k][0]=finalResult[k].x;
 			ans[k][1]=finalResult[k].y;
 		}
@@ -105,7 +105,7 @@ for (i = 1; !arr[result[i - 1].x]
 		    for (int j = 0; j < m; j++) {
 		    	if (flag && input[i][j]=='S')
 		    		throw new RuntimeException();
-		        if (input[i][j]=='S'){
+		        if (input[i][j]=='S') {
 		        	source=new Point(i,j);
 		        flag=true;
 		    }
@@ -121,7 +121,7 @@ boolean stop=false;
 		 for (int j = 0; j < m; j++) {
 		  if (stop && input[i][j]=='E')
 		  throw new RuntimeException();
-		    if (input[i][j]=='E'){
+		    if (input[i][j]=='E') {
 		        stop=true;
 		    }
 		   }
@@ -129,14 +129,14 @@ boolean stop=false;
 		if (!stop)
 			throw new RuntimeException();
 		q.enqueue(source);
-		while(!q.isEmpty()){
+		while(!q.isEmpty()) {
 			Point top = (Point)q.dequeue();
-			if (input[top.x][top.y] == 'E'){
+			if (input[top.x][top.y] == 'E') {
 				sol = finalPath(parent, top);
 				return sol;
 			}
 			else if ((input[top.x][top.y] == '#')
-			|| (visit[top.x][top.y])){
+			|| (visit[top.x][top.y])) {
 				continue;
 			}
 			else {
@@ -153,12 +153,12 @@ parent[top.x][top.y + 1] = new Point(top.x, top.y);
 	q.enqueue(h);
 parent[top.x + 1][top.y] = new Point(top.x, top.y);
 				}
-	if ((top.y - 1 >= 0) && (!visit[top.x][top.y - 1])){
+	if ((top.y - 1 >= 0) && (!visit[top.x][top.y - 1])) {
 		Point h = new Point(top.x, top.y - 1);
 		q.enqueue(h);
 parent[top.x][top.y - 1] = new Point(top.x, top.y);
 				}
-	if ((top.x - 1 >= 0) && (!visit[top.x - 1][top.y])){
+	if ((top.x - 1 >= 0) && (!visit[top.x - 1][top.y])) {
 	Point h = new Point(top.x - 1, top.y);
 					q.enqueue(h);
 parent[top.x - 1][top.y] = new Point(top.x, top.y);
