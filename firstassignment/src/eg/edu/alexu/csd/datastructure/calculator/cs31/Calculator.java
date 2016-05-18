@@ -16,7 +16,7 @@ public class Calculator implements ICalculator {
  * '
  */
 	@Override
-	public float divide(int x, int y) {
+	public float divide(final int x, final int y) {
 		// TODO Auto-generated method stub
 		if (y == 0) {
 			System.out.println("error");
@@ -24,9 +24,9 @@ public class Calculator implements ICalculator {
 		} else if (y == x) {
 			return 1;
 		} else if (x < 0 && y < 0) {
-			x = -x;
-			y = -y;
-			return (float) x / y;
+			int i = -x;
+			int j = -y;
+			return (float) i / j;
 		} else if (x == 0) {
 			return 0;
 		} else {
