@@ -25,7 +25,7 @@ public class Singly_linkedlists implements ILinkedList {
  * '
  */
 	@Override
-	public void add(int index, Object element) throws RuntimeException {
+	public void add(int index, Object element) {
 		// TODO Auto-generated method stub
 		/**.
 		 * '
@@ -91,7 +91,7 @@ public class Singly_linkedlists implements ILinkedList {
  * ;
  */
 	@Override
-	public Object get(int index) throws RuntimeException {
+	public Object get(int index) {
 		// TODO Auto-generated method stub
 		/**.
 		 * ;
@@ -110,7 +110,7 @@ public class Singly_linkedlists implements ILinkedList {
  * ;
  */
 	@Override
-	public void set(int index, Object element) throws RuntimeException {
+	public void set(int index, Object element) {
 		// TODO Auto-generated method stub
 		/**.
 		 * ;
@@ -149,7 +149,7 @@ public class Singly_linkedlists implements ILinkedList {
  * '
  */
 	@Override
-	public void remove(int index) throws RuntimeException {
+	public void remove(int index) {
 		// TODO Auto-generated method stub
 		/**.
 		 * ;
@@ -192,8 +192,7 @@ public class Singly_linkedlists implements ILinkedList {
  * ;
  */
 	@Override
-	public ILinkedList sublist(int fromIndex, int toIndex)
-			throws RuntimeException {
+	public ILinkedList sublist(int fromIndex, int toIndex) {
 		// TODO Auto-generated method stub
 		/**.
 		 * ;

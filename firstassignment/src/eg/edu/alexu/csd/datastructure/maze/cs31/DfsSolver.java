@@ -128,7 +128,7 @@ public int[][]dfs(char[][]input,int n,int m) {
 	    }
 	   }
 	}
-	if (!stop){
+	if (!stop) {
 		throw new RuntimeException();
 	}
 	stack.push(source);

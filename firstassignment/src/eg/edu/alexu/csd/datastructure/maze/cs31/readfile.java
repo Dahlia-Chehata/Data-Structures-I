@@ -34,7 +34,7 @@ public class readfile {
 	 * @param maze filename
 	 * @return arr2
 	 */
-public char[][] readFile(File maze){
+public char[][] readFile(File maze) {
 		if (maze.length() == 0) {
 		    throw new RuntimeException();
 		} 
@@ -83,7 +83,7 @@ public char[][] readFile(File maze){
 	    }
 	    str = sb.toString();
 	    textReader.close( );
-		}catch(IOException e){
+		} catch(IOException e) {
 	System.out.println("not found");
 };
 		arr1 = str.split("\n");

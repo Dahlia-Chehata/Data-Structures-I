@@ -6,7 +6,7 @@ import java.awt.Point;
 /**.
  * @author Dell
  */
-class myCOMP implements Comparator<Point> {
+class mycomp implements Comparator<Point> {
 	/**.
 	 * .
 	 */
@@ -188,7 +188,7 @@ public class IceHockey implements IPlayersFinder {
 					maxCol = flagg;
 				}
 			}
-			myCOMP c = new myCOMP();
+			mycomp c = new mycomp();
 			if (index > 0) {
 				coor = Arrays.copyOfRange(coor, 0, index);
 				Arrays.sort(coor, 0, index, c);

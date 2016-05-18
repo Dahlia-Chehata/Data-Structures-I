@@ -87,8 +87,7 @@ for (i = 1; !arr[result[i - 1].x]
 	 * @return sol
 	 * @throws RuntimeException in case no sol
 	 */
-	public int[][]bfs(char[][]input,int n,int m)
-			throws RuntimeException{
+	public int[][]bfs(char[][]input,int n,int m) {
 		/**.
 		 * ;
 		 */
@@ -111,8 +110,9 @@ for (i = 1; !arr[result[i - 1].x]
 		    }
 		   }
 		}
-		if (!flag)
+		if (!flag) {
 			throw new RuntimeException();
+		}
 		/**.
 		 * ;
 		 */
@@ -126,8 +126,9 @@ boolean stop=false;
 		    }
 		   }
 		}
-		if (!stop)
+		if (!stop) {
 			throw new RuntimeException();
+		}
 		q.enqueue(source);
 		while(!q.isEmpty()) {
 			Point top = (Point)q.dequeue();

@@ -66,11 +66,11 @@ else if (expression.charAt(i) == '/'
 					|| expression.charAt(i) == '*' 
 					|| expression.charAt(i) == '+'
 					|| expression.charAt(i) == '-') {
-	if (test){
+	if (test) {
 	throw new RuntimeException(""
 		+ "having unary operator");
 	}
-				else{
+				else {
 					test = true;
 				}
 			} else
@@ -109,7 +109,7 @@ for (int i = 0; i < expression.length() - 1
 			}
 		}
 		for (int i = 0; i < expression.length(); i++) {
-			if (expression.charAt(i) == ' '){
+			if (expression.charAt(i) == ' ') {
 				continue;
 			}
 		if (expression.charAt(i) == '(') {
@@ -121,7 +121,7 @@ for (int i = 0; i < expression.length() - 1
 		str.append(" ");
 			}
 		if (stack.isEmpty() || (!stack.isEmpty() 
-		&& (char) stack.peek() != '(')){
+		&& (char) stack.peek() != '(')) {
 		throw new RuntimeException("there is no (");
 		}
 		stack.pop();
@@ -246,13 +246,13 @@ throw new RuntimeException("'(' without a ')'");
 				 * signs
 				 */
 			} else if (expression.charAt(i) == '*') {
-				if (stack.isEmpty()){
+				if (stack.isEmpty()) {
 					throw new RuntimeException();
 				}
 				else{
 					operand2 = (double) stack.pop();
 				}
-				if (stack.isEmpty()){
+				if (stack.isEmpty()) {
 					throw new RuntimeException();
 				}
 				else{
@@ -260,13 +260,13 @@ throw new RuntimeException("'(' without a ')'");
 				}
 				stack.push((double) operand1 * operand2);
 			} else if (expression.charAt(i) == '+') {
-				if (stack.isEmpty()){
+				if (stack.isEmpty()) {
 					throw new RuntimeException();
 				}
 				else{
 					operand2 = (double) stack.pop();
 				}
-				if (stack.isEmpty()){
+				if (stack.isEmpty()) {
 					throw new RuntimeException();
 				}
 				else{
@@ -274,13 +274,13 @@ throw new RuntimeException("'(' without a ')'");
 				}
 				stack.push((double) operand1 + operand2);
 			} else if (expression.charAt(i) == '-') {
-				if (stack.isEmpty()){
+				if (stack.isEmpty()) {
 					throw new RuntimeException();
 				}
 				else{
 					operand2 = (double) stack.pop();
 				}
-				if (stack.isEmpty()){
+				if (stack.isEmpty()) {
 					throw new RuntimeException();
 				}
 				else{
@@ -288,22 +288,22 @@ throw new RuntimeException("'(' without a ')'");
 				}
 				stack.push((double) operand1 - operand2);
 			} else if (expression.charAt(i) == '/') {
-				if (stack.isEmpty()){
+				if (stack.isEmpty()) {
 					throw new RuntimeException();
 				}
 				else{
 					operand2 = (double) stack.pop();
 				}
-				if (stack.isEmpty()){
+				if (stack.isEmpty()) {
 					throw new RuntimeException();
 				}
 				else{
 					operand1 = (double) stack.pop();
 				}
-				if (operand2 == 0){
+				if (operand2 == 0) {
 					throw new RuntimeException();
 				}
-				else if (operand1 == 0){
+				else if (operand1 == 0) {
 					stack.push(0);
 				}
 				else{
@@ -311,7 +311,7 @@ throw new RuntimeException("'(' without a ')'");
 				}
 			}
 		}
-		if (stack.isEmpty()){
+		if (stack.isEmpty()) {
 			throw new RuntimeException();
 		}
 		return (int) (double) stack.pop();
@@ -391,7 +391,7 @@ System.out.println("starting with operator");
 					System.out.println(""
 	+ "you should insert an expression");
 					break;
-				}else if (conv == "") {
+				} else if (conv == "") {
 	System.out.println("you should convert"
 	+ " infix expression to postfix:" + ""
 	+ " choose option 2");

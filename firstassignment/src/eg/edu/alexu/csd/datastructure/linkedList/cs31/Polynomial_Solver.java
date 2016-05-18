@@ -37,8 +37,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
  * ;
  */
 	@Override
-	public void setPolynomial(char poly, int[][] terms) 
-	  throws RuntimeException {
+	public void setPolynomial(char poly, int[][] terms) {
 		// TODO Auto-generated method stub
 		if (terms.length == 0) {
 			throw new RuntimeException();
@@ -228,7 +227,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	 * .
 	 */
 	@Override
-	public void clearPolynomial(char poly) throws RuntimeException {
+	public void clearPolynomial(char poly) {
 		// TODO Auto-generated method stub
 		switch (poly) {
 		case 'A':
@@ -263,8 +262,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	 * '
 	 */
 	@Override
-	public float evaluatePolynomial(char poly, float value) 
-			throws RuntimeException {
+	public float evaluatePolynomial(char poly, float value) {
 		// TODO Auto-generated method stub
 		/**.
 		 * ;
@@ -373,7 +371,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	 * '
 	 */
 	@Override
-	public int[][] add(char poly1, char poly2) throws RuntimeException {
+	public int[][] add(char poly1, char poly2) {
 		// TODO Auto-generated method stub
 		R.clear();
 		/**.
@@ -512,8 +510,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	 * ;
 	 */
 	@Override
-	public int[][] subtract(char poly1, char poly2) 
-			throws RuntimeException {
+	public int[][] subtract(char poly1, char poly2) {
 		// TODO Auto-generated method stub
 		R.clear();
 		/**.
@@ -649,8 +646,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	 * ;
 	 */
 	@Override
-	public int[][] multiply(char poly1, char poly2) 
-			throws RuntimeException {
+	public int[][] multiply(char poly1, char poly2) {
 		// TODO Auto-generated method stub
 		R.clear();
 		/**.
