@@ -41,7 +41,7 @@ public void test1() {
 		list2.enqueue(num5);
 		try {
 			list2.enqueue(num8);
-		} catch (Exception RuntimeException) {
+		} catch (Exception e) {
 			System.out.println(" ");
 		}
 	}
@@ -61,7 +61,7 @@ public void test1() {
 		try {
 			list2.dequeue();
 
-		} catch (Exception RuntimeException) {
+		} catch (Exception e) {
 			System.out.println(" ");
 		}
 	}
@@ -84,7 +84,7 @@ public void test4() {
 		list2 = new QueueArraybased(num3);
 		try {
 			list2.dequeue();
-		} catch (Exception RuntimeException) {
+		} catch (Exception e) {
 			System.out.println(" ");
 		}
 	}
@@ -149,12 +149,12 @@ public void test5() {
 		Assert.assertEquals(num10, list2.dequeue());
 		try {
 			list2.enqueue(num8);
-		} catch (Exception RuntimeException) {
+		} catch (Exception e) {
 			System.out.println(" ");
 		}
 		try {
 			list2.dequeue();
-		} catch (Exception RuntimeException) {
+		} catch (Exception e) {
 			System.out.println(" ");
 		}
 	}
