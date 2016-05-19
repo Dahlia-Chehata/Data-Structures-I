@@ -144,7 +144,8 @@ public class IceHockey implements IPlayersFinder {
 	 * @return boolean
 	 */
 
-	public boolean canmove(final int xx, final int yy, final int team) {
+	public boolean canmove(final int xx,
+			final int yy, final int team) {
 		/**
 		 * . ;
 		 */

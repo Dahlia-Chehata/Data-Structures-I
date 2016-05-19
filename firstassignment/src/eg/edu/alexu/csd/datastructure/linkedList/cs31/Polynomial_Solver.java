@@ -37,7 +37,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
  * ;
  */
 	@Override
-	public void setPolynomial(final char poly, final int[][] terms) {
+	public final void setPolynomial(final char poly, final int[][] terms) {
 		// TODO Auto-generated method stub
 		if (terms.length == 0) {
 			throw new RuntimeException();
@@ -61,7 +61,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					throw new RuntimeException();
 				}
 				A.add(array[i]);
-			};
+			}
 			break;
 		case 'B':
 			for (int i = 0; i < array.length; i++) {
@@ -70,7 +70,6 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				}
 				B.add(array[i]);
 			}
-			;
 			break;
 		case 'C':
 			for (int i = 0; i < array.length; i++) {
@@ -80,7 +79,6 @@ public class Polynomial_Solver implements IPolynomialSolver {
 
 				C.add(array[i]);
 			}
-			;
 			break;
 		default:
 			throw new RuntimeException();
@@ -90,7 +88,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	 * ;
 	 */
 	@Override
-	public String print(final char poly) {
+	public final String print(final char poly) {
 		// TODO Auto-generated method stub
 		/**.
 		 * ;
@@ -100,7 +98,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		case 'A':
 			if (A.isEmpty()) {
 				return null; 
-			}// throw exception
+			} // throw exception
 			for (int i = 0; i < A.size(); i++) {
 				/**.
 				 * \
@@ -109,19 +107,17 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				pt = (Point) A.get(i);
 				if (pt.x == 1) {
 					message += "+";
-				}else if (pt.x == -1) {
+				} else if (pt.x == -1) {
 					message += "";
-				}else {
+				} else {
 					message += pt.x;
 				}
 				if (pt.y != 0) {
 					if (pt.y == 1) {
 						message += "x";
-					}
-					else {
+					} else {
 						message += "x^" + pt.y;
-					}
-				} else {
+					} } else {
 					message += pt.x;
 				}
 			}
@@ -165,24 +161,20 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				pt = (Point) C.get(i);
 				if (pt.x == 1) {
 					message += "+";
-				}
-				else if (pt.x == -1) {
+				} else if (pt.x == -1) {
 					message += "";
-				}
-				else {
+				} else {
 					message += pt.x;
 				}
 				if (pt.y != 0) {
 					if (pt.y == 1) {
 						message += "x";
-					}
-					else {
+					} else {
 						message += "x^" + pt.y;
-					}
-				} else {
+					} } else {
 					message += pt.x;
 				}
-			}
+			}	
 			// System.out.println(message);
 			break;
 		case 'R':
@@ -195,23 +187,18 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				 */
 				Point pt = new Point();
 				pt = (Point) R.get(i);
-				if (pt.x == 1){
+				if (pt.x == 1) {
 					message += "+";
-				}
-				else if (pt.x == -1){
+				} else if (pt.x == -1) {
 					message += "";
-				}
-				else {
+				} else {
 					message += pt.x;
-				}
-				if (pt.y != 0) {
+				} if (pt.y != 0) {
 					if (pt.y == 1) {
 						message += "x";
-					}
-					else {
+					} else {
 						message += "x^" + pt.y;
-					}
-				} else {
+					} } else {
 					message += pt.x;
 				}
 			}
@@ -227,7 +214,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	 * .
 	 */
 	@Override
-	public void clearPolynomial(final char poly) {
+	public final void clearPolynomial(final char poly) {
 		// TODO Auto-generated method stub
 		switch (poly) {
 		case 'A':
@@ -262,7 +249,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	 * '
 	 */
 	@Override
-	public float evaluatePolynomial(final char poly,
+	public final float evaluatePolynomial(final char poly,
 			final float value) {
 		// TODO Auto-generated method stub
 		/**.
@@ -372,7 +359,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	 * '
 	 */
 	@Override
-	public int[][] add(final char poly1, final char poly2) {
+	public final int[][] add(final char poly1, final char poly2) {
 		// TODO Auto-generated method stub
 		R.clear();
 		/**.
@@ -511,7 +498,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	 * ;
 	 */
 	@Override
-	public int[][] subtract(final char poly1, final char poly2) {
+	public final int[][] subtract(final char poly1, final char poly2) {
 		// TODO Auto-generated method stub
 		R.clear();
 		/**.
@@ -647,7 +634,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	 * ;
 	 */
 	@Override
-	public int[][] multiply(final char poly1,
+	public final int[][] multiply(final char poly1,
 			final char poly2) {
 		// TODO Auto-generated method stub
 		R.clear();

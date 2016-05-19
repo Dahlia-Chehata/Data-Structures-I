@@ -68,7 +68,7 @@ for (i = 1; !arr[result[i - 1].x]
 			System.out.print(finalResult[i]);	
 		}*/
 		//ans=new int[finalResult.length][2];
-		for(int k = 0; k < finalResult.length; k++) {
+		for (int k = 0; k < finalResult.length; k++) {
 			ans[k][0] = finalResult[k].x;
 			ans[k][1] = finalResult[k].y;
 		}
@@ -103,10 +103,11 @@ public int[][]bfs(final char[][]input,
 		//filearray=input;
 		for (int i = 0; i < n; i++) {
 		    for (int j = 0; j < m; j++) {
-		    	if (flag && input[i][j] == 'S')
+		    	if (flag && input[i][j] == 'S') {
 		    		throw new RuntimeException();
+		    	}
 		        if (input[i][j] == 'S') {
-		        	source = new Point(i,j);
+		        	source = new Point(i, j);
 		        flag = true;
 		    }
 		   }
@@ -120,8 +121,9 @@ public int[][]bfs(final char[][]input,
 boolean stop = false;
 	for (int i = 0; i < n; i++) {
 		 for (int j = 0; j < m; j++) {
-		  if (stop && input[i][j] == 'E')
+		  if (stop && input[i][j] == 'E') {
 		  throw new RuntimeException();
+		  }
 		    if (input[i][j] == 'E') {
 		        stop = true;
 		    }
@@ -136,13 +138,13 @@ boolean stop = false;
 			if (input[top.x][top.y] == 'E') {
 				sol = finalPath(parent, top);
 				return sol;
-			}else if ((input[top.x][top.y] == '#')
+			} else if ((input[top.x][top.y] == '#')
 			|| (visit[top.x][top.y])) {
 				continue;
-			}else {
+			} else {
 				visit[top.x][top.y] = true;
 			if ((top.y + 1 < input[0].length)
-			&& (!visit[top.x][top.y + 1])){
+			&& (!visit[top.x][top.y + 1])) {
 			Point h = new Point(top.x, top.y + 1);
 				q.enqueue(h);
 parent[top.x][top.y + 1] = new Point(top.x, top.y);
