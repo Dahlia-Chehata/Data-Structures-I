@@ -228,7 +228,7 @@ throw new RuntimeException("'(' without a ')'");
 				} else {
 					operand1 = (double) stack.pop();
 				}
-				stack.push((double) operand1 * operand2);
+				stack.push(operand1 * operand2);
 			} else if (expression.charAt(i) == '+') {
 				if (stack.isEmpty()) {
 					throw new RuntimeException();
@@ -240,7 +240,7 @@ throw new RuntimeException("'(' without a ')'");
 				} else {
 					operand1 = (double) stack.pop();
 				}
-				stack.push((double) operand1 + operand2);
+				stack.push(operand1 + operand2);
 			} else if (expression.charAt(i) == '-') {
 				if (stack.isEmpty()) {
 					throw new RuntimeException();
@@ -252,24 +252,24 @@ throw new RuntimeException("'(' without a ')'");
 				} else {
 					operand1 = (double) stack.pop();
 				}
-				stack.push((double) operand1 - operand2);
+				stack.push(operand1 - operand2);
 			} else if (expression.charAt(i) == '/') {
 				if (stack.isEmpty()) {
 					throw new RuntimeException();
 				} else {
 					operand2 = (double) stack.pop();
-				} 
+				}
 				if (stack.isEmpty()) {
 					throw new RuntimeException();
 				} else {
 					operand1 = (double) stack.pop();
-				} 
+				}
 				if (operand2 == 0) {
 					throw new RuntimeException();
 				} else if (operand1 == 0) {
 					stack.push(0);
 				} else {
-	stack.push((double) operand1 / operand2);
+	stack.push(operand1 / operand2);
 				}
 			}
 		}
@@ -348,7 +348,7 @@ System.out.println("starting with operator");
 			/**.
 			 * evaluating
 			 */
-			case num3: 
+			case num3:
 			if (input == "") {
 					System.out.println(""
 	+ "you should insert an expression");
@@ -364,7 +364,7 @@ System.out.println("starting with operator");
 				 */
 				boolean f1 = false;
 				for (int i = 0; i < conv.length(); i++) {
-					if (('a' <= (conv.charAt(i)) 
+					if (('a' <= (conv.charAt(i))
 			&& 'z' >= (conv.charAt(i)))
 			|| ('A' <= (conv.charAt(i))
 			&& 'Z' >= (conv.charAt(i)))) {

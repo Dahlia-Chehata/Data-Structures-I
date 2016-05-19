@@ -237,7 +237,7 @@ public ILinkedList sublist(final int fromIndex,
 		 * ;
 		 */
 		DNode pointer = header.next;
-		if (fromIndex >= 0 && fromIndex < size 
+		if (fromIndex >= 0 && fromIndex < size
 				&& toIndex >= 0 && toIndex < size) {
 			for (int i = 0; i < fromIndex; i++) {
 				pointer = pointer.next;

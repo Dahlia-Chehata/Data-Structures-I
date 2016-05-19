@@ -44,9 +44,9 @@ public class BfsSolver {
 		result[i] = new Point(e);
 for (i = 1; !arr[result[i - 1].x]
 		[result[i - 1].y].equals(source); i++) {
-			result[i] = 
+			result[i] =
 	new Point(arr[result[i - 1].x][result[i - 1].y]);
-		//	filearray[result[i].x][result[i].y] = '*'; 
+		//	filearray[result[i].x][result[i].y] = '*';
 		}
 		result[i] = new Point(source);
 		i++;
@@ -63,7 +63,7 @@ for (i = 1; !arr[result[i - 1].x]
 			j++;
 		}
 		/*for( i=0;i<finalResult.length;i++){
-			System.out.print(finalResult[i]);	
+			System.out.print(finalResult[i]);
 		}*/
 		//ans=new int[finalResult.length][2];
 		for (int k = 0; k < finalResult.length; k++) {
@@ -84,7 +84,7 @@ for (i = 1; !arr[result[i - 1].x]
 	 * @return sol
 	 * @throws RuntimeException in case no sol
 	 */
-public int[][]bfs(final char[][]input, 
+public int[][]bfs(final char[][]input,
 		final int n, final int m) {
 		/**.
 		 * ;
@@ -146,7 +146,7 @@ boolean stop = false;
 				q.enqueue(h);
 parent[top.x][top.y + 1] = new Point(top.x, top.y);
 				}
-	if ((top.x + 1 < input.length) 
+	if ((top.x + 1 < input.length)
 		&& (!visit[top.x + 1][top.y])) {
 	Point h = new Point(top.x + 1, top.y);
 	q.enqueue(h);

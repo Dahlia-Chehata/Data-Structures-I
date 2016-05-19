@@ -173,7 +173,7 @@ public class Singlylinkedlists implements ILinkedList {
 		} else {
 			throw new RuntimeException();
 		}
-	}	
+	}
 /**.
  * ;
  */
@@ -197,7 +197,7 @@ public class Singlylinkedlists implements ILinkedList {
 		 * ;
 		 */
 		SLNode pointer = head;
-		if (fromIndex >= 0 && fromIndex < size 
+		if (fromIndex >= 0 && fromIndex < size
 				&& toIndex >= 0 && toIndex < size) {
 			for (int i = 0; i < fromIndex; i++) {
 				pointer = pointer.next;

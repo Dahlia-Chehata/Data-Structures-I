@@ -9,7 +9,7 @@ import org.junit.Test;
  */
 public class SLlistTest {
 	/**..
-	 * 
+	 *
 	 */
 	ILinkedList list = new Singlylinkedlists();
 	/**.
@@ -182,7 +182,7 @@ public class SLlistTest {
  * ;
  */
 	@Test
-	public void test9() { // test clear and get 
+	public void test9() { // test clear and get
 		liste.add(0, 1);
 		liste.add(1, 2);
 		liste.add(2, num3);

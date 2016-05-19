@@ -89,7 +89,7 @@ public class IceHockey implements IPlayersFinder {
 			if (j > maxCol) {
 				maxCol = j;
 			}
-            if (j < minCol) { 
+            if (j < minCol) {
 				minCol = j;
 			}
 			dfs(i - 1, j, v); // up

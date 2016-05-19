@@ -35,7 +35,7 @@ public class Readfile {
 public final char[][] readFile(final File maze) {
 		if (maze.length() == 0) {
 		    throw new RuntimeException();
-		} 
+		}
 		try {
 			/**.
 			 * ;
@@ -92,7 +92,7 @@ public final char[][] readFile(final File maze) {
 			 for (int j=0;j<m;j++){
 				 System.out.print(arr2[i][j]);
 			 }
-			 System.out.println(); 
+			 System.out.println();
 		 }*/
 		 return arr2;
 	}

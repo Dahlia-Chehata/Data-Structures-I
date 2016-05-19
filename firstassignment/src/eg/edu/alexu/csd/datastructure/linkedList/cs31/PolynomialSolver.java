@@ -95,7 +95,7 @@ public class PolynomialSolver implements IPolynomialSolver {
 		switch (poly) {
 		case 'A':
 			if (aa.isEmpty()) {
-				return null; 
+				return null;
 			} // throw exception
 			for (int i = 0; i < aa.size(); i++) {
 				/**.
@@ -148,7 +148,7 @@ public class PolynomialSolver implements IPolynomialSolver {
 				} else {
 					message += pt.x;
 				}
-			}	
+			}
 			// System.out.println(message);
 			break;
 		case 'C':
@@ -170,11 +170,11 @@ public class PolynomialSolver implements IPolynomialSolver {
 						message += "x";
 					} else {
 						message += "x^" + pt.y;
-					} 
+					}
 					} else {
 					message += pt.x;
 				}
-			}	
+			}
 			// System.out.println(message);
 			break;
 		case 'R':
@@ -193,13 +193,13 @@ public class PolynomialSolver implements IPolynomialSolver {
 					message += "";
 				} else {
 					message += pt.x;
-				} 
+				}
 				if (pt.y != 0) {
 					if (pt.y == 1) {
 						message += "x";
 					} else {
 						message += "x^" + pt.y;
-					} 
+					}
 					} else {
 					message += pt.x;
 				}
@@ -237,7 +237,7 @@ public class PolynomialSolver implements IPolynomialSolver {
 			}
 			cc.clear();
 			break;
-		case 'R': 
+		case 'R':
 			if (rr.isEmpty()) {
 				throw new RuntimeException();
 			}
@@ -722,7 +722,7 @@ public class PolynomialSolver implements IPolynomialSolver {
 		 */
 		int counter = 0;
 		/**.4
-		 * 
+		 *
 		 */
 		int k = 0;
 		for (int i = 0; i < array.length; i++) {

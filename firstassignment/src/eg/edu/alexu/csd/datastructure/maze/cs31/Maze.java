@@ -51,7 +51,7 @@ public class Maze implements IMazeSolver  {
 		 * .
 		 */
 		DfsSolver app = new DfsSolver();
-		/**. 
+		/**.
 		 * .
 		 */
 		int[][] arr = app.dfs(input, Readfile.n, Readfile.m);
@@ -71,7 +71,7 @@ public class Maze implements IMazeSolver  {
 	/**.
 	 * ;
 	 */
-	File s = 
+	File s =
 	(new File("C:\\Users\\Dell"
 			+ "\\Desktop\\mm.txt"));
 	/**.
@@ -84,7 +84,7 @@ public class Maze implements IMazeSolver  {
 	 */
 	int[][]arr2;
 	arr2 = app.solveBFS(s);
-	System.out.println("DFS:");	
+	System.out.println("DFS:");
 	for (int i = 0; i < arr.length; i++) {
 		for (int j = 0; j < arr[0].length; j++) {
 			System.out.print(arr[i][j]);
@@ -93,7 +93,7 @@ public class Maze implements IMazeSolver  {
 	System.out.print("/// ");
 	}
 	System.out.println();
-	System.out.println("BFS:");	
+	System.out.println("BFS:");
 for (int i = 0; i < arr2.length; i++) {
 	for (int j = 0; j < arr2[0].length; j++) {
 		System.out.print(arr2[i][j]);

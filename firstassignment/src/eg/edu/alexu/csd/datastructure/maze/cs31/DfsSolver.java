@@ -65,7 +65,7 @@ public class DfsSolver {
 			j++;
 		}
 		/*for( i=0;i<finalResult.length;i++){
-			System.out.print(finalResult[i]);	
+			System.out.print(finalResult[i]);
 		}*/
 		//ans=new int[finalResult.length][2];
 		for (int k = 0; k < finalResult.length; k++) {
@@ -107,7 +107,7 @@ public int[][]dfs(final char[][]input,
 	    	}
 	        if (input[i][j] == 'S') {
 	        	source = new Point(i, j);
-	        flag = true; 
+	        flag = true;
 	    }
 	   }
 	}
@@ -149,7 +149,7 @@ public int[][]dfs(final char[][]input,
 		} else {
 			//west
 			visit[top.x][top.y] = true;
-			if ((top.y - 1 >= 0) 
+			if ((top.y - 1 >= 0)
 			 && (!visit[top.x][top.y - 1])) {
 		Point h = new Point(top.x, top.y - 1);
 				stack.push(h);
