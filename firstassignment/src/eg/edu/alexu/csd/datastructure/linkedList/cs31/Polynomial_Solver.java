@@ -16,15 +16,15 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	/**.
 	 * ;
 	 */
-	Singly_linkedlists B = new Singly_linkedlists();
+	Singly_linkedlists bb = new Singly_linkedlists();
 	/**.
 	 * ;
 	 */
-	Singly_linkedlists C = new Singly_linkedlists();
+	Singly_linkedlists cc = new Singly_linkedlists();
 	/**.
 	 * ;
 	 */
-	Singly_linkedlists R = new Singly_linkedlists();
+	Singly_linkedlists rr = new Singly_linkedlists();
 	/**.
 	 * ;;
 	 */
@@ -67,7 +67,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				if (array[i] == null) {
 					throw new RuntimeException();
 				}
-				B.add(array[i]);
+				bb.add(array[i]);
 			}
 			break;
 		case 'C':
@@ -75,7 +75,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				if (array[i] == null) {
 					throw new RuntimeException();
 				}
-				C.add(array[i]);
+				cc.add(array[i]);
 			}
 			break;
 		default:
@@ -123,15 +123,15 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			// System.out.println(message);
 			break;
 		case 'B':
-			if (B.isEmpty()) {
+			if (bb.isEmpty()) {
 				return null;
 			}
-			for (int i = 0; i < B.size(); i++) {
+			for (int i = 0; i < bb.size(); i++) {
 				/**.
 				 * .
 				 */
 				Point pt = new Point();
-				pt = (Point) B.get(i);
+				pt = (Point) bb.get(i);
 				if (pt.x == 1) {
 					message += "+";
 				} else if (pt.x == -1) {
@@ -152,12 +152,12 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			// System.out.println(message);
 			break;
 		case 'C':
-			if (C.isEmpty()) {
+			if (cc.isEmpty()) {
 				return null;
 			}
-			for (int i = 0; i < C.size(); i++) {
+			for (int i = 0; i < cc.size(); i++) {
 				Point pt = new Point();
-				pt = (Point) C.get(i);
+				pt = (Point) cc.get(i);
 				if (pt.x == 1) {
 					message += "+";
 				} else if (pt.x == -1) {
@@ -178,15 +178,15 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			// System.out.println(message);
 			break;
 		case 'R':
-			if (R.isEmpty()) {
+			if (rr.isEmpty()) {
 				return null;
 			}
-			for (int i = 0; i < R.size(); i++) {
+			for (int i = 0; i < rr.size(); i++) {
 				/**.
 				 * ;
 				 */
 				Point pt = new Point();
-				pt = (Point) R.get(i);
+				pt = (Point) rr.get(i);
 				if (pt.x == 1) {
 					message += "+";
 				} else if (pt.x == -1) {
@@ -226,22 +226,22 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			aa.clear();
 			break;
 		case 'B':
-			if (B.isEmpty()) {
+			if (bb.isEmpty()) {
 				throw new RuntimeException();
 			}
-			B.clear();
+			bb.clear();
 			break;
 		case 'C':
-			if (C.isEmpty()) {
+			if (cc.isEmpty()) {
 				throw new RuntimeException();
 			}
-			C.clear();
+			cc.clear();
 			break;
 		case 'R': 
-			if (R.isEmpty()) {
+			if (rr.isEmpty()) {
 				throw new RuntimeException();
 			}
-			R.clear();
+			rr.clear();
 			break;
 		default:
 			throw new RuntimeException("invalid input");
@@ -283,13 +283,13 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			}
 			break;
 		case 'B':
-			if (!B.isEmpty()) {
-				for (int i = 0; i < B.size(); i++) {
+			if (!bb.isEmpty()) {
+				for (int i = 0; i < bb.size(); i++) {
 					/**.
 					 * ;
 					 */
 					Point point = new Point();
-					point = (Point) B.get(i);
+					point = (Point) bb.get(i);
 					/**.
 					 * ;
 					 */
@@ -306,13 +306,13 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			}
 			break;
 		case 'C':
-			if (!C.isEmpty()) {
-				for (int i = 0; i < C.size(); i++) {
+			if (!cc.isEmpty()) {
+				for (int i = 0; i < cc.size(); i++) {
 					/**.
 					 * ;
 					 */
 					Point point = new Point();
-					point = (Point) C.get(i);
+					point = (Point) cc.get(i);
 					/**.
 					 * '
 					 */
@@ -329,13 +329,13 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			}
 			break;
 		case 'R':
-			if (!R.isEmpty()) {
-				for (int i = 0; i < R.size(); i++) {
+			if (!rr.isEmpty()) {
+				for (int i = 0; i < rr.size(); i++) {
 					/**.
 					 * .
 					 */
 					Point point = new Point();
-					point = (Point) R.get(i);
+					point = (Point) rr.get(i);
 					/**.
 					 * ;
 					 */
@@ -362,7 +362,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	@Override
 	public final int[][] add(final char poly1, final char poly2) {
 		// TODO Auto-generated method stub
-		R.clear();
+		rr.clear();
 		/**.
 		 * '
 		 */
@@ -379,16 +379,16 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			first = aa;
 			break;
 		case 'B':
-			if (B.isEmpty()) {
+			if (bb.isEmpty()) {
 				throw new RuntimeException();
 			}
-			first = B;
+			first = bb;
 			break;
 		case 'C':
-			if (C.isEmpty()) {
+			if (cc.isEmpty()) {
 				throw new RuntimeException();
 			}
-			first = C;
+			first = cc;
 			break;
 		default:
 			throw new RuntimeException();
@@ -401,16 +401,16 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			second = aa;
 			break;
 		case 'B':
-			if (B.isEmpty()) {
+			if (bb.isEmpty()) {
 				throw new RuntimeException();
 			}
-			second = B;
+			second = bb;
 			break;
 		case 'C':
-			if (C.isEmpty()) {
+			if (cc.isEmpty()) {
 				throw new RuntimeException();
 			}
-			second = C;
+			second = cc;
 			break;
 		default:
 			throw new RuntimeException();
@@ -465,7 +465,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				 */
 				Point result = new Point();
 				result.setLocation(arrayy[i], i);
-				R.add(result);
+				rr.add(result);
 				array1[k][0] = arrayy[i];
 				array1[k][1] = i;
 				k++;
@@ -501,7 +501,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	@Override
 	public final int[][] subtract(final char poly1, final char poly2) {
 		// TODO Auto-generated method stub
-		R.clear();
+		rr.clear();
 		/**.
 		 * ;
 		 */
@@ -518,16 +518,16 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			first = aa;
 			break;
 		case 'B':
-			if (B.isEmpty()) {
+			if (bb.isEmpty()) {
 				throw new RuntimeException();
 			}
-			first = B;
+			first = bb;
 			break;
 		case 'C':
-			if (C.isEmpty()) {
+			if (cc.isEmpty()) {
 				throw new RuntimeException();
 			}
-			first = C;
+			first = cc;
 			break;
 		default:
 			throw new RuntimeException();
@@ -540,16 +540,16 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			second = aa;
 			break;
 		case 'B':
-			if (B.isEmpty()) {
+			if (bb.isEmpty()) {
 				throw new RuntimeException();
 			}
-			second = B;
+			second = bb;
 			break;
 		case 'C':
-			if (C.isEmpty()) {
+			if (cc.isEmpty()) {
 				throw new RuntimeException();
 			}
-			second = C;
+			second = cc;
 			break;
 		default:
 			throw new RuntimeException();
@@ -600,7 +600,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				 */
 				Point result = new Point();
 				result.setLocation(arrtay[i], i);
-				R.add(result);
+				rr.add(result);
 				array1[k][0] = arrtay[i];
 				array1[k][1] = i;
 				k++;
@@ -637,7 +637,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	public final int[][] multiply(final char poly1,
 			final char poly2) {
 		// TODO Auto-generated method stub
-		R.clear();
+		rr.clear();
 		/**.
 		 * '
 		 */
@@ -654,16 +654,16 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			first = aa;
 			break;
 		case 'B':
-			if (B.isEmpty()) {
+			if (bb.isEmpty()) {
 				throw new RuntimeException();
 			}
-			first = B;
+			first = bb;
 			break;
 		case 'C':
-			if (C.isEmpty()) {
+			if (cc.isEmpty()) {
 				throw new RuntimeException();
 			}
-			first = C;
+			first = cc;
 			break;
 		default:
 			throw new RuntimeException();
@@ -676,16 +676,16 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			second = aa;
 			break;
 		case 'B':
-			if (B.isEmpty()) {
+			if (bb.isEmpty()) {
 				throw new RuntimeException();
 			}
-			second = B;
+			second = bb;
 			break;
 		case 'C':
-			if (C.isEmpty()) {
+			if (cc.isEmpty()) {
 				throw new RuntimeException();
 			}
-			second = C;
+			second = cc;
 			break;
 		default:
 			throw new RuntimeException();
@@ -733,7 +733,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				 */
 				Point result = new Point();
 				result.setLocation(ar[i], i);
-				R.add(result);
+				rr.add(result);
 				array1[k][0] = (int) ar[i];
 				array1[k][1] = i;
 				k++;
