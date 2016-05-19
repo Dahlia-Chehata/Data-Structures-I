@@ -609,7 +609,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			}
 		}
 		if (counter == 0) {
-			return new int[][] { { 0, 0 } };
+			return new int[][] {{0, 0}};
 		}
 		/**.
 		 * ;
@@ -707,12 +707,12 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		/**.
 		 * .
 		 */
-		double[] array = new double[bignum];
+		double[] ar = new double[bignum];
 		for (int a = 0; a < first.size(); a++) {
 			for (int b = 0; b < second.size(); b++) {
 				pta = (Point) first.get(a);
 				ptb = (Point) second.get(b);
-				array[pta.y + ptb.y] += pta.getX() * ptb.getX();
+				ar[pta.y + ptb.y] += pta.getX() * ptb.getX();
 			}
 		}
 		/**.
@@ -728,15 +728,15 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		 */
 		int k = 0;
 		for (int i = 0; i < array.length; i++) {
-			if (array[i] != 0) {
+			if (ar[i] != 0) {
 				counter++;
 				/**.
 				 * ;
 				 */
 				Point result = new Point();
-				result.setLocation(array[i], i);
+				result.setLocation(ar[i], i);
 				R.add(result);
-				array1[k][0] = (int) array[i];
+				array1[k][0] = (int) ar[i];
 				array1[k][1] = i;
 				k++;
 			}

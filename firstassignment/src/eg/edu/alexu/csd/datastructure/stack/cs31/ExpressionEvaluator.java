@@ -248,7 +248,7 @@ throw new RuntimeException("'(' without a ')'");
 				}
 				if (stack.isEmpty()) {
 					throw new RuntimeException();
-				}else {
+				} else {
 					operand1 = (double) stack.pop();
 				}
 				stack.push((double) operand1 * operand2);
@@ -363,8 +363,7 @@ System.out.println("------------------------------");
 				|| input.charAt(0) == '+'
 				|| input.charAt(0) == '-') {
 System.out.println("starting with operator");
-		}
-				else {
+		} else {	
 			conv = app.infixToPostfix(input);
 			System.out.println(conv);
 				}

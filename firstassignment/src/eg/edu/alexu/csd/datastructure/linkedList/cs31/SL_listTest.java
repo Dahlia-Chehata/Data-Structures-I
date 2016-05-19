@@ -100,7 +100,7 @@ public class SL_listTest {
 		try {
 			SL.remove(2);
 			D.remove(2);
-			Assert.fail( "remove from empty list");
+			Assert.fail("remove from empty list");
 		} catch (Exception e) {
 			System.out.println(" ");
 		}
@@ -149,7 +149,7 @@ public class SL_listTest {
 		try {
 			SL.add(num, num5);
 		    D.add(num, num5);
-			Assert.fail( "add in -ve index");
+			Assert.fail("add in -ve index");
 		} catch (Exception e) {
 			System.out.println(" ");
 		}
