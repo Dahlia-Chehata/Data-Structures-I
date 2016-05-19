@@ -32,7 +32,6 @@ public class Maze implements IMazeSolver  {
 		}
 			//throw new RuntimeException();
 		return arr;
-		
 	}
 /**.
  * ;
@@ -62,7 +61,6 @@ public class Maze implements IMazeSolver  {
 		return arr;
 	}
 	/**.
-	 * ,
 	 * @param args main
 	 */
 	public static void main(final String[] args) {

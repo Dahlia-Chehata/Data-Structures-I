@@ -4,10 +4,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 /**.
- * .
  * @author Dell
  */
-
 public class Readfile {
 	/**.
 	 * .

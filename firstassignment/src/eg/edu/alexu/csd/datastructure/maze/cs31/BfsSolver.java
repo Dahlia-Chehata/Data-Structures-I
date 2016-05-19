@@ -27,7 +27,6 @@ public class BfsSolver {
 	private Point[][] parent;
 	//char[][] filearray;
 	/**.
-	 * ;
 	 * @param arr final
 	 * @param e indices of target
 	 * @return ans
@@ -48,7 +47,6 @@ for (i = 1; !arr[result[i - 1].x]
 			result[i] = 
 	new Point(arr[result[i - 1].x][result[i - 1].y]);
 		//	filearray[result[i].x][result[i].y] = '*'; 
-
 		}
 		result[i] = new Point(source);
 		i++;
@@ -80,7 +78,6 @@ for (i = 1; !arr[result[i - 1].x]
 		return ans;
 	}
 	/**.
-	 * .
 	 * @param input maze arr
 	 * @param n row
 	 * @param m column

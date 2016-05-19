@@ -263,7 +263,6 @@ public class SLlistTest {
 		list.remove(num);
 		liste.add(num15);
 		liste.remove(num);
-
 	}
 /**.
  * ;
@@ -332,7 +331,6 @@ public class SLlistTest {
 		Assert.assertEquals(num3, result2);
 	}
 /**.
- * '
  */
 	@Test
 	public void test20() { // test size
@@ -360,7 +358,7 @@ public class SLlistTest {
 		Assert.assertEquals(0, liste.size());
 	}
 /**.
- * '
+ * 'jk
  */
 	@Test
 	public void test22() { // test size
@@ -374,7 +372,7 @@ public class SLlistTest {
 		Assert.assertEquals(1, liste.size());
 	}
 /**.
- * '
+ * 'kl
  */
 	@Test
 	public void test23() {
@@ -390,7 +388,7 @@ public class SLlistTest {
 		Assert.assertEquals("l", liste.get(1));
 	}
 /**.
- * '
+ * kl
  */
 	@Test
 	public void test24() { // set test index>size

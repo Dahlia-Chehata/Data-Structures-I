@@ -1,9 +1,7 @@
 package eg.edu.alexu.csd.datastructure.linkedList.cs31;
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 /**.
- * ..
  * @author Dell
- *...
  */
 public class Doublylinkedlists implements ILinkedList {
 	/**.
@@ -11,7 +9,6 @@ public class Doublylinkedlists implements ILinkedList {
 	 */
 	public int size;
 	/**.
-	 * \
 	 */
 	public DNode header, tailer;
 /**.
@@ -148,7 +145,6 @@ public class Doublylinkedlists implements ILinkedList {
 	/**.
 	 * ;
 	 */
-
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
@@ -218,7 +214,6 @@ public class Doublylinkedlists implements ILinkedList {
 			throw new RuntimeException();
 		}
 	}
-
 		/**.
 		 * ;
 		 */
@@ -269,7 +264,6 @@ public ILinkedList sublist(final int fromIndex,
 		if (isEmpty()) {
 			return false;
 		}
-
 		while (pointer != null && pointer != tailer) {
 			if (pointer.value.equals(o)) {
 				return true;

@@ -29,7 +29,6 @@ public class DfsSolver {
 	private Point[][] parent;
 	//char[][] filearray;
 	/**.
-	 * .
 	 * @param arr array
 	 * @param e target
 	 * @return ans
@@ -49,8 +48,7 @@ public class DfsSolver {
 	[result[i - 1].y].equals(source); i++) {
 	result[i] = new Point(arr[result[i - 1].x]
 			[result[i - 1].y]);
-		//	filearray[result[i].x][result[i].y] = '*'; 
-
+		//	filearray[result[i].x][result[i].y] = '*';
 		}
 		result[i] = new Point(source);
 		i++;
@@ -62,7 +60,6 @@ public class DfsSolver {
 		 * .
 		 */
 		int[][]ans = new int[i][2];
-		
 		for (i = i - 1; i >= 0; i--) {
 			finalResult[j] = new Point(result[i]);
 			j++;
@@ -83,7 +80,6 @@ public class DfsSolver {
 		return ans;
 	}
 	/**.
-	 *,
 	 * @param input maze array
 	 * @param n row
 	 * @param m column

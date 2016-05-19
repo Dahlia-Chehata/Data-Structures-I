@@ -368,7 +368,6 @@ System.out.println("starting with operator");
 			&& 'z' >= (conv.charAt(i)))
 			|| ('A' <= (conv.charAt(i))
 			&& 'Z' >= (conv.charAt(i)))) {
-
 	System.out.println("can't evaluate symbols");
 						f1 = true;
 					}

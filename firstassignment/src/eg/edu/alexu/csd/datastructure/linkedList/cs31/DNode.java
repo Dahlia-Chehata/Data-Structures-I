@@ -1,8 +1,6 @@
 package eg.edu.alexu.csd.datastructure.linkedList.cs31;
 /**.
- * ,,
  * @author Dell
- *,,
  */
 public class DNode {
 	/**..
@@ -18,7 +16,6 @@ public class DNode {
 	 */
 	public DNode prev;
 /**..
- * .
  */
 	public DNode() {
 		value = null;
