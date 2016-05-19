@@ -68,7 +68,8 @@ for (int i = 0; i < expression.length(); i++) {
 		+ "having unary operator");
 	} else {
 			test = true;
-	} } else {
+	} 
+	} else {
 			test = false;
 	}
 		}	
