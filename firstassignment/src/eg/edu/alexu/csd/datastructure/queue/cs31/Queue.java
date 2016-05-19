@@ -2,7 +2,7 @@ package eg.edu.alexu.csd.datastructure.queue.cs31;
 import eg.edu.alexu.csd.datastructure.queue.IQueue;
 import eg.edu.alexu.csd.datastructure.queue.ILinkedBased;
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
-import eg.edu.alexu.csd.datastructure.linkedList.cs31.doubly_linkedlists;;
+import eg.edu.alexu.csd.datastructure.linkedList.cs31.Doublylinkedlists;;
 /**.
  * @author Dell
  */
@@ -10,7 +10,7 @@ public class Queue implements IQueue, ILinkedBased {
  /**..
   * .
   */
-ILinkedList mylist = new doubly_linkedlists();
+ILinkedList mylist = new Doublylinkedlists();
 	/**..
 	 * .
 	 */

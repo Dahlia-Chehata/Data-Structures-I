@@ -1,58 +1,71 @@
 package eg.edu.alexu.csd.datastructure.linkedList.cs31;
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 /**.
- * 
+ * ..
  * @author Dell
- *
+ *...
  */
-public class Singly_linkedlists implements ILinkedList {
-/**.
- * '
- */
-	public SLNode head;
+public class Doublylinkedlists implements ILinkedList {
 	/**.
-	 * ';
+	 * .
 	 */
 	public int size;
+	/**.
+	 * \
+	 */
+	public DNode header, tailer;
 /**.
- * ;
+ * ;;
  */
-	public Singly_linkedlists() {
-		head = null;
+	public Doublylinkedlists() {
 		size = 0;
+		header = new DNode(null, null, null);
+		tailer = new DNode(header, null, null);
+		header.next = tailer;
 	}
 /**.
- * '
+ * .
  */
 	@Override
 	public void add(final int index, final Object element) {
 		// TODO Auto-generated method stub
 		/**.
-		 * '
-		 */
-		SLNode newNode = new SLNode();
-		/**.
 		 * ;
 		 */
-		SLNode pointer = head;
+		DNode newNode = new DNode();
 		newNode.value = element;
+		/**.
+		 * .
+		 */
+		DNode pointer = header.next;
 		if (index == 0) {
-			newNode.next = head;
-			head = newNode;
+			newNode.next = pointer;
+			newNode.prev = header;
+			header.next = newNode;
+			pointer.prev = newNode;
 			size++;
 		} else if (index == size) {
-			while (pointer.next != null) {
-				pointer = pointer.next;
-			}
-			pointer.next = newNode;
-			newNode.next = null;
+			/**.
+			 * .
+			 */
+			DNode temp = tailer.prev;
+			temp.next = newNode;
+			newNode.next = tailer;
+			tailer.prev = newNode;
+			newNode.prev = temp;
 			size++;
 		} else if (index > 0 && index < size) {
 			for (int i = 0; i < index - 1; i++) {
 				pointer = pointer.next;
 			}
-			newNode.next = pointer.next;
+			/**.
+			 * .
+			 */
+			DNode temp = pointer.next;
 			pointer.next = newNode;
+			newNode.next = temp;
+			newNode.prev = pointer;
+			temp.prev = newNode;
 			size++;
 		} else {
 			throw new RuntimeException();
@@ -65,23 +78,22 @@ public class Singly_linkedlists implements ILinkedList {
 	public void add(final Object element) {
 		// TODO Auto-generated method stub
 		/**.
-		 * ;
+		 * .
 		 */
-		SLNode pointer = head;
-		/**.
-		 * ;
-		 */
-		SLNode newNode = new SLNode();
+		DNode newNode = new DNode();
 		newNode.value = element;
-		if (head == null) {
-			// newNode.next=null;
-			head = newNode;
+		if (size == 0) {
+			DNode temp = header.next;
+			header.next = newNode;
+			newNode.next = temp;
+			newNode.prev = header;
+			temp.prev = newNode;
 		} else {
-			while (pointer.next != null) {
-				pointer = pointer.next;
-			}
-			pointer.next = newNode;
-			newNode.next = null;
+			DNode temp = tailer.prev;
+			temp.next = newNode;
+			newNode.next = tailer;
+			tailer.prev = newNode;
+			newNode.prev = temp;
 		}
 		size++;
 	}
@@ -94,7 +106,7 @@ public class Singly_linkedlists implements ILinkedList {
 		/**.
 		 * ;
 		 */
-		SLNode pointer = head;
+		DNode pointer = header.next;
 		if (index >= 0 && index < size) {
 			for (int i = 0; i < index; i++) {
 				pointer = pointer.next;
@@ -113,7 +125,7 @@ public class Singly_linkedlists implements ILinkedList {
 		/**.
 		 * ;
 		 */
-		SLNode pointer = head;
+		DNode pointer = header.next;
 		if (index >= 0 && index < size) {
 			for (int i = 0; i < index; i++) {
 				pointer = pointer.next;
@@ -123,62 +135,93 @@ public class Singly_linkedlists implements ILinkedList {
 			throw new RuntimeException();
 		}
 	}
-/**.
- * ;
- */
+	/**.
+	 * ;
+	 */
 	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
-		head = null;
 		size = 0;
+		header.next = tailer;
+		tailer.prev = header;
 	}
-/**.
- * '
- */
+	/**.
+	 * ;
+	 */
+
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
-		if (head == null) {
+		if (size == 0) {
 			return true;
 		}
 		return false;
 	}
 /**.
- * '
+ * ;
  */
 	@Override
 	public void remove(final int index) {
 		// TODO Auto-generated method stub
-		/**.
-		 * ;
-		 */
-		SLNode pointer = head;
-		/**.
-		 * '
-		 */
-		SLNode temp;
 		if (isEmpty()) {
 			throw new RuntimeException();
 		} else if (index == 0) {
-			temp = head;
-			head = head.next;
-			temp.next = null;
+			/**.
+			 * .
+			 */
+			DNode removed = header.next;
+			/**.
+			 * .
+			 */
+			DNode temp = removed.next;
+			temp.prev = header;
+			removed.next = null;
+			removed.prev = null;
+			header.next = temp;
 			size--;
-		} else if (index > 0 && index < size) {
+		} else if (index > 0 && index < size - 1) {
+			/**.
+			 * ;
+			 */
+			DNode pointer = header.next;
 			for (int i = 0; i < index - 1; i++) {
 				pointer = pointer.next;
 			}
-			temp = pointer.next;
-			pointer.next = temp.next;
-			temp.next = null;
+			/**.
+			 * .
+			 */
+			DNode removed = pointer.next;
+			/**.
+			 * .
+			 */
+			DNode temp = removed.next;
+			removed.next = null;
+			removed.prev = null;
+			temp.prev = pointer;
+			pointer.next = temp;
+			size--;
+		} else if (index == size - 1) {
+			/**.
+			 * .
+			 */
+			DNode removed = tailer.prev;
+			/**.
+			 * .
+			 */
+			DNode temp = removed.prev;
+			removed.next = null;
+			removed.prev = null;
+			temp.next = tailer;
+			tailer.prev = temp;
 			size--;
 		} else {
 			throw new RuntimeException();
 		}
-	}	
-/**.
- * ;
- */
+	}
+
+		/**.
+		 * ;
+		 */
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
@@ -188,17 +231,17 @@ public class Singly_linkedlists implements ILinkedList {
  * ;
  */
 	@Override
-	public ILinkedList sublist(final int fromIndex,
-			final int toIndex) {
+public ILinkedList sublist(final int fromIndex,
+		final int toIndex) {
 		// TODO Auto-generated method stub
 		/**.
 		 * ;
 		 */
-		ILinkedList newList = new Singly_linkedlists();
+		ILinkedList newList = new Doublylinkedlists();
 		/**.
 		 * ;
 		 */
-		SLNode pointer = head;
+		DNode pointer = header.next;
 		if (fromIndex >= 0 && fromIndex < size 
 				&& toIndex >= 0 && toIndex < size) {
 			for (int i = 0; i < fromIndex; i++) {
@@ -222,11 +265,12 @@ public class Singly_linkedlists implements ILinkedList {
 		/**.
 		 * ;
 		 */
-		SLNode pointer = head;
+		DNode pointer = header.next;
 		if (isEmpty()) {
 			return false;
 		}
-		while (pointer != null) {
+
+		while (pointer != null && pointer != tailer) {
 			if (pointer.value.equals(o)) {
 				return true;
 			}

@@ -4,7 +4,7 @@ import java.util.Random;
 /**.
  * @author Dell
  */
-public class Hangman_game implements IHangman {
+public class Hangmangame implements IHangman {
 	/**.
 	 * ;
 	 */
@@ -99,7 +99,6 @@ public class Hangman_game implements IHangman {
 			 */
 			char k = str.toUpperCase().charAt(i);
 			/**.
-			 * ;
 			 */
 	           char l = Character.toUpperCase(c);
 			if (k == l && check[i]) {

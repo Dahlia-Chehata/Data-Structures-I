@@ -11,11 +11,11 @@ public class SL_listTest {
 	/**..
 	 * 
 	 */
-	ILinkedList list = new Singly_linkedlists();
+	ILinkedList list = new Singlylinkedlists();
 	/**.
 	 * .
 	 */
-	ILinkedList liste = new doubly_linkedlists();
+	ILinkedList liste = new Doublylinkedlists();
 	/**.
 	 * .
 	 */

@@ -1,6 +1,6 @@
 package eg.edu.alexu.csd.datastructure.stack.cs31;
 import eg.edu.alexu.csd.datastructure.stack.IStack;
-import eg.edu.alexu.csd.datastructure.linkedList.cs31.Singly_linkedlists;
+import eg.edu.alexu.csd.datastructure.linkedList.cs31.Singlylinkedlists;
 import java.util.Scanner;
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 /**.
@@ -10,7 +10,7 @@ public class Stack implements IStack {
 	/**..
 	 * .
 	 */
-	ILinkedList mylist = new Singly_linkedlists();
+	ILinkedList mylist = new Singlylinkedlists();
 	/**..
 	 * .
 	 */

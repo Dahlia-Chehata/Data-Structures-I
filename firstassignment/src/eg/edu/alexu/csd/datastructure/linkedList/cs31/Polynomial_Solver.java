@@ -12,19 +12,19 @@ public class Polynomial_Solver implements IPolynomialSolver {
 /**.
  * ;
  */
-	private Singly_linkedlists aa = new Singly_linkedlists();
+	private Singlylinkedlists aa = new Singlylinkedlists();
 	/**.
 	 * ;
 	 */
-	Singly_linkedlists bb = new Singly_linkedlists();
+	Singlylinkedlists bb = new Singlylinkedlists();
 	/**.
 	 * ;
 	 */
-	Singly_linkedlists cc = new Singly_linkedlists();
+	Singlylinkedlists cc = new Singlylinkedlists();
 	/**.
 	 * ;
 	 */
-	Singly_linkedlists rr = new Singly_linkedlists();
+	Singlylinkedlists rr = new Singlylinkedlists();
 	/**.
 	 * ;;
 	 */
@@ -366,11 +366,11 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		/**.
 		 * '
 		 */
-		Singly_linkedlists first = new Singly_linkedlists();
+		Singlylinkedlists first = new Singlylinkedlists();
 		/**.
 		 * '
 		 */
-		Singly_linkedlists second = new Singly_linkedlists();
+		Singlylinkedlists second = new Singlylinkedlists();
 		switch (poly1) {
 		case 'A':
 			if (aa.isEmpty()) {
@@ -505,11 +505,11 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		/**.
 		 * ;
 		 */
-		Singly_linkedlists first = new Singly_linkedlists();
+		Singlylinkedlists first = new Singlylinkedlists();
 		/**.
 		 * '
 		 */
-		Singly_linkedlists second = new Singly_linkedlists();
+		Singlylinkedlists second = new Singlylinkedlists();
 		switch (poly1) {
 		case 'A':
 			if (aa.isEmpty()) {
@@ -641,11 +641,11 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		/**.
 		 * '
 		 */
-		Singly_linkedlists first = new Singly_linkedlists();
+		Singlylinkedlists first = new Singlylinkedlists();
 		/**.
 		 * ;
 		 */
-		Singly_linkedlists second = new Singly_linkedlists();
+		Singlylinkedlists second = new Singlylinkedlists();
 		switch (poly1) {
 		case 'A':
 			if (aa.isEmpty()) {
