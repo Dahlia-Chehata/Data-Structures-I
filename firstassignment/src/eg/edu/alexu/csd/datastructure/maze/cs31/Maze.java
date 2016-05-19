@@ -87,7 +87,7 @@ public class Maze implements IMazeSolver  {
 	int[][]arr2;
 	arr2 = app.solveBFS(s);
 	System.out.println("DFS:");	
-	for (int i = 0 ; i < arr.length; i++) {
+	for (int i = 0; i < arr.length; i++) {
 		for (int j = 0; j < arr[0].length; j++) {
 			System.out.print(arr[i][j]);
 			System.out.print(",");

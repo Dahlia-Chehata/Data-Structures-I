@@ -26,34 +26,22 @@ public String infixToPostfix(final String expression) {
 		/**.
 		 */
 		boolean flag = true;
-		/**.
-		 * check null
-		 */
 		if (expression == null) {
 			throw new RuntimeException("bbb");
 		}
-		/**.
-		 * check starting with operator
-		 */
 		if (expression.charAt(0) == '/'
 				|| expression.charAt(0) == '*' 
 				|| expression.charAt(0) == '+'
 				|| expression.charAt(0) == '-') {
-			throw new RuntimeException(""
-					+ "starting with operator");
+			throw new RuntimeException();
 		}
-		/**.
-		 * check ending with operator
-		 */
 	if (expression.charAt(expression.length() - 1) == '/' 
 	|| expression.charAt(expression.length() - 1) == '*'
 	|| expression.charAt(expression.length() - 1) == '+'
 	|| expression.charAt(expression.length() - 1) == '-') {
-			throw new RuntimeException(""
-					+ "ending  with operator");
+			throw new RuntimeException("k");
 	}
 		/**.
-		 * check unary
 		 */
 		boolean test = true;
 for (int i = 0; i < expression.length(); i++) {
@@ -64,8 +52,7 @@ for (int i = 0; i < expression.length(); i++) {
 					|| expression.charAt(i) == '+'
 					|| expression.charAt(i) == '-') {
 	if (test) {
-	throw new RuntimeException(""
-		+ "having unary operator");
+	throw new RuntimeException("k");
 	} else {
 			test = true;
 	} 
@@ -73,9 +60,6 @@ for (int i = 0; i < expression.length(); i++) {
 			test = false;
 	}
 		}	
-		/**.
-		 * no operator case
-		 */
 for (int i = 0; i < expression.length() - 1 
 				&& flag; i++) {
 			flag = false;
@@ -89,11 +73,7 @@ for (int i = 0; i < expression.length() - 1
 	if (flag) {
 		throw new RuntimeException("no operator");
 		}
-		/**.
-		 * test symbols and digits like :6k
-		 */
 	for (int i = 0; i < expression.length() - 1; i++) {
-			// test all symbols
 			if ((('A' < expression.charAt(i)
 		&& expression.charAt(i) < 'Z')
 		&& '0' < expression.charAt(i + 1) 
@@ -177,9 +157,6 @@ throw new RuntimeException("'(' without a ')'");
 			str.append(" ");
 		}
  return str.toString().trim();
-// to remove space from 
- //end and start of a
-		// string
 	}
 	@Override
 	/**.
