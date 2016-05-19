@@ -14,9 +14,10 @@ IExpressionEvaluator {
  * .
  */
 	static IStack stack = new Stack();
-	@Override
-	/**.
+	/**
+	 * ll
 	 */
+	@Override
  public String infixToPostfix(final String expression) { 
 		// TODO Auto-generated method stub
 		/**.
