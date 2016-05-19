@@ -117,7 +117,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 						message += "x";
 					} else {
 						message += "x^" + pt.y;
-					} } else {
+					}
+					} else {
 					message += pt.x;
 				}
 			}
@@ -171,7 +172,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 						message += "x";
 					} else {
 						message += "x^" + pt.y;
-					} } else {
+					} 
+					} else {
 					message += pt.x;
 				}
 			}	
@@ -198,7 +200,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 						message += "x";
 					} else {
 						message += "x^" + pt.y;
-					} } else {
+					} 
+					} else {
 					message += pt.x;
 				}
 			}
@@ -552,12 +555,11 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			break;
 		default:
 			throw new RuntimeException();
-
 		}
 		/**.
 		 * .
 		 */
-		int[] array = new int[bignum2];
+		int[] arrtay = new int[bignum2];
 		for (int i = 0; i < first.size; i++) {
 			/**.
 			 * '
@@ -567,7 +569,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			 * .
 			 */
 			int coef = ((Point) (first.get(i))).x;
-			array[exp] += coef;
+			arrtay[exp] += coef;
 		}
 		for (int i = 0; i < second.size; i++) {
 			/**.
@@ -578,7 +580,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			 * ;
 			 */
 			int coef = ((Point) (second.get(i))).x;
-			array[exp] -= coef;
+			arrtay[exp] -= coef;
 		}
 		/**.
 		 * ;
@@ -593,15 +595,15 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		 */
 		int k = 0;
 		for (int i = 0; i < array.length; i++) {
-			if (array[i] != 0) {
+			if (arrtay[i] != 0) {
 				counter++;
 				/**.
 				 * ;
 				 */
 				Point result = new Point();
-				result.setLocation(array[i], i);
+				result.setLocation(arrtay[i], i);
 				R.add(result);
-				array1[k][0] = array[i];
+				array1[k][0] = arrtay[i];
 				array1[k][1] = i;
 				k++;
 			}

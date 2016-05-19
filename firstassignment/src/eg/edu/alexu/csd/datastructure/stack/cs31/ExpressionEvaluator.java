@@ -281,11 +281,13 @@ throw new RuntimeException("'(' without a ')'");
 					throw new RuntimeException();
 				} else {
 					operand2 = (double) stack.pop();
-				} if (stack.isEmpty()) {
+				} 
+				if (stack.isEmpty()) {
 					throw new RuntimeException();
 				} else {
 					operand1 = (double) stack.pop();
-				} if (operand2 == 0) {
+				} 
+				if (operand2 == 0) {
 					throw new RuntimeException();
 				} else if (operand1 == 0) {
 					stack.push(0);
