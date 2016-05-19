@@ -60,7 +60,7 @@ for (int i = 0; i < expression.length(); i++) {
 			test = false;
 	}
 		}
-for (int i = 0; i < expression.length() - 1 
+for (int i = 0; i < expression.length() - 1
 				&& flag; i++) {
 			flag = false;
 			if (expression.charAt(i) != '*'
