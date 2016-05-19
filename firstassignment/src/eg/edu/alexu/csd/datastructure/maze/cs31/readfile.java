@@ -24,7 +24,7 @@ public class readfile {
 	/**.
 	 * ;
 	 */
-	public static int n,m;
+	public static int n, m;
 	/**.
 	 * ;
 	 */

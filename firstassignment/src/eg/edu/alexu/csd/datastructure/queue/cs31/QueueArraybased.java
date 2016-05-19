@@ -32,7 +32,6 @@ public class QueueArraybased implements IQueue, IArrayBased {
 	public QueueArraybased(final int n) {
 		ns = n;
 		arr = new Object[n];
-		
 	}
 /**.
  * ;

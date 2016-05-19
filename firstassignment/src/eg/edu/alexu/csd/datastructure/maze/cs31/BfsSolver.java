@@ -8,7 +8,7 @@ public class BfsSolver {
 	/**.
 	 * .
 	 */
-	Point source ;
+	Point source;
 	/**.
 	 * .
 	 */

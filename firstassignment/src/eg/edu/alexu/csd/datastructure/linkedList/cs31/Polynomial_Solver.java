@@ -302,8 +302,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					result += x * Math.pow(value, y);
 				}
 				System.out.println(result);
-			}
-			else {
+			} else {
 				throw new RuntimeException();
 			}
 			break;
@@ -420,7 +419,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		/**.
 		 * ;
 		 */
-		final int numbb=10000;
+		final int numbb = 10000;
 		/**.
 		 * '
 		 */
