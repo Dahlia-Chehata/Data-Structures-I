@@ -47,7 +47,7 @@ public class IceHockey implements IPlayersFinder {
 	/**
 	 * . .
 	 */
-	final int num = 500 ;
+	final int num = 500;
 	/**
 	 * . ;
 	 */

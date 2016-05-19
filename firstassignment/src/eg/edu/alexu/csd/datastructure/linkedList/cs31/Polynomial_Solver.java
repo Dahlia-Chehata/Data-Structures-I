@@ -32,7 +32,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 	/**.
 	 * 
 	 */
-	 final int bignum2=1000;
+	 final int bignum2 = 1000;
 /**.
  * ;
  */
@@ -76,7 +76,6 @@ public class Polynomial_Solver implements IPolynomialSolver {
 				if (array[i] == null) {
 					throw new RuntimeException();
 				}
-
 				C.add(array[i]);
 			}
 			break;
@@ -195,7 +194,8 @@ public class Polynomial_Solver implements IPolynomialSolver {
 					message += "";
 				} else {
 					message += pt.x;
-				} if (pt.y != 0) {
+				} 
+				if (pt.y != 0) {
 					if (pt.y == 1) {
 						message += "x";
 					} else {
@@ -742,7 +742,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			}
 		}
 		if (counter == 0) {
-			return new int[][] { { 0, 0 } };
+			return new int[][] {{0, 0}};
 		}
 		/**.
 		 * '

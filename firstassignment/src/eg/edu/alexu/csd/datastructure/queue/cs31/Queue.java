@@ -6,7 +6,7 @@ import eg.edu.alexu.csd.datastructure.linkedList.cs31.doubly_linkedlists;;
 /**.
  * @author Dell
  */
-public class Queue implements IQueue,ILinkedBased {
+public class Queue implements IQueue, ILinkedBased {
  /**..
   * .
   */
