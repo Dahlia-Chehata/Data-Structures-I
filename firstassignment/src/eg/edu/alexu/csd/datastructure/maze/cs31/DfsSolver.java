@@ -10,7 +10,7 @@ public class DfsSolver {
 	/**.
 	 * .
 	 */
-	Point source ;
+	Point source;
 	/**.
 	 * ;
 	 */
@@ -91,7 +91,7 @@ public class DfsSolver {
 	 * @throws RuntimeException iin case no sol
 	 */
 public int[][]dfs(final char[][]input,
-		final int n,final int m) {
+		final int n, final int m) {
 	/**.
 	 * ;
 	 */
