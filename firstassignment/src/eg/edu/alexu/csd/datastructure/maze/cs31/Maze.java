@@ -14,7 +14,7 @@ public class Maze implements IMazeSolver  {
 		/**.
 		 * ;
 		 */
-		readfile appl = new readfile();
+		Readfile appl = new Readfile();
 		/**.
 		 * ;
 		 */
@@ -26,7 +26,7 @@ public class Maze implements IMazeSolver  {
 		/**.
 		*;
 		 */
-	int[][] arr = app.bfs(input, readfile.n, readfile.m);
+	int[][] arr = app.bfs(input, Readfile.n, Readfile.m);
 		if (arr == null || arr.length == 0) {
 				return null;
 		}
@@ -43,7 +43,7 @@ public class Maze implements IMazeSolver  {
 		/**.
 		 * .
 		 */
-		readfile appl = new readfile();
+		Readfile appl = new Readfile();
 		/**.
 		 * .
 		 */
@@ -55,7 +55,7 @@ public class Maze implements IMazeSolver  {
 		/**. 
 		 * .
 		 */
-		int[][] arr = app.dfs(input, readfile.n, readfile.m);
+		int[][] arr = app.dfs(input, Readfile.n, Readfile.m);
 		if (arr == null || arr.length == 0) {
 				return null;
 		}

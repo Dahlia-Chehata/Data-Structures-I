@@ -8,7 +8,7 @@ import java.io.IOException;
  * @author Dell
  */
 
-public class readfile {
+public class Readfile {
 	/**.
 	 * .
 	 */
@@ -34,7 +34,7 @@ public class readfile {
 	 * @param maze filename
 	 * @return arr2
 	 */
-public char[][] readFile(final File maze) {
+public final char[][] readFile(final File maze) {
 		if (maze.length() == 0) {
 		    throw new RuntimeException();
 		} 
