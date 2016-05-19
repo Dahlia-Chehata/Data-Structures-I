@@ -40,7 +40,7 @@ public class QueueArraybased implements IQueue, IArrayBased {
  * ;
  */
 	@Override
-	public void enqueue(final Object item) {
+	public final void enqueue(final Object item) {
 		// TODO Auto-generated method stub
 		if (size >= ns) {
 			throw new RuntimeException();
@@ -48,7 +48,7 @@ public class QueueArraybased implements IQueue, IArrayBased {
 		arr[r] = item;
 		if (r == ns - 1) {
 			r = 0;
-		}else {
+		} else {
 			r++;
 		}
 		size++;
@@ -57,7 +57,7 @@ public class QueueArraybased implements IQueue, IArrayBased {
  * .
  */
 	@Override
-	public Object dequeue() {
+	public final Object dequeue() {
 		// TODO Auto-generated method stub
 		if (size == 0) {
 			throw new RuntimeException();
@@ -66,7 +66,7 @@ public class QueueArraybased implements IQueue, IArrayBased {
 		arr[f] = null;
 		if (f == ns - 1) {
 			f = 0;
-		}else {
+		} else {
 			f++;
 	}
 		size--;
@@ -76,7 +76,7 @@ public class QueueArraybased implements IQueue, IArrayBased {
 	 * ;
 	 */
 	@Override
-	public boolean isEmpty() {
+	public final boolean isEmpty() {
 		// TODO Auto-generated method stub
 		return (size == 0);
 	}
@@ -84,7 +84,7 @@ public class QueueArraybased implements IQueue, IArrayBased {
 	 * l
 	 */
 	@Override
-	public int size() {
+	public final int size() {
 		// TODO Auto-generated method stub
 		return size;
 	}

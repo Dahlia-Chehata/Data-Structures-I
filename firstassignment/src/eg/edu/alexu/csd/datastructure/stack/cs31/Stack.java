@@ -127,8 +127,7 @@ public class Stack implements IStack {
 				if (stack.isEmpty()) {
 					System.out.println(""
 							+ "stack is empty");
-				}
-				else {
+				} else {
 					System.out.println(stack.pop());
 				}
 				break;
@@ -136,8 +135,7 @@ public class Stack implements IStack {
 				if (stack.isEmpty()) {
 					System.out.println(""
 							+ "stack is empty");
-				}
-				else {
+				} else {
 					System.out.println(stack.peek());
 				}
 				break;
@@ -148,8 +146,7 @@ public class Stack implements IStack {
 				if (stack.isEmpty()) {
 					System.out.println(""
 							+ "stack is empty");
-				}
-				else {
+				} else {
 					System.out.println("stack"
 							+ " is not empty");
 				}
