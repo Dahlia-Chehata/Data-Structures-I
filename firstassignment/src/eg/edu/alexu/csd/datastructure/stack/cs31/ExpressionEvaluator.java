@@ -21,11 +21,9 @@ IExpressionEvaluator {
 public String infixToPostfix(final String expression) { 
 		// TODO Auto-generated method stub
 		/**.
-		 * .
 		 */
 		StringBuffer str = new StringBuffer();
 		/**.
-		 * .
 		 */
 		boolean flag = true;
 		/**.
@@ -68,13 +66,12 @@ for (int i = 0; i < expression.length(); i++) {
 	if (test) {
 	throw new RuntimeException(""
 		+ "having unary operator");
+	} else {
+			test = true;
+	} } else {
+			test = false;
 	}
-				else {
-					test = true;
-				}
-			} else
-				test = false;
-		}
+		}	
 		/**.
 		 * no operator case
 		 */
@@ -157,8 +154,7 @@ for (int i = 0; i < expression.length() - 1
 				&& expression.charAt(i) <= 'z')
 				|| ('0' <= expression.charAt(i) 
 			  && expression.charAt(i) <= '9')) {
-				{
-			while (i < expression.length() 
+				while (i < expression.length() 
 			&& (('A' <= expression.charAt(i) 
 			&& expression.charAt(i) <= 'Z')
 		|| ('a' <= expression.charAt(i) 
@@ -168,9 +164,8 @@ for (int i = 0; i < expression.length() - 1
 		str.append(expression.charAt(i));
 						i++;
 					}
-					i--;
+			i--;
 			str.append(" ");
-				}
 			}
 		}
 		while (!stack.isEmpty()) {
@@ -247,65 +242,53 @@ throw new RuntimeException("'(' without a ')'");
 			} else if (expression.charAt(i) == '*') {
 				if (stack.isEmpty()) {
 					throw new RuntimeException();
-				}
-				else {
+				}else {
 					operand2 = (double) stack.pop();
 				}
 				if (stack.isEmpty()) {
 					throw new RuntimeException();
-				}
-				else {
+				}else {
 					operand1 = (double) stack.pop();
 				}
 				stack.push((double) operand1 * operand2);
 			} else if (expression.charAt(i) == '+') {
 				if (stack.isEmpty()) {
 					throw new RuntimeException();
-				}
-				else {
+				}else {
 					operand2 = (double) stack.pop();
 				}
 				if (stack.isEmpty()) {
 					throw new RuntimeException();
-				}
-				else {
+				}else {
 					operand1 = (double) stack.pop();
 				}
 				stack.push((double) operand1 + operand2);
 			} else if (expression.charAt(i) == '-') {
 				if (stack.isEmpty()) {
 					throw new RuntimeException();
-				}
-				else {
+				}else {
 					operand2 = (double) stack.pop();
 				}
 				if (stack.isEmpty()) {
 					throw new RuntimeException();
-				}
-				else {
+				}else {
 					operand1 = (double) stack.pop();
 				}
 				stack.push((double) operand1 - operand2);
 			} else if (expression.charAt(i) == '/') {
 				if (stack.isEmpty()) {
 					throw new RuntimeException();
-				}
-				else {
+				}else {
 					operand2 = (double) stack.pop();
-				}
-				if (stack.isEmpty()) {
+				}if (stack.isEmpty()) {
 					throw new RuntimeException();
-				}
-				else {
+				}else {
 					operand1 = (double) stack.pop();
-				}
-				if (operand2 == 0) {
+				}if (operand2 == 0) {
 					throw new RuntimeException();
-				}
-				else if (operand1 == 0) {
+				}else if (operand1 == 0) {
 					stack.push(0);
-				}
-				else {
+				}else {
 	stack.push((double) operand1 / operand2);
 				}
 			}
@@ -375,8 +358,9 @@ System.out.println("------------------------------");
 		} else if (input.charAt(0) == '/' 
 				|| input.charAt(0) == '*' 
 				|| input.charAt(0) == '+'
-				|| input.charAt(0) == '-')
+				|| input.charAt(0) == '-') {
 System.out.println("starting with operator");
+		}
 				else {
 			conv = app.infixToPostfix(input);
 			System.out.println(conv);
@@ -385,8 +369,8 @@ System.out.println("starting with operator");
 			/**.
 			 * evaluating
 			 */
-			case num3: {
-				if (input == "") {
+			case num3: 
+			if (input == "") {
 					System.out.println(""
 	+ "you should insert an expression");
 					break;
@@ -430,11 +414,10 @@ System.out.println("starting with operator");
 		flag = true;
 					}
 			}
-		if (flag && !f1) {
+				if (flag && !f1) {
 System.out.println(app.evaluate(conv));
-		}
+				}
 				break;
-			}
 			/**.
 			 * other input
 			 */

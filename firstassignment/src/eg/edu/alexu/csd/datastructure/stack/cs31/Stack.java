@@ -19,7 +19,7 @@ public class Stack implements IStack {
 	 * add in stack
 	 */
 	@Override
-	public void add(final int index,final Object element) {
+	public void add(final int index, final Object element) {
 		// TODO Auto-generated method stub
 		mylist.add(mylist.size() - index, element);
 	}
@@ -124,29 +124,35 @@ public class Stack implements IStack {
 				stack.push(element);
 				break;
 			case 2:
-				if (stack.isEmpty())
+				if (stack.isEmpty()) {
 					System.out.println(""
 							+ "stack is empty");
-				else
+				}
+				else {
 					System.out.println(stack.pop());
+				}
 				break;
 			case num3:
-				if (stack.isEmpty())
+				if (stack.isEmpty()) {
 					System.out.println(""
 							+ "stack is empty");
-				else
+				}
+				else {
 					System.out.println(stack.peek());
+				}
 				break;
 			case num4:
 				System.out.println(stack.size());
 				break;
 			case num5:
-				if (stack.isEmpty())
+				if (stack.isEmpty()) {
 					System.out.println(""
 							+ "stack is empty");
-				else
+				}
+				else {
 					System.out.println("stack"
 							+ " is not empty");
+				}
 				break;
 			default:
 				System.out.println(""

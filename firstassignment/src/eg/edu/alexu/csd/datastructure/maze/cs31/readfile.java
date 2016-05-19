@@ -38,7 +38,7 @@ public char[][] readFile(final File maze) {
 		if (maze.length() == 0) {
 		    throw new RuntimeException();
 		} 
-		try{
+		try {
 			/**.
 			 * ;
 			 */
@@ -82,8 +82,8 @@ public char[][] readFile(final File maze) {
 	    	sb.append("\n");
 	    }
 	    str = sb.toString();
-	    textReader.close( );
-		} catch(IOException e) {
+	    textReader.close();
+		} catch (IOException e) {
 	System.out.println("not found");
 }
 		arr1 = str.split("\n");

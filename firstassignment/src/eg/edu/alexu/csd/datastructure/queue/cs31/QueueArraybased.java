@@ -6,7 +6,7 @@ import eg.edu.alexu.csd.datastructure.queue.IArrayBased;
  * @author Dell
  *
  */
-public class QueueArraybased implements IQueue,IArrayBased {
+public class QueueArraybased implements IQueue, IArrayBased {
 	/**.
 	 * .
 	 */
@@ -42,13 +42,16 @@ public class QueueArraybased implements IQueue,IArrayBased {
 	@Override
 	public void enqueue(final Object item) {
 		// TODO Auto-generated method stub
-		if (size >= ns)
+		if (size >= ns) {
 			throw new RuntimeException();
+		}
 		arr[r] = item;
-		if (r == ns - 1)
+		if (r == ns - 1) {
 			r = 0;
-		else
+		}
+		else {
 			r++;
+		}
 		size++;
 	}
 /**.
@@ -57,14 +60,17 @@ public class QueueArraybased implements IQueue,IArrayBased {
 	@Override
 	public Object dequeue() {
 		// TODO Auto-generated method stub
-		if (size == 0)
+		if (size == 0) {
 			throw new RuntimeException();
+		}
 		Object temp = arr[f];
 		arr[f] = null;
-		if (f == ns - 1)
+		if (f == ns - 1) {
 			f = 0;
-		else
+		}
+		else {
 			f++;
+	}
 		size--;
 		return temp;
 	}
