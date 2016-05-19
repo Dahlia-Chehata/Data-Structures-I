@@ -6,7 +6,7 @@ import java.awt.Point;
 /**.
  * @author Dell
  */
-class cc implements Comparator<Point> {
+class lol implements Comparator<Point> {
 	/**.
 	 * .
 	 */
@@ -24,7 +24,7 @@ int flagg = -1;
 		 } else {
 			if (o2.y > o1.y) {
 				return flagg;
-			} else if (o2.y <o1.y) {
+			} else if (o2.y < o1.y) {
 				return 1;
 			}
 		}
@@ -190,7 +190,7 @@ public class IceHockey implements IPlayersFinder {
 					maxCol = flagg;
 				}
 			}
-			cc c = new cc();
+			lol c = new lol();
 			if (index > 0) {
 				coor = Arrays.copyOfRange(coor, 0, index);
 				Arrays.sort(coor, 0, index, c);

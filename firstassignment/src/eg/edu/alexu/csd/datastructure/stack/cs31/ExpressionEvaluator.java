@@ -61,8 +61,7 @@ public String infixToPostfix(final String expression) {
 for (int i = 0; i < expression.length(); i++) {
 			if (expression.charAt(i) == ' ') {
 				continue;
-			}
-else if (expression.charAt(i) == '/'
+			}else if (expression.charAt(i) == '/'
 					|| expression.charAt(i) == '*' 
 					|| expression.charAt(i) == '+'
 					|| expression.charAt(i) == '-') {
