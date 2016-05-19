@@ -165,7 +165,7 @@ public class doubly_linkedlists implements ILinkedList {
 		// TODO Auto-generated method stub
 		if (isEmpty()) {
 			throw new RuntimeException();
-		}else if (index == 0) {
+		} else if (index == 0) {
 			/**.
 			 * .
 			 */

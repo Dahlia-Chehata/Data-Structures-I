@@ -40,8 +40,7 @@ public class Singly_linkedlists implements ILinkedList {
 			newNode.next = head;
 			head = newNode;
 			size++;
-		}
-		else if (index == size) {
+		} else if (index == size) {
 			while (pointer.next != null) {
 				pointer = pointer.next;
 			}
@@ -55,8 +54,7 @@ public class Singly_linkedlists implements ILinkedList {
 			newNode.next = pointer.next;
 			pointer.next = newNode;
 			size++;
-		}
-		else {
+		} else {
 			throw new RuntimeException();
 		}
 	}
@@ -117,7 +115,7 @@ public class Singly_linkedlists implements ILinkedList {
 		 */
 		SLNode pointer = head;
 		if (index >= 0 && index < size) {
-			for (int i = 0; i < index; i++){
+			for (int i = 0; i < index; i++) {
 				pointer = pointer.next;
 			}
 			pointer.value = element;
@@ -161,14 +159,12 @@ public class Singly_linkedlists implements ILinkedList {
 		SLNode temp;
 		if (isEmpty()) {
 			throw new RuntimeException();
-		}
-		else if (index == 0) {
+		} else if (index == 0) {
 			temp = head;
 			head = head.next;
 			temp.next = null;
 			size--;
-		}
-		else if (index > 0 && index < size) {
+		} else if (index > 0 && index < size) {
 			for (int i = 0; i < index - 1; i++) {
 				pointer = pointer.next;
 			}
@@ -179,7 +175,7 @@ public class Singly_linkedlists implements ILinkedList {
 		} else {
 			throw new RuntimeException();
 		}
-	}
+	}	
 /**.
  * ;
  */

@@ -48,8 +48,7 @@ public class QueueArraybased implements IQueue, IArrayBased {
 		arr[r] = item;
 		if (r == ns - 1) {
 			r = 0;
-		}
-		else {
+		}else {
 			r++;
 		}
 		size++;
@@ -67,8 +66,7 @@ public class QueueArraybased implements IQueue, IArrayBased {
 		arr[f] = null;
 		if (f == ns - 1) {
 			f = 0;
-		}
-		else {
+		}else {
 			f++;
 	}
 		size--;

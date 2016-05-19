@@ -12,7 +12,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 /**.
  * ;
  */
-	Singly_linkedlists A = new Singly_linkedlists();
+	private Singly_linkedlists A = new Singly_linkedlists();
 	/**.
 	 * ;
 	 */

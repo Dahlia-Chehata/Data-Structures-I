@@ -127,7 +127,7 @@ public class IceHockey implements IPlayersFinder {
 			 * . '
 			 */
 			int yy = minRow + maxRow + 1;
-			center = new Point(xx,yy);
+			center = new Point(xx, yy);
 		}
 		return center;
 	}
@@ -175,7 +175,8 @@ public class IceHockey implements IPlayersFinder {
 	 * . ;
 	 */
 	@Override
-	public Point[] findPlayers(final String[] photo, final int team, final int threshold) {
+	public Point[] findPlayers(final String[] photo,
+		final int team, final int threshold) {
 		// TODO Auto-generated method stub
 		teams = team;
 		area = threshold;

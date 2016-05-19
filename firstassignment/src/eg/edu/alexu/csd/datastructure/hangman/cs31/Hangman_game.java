@@ -79,7 +79,7 @@ public class Hangman_game implements IHangman {
 			/**.
 			 * ;
 			 */
-           char k=str.toUpperCase().charAt(i);
+           char k = str.toUpperCase().charAt(i);
            /**.
             * ;
             */
