@@ -10,7 +10,7 @@ import java.awt.Point;
  * 
  * @author Dell
  */
-final class firstTD implements Comparator<Point> {
+final class Raster implements Comparator<Point> {
 	/**
 	 * . .
 	 */
@@ -211,7 +211,7 @@ public class IceHockey implements IPlayersFinder {
 					maxCol = flagg;
 				}
 			}
-			firstTD c = new firstTD();
+			Raster c = new Raster();
 			if (index > 0) {
 				coor = Arrays.copyOfRange(coor, 0, index);
 				Arrays.sort(coor, 0, index, c);
