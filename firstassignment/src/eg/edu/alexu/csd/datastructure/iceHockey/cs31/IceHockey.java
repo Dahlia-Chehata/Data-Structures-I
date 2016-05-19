@@ -1,23 +1,17 @@
 package eg.edu.alexu.csd.datastructure.iceHockey.cs31;
-
 import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.awt.Point;
-
-/**
- * .
- * 
+/**.
  * @author Dell
  */
 final class Raster implements Comparator<Point> {
-	/**
+	/**.
 	 * . .
 	 */
 	private int flagg = -1;
-
-	/**
-	 * . .
+	/**.
 	 */
 	@Override
 	public int compare(final Point o1, final Point o2) {
@@ -36,64 +30,50 @@ final class Raster implements Comparator<Point> {
 		return 0;
 	}
 }
-
-/**
- * .
- * 
+/**.
  * @author Dell
- *
  */
 public class IceHockey implements IPlayersFinder {
-	/**
-	 * . .
+	/**.
 	 */
 	final int num = 500;
-	/**
+	/**.
 	 * . ;
 	 */
 	final int flagg = -1;
-	/**
-	 * . .
+	/**.
 	 */
 	final int num100 = 100;
-	/**
-	 * . ;
+	/**.
 	 */
 	final int num4 = 4;
-	/**
-	 * . ;
+	/**.
 	 */
 	char[][] photos;
-	/**
-	 * . ;
+	/**.
 	 */
 	boolean[][] visited;
-	/**
+	/**.
 	 * . ;
 	 */
 	Point[] temp;
-	/**
+	/**.
 	 * . ;
 	 */
 	int n, m, index = 0, counter = 0, teams, area;
-	/**
+	/**.
 	 * . ;
 	 */
 	int minRow = num, minCol = num, maxRow = flagg, maxCol = flagg;
-	/**
+	/**.
 	 * . '
 	 */
 	Point center;
-
 	/**
 	 * . ;
-	 * 
 	 * @param i
-	 *            index
 	 * @param j
-	 *            index
 	 * @param v
-	 *            team
 	 * @return center
 	 */
 	public Point dfs(final int i, final int j, final int v) {
@@ -119,11 +99,11 @@ public class IceHockey implements IPlayersFinder {
 		}
 		int a = counter;
 		if (a * num4 >= area) {
-			/**
+			/**.
 			 * . '
 			 */
 			int xx = minCol + maxCol + 1;
-			/**
+			/**.
 			 * . '
 			 */
 			int yy = minRow + maxRow + 1;
@@ -131,19 +111,13 @@ public class IceHockey implements IPlayersFinder {
 		}
 		return center;
 	}
-
 	/**
 	 * . ;
-	 * 
 	 * @param xx
-	 *            index
 	 * @param yy
-	 *            index
 	 * @param team
-	 *            team
 	 * @return boolean
 	 */
-
 	public boolean canmove(final int xx,
 			final int yy, final int team) {
 		/**
@@ -158,22 +132,16 @@ public class IceHockey implements IPlayersFinder {
 		}
 		return false;
 	}
-
-	/**
+	/**.
 	 * . ;
-	 * 
 	 * @param i
-	 *            index
 	 * @param j
-	 *            index
 	 * @return visited[i][j]
 	 */
 	private boolean isVisited(final int i, final int j) {
 		return visited[i][j];
 	}
-
-	/**
-	 * . ;
+	/**.
 	 */
 	@Override
 	public Point[] findPlayers(final String[] photo,
@@ -181,8 +149,7 @@ public class IceHockey implements IPlayersFinder {
 		// TODO Auto-generated method stub
 		teams = team;
 		area = threshold;
-		/**
-		 * . ;
+		/**.
 		 */
 		Point[] coor = new Point[num100];
 
