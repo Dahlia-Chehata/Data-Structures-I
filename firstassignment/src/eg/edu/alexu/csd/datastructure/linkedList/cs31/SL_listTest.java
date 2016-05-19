@@ -7,11 +7,11 @@ import org.junit.Test;
 /**.
  * @author Dell
  */
-public class SL_listTest {
+public class list_listTest {
 	/**..
 	 * 
 	 */
-	ILinkedList SL = new Singly_linkedlists();
+	ILinkedList list = new Singly_linkedlists();
 	/**.
 	 * .
 	 */
@@ -70,9 +70,9 @@ public class SL_listTest {
  */
 	@Test
 	public void test1() { // test get
-		SL.add(0, num7);
+		list.add(0, num7);
 		D.add(0, num7);
-		Object result1 = SL.get(0);
+		Object result1 = list.get(0);
 		Object result2 = D.get(0);
 		assertEquals(num7, result1);
 		assertEquals(num7, result2);
@@ -82,10 +82,10 @@ public class SL_listTest {
  */
 	@Test
 	public void test2() { // add test index> size
-		SL.add(0, num7);
+		list.add(0, num7);
 		D.add(0, num7);
 		try {
-			SL.add(num3, num10);
+			list.add(num3, num10);
 			D.add(num3, num10);
 			Assert.fail("index out of bounds");
 		} catch (Exception e) {
@@ -98,7 +98,7 @@ public class SL_listTest {
 	@Test
 	public void test3() { // remove from empty list
 		try {
-			SL.remove(2);
+			list.remove(2);
 			D.remove(2);
 			Assert.fail("remove from empty list");
 		} catch (Exception e) {
@@ -110,16 +110,16 @@ public class SL_listTest {
  */
 	@Test
 	public void test4() {
-		SL.add(0, num7);
-		SL.add(0, 1);
-		SL.add(0, num69);
-		SL.add(1, num96);
-		SL.add(num15);
-		SL.add(num5, num555);
-		SL.add(num5, num888);
-		SL.set(0, "m");
-		Object result1 = SL.get(0);
-		Object result2 = SL.get(num5);
+		list.add(0, num7);
+		list.add(0, 1);
+		list.add(0, num69);
+		list.add(1, num96);
+		list.add(num15);
+		list.add(num5, num555);
+		list.add(num5, num888);
+		list.set(0, "m");
+		Object result1 = list.get(0);
+		Object result2 = list.get(num5);
 		assertEquals("m", result1);
 		assertEquals(num888, result2);
 	}
@@ -147,7 +147,7 @@ public class SL_listTest {
 	@Test() // test add(index-ve ,Object)
 	public void test6() {
 		try {
-			SL.add(num, num5);
+			list.add(num, num5);
 		    D.add(num, num5);
 			Assert.fail("add in -ve index");
 		} catch (Exception e) {
@@ -159,7 +159,7 @@ public class SL_listTest {
  */
 	@Test(expected = RuntimeException.class) // get -ve index
 	public void test7() {
-		SL.get(num);
+		list.get(num);
 		D.get(num);
 	}
 /**.
@@ -167,12 +167,12 @@ public class SL_listTest {
  */
 	@Test
 	public void test8() { // test clear
-		SL.add(0, 1);
-		SL.add(1, 2);
-		SL.add(2, num3);
-		SL.clear();
+		list.add(0, 1);
+		list.add(1, 2);
+		list.add(2, num3);
+		list.clear();
 		try {
-			SL.get(0);
+			list.get(0);
 			Assert.fail();
 		} catch (Exception e) {
 			System.out.println(" ");
@@ -200,7 +200,7 @@ public class SL_listTest {
  */
 	@Test(expected = RuntimeException.class) // sublist -ve index
 	public void test10() {
-		SL.sublist(num, num5);
+		list.sublist(num, num5);
 		D.sublist(num, num5);
 	}
 /**.
@@ -208,11 +208,11 @@ public class SL_listTest {
  */
 	@Test
 	public void test11() { // sublist>size index
-		SL.add(0, 1);
-		SL.add(1, 2);
-		SL.add(2, num3);
+		list.add(0, 1);
+		list.add(1, 2);
+		list.add(2, num3);
 		try {
-			SL.sublist(2, num5);
+			list.sublist(2, num5);
 		} catch (Exception e) {
 			System.out.println(" ");
 		}
@@ -237,13 +237,13 @@ public class SL_listTest {
  */
 	@Test
 	public void test13() { // test isEmpty()
-		SL.add(0, num7);
-		SL.add(1, 2);
-		SL.add(2, num5);
+		list.add(0, num7);
+		list.add(1, 2);
+		list.add(2, num5);
 		D.add(0, num7);
 		D.add(1, 2);
 		D.add(2, num5);
-		boolean result = SL.isEmpty();
+		boolean result = list.isEmpty();
 		Assert.assertEquals(false, result);
 	}
 /**.
@@ -251,7 +251,7 @@ public class SL_listTest {
  */
 	@Test // contains test on an empty list
 	public void test14() {
-		assertEquals(false, SL.contains(num5));
+		assertEquals(false, list.contains(num5));
 		assertEquals(false, D.contains(num5));
 	}
 /**.
@@ -259,8 +259,8 @@ public class SL_listTest {
  */
 	@Test(expected = RuntimeException.class) // remove -ve index
 	public void test15() { // test remove
-		SL.add(num15);
-		SL.remove(num);
+		list.add(num15);
+		list.remove(num);
 		D.add(num15);
 		D.remove(num);
 
@@ -270,7 +270,7 @@ public class SL_listTest {
  */
 	@Test
 	public void test16() { // test isEmpty()
-		boolean result = SL.isEmpty();
+		boolean result = list.isEmpty();
 		Assert.assertEquals(true, result);
 	}
 /**.
@@ -278,17 +278,17 @@ public class SL_listTest {
  */
 	@Test // contains && remove test
 	public void test17() {
-		SL.add(0, num3);
-		SL.add(1, 2);
-		SL.add(2, num3);
-		SL.add(0, num5);
-		SL.remove(0);
+		list.add(0, num3);
+		list.add(1, 2);
+		list.add(2, num3);
+		list.add(0, num5);
+		list.remove(0);
 		D.add(0, num3);
 		D.add(1, 2);
 		D.add(2, num3);
 		D.add(0, num5);
 		D.remove(0);
-		assertEquals(false, SL.contains(num5));
+		assertEquals(false, list.contains(num5));
 		assertEquals(false, D.contains(num5));
 	}
 /**.
@@ -296,11 +296,11 @@ public class SL_listTest {
  */
 	@Test // contains test
 	public void test18() {
-		SL.add(0, num5);
-		SL.add(1, 2);
-		SL.add(2, 0);
-		SL.add(0, num3);
-		assertEquals(true, SL.contains(num3));
+		list.add(0, num5);
+		list.add(1, 2);
+		list.add(2, 0);
+		list.add(0, num3);
+		assertEquals(true, list.contains(num3));
 		D.add(0, num5);
 		D.add(1, 2);
 		D.add(2, 0);
@@ -312,13 +312,13 @@ public class SL_listTest {
  */
 	@Test
 	public void test19() { // test sublist
-		SL.add(0, num7);
-		SL.add(1, 2);
-		SL.add(2, num5);
-		SL.add(num3);
-		SL.add(num6);
-		SL.add(num4);
-		ILinkedList newlist = SL.sublist(1, num3);
+		list.add(0, num7);
+		list.add(1, 2);
+		list.add(2, num5);
+		list.add(num3);
+		list.add(num6);
+		list.add(num4);
+		ILinkedList newlist = list.sublist(1, num3);
 		Object result = newlist.get(2);
 		Assert.assertEquals(num3, result);
 		D.add(0, num7);
@@ -336,13 +336,13 @@ public class SL_listTest {
  */
 	@Test
 	public void test20() { // test size
-		SL.add(0, num7);
-		SL.add(1, 2);
-		SL.add(2, num5);
-		SL.add(num3);
-		SL.add(num6);
-		SL.add(num4);
-		Assert.assertEquals(num6, SL.size());
+		list.add(0, num7);
+		list.add(1, 2);
+		list.add(2, num5);
+		list.add(num3);
+		list.add(num6);
+		list.add(num4);
+		Assert.assertEquals(num6, list.size());
 		D.add(0, num7);
 		D.add(1, 2);
 		D.add(2, num5);
@@ -356,7 +356,7 @@ public class SL_listTest {
  */
 	@Test
 	public void test21() {
-		Assert.assertEquals(0, SL.size());
+		Assert.assertEquals(0, list.size());
 		Assert.assertEquals(0, D.size());
 	}
 /**.
@@ -364,10 +364,10 @@ public class SL_listTest {
  */
 	@Test
 	public void test22() { // test size
-		SL.add(0, num7);
-		SL.add(1, 2);
-		SL.remove(0);
-		Assert.assertEquals(1, SL.size());
+		list.add(0, num7);
+		list.add(1, 2);
+		list.remove(0);
+		Assert.assertEquals(1, list.size());
 		D.add(0, num7);
 		D.add(1, 2);
 		D.remove(0);
@@ -378,11 +378,11 @@ public class SL_listTest {
  */
 	@Test
 	public void test23() {
-		SL.add(0, "p");
-		SL.add(1, "m");
-		SL.add(1, "n");
-		SL.add(1, "l");
-		Assert.assertEquals("l", SL.get(1));
+		list.add(0, "p");
+		list.add(1, "m");
+		list.add(1, "n");
+		list.add(1, "l");
+		Assert.assertEquals("l", list.get(1));
 		D.add(0, "p");
 		D.add(1, "m");
 		D.add(1, "n");
@@ -394,11 +394,11 @@ public class SL_listTest {
  */
 	@Test
 	public void test24() { // set test index>size
-		SL.add(0, 1);
-		SL.add(1, 2);
-		SL.add(2, num3);
+		list.add(0, 1);
+		list.add(1, 2);
+		list.add(2, num3);
 		try {
-			SL.set(num4, num5);
+			list.set(num4, num5);
 			Assert.fail("index is out of bounds");
 		} catch (Exception e) {
 			System.out.println(" ");
@@ -418,7 +418,7 @@ public class SL_listTest {
  */
 	@Test(expected = RuntimeException.class) // set empty list
 	public void test25() {
-		SL.set(1, num5);
+		list.set(1, num5);
 		D.set(1, num5);
 	}
 /**.
@@ -426,11 +426,11 @@ public class SL_listTest {
  */
 	@Test
 	public void test26() { // set list test //set -ve index
-		SL.add(0, 1);
-		SL.add(1, 2);
-		SL.add(2, num3);
+		list.add(0, 1);
+		list.add(1, 2);
+		list.add(2, num3);
 		try {
-			SL.set(num, num5);
+			list.set(num, num5);
 			Assert.fail("cannot set at a -ve index");
 		} catch (Exception e) {
 			System.out.println(" ");
@@ -450,7 +450,7 @@ public class SL_listTest {
  */
 	@Test(expected = RuntimeException.class) // get empty list
 	public void test27() {
-		SL.get(1);
+		list.get(1);
 		D.get(1);
 	}
 /**.
@@ -458,10 +458,10 @@ public class SL_listTest {
  */
 	@Test
 	public void test28() {
-		SL.add(1);
-		SL.clear();
+		list.add(1);
+		list.clear();
 		try {
-			SL.set(0, num10);
+			list.set(0, num10);
 		} catch (Exception e) {
 			System.out.println(" ");
 		}
@@ -478,11 +478,11 @@ public class SL_listTest {
  */
 	@Test
 	public void test29() { // test get index> size
-		SL.add(0, 1);
-		SL.add(1, 2);
-		SL.add(2, num3);
+		list.add(0, 1);
+		list.add(1, 2);
+		list.add(2, num3);
 		try {
-			SL.get(num5);
+			list.get(num5);
 			Assert.fail("index out of bounds");
 		} catch (Exception e) {
 			System.out.println(" ");
@@ -502,11 +502,11 @@ public class SL_listTest {
  */
 	@Test
 	public void test30() { // test remove index> size
-		SL.add(0, 1);
-		SL.add(1, 2);
-		SL.add(2, num3);
+		list.add(0, 1);
+		list.add(1, 2);
+		list.add(2, num3);
 		try {
-			SL.remove(num5);
+			list.remove(num5);
 			Assert.fail("index out of bounds");
 		} catch (Exception e) {
 			System.out.println(" ");
