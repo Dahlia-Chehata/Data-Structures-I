@@ -30,12 +30,12 @@ IExpressionEvaluator {
 			throw new RuntimeException("bbb");
 		}
 		if (expression.charAt(0) == '/'
-				|| expression.charAt(0) == '*' 
+				|| expression.charAt(0) == '*'
 				|| expression.charAt(0) == '+'
 				|| expression.charAt(0) == '-') {
 			throw new RuntimeException();
 		}
-	if (expression.charAt(expression.length() - 1) == '/' 
+	if (expression.charAt(expression.length() - 1) == '/'
 	|| expression.charAt(expression.length() - 1) == '*'
 	|| expression.charAt(expression.length() - 1) == '+'
 	|| expression.charAt(expression.length() - 1) == '-') {
@@ -48,23 +48,23 @@ for (int i = 0; i < expression.length(); i++) {
 			if (expression.charAt(i) == ' ') {
 				continue;
 			} else if (expression.charAt(i) == '/'
-					|| expression.charAt(i) == '*' 
+					|| expression.charAt(i) == '*'
 					|| expression.charAt(i) == '+'
 					|| expression.charAt(i) == '-') {
 	if (test) {
 	throw new RuntimeException("k");
 	} else {
 			test = true;
-	} 
+	}
 	} else {
 			test = false;
 	}
-		}	
+		}
 for (int i = 0; i < expression.length() - 1 
 				&& flag; i++) {
 			flag = false;
-			if (expression.charAt(i) != '*' 
-					&& expression.charAt(i) != '+' 
+			if (expression.charAt(i) != '*'
+					&& expression.charAt(i) != '+'
 					&& expression.charAt(i) != '-'
 					&& expression.charAt(i) != '/') {
 				flag = true;
@@ -76,7 +76,7 @@ for (int i = 0; i < expression.length() - 1
 	for (int i = 0; i < expression.length() - 1; i++) {
 			if ((('A' < expression.charAt(i)
 		&& expression.charAt(i) < 'Z')
-		&& '0' < expression.charAt(i + 1) 
+		&& '0' < expression.charAt(i + 1)
 		&& expression.charAt(i + 1) < '9')
 		|| (('a' < expression.charAt(i)
 		&& expression.charAt(i) < 'z')
@@ -92,12 +92,12 @@ for (int i = 0; i < expression.length() - 1
 		if (expression.charAt(i) == '(') {
 				stack.push(expression.charAt(i));
 		} else if (expression.charAt(i) == ')') {
-		while (stack.size() != 0 
+		while (stack.size() != 0
 		&& (char) stack.peek() != '(') {
 		str.append(stack.pop());
 		str.append(" ");
 			}
-		if (stack.isEmpty() || (!stack.isEmpty() 
+		if (stack.isEmpty() || (!stack.isEmpty()
 		&& (char) stack.peek() != '(')) {
 		throw new RuntimeException("there is no (");
 		}
@@ -111,7 +111,7 @@ for (int i = 0; i < expression.length() - 1
 		stack.push(expression.charAt(i));
 		} else {
 		while (stack.size() != 0
-		&& ((char) stack.peek() == '*' 
+		&& ((char) stack.peek() == '*'
 		|| (char) stack.peek() == '/')) {
 		str.append(stack.pop());
 		str.append(" ");
@@ -120,8 +120,8 @@ for (int i = 0; i < expression.length() - 1
 		}
 		} else if (expression.charAt(i) == '+'
 		|| expression.charAt(i) == '-') {
-		while (stack.size() != 0 
-		&& ((char) stack.peek() == '*' 
+		while (stack.size() != 0
+		&& ((char) stack.peek() == '*'
 		|| (char) stack.peek() == '/'
 		|| (char) stack.peek() == '+'
 		|| (char) stack.peek() == '-')) {
@@ -131,16 +131,16 @@ for (int i = 0; i < expression.length() - 1
 		stack.push(expression.charAt(i));
 			} else if (('A' <= expression.charAt(i)
 				&& expression.charAt(i) <= 'Z')
-				|| ('a' <= expression.charAt(i) 
+				|| ('a' <= expression.charAt(i)
 				&& expression.charAt(i) <= 'z')
-				|| ('0' <= expression.charAt(i) 
+				|| ('0' <= expression.charAt(i)
 			  && expression.charAt(i) <= '9')) {
-				while (i < expression.length() 
-			&& (('A' <= expression.charAt(i) 
+				while (i < expression.length()
+			&& (('A' <= expression.charAt(i)
 			&& expression.charAt(i) <= 'Z')
-		|| ('a' <= expression.charAt(i) 
+		|| ('a' <= expression.charAt(i)
 			&& expression.charAt(i) <= 'z')
-			|| ('0' <= expression.charAt(i) 
+			|| ('0' <= expression.charAt(i)
 			&& expression.charAt(i) <= '9'))) {
 		str.append(expression.charAt(i));
 						i++;
@@ -188,7 +188,7 @@ throw new RuntimeException("'(' without a ')'");
 		for (int i = 0; i < expression.length(); i++) {
 			if (('a' <= (expression.charAt(i)) && 'z'
 		>= (expression.charAt(i)))
-	|| ('A' <= (expression.charAt(i)) 
+	|| ('A' <= (expression.charAt(i))
 	&& 'Z' >= (expression.charAt(i)))) {
   throw new RuntimeException("lolololol");
 			}
@@ -203,10 +203,10 @@ throw new RuntimeException("'(' without a ')'");
 			/**.
 			 * digits
 			 */
-			if ('0' <= expression.charAt(i) 
+			if ('0' <= expression.charAt(i)
 					&& expression.charAt(i) <= '9') {
-			while (i < expression.length() 
-			&& '0' <= expression.charAt(i) 
+			while (i < expression.length()
+			&& '0' <= expression.charAt(i)
 			&& expression.charAt(i) <= '9') {
 			str += expression.charAt(i);
 					i++;
@@ -335,12 +335,12 @@ System.out.println("------------------------------");
 				if (input == "") {
 					System.out.println(""
 + "you should insert an expression");
-		} else if (input.charAt(0) == '/' 
-				|| input.charAt(0) == '*' 
+		} else if (input.charAt(0) == '/'
+				|| input.charAt(0) == '*'
 				|| input.charAt(0) == '+'
 				|| input.charAt(0) == '-') {
 System.out.println("starting with operator");
-		} else {	
+		} else {
 			conv = app.infixToPostfix(input);
 			System.out.println(conv);
 				}
@@ -385,8 +385,8 @@ System.out.println("starting with operator");
 		if ('0' <= (conv.charAt(i))
 		& '9' >= (conv.charAt(i))
 		|| conv.charAt(i) == ' '
-		|| conv.charAt(i) == '*' 
-		|| conv.charAt(i) == '/' 
+		|| conv.charAt(i) == '*'
+		|| conv.charAt(i) == '/'
 		|| conv.charAt(i) == '+'
 		|| conv.charAt(i) == '-') {
 		flag = true;
