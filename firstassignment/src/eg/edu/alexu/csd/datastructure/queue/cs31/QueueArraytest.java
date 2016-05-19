@@ -6,32 +6,25 @@ import org.junit.Test;
  */
 public class QueueArraytest {
 /**..
- *. 
  */
 QueueArraybased list2;
 	/**..
-	 * .
 	 */
 private final int num5 = 5;
 	/**..
-	 * .
 	 */
 private final int num3 = 3;
 	/**.
-	 * .
 	 */
 private final int num8 = 8;
 	/**.
-	 * .
 	 */
 private final int num12 = 12;
 	/**.
-	 * .
 	 */
 private final int num10 = 10;
 	// enqueue item at index > size
 	/**.
-	 * ;
 	 */
 	@Test
 public void test1() {
