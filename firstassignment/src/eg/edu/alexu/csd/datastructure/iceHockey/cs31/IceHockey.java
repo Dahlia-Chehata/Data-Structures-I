@@ -1,27 +1,32 @@
 package eg.edu.alexu.csd.datastructure.iceHockey.cs31;
+
 import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.awt.Point;
-/**.
+
+/**
+ * .
+ * 
  * @author Dell
  */
 final class lol implements Comparator<Point> {
-	/**.
-	 * .
+	/**
+	 * . .
 	 */
-int flagg = -1;
-/**.
- * .
- */
+	private int flagg = -1;
+
+	/**
+	 * . .
+	 */
 	@Override
-	public int compare(final Point o1,final Point o2) {
+	public int compare(final Point o1, final Point o2) {
 		// TODO Auto-generated method stub
-		 if (o2.x > o1.x) {
-			return flagg;    
-		 } else if (o1.x > o2.x) {
-			return 1;              
-		 } else {
+		if (o2.x > o1.x) {
+			return flagg;
+		} else if (o1.x > o2.x) {
+			return 1;
+		} else {
 			if (o2.y > o1.y) {
 				return flagg;
 			} else if (o2.y < o1.y) {
@@ -31,60 +36,66 @@ int flagg = -1;
 		return 0;
 	}
 }
-/**.
+
+/**
+ * .
  * 
  * @author Dell
  *
  */
 public class IceHockey implements IPlayersFinder {
-			/**.
-			 * .
-			 */
-		 final int num = 500	;
-		 /**.
-		  * ;
-		  */
-		 final int flagg = -1;
-		 /**.
-		  * .
-		  */
-		 final int num100 = 100;
-		 /**.
-		  * ;
-		  */
-		 final int num4 = 4	;
-		 /**.
-		  * ;
-		  */
+	/**
+	 * . .
+	 */
+	final int num = 500 ;
+	/**
+	 * . ;
+	 */
+	final int flagg = -1;
+	/**
+	 * . .
+	 */
+	final int num100 = 100;
+	/**
+	 * . ;
+	 */
+	final int num4 = 4;
+	/**
+	 * . ;
+	 */
 	char[][] photos;
-	/**.
-	 * ;
+	/**
+	 * . ;
 	 */
 	boolean[][] visited;
-	/**.
-	 * ;
+	/**
+	 * . ;
 	 */
 	Point[] temp;
-	/**.
-	 * ;
+	/**
+	 * . ;
 	 */
 	int n, m, index = 0, counter = 0, teams, area;
-	/**.
-	 * ;
+	/**
+	 * . ;
 	 */
-	int minRow = num, minCol = num,
-	maxRow = flagg, maxCol = flagg;
-	/**.
-	 * '
+	int minRow = num, minCol = num, maxRow = flagg, maxCol = flagg;
+	/**
+	 * . '
 	 */
 	Point center;
-/**.
- * ;
- * @param i index
- * @param j index
- * @param v team
- * @return center
- */
+
+	/**
+	 * . ;
+	 * 
+	 * @param i
+	 *            index
+	 * @param j
+	 *            index
+	 * @param v
+	 *            team
+	 * @return center
+	 */
 	public Point dfs(final int i, final int j, final int v) {
 		if (canmove(i, j, teams)) {
 			visited[i][j] = true;
@@ -98,7 +109,7 @@ public class IceHockey implements IPlayersFinder {
 			if (j > maxCol) {
 				maxCol = j;
 			}
-			if (j < minCol){
+            if (j < minCol) { 
 				minCol = j;
 			}
 			dfs(i - 1, j, v); // up
@@ -108,30 +119,34 @@ public class IceHockey implements IPlayersFinder {
 		}
 		int a = counter;
 		if (a * num4 >= area) {
-			/**.
-			 * '
+			/**
+			 * . '
 			 */
 			int xx = minCol + maxCol + 1;
-			/**.
-			 * '
+			/**
+			 * . '
 			 */
 			int yy = minRow + maxRow + 1;
 			center = new Point(xx,yy);
 		}
 		return center;
 	}
-	/**.
-	 * ;
-	 * @param xx index
-	 * @param yy index
-	 * @param team team
+
+	/**
+	 * . ;
+	 * 
+	 * @param xx
+	 *            index
+	 * @param yy
+	 *            index
+	 * @param team
+	 *            team
 	 * @return boolean
 	 */
 
-	public boolean canmove(final int xx,
-			final int yy, final int team) {
-		/**.
-		 * ;
+	public boolean canmove(final int xx, final int yy, final int team) {
+		/**
+		 * . ;
 		 */
 		teams = team;
 		if (xx < 0 || yy < 0 || xx >= m || yy >= n) {
@@ -142,29 +157,33 @@ public class IceHockey implements IPlayersFinder {
 		}
 		return false;
 	}
-/**.
- * ;
- * @param i index
- * @param j index
- * @return visited[i][j]
- */
+
+	/**
+	 * . ;
+	 * 
+	 * @param i
+	 *            index
+	 * @param j
+	 *            index
+	 * @return visited[i][j]
+	 */
 	private boolean isVisited(final int i, final int j) {
 		return visited[i][j];
 	}
-/**.
- * ;
- */
+
+	/**
+	 * . ;
+	 */
 	@Override
-	public Point[] findPlayers(final String[]photo,
-			final int team,final int threshold) {
+	public Point[] findPlayers(final String[] photo, final int team, final int threshold) {
 		// TODO Auto-generated method stub
 		teams = team;
 		area = threshold;
-		/**.
-		 * ;
+		/**
+		 * . ;
 		 */
 		Point[] coor = new Point[num100];
-		
+
 		if (photo.length == 0) {
 			return new Point[0];
 		}

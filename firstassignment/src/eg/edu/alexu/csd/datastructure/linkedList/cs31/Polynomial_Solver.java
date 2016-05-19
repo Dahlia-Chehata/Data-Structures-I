@@ -434,7 +434,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		/**.
 		 * '
 		 */
-		int[] array = new int[numbb];
+		int[] arrayy = new int[numbb];
 		for (int i = 0; i < first.size; i++) {
 			/**.
 			 * '
@@ -444,7 +444,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			 * ;
 			 */
 			int coef = ((Point) (first.get(i))).x;
-			array[exp] += coef;
+			arrayy[exp] += coef;
 		}
 		for (int i = 0; i < second.size; i++) {
 			/**.
@@ -455,7 +455,7 @@ public class Polynomial_Solver implements IPolynomialSolver {
 			 * ;
 			 */
 			int coef = ((Point) (second.get(i))).x;
-			array[exp] += coef;
+			arrayy[exp] += coef;
 		}
 		/**.
 		 * ;
@@ -470,15 +470,15 @@ public class Polynomial_Solver implements IPolynomialSolver {
 		 */
 		int[][] array1 = new int[bignum2][2];
 		for (int i = 0; i < array.length; i++) {
-			if (array[i] != 0) {
+			if (arrayy[i] != 0) {
 				counter++;
 				/**.
 				 * ;
 				 */
 				Point result = new Point();
-				result.setLocation(array[i], i);
+				result.setLocation(arrayy[i], i);
 				R.add(result);
-				array1[k][0] = array[i];
+				array1[k][0] = arrayy[i];
 				array1[k][1] = i;
 				k++;
 			}
