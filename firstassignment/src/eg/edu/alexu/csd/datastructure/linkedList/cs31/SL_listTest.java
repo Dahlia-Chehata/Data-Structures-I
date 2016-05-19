@@ -7,7 +7,7 @@ import org.junit.Test;
 /**.
  * @author Dell
  */
-public class list_listTest {
+public class SL_listTest {
 	/**..
 	 * 
 	 */
