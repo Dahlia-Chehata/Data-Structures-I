@@ -6,7 +6,7 @@ import java.awt.Point;
 /**.
  * @author Dell
  */
-class lol implements Comparator<Point> {
+final class lol implements Comparator<Point> {
 	/**.
 	 * .
 	 */
@@ -68,7 +68,7 @@ public class IceHockey implements IPlayersFinder {
 	/**.
 	 * ;
 	 */
-	int n, m, index = 0, counter = 0, team, area;
+	int n, m, index = 0, counter = 0, teams, area;
 	/**.
 	 * ;
 	 */
@@ -86,7 +86,7 @@ public class IceHockey implements IPlayersFinder {
  * @return center
  */
 	public Point dfs(final int i, final int j, final int v) {
-		if (canmove(i, j, team)) {
+		if (canmove(i, j, teams)) {
 			visited[i][j] = true;
 			counter++;
 			if (i > maxRow) {
@@ -133,7 +133,7 @@ public class IceHockey implements IPlayersFinder {
 		/**.
 		 * ;
 		 */
-		this.team = team;
+		teams = team;
 		if (xx < 0 || yy < 0 || xx >= m || yy >= n) {
 			return false;
 		}
@@ -158,7 +158,7 @@ public class IceHockey implements IPlayersFinder {
 	public Point[] findPlayers(final String[]photo,
 			final int team,final int threshold) {
 		// TODO Auto-generated method stub
-		this.team = team;
+		teams = team;
 		area = threshold;
 		/**.
 		 * ;
