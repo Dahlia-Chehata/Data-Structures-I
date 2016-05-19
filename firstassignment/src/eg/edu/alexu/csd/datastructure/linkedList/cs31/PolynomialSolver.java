@@ -8,7 +8,7 @@ import eg.edu.alexu.csd.datastructure.linkedList.IPolynomialSolver;
 /**.
  * @author Dell
  */
-public class Polynomial_Solver implements IPolynomialSolver {
+public class PolynomialSolver implements IPolynomialSolver {
 /**.
  * ;
  */
